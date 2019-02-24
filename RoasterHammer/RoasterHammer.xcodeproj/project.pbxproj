@@ -226,9 +226,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-RoasterHammer/Pods-RoasterHammer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RoasterHammerShared/RoasterHammerShared.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RoasterHammerShared.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

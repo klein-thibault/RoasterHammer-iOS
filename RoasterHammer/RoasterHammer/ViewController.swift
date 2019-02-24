@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RoasterHammerShared
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let armyDTO = ArmyDTO(id: 1, name: "Test")
+        print(armyDTO.name)
     }
 
 
