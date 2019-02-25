@@ -18,6 +18,10 @@ class ViewController: UIViewController {
         print(armyDTO.name)
     }
 
-
+    @IBAction func createAccountTapped(_ sender: Any) {
+        // TODO: add navigation controller
+        let createAccountViewController = CreateAccountViewController()
+    }
+    
 }
 
