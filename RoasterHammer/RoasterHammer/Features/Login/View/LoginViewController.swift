@@ -1,5 +1,5 @@
 //
-//  CreateAccountViewController.swift
+//  LoginViewController.swift
 //  RoasterHammer
 //
 //  Created by Thibault Klein on 2/25/19.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-final class CreateAccountViewController: CreateAccountLayoutViewController {
+final class LoginViewController: LoginLayoutViewController {
     private let dataManager = AccountDataManager()
 
     override init() {
@@ -23,19 +23,17 @@ final class CreateAccountViewController: CreateAccountLayoutViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        createAccountButton.addTarget(self, action: #selector(createAccountButtonTapped(_:)), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
     }
 
-    @objc private func createAccountButtonTapped(_ sender: UIButton) {
+    @objc private func loginButtonTapped(_ sender: UIButton) {
         guard let email = emailTextField.text,
             let password = passwordTextField.text else {
-            return
+                return
         }
 
-        dataManager.createAccount(email: email, password: password) { (user, error) in
-            print(user)
-            print(error)
+        dataManager.login(email: email, password: password) { (token, error) in
+
         }
     }
-
 }

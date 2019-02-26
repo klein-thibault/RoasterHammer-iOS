@@ -14,17 +14,33 @@ final class AccountNetworking {
 
     func createAccount(request: CreateUserRequest, completion: @escaping (HTTPResponse?, Error?) -> Void) {
         Alamofire
-            .request("http://localhost:8080/",
-                     method: HTTPMethod.post,
+            .request("http://localhost:8080/users/register",
+                     method: .post,
                      parameters: request.toJSON(),
-                     encoding: URLEncoding.default,
+                     encoding: JSONEncoding.default,
                      headers: ["Content-Type": "application/json"])
-            .responseJSON { [weak self] response in
+            .responseData { [weak self] response in
                 self?.handleResponse(response: response, completion: completion)
         }
     }
 
-    func handleResponse(response: DataResponse<Any>, completion: @escaping (HTTPResponse?, Error?) -> Void) {
+    func login(basicToken: String, completion: @escaping (HTTPResponse?, Error?) -> Void) {
+        let headers = [
+            "Content-Type": "application/json",
+            "Authentication": "Basic \(basicToken)"
+        ]
+
+        Alamofire
+            .request("http://localhost:8080/users/login",
+                     method: .post,
+                     encoding: JSONEncoding.default,
+                     headers: headers)
+            .responseData { [weak self] response in
+                self?.handleResponse(response: response, completion: completion)
+        }
+    }
+    
+    private func handleResponse(response: DataResponse<Data>, completion: @escaping (HTTPResponse?, Error?) -> Void) {
         if let error = response.result.error {
             completion(nil, error)
         }

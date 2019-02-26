@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let armyDTO = ArmyDTO(id: 1, name: "Test")
-        print(armyDTO.name)
     }
 
     @IBAction func createAccountTapped(_ sender: Any) {
@@ -24,5 +22,9 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(createAccountViewController, animated: true)
     }
     
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        let loginViewController = LoginViewController()
+        navigationController?.pushViewController(loginViewController, animated: true)
+    }
 }
 

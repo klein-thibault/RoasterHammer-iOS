@@ -10,10 +10,10 @@ import Foundation
 
 public struct HTTPResponse {
 
-    public let data: Any
+    public let data: Data
     public let statusCode: Int?
 
-    public init(data: Any, statusCode: Int?) {
+    public init(data: Data, statusCode: Int?) {
         self.data = data
         self.statusCode = statusCode
     }

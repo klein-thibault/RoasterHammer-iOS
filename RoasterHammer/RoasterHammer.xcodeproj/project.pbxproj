@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		27EB0BFF28BC7AB9F3D16A62 /* Pods_RoasterHammer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AEE1820CAD5C57303E9F64 /* Pods_RoasterHammer.framework */; };
 		8E311B712225793A00C58DBF /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B702225793A00C58DBF /* HTTPResponse.swift */; };
-		8E311B7422257A5F00C58DBF /* CreateAccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B7322257A5F00C58DBF /* CreateAccountDataManager.swift */; };
+		8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B7322257A5F00C58DBF /* AccountDataManager.swift */; };
 		8E6467F52224EDB000599834 /* AccountNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6467F42224EDB000599834 /* AccountNetworking.swift */; };
-		8E646CE62224FA4800599834 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder.swift */; };
+		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
 		8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE72224FBB300599834 /* JSONConvertible.swift */; };
 		8EE227B822235FAE00DF0D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE227B722235FAE00DF0D72 /* AppDelegate.swift */; };
 		8EE227BA22235FAE00DF0D72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE227B922235FAE00DF0D72 /* ViewController.swift */; };
@@ -23,6 +23,12 @@
 		8EFAF0402224A91200DAE956 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF03F2224A91200DAE956 /* LoginViewController.swift */; };
 		8EFAF0422224A9B500DAE956 /* CreateAccountLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF0412224A9B500DAE956 /* CreateAccountLayoutViewController.swift */; };
 		8EFAF0462224AAB200DAE956 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF0452224AAB200DAE956 /* UIView+Autolayout.swift */; };
+		8EFAF5272225F9AE00DAE956 /* JSONDecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5262225F9AE00DAE956 /* JSONDecodingError.swift */; };
+		8EFAF52A2225FB8300DAE956 /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5292225FB8300DAE956 /* String+Encoding.swift */; };
+		8EFAF52F2226009F00DAE956 /* AccountDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF52E2226009F00DAE956 /* AccountDataStore.swift */; };
+		8EFAF531222600C300DAE956 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF530222600C300DAE956 /* Storable.swift */; };
+		8EFAF5332226011000DAE956 /* UserDefaultStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5322226011000DAE956 /* UserDefaultStore.swift */; };
+		8EFAF536222602F000DAE956 /* LoginLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF535222602F000DAE956 /* LoginLayoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +45,9 @@
 		5CAB593934FB800EDA79F6FD /* Pods-RoasterHammer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoasterHammer.release.xcconfig"; path = "../Pods/Target Support Files/Pods-RoasterHammer/Pods-RoasterHammer.release.xcconfig"; sourceTree = "<group>"; };
 		844F19CF2A860DC859BFC27C /* Pods-RoasterHammer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoasterHammer.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-RoasterHammer/Pods-RoasterHammer.debug.xcconfig"; sourceTree = "<group>"; };
 		8E311B702225793A00C58DBF /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
-		8E311B7322257A5F00C58DBF /* CreateAccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountDataManager.swift; sourceTree = "<group>"; };
+		8E311B7322257A5F00C58DBF /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
 		8E6467F42224EDB000599834 /* AccountNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNetworking.swift; sourceTree = "<group>"; };
-		8E646CE52224FA4800599834 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
 		8E646CE72224FBB300599834 /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
 		8EE227B422235FAE00DF0D72 /* RoasterHammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoasterHammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE227B722235FAE00DF0D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +63,12 @@
 		8EFAF03F2224A91200DAE956 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8EFAF0412224A9B500DAE956 /* CreateAccountLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountLayoutViewController.swift; sourceTree = "<group>"; };
 		8EFAF0452224AAB200DAE956 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		8EFAF5262225F9AE00DAE956 /* JSONDecodingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodingError.swift; sourceTree = "<group>"; };
+		8EFAF5292225FB8300DAE956 /* String+Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Encoding.swift"; sourceTree = "<group>"; };
+		8EFAF52E2226009F00DAE956 /* AccountDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataStore.swift; sourceTree = "<group>"; };
+		8EFAF530222600C300DAE956 /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
+		8EFAF5322226011000DAE956 /* UserDefaultStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStore.swift; sourceTree = "<group>"; };
+		8EFAF535222602F000DAE956 /* LoginLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLayoutViewController.swift; sourceTree = "<group>"; };
 		B4AEE1820CAD5C57303E9F64 /* Pods_RoasterHammer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoasterHammer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,7 +103,6 @@
 		8E311B7222257A5400C58DBF /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				8E311B7322257A5F00C58DBF /* CreateAccountDataManager.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -117,8 +128,8 @@
 		8E646CE42224FA3E00599834 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				8E646CE52224FA4800599834 /* JSONDecoder.swift */,
 				8E646CE72224FBB300599834 /* JSONConvertible.swift */,
+				8EFAF5262225F9AE00DAE956 /* JSONDecodingError.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -146,6 +157,7 @@
 		8EE227B622235FAE00DF0D72 /* RoasterHammer */ = {
 			isa = PBXGroup;
 			children = (
+				8EFAF52B2226006C00DAE956 /* Shared */,
 				8E6467F32224ED8400599834 /* Networking */,
 				8EFAF0432224AAA200DAE956 /* Utils */,
 				8EFAF03A2224A8E400DAE956 /* Features */,
@@ -180,7 +192,7 @@
 		8EFAF03B2224A8ED00DAE956 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				8EFAF03F2224A91200DAE956 /* LoginViewController.swift */,
+				8EFAF534222602DD00DAE956 /* View */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -206,9 +218,47 @@
 		8EFAF0442224AAA700DAE956 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */,
 				8EFAF0452224AAB200DAE956 /* UIView+Autolayout.swift */,
+				8EFAF5292225FB8300DAE956 /* String+Encoding.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8EFAF52B2226006C00DAE956 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAF52D2226008C00DAE956 /* Storage */,
+				8EFAF52C2226007100DAE956 /* Data Manager */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8EFAF52C2226007100DAE956 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8E311B7322257A5F00C58DBF /* AccountDataManager.swift */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		8EFAF52D2226008C00DAE956 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAF52E2226009F00DAE956 /* AccountDataStore.swift */,
+				8EFAF530222600C300DAE956 /* Storable.swift */,
+				8EFAF5322226011000DAE956 /* UserDefaultStore.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		8EFAF534222602DD00DAE956 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAF535222602F000DAE956 /* LoginLayoutViewController.swift */,
+				8EFAF03F2224A91200DAE956 /* LoginViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C40B1FABD0F7938DD32EDC5E /* Frameworks */ = {
@@ -365,13 +415,19 @@
 			files = (
 				8E6467F52224EDB000599834 /* AccountNetworking.swift in Sources */,
 				8EFAF0402224A91200DAE956 /* LoginViewController.swift in Sources */,
+				8EFAF5332226011000DAE956 /* UserDefaultStore.swift in Sources */,
 				8E311B712225793A00C58DBF /* HTTPResponse.swift in Sources */,
+				8EFAF5272225F9AE00DAE956 /* JSONDecodingError.swift in Sources */,
 				8EFAF0462224AAB200DAE956 /* UIView+Autolayout.swift in Sources */,
-				8E646CE62224FA4800599834 /* JSONDecoder.swift in Sources */,
+				8EFAF52A2225FB8300DAE956 /* String+Encoding.swift in Sources */,
+				8EFAF531222600C300DAE956 /* Storable.swift in Sources */,
+				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
+				8EFAF52F2226009F00DAE956 /* AccountDataStore.swift in Sources */,
 				8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */,
-				8E311B7422257A5F00C58DBF /* CreateAccountDataManager.swift in Sources */,
+				8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */,
 				8EFAF03E2224A90500DAE956 /* CreateAccountViewController.swift in Sources */,
 				8EE227BA22235FAE00DF0D72 /* ViewController.swift in Sources */,
+				8EFAF536222602F000DAE956 /* LoginLayoutViewController.swift in Sources */,
 				8EE227B822235FAE00DF0D72 /* AppDelegate.swift in Sources */,
 				8EFAF0422224A9B500DAE956 /* CreateAccountLayoutViewController.swift in Sources */,
 			);
