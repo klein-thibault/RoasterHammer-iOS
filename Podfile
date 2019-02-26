@@ -4,5 +4,6 @@ target "RoasterHammer" do
   inhibit_all_warnings!
   project "RoasterHammer/RoasterHammer.xcodeproj"
   
-  pod 'RoasterHammerShared'
+  pod 'Alamofire'
+  pod 'RoasterHammerShared', :git => 'git@github.com:klein-thibault/RoasterHammer-Shared.git', :branch => 'master'
 end

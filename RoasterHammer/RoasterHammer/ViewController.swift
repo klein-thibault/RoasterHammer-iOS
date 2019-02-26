@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBAction func createAccountTapped(_ sender: Any) {
         // TODO: add navigation controller
         let createAccountViewController = CreateAccountViewController()
+        navigationController?.pushViewController(createAccountViewController, animated: true)
     }
     
 }

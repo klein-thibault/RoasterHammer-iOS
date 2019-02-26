@@ -14,11 +14,13 @@ class CreateAccountLayoutViewController: UIViewController {
     var fieldsStackView: UIStackView
     var emailTextField: UITextField
     var passwordTextField: UITextField
+    var createAccountButton: UIButton
 
     init() {
         emailTextField = UITextField()
         passwordTextField = UITextField()
-        fieldsStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
+        createAccountButton = UIButton()
+        fieldsStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, createAccountButton])
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -29,10 +31,15 @@ class CreateAccountLayoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        emailTextField.placeholder = "Email"
+        passwordTextField.placeholder = "Password"
+        createAccountButton.setTitle("Create Account", for: .normal)
+
         view.addSubview(fieldsStackView)
-        fieldsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        fieldsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        fieldsStackView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        fieldsStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        fieldsStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 15).isActive = true
+        fieldsStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
+        fieldsStackView.heightAnchor.constraint(equalToConstant: 300)
     }
 
 }
