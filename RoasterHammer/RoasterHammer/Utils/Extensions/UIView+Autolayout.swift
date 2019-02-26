@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
 
-    convenience init(autolayout: Bool = true) {
+    convenience init(forAutoLayout: ()) {
         self.init()
         translatesAutoresizingMaskIntoConstraints = false
     }

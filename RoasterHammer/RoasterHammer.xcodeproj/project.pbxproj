@@ -231,7 +231,6 @@
 				8EE227B122235FAE00DF0D72 /* Frameworks */,
 				8EE227B222235FAE00DF0D72 /* Resources */,
 				28561CC6179EEE5204AB9B00 /* [CP] Embed Pods Frameworks */,
-				42E8C25DD2F9A6D859ABCB10 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,21 +336,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-RoasterHammer/Pods-RoasterHammer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		42E8C25DD2F9A6D859ABCB10 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-RoasterHammer/Pods-RoasterHammer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B8D2975D45EB1A7167DCEBE5 /* [CP] Check Pods Manifest.lock */ = {

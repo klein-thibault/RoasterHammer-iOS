@@ -11,16 +11,11 @@ import UIKit
 
 class CreateAccountLayoutViewController: UIViewController {
 
-    var fieldsStackView: UIStackView
-    var emailTextField: UITextField
-    var passwordTextField: UITextField
-    var createAccountButton: UIButton
+    var emailTextField = UITextField(forAutoLayout: ())
+    var passwordTextField = UITextField(forAutoLayout: ())
+    var createAccountButton = UIButton(forAutoLayout: ())
 
     init() {
-        emailTextField = UITextField()
-        passwordTextField = UITextField()
-        createAccountButton = UIButton()
-        fieldsStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, createAccountButton])
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -31,15 +26,29 @@ class CreateAccountLayoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.white
+
         emailTextField.placeholder = "Email"
         passwordTextField.placeholder = "Password"
         createAccountButton.setTitle("Create Account", for: .normal)
+        createAccountButton.setTitleColor(UIColor.black, for: .normal)
 
-        view.addSubview(fieldsStackView)
-        fieldsStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
-        fieldsStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 15).isActive = true
-        fieldsStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
-        fieldsStackView.heightAnchor.constraint(equalToConstant: 300)
+        view.addSubview(emailTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(createAccountButton)
+
+        let margins = view.layoutMarginsGuide
+
+        NSLayoutConstraint.activate([
+            emailTextField.topAnchor.constraint(equalTo: margins.topAnchor),
+            emailTextField.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+            emailTextField.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 15),
+            passwordTextField.leftAnchor.constraint(equalTo: margins.leftAnchor),
+            passwordTextField.rightAnchor.constraint(equalTo: margins.rightAnchor),
+            createAccountButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15),
+            createAccountButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
+            ])
     }
 
 }
