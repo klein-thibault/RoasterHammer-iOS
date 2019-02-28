@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 final class CreateAccountViewController: CreateAccountLayoutViewController {
+    var interactor: CreateAccountInteractor!
     private let dataManager = AccountDataManager()
 
     override init() {
@@ -32,10 +33,19 @@ final class CreateAccountViewController: CreateAccountLayoutViewController {
             return
         }
 
-        dataManager.createAccount(email: email, password: password) { (user, error) in
-            print(user)
-            print(error)
-        }
+        interactor.createAccount(email: email, password: password)
     }
 
+}
+
+extension CreateAccountViewController: CreateAccountView {
+    func didRegister() {
+        let alert = Alerter().informationalAlert(title: "Register", message: "You successfully registered")
+        present(alert, animated: true, completion: nil)
+    }
+
+    func didReceiveError(_ error: Error) {
+        let alert = Alerter().informationalAlert(title: "Error", message: error.localizedDescription)
+        present(alert, animated: true, completion: nil)
+    }
 }

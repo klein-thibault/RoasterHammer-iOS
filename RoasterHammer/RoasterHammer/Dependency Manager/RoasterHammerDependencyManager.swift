@@ -12,4 +12,8 @@ final class RoasterHammerDependencyManager: DependencyManager {
     func loginBuilder() -> LoginBuildable {
         return LoginBuilder()
     }
+
+    func createAccountBuilder() -> CreateAccountBuildable {
+        return CreateAccountBuilder()
+    }
 }

@@ -38,19 +38,12 @@ final class LoginViewController: LoginLayoutViewController {
 
 extension LoginViewController: LoginView {
     func didLogin() {
-        // TODO
-        let alert = UIAlertController(title: "Login", message: "You successfully logged in", preferredStyle: .alert)
-        let dismissAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(dismissAction)
+        let alert = Alerter().informationalAlert(title: "Login", message: "You successfully logged in")
         present(alert, animated: true, completion: nil)
     }
 
     func didReceiveError(_ error: Error) {
-        // TODO
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        let dismissAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(dismissAction)
+        let alert = Alerter().informationalAlert(title: "Error", message: error.localizedDescription)
         present(alert, animated: true, completion: nil)
     }
-
 }

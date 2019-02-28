@@ -10,4 +10,5 @@ import Foundation
 
 protocol FeatureFactory {
     func loginBuilder() -> LoginBuildable
+    func createAccountBuilder() -> CreateAccountBuildable
 }

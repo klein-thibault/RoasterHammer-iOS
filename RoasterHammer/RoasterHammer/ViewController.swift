@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func createAccountTapped(_ sender: Any) {
-        // TODO: add navigation controller
-        let createAccountViewController = CreateAccountViewController()
+        let dependencyManager = RoasterHammerDependencyManager()
+        let createAccountViewController = dependencyManager.createAccountBuilder().build()
         navigationController?.pushViewController(createAccountViewController, animated: true)
     }
     
