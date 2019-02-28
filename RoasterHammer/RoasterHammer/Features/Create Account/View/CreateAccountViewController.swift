@@ -12,6 +12,9 @@ import UIKit
 final class CreateAccountViewController: CreateAccountLayoutViewController {
     var interactor: CreateAccountInteractor!
     private let dataManager = AccountDataManager()
+    private lazy var router: CreateAccountRouter = {
+        return CreateAccountRouter(navigationController: navigationController)
+    }()
 
     override init() {
         super.init()
@@ -25,6 +28,13 @@ final class CreateAccountViewController: CreateAccountLayoutViewController {
         super.viewDidLoad()
 
         createAccountButton.addTarget(self, action: #selector(createAccountButtonTapped(_:)), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
+
+        let closeButton = UIBarButtonItem(title: "Close",
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(closeButtonTapped(_:)))
+        navigationItem.rightBarButtonItem = closeButton
     }
 
     @objc private func createAccountButtonTapped(_ sender: UIButton) {
@@ -36,12 +46,19 @@ final class CreateAccountViewController: CreateAccountLayoutViewController {
         interactor.createAccount(email: email, password: password)
     }
 
+    @objc private func loginButtonTapped(_ sender: UIButton) {
+        router.presentLoginView()
+    }
+
+    @objc private func closeButtonTapped(_ sender: UIBarButtonItem) {
+        router.dismiss()
+    }
+
 }
 
 extension CreateAccountViewController: CreateAccountView {
     func didRegister() {
-        let alert = Alerter().informationalAlert(title: "Register", message: "You successfully registered")
-        present(alert, animated: true, completion: nil)
+        router.dismiss()
     }
 
     func didReceiveError(_ error: Error) {

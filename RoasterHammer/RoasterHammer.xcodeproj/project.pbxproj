@@ -53,6 +53,8 @@
 		8EFAF5742228763900DAE956 /* RoastersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5732228763900DAE956 /* RoastersPresenter.swift */; };
 		8EFAF5762228767F00DAE956 /* RoastersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5752228767F00DAE956 /* RoastersView.swift */; };
 		8EFAF5792228782400DAE956 /* RoastersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5782228782400DAE956 /* RoastersRouter.swift */; };
+		8EFAF57D2228948200DAE956 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF57C2228948200DAE956 /* LoginRouter.swift */; };
+		8EFAF5802228957C00DAE956 /* CreateAccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF57F2228957C00DAE956 /* CreateAccountRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		8EFAF5732228763900DAE956 /* RoastersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersPresenter.swift; sourceTree = "<group>"; };
 		8EFAF5752228767F00DAE956 /* RoastersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersView.swift; sourceTree = "<group>"; };
 		8EFAF5782228782400DAE956 /* RoastersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersRouter.swift; sourceTree = "<group>"; };
+		8EFAF57C2228948200DAE956 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		8EFAF57F2228957C00DAE956 /* CreateAccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountRouter.swift; sourceTree = "<group>"; };
 		B4AEE1820CAD5C57303E9F64 /* Pods_RoasterHammer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoasterHammer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -243,6 +247,7 @@
 		8EFAF03B2224A8ED00DAE956 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				8EFAF57B2228947900DAE956 /* Router */,
 				8EFAF54222284C5E00DAE956 /* Builder */,
 				8EFAF53A22284AAE00DAE956 /* Presenter */,
 				8EFAF53922284A9F00DAE956 /* Interactor */,
@@ -254,6 +259,7 @@
 		8EFAF03C2224A8F300DAE956 /* Create Account */ = {
 			isa = PBXGroup;
 			children = (
+				8EFAF57E2228957300DAE956 /* Router */,
 				8EFAF551222850E500DAE956 /* Builder */,
 				8EFAF550222850DF00DAE956 /* Presenter */,
 				8E311B7222257A5400C58DBF /* Interactor */,
@@ -437,6 +443,22 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		8EFAF57B2228947900DAE956 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAF57C2228948200DAE956 /* LoginRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8EFAF57E2228957300DAE956 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAF57F2228957C00DAE956 /* CreateAccountRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		C40B1FABD0F7938DD32EDC5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,6 +617,7 @@
 				8EFAF53F22284B1F00DAE956 /* LoginInteractor.swift in Sources */,
 				8EFAF54D22284EBD00DAE956 /* DependencyManager.swift in Sources */,
 				8EFAF5742228763900DAE956 /* RoastersPresenter.swift in Sources */,
+				8EFAF57D2228948200DAE956 /* LoginRouter.swift in Sources */,
 				8EFAF5722228760C00DAE956 /* RoastersInteractorOutput.swift in Sources */,
 				8EFAF0402224A91200DAE956 /* LoginViewController.swift in Sources */,
 				8EFAF56522285B2700DAE956 /* BaseViewController.swift in Sources */,
@@ -617,6 +640,7 @@
 				8EFAF52F2226009F00DAE956 /* AccountDataStore.swift in Sources */,
 				8EFAF54122284BC200DAE956 /* LoginInteractorOutput.swift in Sources */,
 				8EFAF56A22285D1400DAE956 /* RoastersBuilder.swift in Sources */,
+				8EFAF5802228957C00DAE956 /* CreateAccountRouter.swift in Sources */,
 				8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */,
 				8EFAF56F2228752F00DAE956 /* RoastersInteractor.swift in Sources */,
 				8EFAF5592228560E00DAE956 /* CreateAccountInteractor.swift in Sources */,

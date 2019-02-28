@@ -22,7 +22,14 @@ final class CreateAccountInteractor: CreateAccountViewOutput {
                 self?.presenter.didReceiveError(error)
             }
 
-            self?.presenter.didRegister()
+            // Login automatically the user after creating an account
+            self?.dataManager.login(email: email, password: password, completion: { (token, error) in
+                if let error = error {
+                    self?.presenter.didReceiveError(error)
+                }
+
+                self?.presenter.didRegister()
+            })
         }
     }
 }

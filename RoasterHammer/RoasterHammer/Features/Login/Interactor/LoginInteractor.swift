@@ -21,6 +21,8 @@ final class LoginInteractor: LoginViewOutput {
             if let error = error {
                 self?.presenter.didReceiveError(error)
             }
+
+            self?.presenter.didLogin()
         }
     }
 

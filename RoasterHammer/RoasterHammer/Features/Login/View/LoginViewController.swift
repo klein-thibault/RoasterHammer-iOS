@@ -11,6 +11,9 @@ import UIKit
 
 final class LoginViewController: LoginLayoutViewController {
     var interactor: LoginViewOutput!
+    private lazy var router: LoginRouter = {
+        return LoginRouter(navigationController: navigationController)
+    }()
 
     override init() {
         super.init()
@@ -24,6 +27,8 @@ final class LoginViewController: LoginLayoutViewController {
         super.viewDidLoad()
 
         loginButton.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
+        createAccountButton.addTarget(self, action: #selector(createAccountButtonTapped(_:)), for: .touchUpInside)
+
         let closeButton = UIBarButtonItem(title: "Close",
                                           style: .plain,
                                           target: self,
@@ -40,15 +45,18 @@ final class LoginViewController: LoginLayoutViewController {
         interactor.login(email: email, password: password)
     }
 
+    @objc private func createAccountButtonTapped(_ sender: UIButton) {
+        router.presentCreateAccountView()
+    }
+
     @objc private func closeButtonTapped(_ sender: UIBarButtonItem) {
-        navigationController?.dismiss(animated: true, completion: nil)
+        router.dismiss()
     }
 }
 
 extension LoginViewController: LoginView {
     func didLogin() {
-        let alert = Alerter().informationalAlert(title: "Login", message: "You successfully logged in")
-        present(alert, animated: true, completion: nil)
+        router.dismiss()
     }
 
     func didReceiveError(_ error: Error) {

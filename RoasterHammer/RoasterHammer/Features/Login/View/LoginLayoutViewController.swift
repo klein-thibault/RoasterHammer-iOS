@@ -13,9 +13,12 @@ class LoginLayoutViewController: BaseViewController {
     var emailTextField = UITextField(forAutoLayout: ())
     var passwordTextField = UITextField(forAutoLayout: ())
     var loginButton = UIButton(forAutoLayout: ())
+    var createAccountButton = UIButton(forAutoLayout: ())
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.hidesBackButton = true
 
         view.backgroundColor = UIColor.white
 
@@ -26,10 +29,13 @@ class LoginLayoutViewController: BaseViewController {
         passwordTextField.autocapitalizationType = .none
         loginButton.setTitle("Login", for: .normal)
         loginButton.setTitleColor(UIColor.black, for: .normal)
+        createAccountButton.setTitle("Create Account", for: .normal)
+        createAccountButton.setTitleColor(UIColor.black, for: .normal)
 
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
+        view.addSubview(createAccountButton)
 
         let margins = view.layoutMarginsGuide
 
@@ -41,7 +47,9 @@ class LoginLayoutViewController: BaseViewController {
             passwordTextField.leftAnchor.constraint(equalTo: margins.leftAnchor),
             passwordTextField.rightAnchor.constraint(equalTo: margins.rightAnchor),
             loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15),
-            loginButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
+            loginButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+            createAccountButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 15),
+            createAccountButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
             ])
     }
 }
