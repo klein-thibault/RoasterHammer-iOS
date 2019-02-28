@@ -13,11 +13,17 @@ final class UserDefaultStore: Storable {
 
     func store(data: T, key: String) -> Bool {
         UserDefaults.standard.set(data, forKey: key)
-        return true
+        return UserDefaults.standard.synchronize()
     }
 
     func get(forKey key: String) -> T? {
-        return UserDefaults.standard.data(forKey: key)
+        let data = UserDefaults.standard.data(forKey: key)
+        UserDefaults.standard.synchronize()
+        return data
     }
 
+    func remove(forKey key: String) {
+        UserDefaults.standard.removeObject(forKey: key)
+        UserDefaults.standard.synchronize()
+    }
 }

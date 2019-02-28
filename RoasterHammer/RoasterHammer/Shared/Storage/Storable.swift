@@ -13,5 +13,6 @@ protocol Storable {
 
     func store(data: T, key: String) -> Bool
     func get(forKey key: String) -> T?
+    func remove(forKey key: String)
 
 }

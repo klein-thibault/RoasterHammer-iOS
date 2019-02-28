@@ -28,7 +28,10 @@ class LoginLayoutViewController: UIViewController {
         view.backgroundColor = UIColor.white
 
         emailTextField.placeholder = "Email"
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.autocapitalizationType = .none
         passwordTextField.placeholder = "Password"
+        passwordTextField.autocapitalizationType = .none
         loginButton.setTitle("Login", for: .normal)
         loginButton.setTitleColor(UIColor.black, for: .normal)
 

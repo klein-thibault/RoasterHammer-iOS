@@ -27,7 +27,7 @@ final class AccountNetworking {
     func login(basicToken: String, completion: @escaping (HTTPResponse?, Error?) -> Void) {
         let headers = [
             "Content-Type": "application/json",
-            "Authentication": "Basic \(basicToken)"
+            "Authorization": "Basic \(basicToken)"
         ]
 
         Alamofire
@@ -39,7 +39,7 @@ final class AccountNetworking {
                 self?.handleResponse(response: response, completion: completion)
         }
     }
-    
+
     private func handleResponse(response: DataResponse<Data>, completion: @escaping (HTTPResponse?, Error?) -> Void) {
         if let error = response.result.error {
             completion(nil, error)

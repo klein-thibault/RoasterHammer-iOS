@@ -29,7 +29,10 @@ class CreateAccountLayoutViewController: UIViewController {
         view.backgroundColor = UIColor.white
 
         emailTextField.placeholder = "Email"
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.autocapitalizationType = .none
         passwordTextField.placeholder = "Password"
+        passwordTextField.autocapitalizationType = .none
         createAccountButton.setTitle("Create Account", for: .normal)
         createAccountButton.setTitleColor(UIColor.black, for: .normal)
 
