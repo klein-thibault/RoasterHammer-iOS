@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 final class LoginViewController: LoginLayoutViewController {
-    private let dataManager = AccountDataManager()
+    var interactor: LoginViewOutput!
 
     override init() {
         super.init()
@@ -32,8 +32,25 @@ final class LoginViewController: LoginLayoutViewController {
                 return
         }
 
-        dataManager.login(email: email, password: password) { (token, error) in
-
-        }
+        interactor.login(email: email, password: password)
     }
+}
+
+extension LoginViewController: LoginView {
+    func didLogin() {
+        // TODO
+        let alert = UIAlertController(title: "Login", message: "You successfully logged in", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(dismissAction)
+        present(alert, animated: true, completion: nil)
+    }
+
+    func didReceiveError(_ error: Error) {
+        // TODO
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(dismissAction)
+        present(alert, animated: true, completion: nil)
+    }
+
 }

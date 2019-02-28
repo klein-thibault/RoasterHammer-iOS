@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        let loginViewController = LoginViewController()
+        let dependencyManager = RoasterHammerDependencyManager()
+        let loginViewController = dependencyManager.loginBuilder().build()
         navigationController?.pushViewController(loginViewController, animated: true)
     }
 }
