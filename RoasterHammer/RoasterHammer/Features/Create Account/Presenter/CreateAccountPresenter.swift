@@ -9,7 +9,7 @@
 import Foundation
 
 final class CreateAccountPresenter: CreateAccountInteractorOutput {
-    var view: CreateAccountView!
+    weak var view: CreateAccountView!
 
     func didRegister() {
         view.didRegister()

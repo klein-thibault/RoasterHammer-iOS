@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 final class RoastersViewController: RoastersLayoutViewController {
+    var interactor: RoastersViewOutput!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,18 @@ final class RoastersViewController: RoastersLayoutViewController {
     }
 
     @objc private func accountButtonTapped(_ sender: UIBarButtonItem) {
-
+        interactor.accountButtonTapped()
     }
 
     @objc private func addRoasterButtonTapped(_ sender: UIBarButtonItem) {
-
+        interactor.addRoasterButtonTapped()
     }
 
+}
+
+extension RoastersViewController: RoastersView {
+    func presentLoginView() {
+        let router = RoastersRouter(navigationController: navigationController)
+        router.presentLoginView()
+    }
 }

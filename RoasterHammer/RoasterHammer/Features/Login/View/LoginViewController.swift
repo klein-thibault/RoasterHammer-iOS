@@ -24,6 +24,11 @@ final class LoginViewController: LoginLayoutViewController {
         super.viewDidLoad()
 
         loginButton.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
+        let closeButton = UIBarButtonItem(title: "Close",
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(closeButtonTapped(_:)))
+        navigationItem.rightBarButtonItem = closeButton
     }
 
     @objc private func loginButtonTapped(_ sender: UIButton) {
@@ -33,6 +38,10 @@ final class LoginViewController: LoginLayoutViewController {
         }
 
         interactor.login(email: email, password: password)
+    }
+
+    @objc private func closeButtonTapped(_ sender: UIBarButtonItem) {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
 }
 

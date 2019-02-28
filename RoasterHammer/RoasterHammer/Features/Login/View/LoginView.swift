@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LoginView {
+protocol LoginView: class {
     func didLogin()
     func didReceiveError(_ error: Error)
 }

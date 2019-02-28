@@ -47,6 +47,12 @@
 		8EFAF56522285B2700DAE956 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF56422285B2700DAE956 /* BaseViewController.swift */; };
 		8EFAF56722285BE700DAE956 /* RoastersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF56622285BE700DAE956 /* RoastersViewController.swift */; };
 		8EFAF56A22285D1400DAE956 /* RoastersBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF56922285D1400DAE956 /* RoastersBuilder.swift */; };
+		8EFAF56D2228750200DAE956 /* RoastersViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF56C2228750200DAE956 /* RoastersViewOutput.swift */; };
+		8EFAF56F2228752F00DAE956 /* RoastersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF56E2228752F00DAE956 /* RoastersInteractor.swift */; };
+		8EFAF5722228760C00DAE956 /* RoastersInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5712228760C00DAE956 /* RoastersInteractorOutput.swift */; };
+		8EFAF5742228763900DAE956 /* RoastersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5732228763900DAE956 /* RoastersPresenter.swift */; };
+		8EFAF5762228767F00DAE956 /* RoastersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5752228767F00DAE956 /* RoastersView.swift */; };
+		8EFAF5792228782400DAE956 /* RoastersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5782228782400DAE956 /* RoastersRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +111,12 @@
 		8EFAF56422285B2700DAE956 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8EFAF56622285BE700DAE956 /* RoastersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersViewController.swift; sourceTree = "<group>"; };
 		8EFAF56922285D1400DAE956 /* RoastersBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersBuilder.swift; sourceTree = "<group>"; };
+		8EFAF56C2228750200DAE956 /* RoastersViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersViewOutput.swift; sourceTree = "<group>"; };
+		8EFAF56E2228752F00DAE956 /* RoastersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersInteractor.swift; sourceTree = "<group>"; };
+		8EFAF5712228760C00DAE956 /* RoastersInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersInteractorOutput.swift; sourceTree = "<group>"; };
+		8EFAF5732228763900DAE956 /* RoastersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersPresenter.swift; sourceTree = "<group>"; };
+		8EFAF5752228767F00DAE956 /* RoastersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersView.swift; sourceTree = "<group>"; };
+		8EFAF5782228782400DAE956 /* RoastersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersRouter.swift; sourceTree = "<group>"; };
 		B4AEE1820CAD5C57303E9F64 /* Pods_RoasterHammer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoasterHammer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -310,6 +322,9 @@
 		8EFAF53822284A5700DAE956 /* Roasters */ = {
 			isa = PBXGroup;
 			children = (
+				8EFAF5772228781800DAE956 /* Router */,
+				8EFAF570222875FB00DAE956 /* Presenter */,
+				8EFAF56B2228747F00DAE956 /* Interactor */,
 				8EFAF56822285D0C00DAE956 /* Builder */,
 				8EFAF56122285AE700DAE956 /* View */,
 			);
@@ -381,6 +396,7 @@
 		8EFAF56122285AE700DAE956 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8EFAF5752228767F00DAE956 /* RoastersView.swift */,
 				8EFAF56222285AF500DAE956 /* RoastersLayoutViewController.swift */,
 				8EFAF56622285BE700DAE956 /* RoastersViewController.swift */,
 			);
@@ -393,6 +409,32 @@
 				8EFAF56922285D1400DAE956 /* RoastersBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		8EFAF56B2228747F00DAE956 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAF56C2228750200DAE956 /* RoastersViewOutput.swift */,
+				8EFAF56E2228752F00DAE956 /* RoastersInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8EFAF570222875FB00DAE956 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAF5712228760C00DAE956 /* RoastersInteractorOutput.swift */,
+				8EFAF5732228763900DAE956 /* RoastersPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8EFAF5772228781800DAE956 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAF5782228782400DAE956 /* RoastersRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		C40B1FABD0F7938DD32EDC5E /* Frameworks */ = {
@@ -547,9 +589,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EFAF5572228513E00DAE956 /* CreateAccountInteractorOutput.swift in Sources */,
+				8EFAF56D2228750200DAE956 /* RoastersViewOutput.swift in Sources */,
+				8EFAF5762228767F00DAE956 /* RoastersView.swift in Sources */,
 				8E6467F52224EDB000599834 /* AccountNetworking.swift in Sources */,
 				8EFAF53F22284B1F00DAE956 /* LoginInteractor.swift in Sources */,
 				8EFAF54D22284EBD00DAE956 /* DependencyManager.swift in Sources */,
+				8EFAF5742228763900DAE956 /* RoastersPresenter.swift in Sources */,
+				8EFAF5722228760C00DAE956 /* RoastersInteractorOutput.swift in Sources */,
 				8EFAF0402224A91200DAE956 /* LoginViewController.swift in Sources */,
 				8EFAF56522285B2700DAE956 /* BaseViewController.swift in Sources */,
 				8EFAF5332226011000DAE956 /* UserDefaultStore.swift in Sources */,
@@ -572,6 +618,7 @@
 				8EFAF54122284BC200DAE956 /* LoginInteractorOutput.swift in Sources */,
 				8EFAF56A22285D1400DAE956 /* RoastersBuilder.swift in Sources */,
 				8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */,
+				8EFAF56F2228752F00DAE956 /* RoastersInteractor.swift in Sources */,
 				8EFAF5592228560E00DAE956 /* CreateAccountInteractor.swift in Sources */,
 				8EFAF53D22284B0700DAE956 /* LoginViewOutput.swift in Sources */,
 				8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */,
@@ -580,6 +627,7 @@
 				8EFAF54B22284E9F00DAE956 /* FeatureFactory.swift in Sources */,
 				8EFAF536222602F000DAE956 /* LoginLayoutViewController.swift in Sources */,
 				8EFAF55D222856CA00DAE956 /* CreateAccountBuilder.swift in Sources */,
+				8EFAF5792228782400DAE956 /* RoastersRouter.swift in Sources */,
 				8EE227B822235FAE00DF0D72 /* AppDelegate.swift in Sources */,
 				8EFAF0422224A9B500DAE956 /* CreateAccountLayoutViewController.swift in Sources */,
 			);

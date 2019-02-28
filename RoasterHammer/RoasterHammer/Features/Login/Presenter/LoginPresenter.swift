@@ -9,7 +9,7 @@
 import Foundation
 
 final class LoginPresenter: LoginInteractorOutput {
-    var view: LoginView!
+    weak var view: LoginView!
 
     func didLogin() {
         view.didLogin()

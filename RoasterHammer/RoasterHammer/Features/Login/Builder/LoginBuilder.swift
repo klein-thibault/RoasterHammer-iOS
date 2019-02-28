@@ -11,6 +11,7 @@ import UIKit
 
 protocol LoginBuildable {
     func build() -> UIViewController
+    func buildInNavigationController() -> UINavigationController
 }
 
 final class LoginBuilder: LoginBuildable {
@@ -25,5 +26,11 @@ final class LoginBuilder: LoginBuildable {
         presenter.view = view
 
         return view
+    }
+
+    func buildInNavigationController() -> UINavigationController {
+        let view = build()
+        let navigationController = UINavigationController(rootViewController: view)
+        return navigationController
     }
 }
