@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DependencyManager: FeatureFactory {
-
+    func startApplication(window: UIWindow?)
 }

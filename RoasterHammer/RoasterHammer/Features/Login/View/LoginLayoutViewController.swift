@@ -9,18 +9,10 @@
 import Foundation
 import UIKit
 
-class LoginLayoutViewController: UIViewController {
+class LoginLayoutViewController: BaseViewController {
     var emailTextField = UITextField(forAutoLayout: ())
     var passwordTextField = UITextField(forAutoLayout: ())
     var loginButton = UIButton(forAutoLayout: ())
-
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,6 +13,10 @@ final class AccountDataManager {
     private let networking = AccountNetworking()
     private let accountStore = AccountDataStore()
 
+    func isUserLoggedIn() -> Bool {
+        return accountStore.getAuthToken() != nil
+    }
+
     func createAccount(email: String, password: String, completion: @escaping (UserResponse?, Error?) -> Void) {
         let request = CreateUserRequest(email: email, password: password)
         networking.createAccount(request: request) { (response, error) in
