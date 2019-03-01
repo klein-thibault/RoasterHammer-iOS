@@ -9,6 +9,12 @@
 import Foundation
 import RoasterHammerShared
 
+extension CreateUserRequest: JSONConvertible {
+    func toJSON() -> JSON {
+        return ["email": email, "password": password]
+    }
+}
+
 final class AccountDataManager {
     private let environmentManager: HTTPEnvironmentManager
     private let httpClient = AlamofireHTTPClient()
