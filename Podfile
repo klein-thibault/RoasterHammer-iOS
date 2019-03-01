@@ -1,3 +1,4 @@
+platform :ios, '12.1'
 workspace "RoasterHammer.xcworkspace"
 target "RoasterHammer" do
   use_frameworks!
