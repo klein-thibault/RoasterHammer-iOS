@@ -6,21 +6,17 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - "RoasterHammerShared (from `git@github.com:klein-thibault/RoasterHammer-Shared.git`, branch `master`)"
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Alamofire
+  - RoasterHammerShared (from `git@github.com:klein-thibault/RoasterHammer-Shared.git`, branch `master`)
 
 EXTERNAL SOURCES:
   RoasterHammerShared:
     :branch: master
-    :git: "git@github.com:klein-thibault/RoasterHammer-Shared.git"
+    :git: git@github.com:klein-thibault/RoasterHammer-Shared.git
 
 CHECKOUT OPTIONS:
   RoasterHammerShared:
     :commit: c901c55589c212a130908dfe47df7ee04a16b8db
-    :git: "git@github.com:klein-thibault/RoasterHammer-Shared.git"
+    :git: git@github.com:klein-thibault/RoasterHammer-Shared.git
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -28,4 +24,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 056f5f8183ff5326f088ce413b22c6b9bc6ae5fa
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.3.1

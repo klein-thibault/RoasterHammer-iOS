@@ -11,6 +11,7 @@ import UIKit
 
 final class RoasterHammerDependencyManager: DependencyManager {
     var environmentManager: HTTPEnvironmentManager
+    static let shared = RoasterHammerDependencyManager()
 
     init() {
         let localEnvironment = HTTPEnvironment(name: "Local", baseURL: URL(string: "http://localhost:8080")!)
@@ -29,14 +30,14 @@ final class RoasterHammerDependencyManager: DependencyManager {
     // MARK: - FeatureFactory
 
     func loginBuilder() -> LoginBuildable {
-        return LoginBuilder(dependencyManager: self)
+        return LoginBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
 
     func createAccountBuilder() -> CreateAccountBuildable {
-        return CreateAccountBuilder(dependencyManager: self)
+        return CreateAccountBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
 
     func roastersBuilder() -> RoastersBuildable {
-        return RoastersBuilder(dependencyManager: self)
+        return RoastersBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
 }
