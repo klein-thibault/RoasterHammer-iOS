@@ -11,21 +11,20 @@ import UIKit
 
 class RoastersLayoutViewController: BaseViewController {
 
-    let label = UILabel(forAutoLayout: ())
+    let tableView = UITableView(forAutoLayout: ())
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.registerCell(cellClass: RoasterTableViewCell.self)
         view.backgroundColor = UIColor.white
-
-        label.textColor = UIColor.black
-        label.text = "Roasters"
-
-        view.addSubview(label)
+        view.addSubview(tableView)
 
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
     }
 

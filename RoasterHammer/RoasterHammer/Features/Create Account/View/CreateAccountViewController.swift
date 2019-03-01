@@ -11,7 +11,6 @@ import UIKit
 
 final class CreateAccountViewController: CreateAccountLayoutViewController {
     var interactor: CreateAccountInteractor!
-    private let dataManager = AccountDataManager()
     private lazy var router: CreateAccountRouter = {
         return CreateAccountRouter(navigationController: navigationController)
     }()

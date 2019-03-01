@@ -14,9 +14,10 @@ protocol LoginBuildable {
     func buildInNavigationController() -> UINavigationController
 }
 
-final class LoginBuilder: LoginBuildable {
+final class LoginBuilder: FeatureBuilderBase, LoginBuildable {
     func build() -> UIViewController {
-        let dataManager = AccountDataManager()
+        let environmentManager = dependencyManager.environmentManager
+        let dataManager = AccountDataManager(environmentManager: environmentManager)
         let interactor = LoginInteractor(dataManager: dataManager)
         let presenter = LoginPresenter()
         let view = LoginViewController()

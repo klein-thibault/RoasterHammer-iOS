@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 
 final class RoasterHammerDependencyManager: DependencyManager {
+    var environmentManager: HTTPEnvironmentManager
+
+    init() {
+        let localEnvironment = HTTPEnvironment(name: "Local", baseURL: URL(string: "http://localhost:8080")!)
+        environmentManager = RoasterHammerEnvironmentManager(currentEnvironment: localEnvironment, environments: [localEnvironment])
+    }
 
     // MARK: - DependencyManager
 
@@ -23,14 +29,14 @@ final class RoasterHammerDependencyManager: DependencyManager {
     // MARK: - FeatureFactory
 
     func loginBuilder() -> LoginBuildable {
-        return LoginBuilder()
+        return LoginBuilder(dependencyManager: self)
     }
 
     func createAccountBuilder() -> CreateAccountBuildable {
-        return CreateAccountBuilder()
+        return CreateAccountBuilder(dependencyManager: self)
     }
 
     func roastersBuilder() -> RoastersBuildable {
-        return RoastersBuilder()
+        return RoastersBuilder(dependencyManager: self)
     }
 }

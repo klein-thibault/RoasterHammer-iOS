@@ -13,9 +13,10 @@ protocol CreateAccountBuildable {
     func build() -> UIViewController
 }
 
-final class CreateAccountBuilder: CreateAccountBuildable {
+final class CreateAccountBuilder: FeatureBuilderBase, CreateAccountBuildable {
     func build() -> UIViewController {
-        let dataManager = AccountDataManager()
+        let environmentManager = dependencyManager.environmentManager
+        let dataManager = AccountDataManager(environmentManager: environmentManager)
         let interactor = CreateAccountInteractor(dataManager: dataManager)
         let presenter = CreateAccountPresenter()
         let view = CreateAccountViewController()

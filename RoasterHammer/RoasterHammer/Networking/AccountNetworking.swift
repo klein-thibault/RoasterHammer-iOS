@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import RoasterHammerShared
 
-final class AccountNetworking {
+final class AccountNetworking: ResponseHandling {
 
     func createAccount(request: CreateUserRequest, completion: @escaping (HTTPResponse?, Error?) -> Void) {
         Alamofire
@@ -38,20 +38,6 @@ final class AccountNetworking {
             .responseData { [weak self] response in
                 self?.handleResponse(response: response, completion: completion)
         }
-    }
-
-    private func handleResponse(response: DataResponse<Data>, completion: @escaping (HTTPResponse?, Error?) -> Void) {
-        if let error = response.result.error {
-            completion(nil, error)
-        }
-
-        guard let data = response.result.value else {
-            completion(nil, response.result.error)
-            return
-        }
-
-        let httpResponse = HTTPResponse(data: data, statusCode: nil)
-        completion(httpResponse, nil)
     }
 
 }

@@ -15,6 +15,7 @@ final class RoastersViewController: RoastersLayoutViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Roasters"
         let accountButton = UIBarButtonItem(title: "Profile",
                                             style: .plain,
                                             target: self,
@@ -24,6 +25,9 @@ final class RoastersViewController: RoastersLayoutViewController {
                                                action: #selector(addRoasterButtonTapped(_:)))
         navigationItem.leftBarButtonItem = accountButton
         navigationItem.rightBarButtonItem = addRoasterButton
+
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     @objc private func accountButtonTapped(_ sender: UIBarButtonItem) {
@@ -41,4 +45,24 @@ extension RoastersViewController: RoastersView {
         let router = RoastersRouter(navigationController: navigationController)
         router.presentLoginView()
     }
+}
+
+extension RoastersViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: RoasterTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
+        return cell
+    }
+
+}
+
+extension RoastersViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO
+    }
+
 }

@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
-protocol DependencyManager: FeatureFactory {
+protocol DependencyManager: class, FeatureFactory {
+    var environmentManager: HTTPEnvironmentManager { get }
+
     func startApplication(window: UIWindow?)
 }
