@@ -10,14 +10,15 @@ import Foundation
 import UIKit
 
 final class RoastersRouter {
-    private weak var navigationController: UINavigationController?
+    private unowned var dependencyManager: DependencyManager
+    weak var navigationController: UINavigationController?
 
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
+    init(dependencyManager: DependencyManager) {
+        self.dependencyManager = dependencyManager
     }
 
     func presentLoginView() {
-        let loginViewController = RoasterHammerDependencyManager().loginBuilder().buildInNavigationController()
+        let loginViewController = dependencyManager.loginBuilder().buildInNavigationController()
         navigationController?.present(loginViewController, animated: true, completion: nil)
     }
 }
