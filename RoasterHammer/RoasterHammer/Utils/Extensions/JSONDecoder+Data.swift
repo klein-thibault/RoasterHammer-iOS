@@ -14,4 +14,8 @@ extension JSONDecoder {
         return try decode(T.self, from: data)
     }
 
+    func decodeResponseArray<T: Decodable>(from data: Data) throws -> [T] {
+        return try decode([T].self, from: data)
+    }
+
 }

@@ -68,6 +68,8 @@
 		8EFAFD5E2228AB1D00DAE956 /* AlamofireHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFD5D2228AB1D00DAE956 /* AlamofireHTTPClient.swift */; };
 		8EFAFD602228ABDE00DAE956 /* RoasterHammerEnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFD5F2228ABDE00DAE956 /* RoasterHammerEnvironmentManager.swift */; };
 		8EFAFD632228AEF400DAE956 /* FeatureBuilderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFD622228AEF400DAE956 /* FeatureBuilderBase.swift */; };
+		8EFAFFD72229BEDE00DAE956 /* BaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFD62229BEDE00DAE956 /* BaseDataManager.swift */; };
+		8EFAFFDA2229C10B00DAE956 /* RoasterHammerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFD92229C10B00DAE956 /* RoasterHammerError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +149,8 @@
 		8EFAFD5D2228AB1D00DAE956 /* AlamofireHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireHTTPClient.swift; sourceTree = "<group>"; };
 		8EFAFD5F2228ABDE00DAE956 /* RoasterHammerEnvironmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterHammerEnvironmentManager.swift; sourceTree = "<group>"; };
 		8EFAFD622228AEF400DAE956 /* FeatureBuilderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureBuilderBase.swift; sourceTree = "<group>"; };
+		8EFAFFD62229BEDE00DAE956 /* BaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataManager.swift; sourceTree = "<group>"; };
+		8EFAFFD92229C10B00DAE956 /* RoasterHammerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterHammerError.swift; sourceTree = "<group>"; };
 		B4AEE1820CAD5C57303E9F64 /* Pods_RoasterHammer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoasterHammer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -299,6 +303,7 @@
 		8EFAF0432224AAA200DAE956 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8EFAFFD82229C10300DAE956 /* Error */,
 				8EFAF55E2228574D00DAE956 /* Interface */,
 				8E646CE42224FA3E00599834 /* Data */,
 				8EFAF0442224AAA700DAE956 /* Extensions */,
@@ -331,6 +336,7 @@
 		8EFAF52C2226007100DAE956 /* Data Manager */ = {
 			isa = PBXGroup;
 			children = (
+				8EFAFFD62229BEDE00DAE956 /* BaseDataManager.swift */,
 				8E311B7322257A5F00C58DBF /* AccountDataManager.swift */,
 				8EFAFD4A2228A8E900DAE956 /* GameDataManager.swift */,
 			);
@@ -512,6 +518,14 @@
 				8EFAFD622228AEF400DAE956 /* FeatureBuilderBase.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		8EFAFFD82229C10300DAE956 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAFFD92229C10B00DAE956 /* RoasterHammerError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		C40B1FABD0F7938DD32EDC5E /* Frameworks */ = {
@@ -701,6 +715,7 @@
 				8EFAF54422284C6900DAE956 /* LoginBuilder.swift in Sources */,
 				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
 				8EFAF56722285BE700DAE956 /* RoastersViewController.swift in Sources */,
+				8EFAFFD72229BEDE00DAE956 /* BaseDataManager.swift in Sources */,
 				8EFAF52F2226009F00DAE956 /* AccountDataStore.swift in Sources */,
 				8EFAF54122284BC200DAE956 /* LoginInteractorOutput.swift in Sources */,
 				8EFAF56A22285D1400DAE956 /* RoastersBuilder.swift in Sources */,
@@ -712,6 +727,7 @@
 				8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */,
 				8EFAF03E2224A90500DAE956 /* CreateAccountViewController.swift in Sources */,
 				8EFAF553222850F500DAE956 /* CreateAccountView.swift in Sources */,
+				8EFAFFDA2229C10B00DAE956 /* RoasterHammerError.swift in Sources */,
 				8EFAF54B22284E9F00DAE956 /* FeatureFactory.swift in Sources */,
 				8EFAF536222602F000DAE956 /* LoginLayoutViewController.swift in Sources */,
 				8EFAFD602228ABDE00DAE956 /* RoasterHammerEnvironmentManager.swift in Sources */,

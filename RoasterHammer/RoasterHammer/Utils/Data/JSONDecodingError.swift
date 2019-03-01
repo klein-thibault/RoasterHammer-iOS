@@ -16,7 +16,14 @@ extension JSONDecodingError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidDataType:
-            return "Received unexpected data"
+            return "Received unexpected data for decoding JSON"
+        }
+    }
+
+    var localizedDescription: String {
+        switch self {
+        case .invalidDataType:
+            return "Something happened, please try again"
         }
     }
 }

@@ -15,14 +15,8 @@ extension CreateUserRequest: JSONConvertible {
     }
 }
 
-final class AccountDataManager {
-    private let environmentManager: HTTPEnvironmentManager
-    private let httpClient = AlamofireHTTPClient()
+final class AccountDataManager: BaseDataManager {
     private let accountStore = AccountDataStore()
-
-    init(environmentManager: HTTPEnvironmentManager) {
-        self.environmentManager = environmentManager
-    }
 
     func isUserLoggedIn() -> Bool {
         return accountStore.getAuthToken() != nil
@@ -49,7 +43,6 @@ final class AccountDataManager {
             } catch {
                 completion(nil, error)
             }
-
         }
     }
 
