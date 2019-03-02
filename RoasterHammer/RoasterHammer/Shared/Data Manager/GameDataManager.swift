@@ -11,6 +11,7 @@ import RoasterHammerShared
 
 final class GameDataManager: BaseDataManager {
     private let accountStore = AccountDataStore()
+    private let gameStore = GameDataStore()
 
     func createGame(completion: @escaping (GameResponse?, Error?) -> Void) {
         guard let token = accountStore.getAuthToken() else {
@@ -24,7 +25,7 @@ final class GameDataManager: BaseDataManager {
                                   queryItems: nil,
                                   body: nil,
                                   headers: environmentManager.currentEnvironment.basicAuthHeaders(token: token))
-        httpClient.perform(request: request) { (response, error) in
+        httpClient.perform(request: request) { [weak self] (response, error) in
             guard let data = response?.data else {
                 completion(nil, JSONDecodingError.invalidDataType)
                 return
@@ -32,6 +33,7 @@ final class GameDataManager: BaseDataManager {
 
             do {
                 let game: GameResponse = try JSONDecoder().decodeResponse(from: data)
+                self?.gameStore.storeGameId(gameId: game.id)
                 completion(game, nil)
             } catch {
                 completion(nil, error)
@@ -51,7 +53,7 @@ final class GameDataManager: BaseDataManager {
                                   queryItems: nil,
                                   body: nil,
                                   headers: environmentManager.currentEnvironment.basicAuthHeaders(token: token))
-        httpClient.perform(request: request) { (response, error) in
+        httpClient.perform(request: request) { [weak self] (response, error) in
             guard let data = response?.data else {
                 completion(nil, JSONDecodingError.invalidDataType)
                 return
@@ -59,6 +61,9 @@ final class GameDataManager: BaseDataManager {
 
             do {
                 let games: [GameResponse] = try JSONDecoder().decodeResponseArray(from: data)
+                if let game = games.first {
+                    self?.gameStore.storeGameId(gameId: game.id)
+                }
                 completion(games, nil)
             } catch {
                 completion(nil, error)

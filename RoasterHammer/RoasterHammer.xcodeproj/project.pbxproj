@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		27EB0BFF28BC7AB9F3D16A62 /* Pods_RoasterHammer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AEE1820CAD5C57303E9F64 /* Pods_RoasterHammer.framework */; };
+		8E19D7EB222AB69E00051784 /* GameDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D7EA222AB69E00051784 /* GameDataStore.swift */; };
+		8E19D7ED222ABA2900051784 /* RoasterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D7EC222ABA2900051784 /* RoasterDataManager.swift */; };
 		8E311B712225793A00C58DBF /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B702225793A00C58DBF /* HTTPResponse.swift */; };
 		8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B7322257A5F00C58DBF /* AccountDataManager.swift */; };
 		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
@@ -85,6 +87,8 @@
 /* Begin PBXFileReference section */
 		5CAB593934FB800EDA79F6FD /* Pods-RoasterHammer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoasterHammer.release.xcconfig"; path = "../Pods/Target Support Files/Pods-RoasterHammer/Pods-RoasterHammer.release.xcconfig"; sourceTree = "<group>"; };
 		844F19CF2A860DC859BFC27C /* Pods-RoasterHammer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoasterHammer.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-RoasterHammer/Pods-RoasterHammer.debug.xcconfig"; sourceTree = "<group>"; };
+		8E19D7EA222AB69E00051784 /* GameDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataStore.swift; sourceTree = "<group>"; };
+		8E19D7EC222ABA2900051784 /* RoasterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDataManager.swift; sourceTree = "<group>"; };
 		8E311B702225793A00C58DBF /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		8E311B7322257A5F00C58DBF /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
 		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 				8EFAFFD62229BEDE00DAE956 /* BaseDataManager.swift */,
 				8E311B7322257A5F00C58DBF /* AccountDataManager.swift */,
 				8EFAFD4A2228A8E900DAE956 /* GameDataManager.swift */,
+				8E19D7EC222ABA2900051784 /* RoasterDataManager.swift */,
 			);
 			path = "Data Manager";
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				8EFAF52E2226009F00DAE956 /* AccountDataStore.swift */,
+				8E19D7EA222AB69E00051784 /* GameDataStore.swift */,
 				8EFAF530222600C300DAE956 /* Storable.swift */,
 				8EFAF5322226011000DAE956 /* UserDefaultStore.swift */,
 			);
@@ -718,7 +724,9 @@
 				8EFAFFD72229BEDE00DAE956 /* BaseDataManager.swift in Sources */,
 				8EFAF52F2226009F00DAE956 /* AccountDataStore.swift in Sources */,
 				8EFAF54122284BC200DAE956 /* LoginInteractorOutput.swift in Sources */,
+				8E19D7EB222AB69E00051784 /* GameDataStore.swift in Sources */,
 				8EFAF56A22285D1400DAE956 /* RoastersBuilder.swift in Sources */,
+				8E19D7ED222ABA2900051784 /* RoasterDataManager.swift in Sources */,
 				8EFAF5802228957C00DAE956 /* CreateAccountRouter.swift in Sources */,
 				8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */,
 				8EFAF56F2228752F00DAE956 /* RoastersInteractor.swift in Sources */,
