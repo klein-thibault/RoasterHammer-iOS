@@ -16,8 +16,9 @@ protocol RoastersBuildable {
 final class RoastersBuilder: FeatureBuilderBase, RoastersBuildable {
     func build() -> UIViewController {
         let environmentManager = dependencyManager.environmentManager
-        let dataManager = AccountDataManager(environmentManager: environmentManager)
-        let interactor = RoastersInteractor(accountDataManager: dataManager)
+        let accountDataManager = AccountDataManager(environmentManager: environmentManager)
+        let roastersDataManager = RoasterDataManager(environmentManager: environmentManager)
+        let interactor = RoastersInteractor(accountDataManager: accountDataManager, roastersDataManager: roastersDataManager)
         let presenter = RoastersPresenter()
         let view = RoastersViewController()
         let router = RoastersRouter(dependencyManager: dependencyManager)

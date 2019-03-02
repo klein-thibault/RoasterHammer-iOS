@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import RoasterHammerShared
 
 protocol RoastersView: class {
     func presentLoginView()
+    func displayRoasters(roasters: [RoasterResponse])
+    func didReceiveError(_ error: Error)
 }

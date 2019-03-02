@@ -61,10 +61,21 @@ final class GameDataManager: BaseDataManager {
 
             do {
                 let games: [GameResponse] = try JSONDecoder().decodeResponseArray(from: data)
-                if let game = games.first {
-                    self?.gameStore.storeGameId(gameId: game.id)
+                if games.isEmpty {
+                    self?.createGame(completion: { (game, error) in
+                        if let game = game {
+                            completion([game], nil)
+                        } else {
+                            completion(nil, error)
+                        }
+                    })
+                } else {
+                    if let game = games.first {
+                        self?.gameStore.storeGameId(gameId: game.id)
+                    }
+
+                    completion(games, nil)
                 }
-                completion(games, nil)
             } catch {
                 completion(nil, error)
             }

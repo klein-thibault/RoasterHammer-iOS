@@ -11,13 +11,22 @@ import Foundation
 final class RoastersInteractor: RoastersViewOutput {
     var presenter: RoastersInteractorOutput!
     private let accountDataManager: AccountDataManager
+    private let roastersDataManager: RoasterDataManager
 
-    init(accountDataManager: AccountDataManager) {
+    init(accountDataManager: AccountDataManager,
+         roastersDataManager: RoasterDataManager) {
         self.accountDataManager = accountDataManager
+        self.roastersDataManager = roastersDataManager
     }
 
     func getRoasters() {
-        // TODO
+        roastersDataManager.getRoasters { [weak self] (roasters, error) in
+            if let roasters = roasters {
+                self?.presenter.didReceiveRoasters(roasters: roasters)
+            } else if let error = error {
+                self?.presenter.didReceiveError(error)
+            }
+        }
     }
 
     func accountButtonTapped() {
