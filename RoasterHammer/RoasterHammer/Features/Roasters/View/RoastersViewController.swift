@@ -82,7 +82,8 @@ extension RoastersViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO
+        let selectedRoaster = roasters[indexPath.row]
+        router.presentRoaster(roaster: selectedRoaster)
     }
 
 }

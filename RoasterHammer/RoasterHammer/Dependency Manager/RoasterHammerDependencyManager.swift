@@ -40,4 +40,9 @@ final class RoasterHammerDependencyManager: DependencyManager {
     func roastersBuilder() -> RoastersBuildable {
         return RoastersBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
+
+    func roasterBuilder() -> RoasterBuildable {
+        return RoasterBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
+    }
+
 }

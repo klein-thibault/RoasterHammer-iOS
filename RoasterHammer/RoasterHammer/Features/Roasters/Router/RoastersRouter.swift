@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RoasterHammerShared
 
 final class RoastersRouter {
     private unowned var dependencyManager: DependencyManager
@@ -20,5 +21,10 @@ final class RoastersRouter {
     func presentLoginView() {
         let loginViewController = dependencyManager.loginBuilder().buildInNavigationController()
         navigationController?.present(loginViewController, animated: true, completion: nil)
+    }
+
+    func presentRoaster(roaster: RoasterResponse) {
+        let roasterViewController = dependencyManager.roasterBuilder().build(roaster: roaster)
+        navigationController?.pushViewController(roasterViewController, animated: true)
     }
 }
