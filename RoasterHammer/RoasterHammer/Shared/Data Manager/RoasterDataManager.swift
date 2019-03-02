@@ -18,6 +18,13 @@ extension CreateRoasterRequest: JSONConvertible {
 final class RoasterDataManager: BaseDataManager {
     private let accountStore = AccountDataStore()
     private let gameStore = GameDataStore()
+    private let gameDataManager: GameDataManager
+
+    override init(environmentManager: HTTPEnvironmentManager,
+                  httpClient: HTTPClient = AlamofireHTTPClient()) {
+        gameDataManager = GameDataManager(environmentManager: environmentManager, httpClient: httpClient)
+        super.init(environmentManager: environmentManager, httpClient: httpClient)
+    }
 
     // MARK: - Public Functions
 
@@ -54,7 +61,6 @@ final class RoasterDataManager: BaseDataManager {
         if let gameId = gameStore.getGameId() {
             getRoasters(token: token, gameId: gameId, completion: completion)
         } else {
-            let gameDataManager = GameDataManager(environmentManager: environmentManager)
             gameDataManager.getUserGames { [weak self] (games, error) in
                 if let error = error {
                     completion(nil, error)
@@ -75,7 +81,7 @@ final class RoasterDataManager: BaseDataManager {
                                   path: "/games/\(gameId)/roasters",
             queryItems: nil,
             body: body,
-            headers: environmentManager.currentEnvironment.basicAuthHeaders(token: token))
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
 
         httpClient.perform(request: request) { (response, error) in
             guard let data = response?.data else {
@@ -98,7 +104,7 @@ final class RoasterDataManager: BaseDataManager {
                                   path: "/games/\(gameId)/roasters",
             queryItems: nil,
             body: nil,
-            headers: environmentManager.currentEnvironment.basicAuthHeaders(token: token))
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
 
         httpClient.perform(request: request) { (response, error) in
             guard let data = response?.data else {

@@ -21,10 +21,10 @@ final class GameDataManager: BaseDataManager {
 
         let request = HTTPRequest(method: .post,
                                   baseURL: environmentManager.currentEnvironment.baseURL,
-                                  path: "games",
+                                  path: "/games",
                                   queryItems: nil,
                                   body: nil,
-                                  headers: environmentManager.currentEnvironment.basicAuthHeaders(token: token))
+                                  headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
         httpClient.perform(request: request) { [weak self] (response, error) in
             guard let data = response?.data else {
                 completion(nil, JSONDecodingError.invalidDataType)
@@ -49,10 +49,10 @@ final class GameDataManager: BaseDataManager {
 
         let request = HTTPRequest(method: .get,
                                   baseURL: environmentManager.currentEnvironment.baseURL,
-                                  path: "games",
+                                  path: "/games",
                                   queryItems: nil,
                                   body: nil,
-                                  headers: environmentManager.currentEnvironment.basicAuthHeaders(token: token))
+                                  headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
         httpClient.perform(request: request) { [weak self] (response, error) in
             guard let data = response?.data else {
                 completion(nil, JSONDecodingError.invalidDataType)
@@ -90,10 +90,10 @@ final class GameDataManager: BaseDataManager {
 
         let request = HTTPRequest(method: .get,
                                   baseURL: environmentManager.currentEnvironment.baseURL,
-                                  path: "games/\(gameId)",
+                                  path: "/games/\(gameId)",
                                   queryItems: nil,
                                   body: nil,
-                                  headers: environmentManager.currentEnvironment.basicAuthHeaders(token: token))
+                                  headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
         httpClient.perform(request: request) { (response, error) in
             guard let data = response?.data else {
                 completion(nil, JSONDecodingError.invalidDataType)

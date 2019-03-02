@@ -38,6 +38,13 @@ final class RoastersInteractor: RoastersViewOutput {
 
     func addRoasterButtonTapped() {
         // TODO
+        roastersDataManager.createRoaster(name: "Test Roaster") { [weak self] (roaster, error) in
+            if let roaster = roaster {
+                self?.presenter.didReceiveRoasters(roasters: [roaster])
+            } else if let error = error {
+                self?.presenter.didReceiveError(error)
+            }
+        }
     }
 
 

@@ -64,17 +64,22 @@ extension RoastersViewController: RoastersView {
 
 extension RoastersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return roasters.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RoasterTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
+        cell.setupWithRoaster(roaster: roasters[indexPath.row])
         return cell
     }
 
 }
 
 extension RoastersViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO

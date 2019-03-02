@@ -26,4 +26,10 @@ extension HTTPEnvironment {
         ].combineWith(defaultHTTPHeaders)
     }
 
+    func bearerAuthHeaders(token: String) -> Headers {
+        return [
+            "Authorization": "Bearer \(token)"
+            ].combineWith(defaultHTTPHeaders)
+    }
+
 }
