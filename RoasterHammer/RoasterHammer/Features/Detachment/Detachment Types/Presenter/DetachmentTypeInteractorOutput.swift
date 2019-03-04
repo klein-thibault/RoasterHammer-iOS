@@ -12,4 +12,5 @@ import RoasterHammerShared
 protocol DetachmentTypeInteractorOutput {
     func didReceiveError(error: Error)
     func didReceiveDetachmentTypes(detachmentTypes: [DetachmentShortResponse])
+    func didCreateNewDetachmentInRoaster(roaster: RoasterResponse)
 }

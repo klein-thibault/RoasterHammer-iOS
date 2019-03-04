@@ -10,15 +10,15 @@ import Foundation
 import RoasterHammerShared
 
 protocol DetachmentTypeBuildable {
-    func build(roaster: RoasterResponse) -> UIViewController
+    func build(armyId: Int, roaster: RoasterResponse) -> UIViewController
 }
 
 final class DetachmentTypeBuilder: FeatureBuilderBase, DetachmentTypeBuildable {
-    func build(roaster: RoasterResponse) -> UIViewController {
+    func build(armyId: Int, roaster: RoasterResponse) -> UIViewController {
         let detachmentDataManager = DetachmentDataManager(environmentManager: dependencyManager.environmentManager)
         let interactor = DetachmentTypeInteractor(detachmentDataManager: detachmentDataManager)
         let presenter = DetachmentTypePresenter()
-        let view = DetachmentTypeViewController(roaster: roaster)
+        let view = DetachmentTypeViewController(armyId: armyId, roaster: roaster)
 
         view.interactor = interactor
         interactor.presenter = presenter

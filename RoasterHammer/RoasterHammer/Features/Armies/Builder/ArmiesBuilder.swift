@@ -19,9 +19,11 @@ final class ArmiesBuilder: FeatureBuilderBase, ArmiesBuildable {
         let armyDataManager = ArmyDataManager(environmentManager: dependencyManager.environmentManager)
         let interactor = ArmiesInteractor(armyDataManager: armyDataManager)
         let presenter = ArmiesPresenter()
-        let view = ArmiesViewController()
+        let view = ArmiesViewController(roaster: roaster)
+        let router = ArmiesRouter(dependencyManager: dependencyManager)
 
         view.interactor = interactor
+        view.router = router
         interactor.presenter = presenter
         presenter.view = view
 

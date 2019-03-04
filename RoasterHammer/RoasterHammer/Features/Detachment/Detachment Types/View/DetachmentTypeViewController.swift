@@ -11,15 +11,17 @@ import UIKit
 import RoasterHammerShared
 
 final class DetachmentTypeViewController: DetachmentTypeBaseViewController {
+    let armyId: Int
     let roaster: RoasterResponse
     var interactor: DetachmentTypeViewOutput!
     var detachmentTypes: [DetachmentShortResponse] = []
 
-    init(roaster: RoasterResponse) {
+    init(armyId: Int, roaster: RoasterResponse) {
+        self.armyId = armyId
         self.roaster = roaster
         super.init()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -38,6 +40,10 @@ extension DetachmentTypeViewController: DetachmentTypeView {
     func displayDetachmentTypes(detachmentTypes: [DetachmentShortResponse]) {
         self.detachmentTypes = detachmentTypes
         tableView.reloadData()
+    }
+
+    func showUpdatedRoaster(roaster: RoasterResponse) {
+        // TODO: show the roaster detail view
     }
 
     func didReceiveError(error: Error) {
@@ -68,6 +74,7 @@ extension DetachmentTypeViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        let selectedDetachmentType = detachmentTypes[indexPath.row]
+        interactor.createDetachment(ofType: selectedDetachmentType, forRoaster: roaster, inArmy: armyId)
     }
 }

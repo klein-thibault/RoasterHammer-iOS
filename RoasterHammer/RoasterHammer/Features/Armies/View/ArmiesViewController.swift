@@ -12,10 +12,23 @@ import RoasterHammerShared
 
 final class ArmiesViewController: ArmiesBaseViewController {
     var interactor: ArmiesViewOutput!
+    var router: ArmiesRouter!
+    let roaster: RoasterResponse
     var armies: [ArmyResponse] = []
+
+    init(roaster: RoasterResponse) {
+        self.roaster = roaster
+        super.init()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        router.navigationController = navigationController
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -59,6 +72,7 @@ extension ArmiesViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        let selectedArmy = armies[indexPath.row]
+        router.presentDetachmentTypesView(armyId: selectedArmy.id, roaster: roaster)
     }
 }

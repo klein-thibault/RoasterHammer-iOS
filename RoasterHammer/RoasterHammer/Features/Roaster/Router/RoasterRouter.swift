@@ -18,8 +18,8 @@ final class RoasterRouter {
         self.dependencyManager = dependencyManager
     }
 
-    func presentAddDetachmentView(roaster: RoasterResponse) {
-        let detachmentTypeView = dependencyManager.detachmentTypeBuilder().build(roaster: roaster)
-        navigationController?.pushViewController(detachmentTypeView, animated: true)
+    func presentArmySelection(roaster: RoasterResponse) {
+        let armiesViewController = dependencyManager.armiesBuilder().build(roaster: roaster)
+        navigationController?.pushViewController(armiesViewController, animated: true)
     }
 }

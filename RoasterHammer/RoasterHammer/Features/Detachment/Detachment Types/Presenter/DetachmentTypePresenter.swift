@@ -19,4 +19,8 @@ final class DetachmentTypePresenter: DetachmentTypeInteractorOutput {
     func didReceiveDetachmentTypes(detachmentTypes: [DetachmentShortResponse]) {
         view.displayDetachmentTypes(detachmentTypes: detachmentTypes)
     }
+
+    func didCreateNewDetachmentInRoaster(roaster: RoasterResponse) {
+        view.showUpdatedRoaster(roaster: roaster)
+    }
 }

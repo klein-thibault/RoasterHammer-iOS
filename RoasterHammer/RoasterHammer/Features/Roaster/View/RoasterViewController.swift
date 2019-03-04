@@ -36,7 +36,7 @@ final class RoasterViewController: RoasterBaseViewController, RoasterView {
     // MARK: - Private Functions
 
     @objc private func addDetachmentButtonTapped(_ sender: UIButton) {
-        router.presentAddDetachmentView(roaster: roaster)
+        router.presentArmySelection(roaster: roaster)
     }
 
 }

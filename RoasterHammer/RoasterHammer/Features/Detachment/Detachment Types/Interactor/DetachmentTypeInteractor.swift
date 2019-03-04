@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RoasterHammerShared
 
 final class DetachmentTypeInteractor: DetachmentTypeViewOutput {
     var presenter: DetachmentTypeInteractorOutput!
@@ -22,6 +23,26 @@ final class DetachmentTypeInteractor: DetachmentTypeViewOutput {
                 self?.presenter.didReceiveError(error: error)
             } else if let detachmentTypes = detachmentTypes {
                 self?.presenter.didReceiveDetachmentTypes(detachmentTypes: detachmentTypes)
+            }
+        }
+    }
+
+    func createDetachment(ofType type: DetachmentShortResponse,
+                          forRoaster roaster: RoasterResponse,
+                          inArmy armyId: Int) {
+        detachmentDataManager.createDetachment(armyId: armyId, selectedDetachmentType: type) { [weak self] (detachment, error) in
+            if let error = error {
+                self?.presenter.didReceiveError(error: error)
+            } else if let detachment = detachment {
+                self?.detachmentDataManager.addDetachmentToRoaster(roasterId: roaster.id,
+                                                             detachmentId: detachment.id,
+                                                             completion: { (roaster, error) in
+                                                                if let error = error {
+                                                                    self?.presenter.didReceiveError(error: error)
+                                                                } else if let roaster = roaster {
+                                                                    self?.presenter.didCreateNewDetachmentInRoaster(roaster: roaster)
+                                                                }
+                })
             }
         }
     }
