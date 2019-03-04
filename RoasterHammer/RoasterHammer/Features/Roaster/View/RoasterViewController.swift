@@ -13,6 +13,7 @@ import RoasterHammerShared
 final class RoasterViewController: RoasterBaseViewController, RoasterView {
     let roaster: RoasterResponse
     var interactor: RoasterViewOutput!
+    var router: RoasterRouter!
 
     init(roaster: RoasterResponse) {
         self.roaster = roaster
@@ -21,6 +22,21 @@ final class RoasterViewController: RoasterBaseViewController, RoasterView {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        router.navigationController = navigationController
+
+        emptyView.isHidden = !roaster.detachments.isEmpty
+        addDetachmentButton.addTarget(self, action: #selector(addDetachmentButtonTapped(_:)), for: .touchUpInside)
+    }
+
+    // MARK: - Private Functions
+
+    @objc private func addDetachmentButtonTapped(_ sender: UIButton) {
+        router.presentAddDetachmentView(roaster: roaster)
     }
 
 }

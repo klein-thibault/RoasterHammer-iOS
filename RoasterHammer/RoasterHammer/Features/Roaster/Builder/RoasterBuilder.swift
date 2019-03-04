@@ -19,8 +19,10 @@ final class RoasterBuilder: FeatureBuilderBase, RoasterBuildable {
         let interactor = RoasterInteractor()
         let presenter = RoasterPresenter()
         let view = RoasterViewController(roaster: roaster)
+        let router = RoasterRouter(dependencyManager: dependencyManager)
 
         view.interactor = interactor
+        view.router = router
         interactor.presenter = presenter
         presenter.view = view
 

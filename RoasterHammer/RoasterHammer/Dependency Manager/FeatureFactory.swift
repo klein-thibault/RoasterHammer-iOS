@@ -13,4 +13,5 @@ protocol FeatureFactory {
     func createAccountBuilder() -> CreateAccountBuildable
     func roastersBuilder() -> RoastersBuildable
     func roasterBuilder() -> RoasterBuildable
+    func detachmentTypeBuilder() -> DetachmentTypeBuildable
 }
