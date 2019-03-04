@@ -68,8 +68,8 @@ extension RoastersViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: RoasterTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
-        cell.setupWithRoaster(roaster: roasters[indexPath.row])
+        let cell: SingleLabelTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
+        cell.setupWithText(roasters[indexPath.row].name)
         return cell
     }
 

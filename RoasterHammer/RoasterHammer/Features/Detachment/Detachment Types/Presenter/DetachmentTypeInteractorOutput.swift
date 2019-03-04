@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import RoasterHammerShared
 
 protocol DetachmentTypeInteractorOutput {
-
+    func didReceiveError(_ error: Error)
+    func didReceiveDetachmentTypes(_ detachmentTypes: [DetachmentShortResponse])
 }

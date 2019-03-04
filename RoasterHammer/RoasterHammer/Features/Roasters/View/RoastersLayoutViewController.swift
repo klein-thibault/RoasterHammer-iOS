@@ -16,7 +16,7 @@ class RoastersLayoutViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.registerCell(cellClass: RoasterTableViewCell.self)
+        tableView.registerCell(cellClass: SingleLabelTableViewCell.self)
         view.backgroundColor = UIColor.white
         view.addSubview(tableView)
 

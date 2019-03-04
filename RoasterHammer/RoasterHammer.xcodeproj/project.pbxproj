@@ -17,6 +17,7 @@
 		8E19B340222D5B02003F10FA /* DetachmentTypeInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B33F222D5B02003F10FA /* DetachmentTypeInteractorOutput.swift */; };
 		8E19B342222D5B1C003F10FA /* DetachmentTypePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B341222D5B1C003F10FA /* DetachmentTypePresenter.swift */; };
 		8E19B344222D5B52003F10FA /* DetachmentTypeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B343222D5B52003F10FA /* DetachmentTypeBuilder.swift */; };
+		8E19B5B5222D6383003F10FA /* DetachmentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B5B4222D6383003F10FA /* DetachmentDataManager.swift */; };
 		8E19D7EB222AB69E00051784 /* GameDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D7EA222AB69E00051784 /* GameDataStore.swift */; };
 		8E19D7ED222ABA2900051784 /* RoasterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D7EC222ABA2900051784 /* RoasterDataManager.swift */; };
 		8E19E6B1222B368E00051784 /* RoasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19E6B0222B368E00051784 /* RoasterView.swift */; };
@@ -73,7 +74,7 @@
 		8EFAF5792228782400DAE956 /* RoastersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF5782228782400DAE956 /* RoastersRouter.swift */; };
 		8EFAF57D2228948200DAE956 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF57C2228948200DAE956 /* LoginRouter.swift */; };
 		8EFAF5802228957C00DAE956 /* CreateAccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF57F2228957C00DAE956 /* CreateAccountRouter.swift */; };
-		8EFAFD452228A50200DAE956 /* RoasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFD442228A50100DAE956 /* RoasterTableViewCell.swift */; };
+		8EFAFD452228A50200DAE956 /* SingleLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFD442228A50100DAE956 /* SingleLabelTableViewCell.swift */; };
 		8EFAFD472228A55000DAE956 /* IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFD462228A55000DAE956 /* IdentifiableView.swift */; };
 		8EFAFD492228A61700DAE956 /* UITableView+IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFD482228A61700DAE956 /* UITableView+IdentifiableView.swift */; };
 		8EFAFD4B2228A8E900DAE956 /* GameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFD4A2228A8E900DAE956 /* GameDataManager.swift */; };
@@ -113,6 +114,7 @@
 		8E19B33F222D5B02003F10FA /* DetachmentTypeInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeInteractorOutput.swift; sourceTree = "<group>"; };
 		8E19B341222D5B1C003F10FA /* DetachmentTypePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypePresenter.swift; sourceTree = "<group>"; };
 		8E19B343222D5B52003F10FA /* DetachmentTypeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeBuilder.swift; sourceTree = "<group>"; };
+		8E19B5B4222D6383003F10FA /* DetachmentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentDataManager.swift; sourceTree = "<group>"; };
 		8E19D7EA222AB69E00051784 /* GameDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataStore.swift; sourceTree = "<group>"; };
 		8E19D7EC222ABA2900051784 /* RoasterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDataManager.swift; sourceTree = "<group>"; };
 		8E19E6B0222B368E00051784 /* RoasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterView.swift; sourceTree = "<group>"; };
@@ -173,7 +175,7 @@
 		8EFAF5782228782400DAE956 /* RoastersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersRouter.swift; sourceTree = "<group>"; };
 		8EFAF57C2228948200DAE956 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		8EFAF57F2228957C00DAE956 /* CreateAccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountRouter.swift; sourceTree = "<group>"; };
-		8EFAFD442228A50100DAE956 /* RoasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterTableViewCell.swift; sourceTree = "<group>"; };
+		8EFAFD442228A50100DAE956 /* SingleLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelTableViewCell.swift; sourceTree = "<group>"; };
 		8EFAFD462228A55000DAE956 /* IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableView.swift; sourceTree = "<group>"; };
 		8EFAFD482228A61700DAE956 /* UITableView+IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+IdentifiableView.swift"; sourceTree = "<group>"; };
 		8EFAFD4A2228A8E900DAE956 /* GameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataManager.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				8E311B7322257A5F00C58DBF /* AccountDataManager.swift */,
 				8EFAFD4A2228A8E900DAE956 /* GameDataManager.swift */,
 				8E19D7EC222ABA2900051784 /* RoasterDataManager.swift */,
+				8E19B5B4222D6383003F10FA /* DetachmentDataManager.swift */,
 			);
 			path = "Data Manager";
 			sourceTree = "<group>";
@@ -597,7 +600,7 @@
 				8EFAF5752228767F00DAE956 /* RoastersView.swift */,
 				8EFAF56222285AF500DAE956 /* RoastersLayoutViewController.swift */,
 				8EFAF56622285BE700DAE956 /* RoastersViewController.swift */,
-				8EFAFD442228A50100DAE956 /* RoasterTableViewCell.swift */,
+				8EFAFD442228A50100DAE956 /* SingleLabelTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -866,7 +869,7 @@
 				8EFAF0462224AAB200DAE956 /* UIView+Autolayout.swift in Sources */,
 				8EFAFD492228A61700DAE956 /* UITableView+IdentifiableView.swift in Sources */,
 				8EFAFD5A2228AAB200DAE956 /* Dictionary+Utils.swift in Sources */,
-				8EFAFD452228A50200DAE956 /* RoasterTableViewCell.swift in Sources */,
+				8EFAFD452228A50200DAE956 /* SingleLabelTableViewCell.swift in Sources */,
 				8EFAF56322285AF500DAE956 /* RoastersLayoutViewController.swift in Sources */,
 				8EFAFD4F2228A96300DAE956 /* ResponseHandling.swift in Sources */,
 				8EFAFD512228A9CB00DAE956 /* HTTPEnvironment.swift in Sources */,
@@ -878,6 +881,7 @@
 				8EFAF5552228511900DAE956 /* CreateAccountViewOutput.swift in Sources */,
 				8EFAF54422284C6900DAE956 /* LoginBuilder.swift in Sources */,
 				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
+				8E19B5B5222D6383003F10FA /* DetachmentDataManager.swift in Sources */,
 				8EFAF56722285BE700DAE956 /* RoastersViewController.swift in Sources */,
 				8EFAFFD72229BEDE00DAE956 /* BaseDataManager.swift in Sources */,
 				8E19E6B3222B36A600051784 /* RoasterBaseViewController.swift in Sources */,

@@ -15,7 +15,8 @@ protocol DetachmentTypeBuildable {
 
 final class DetachmentTypeBuilder: FeatureBuilderBase, DetachmentTypeBuildable {
     func build(roaster: RoasterResponse) -> UIViewController {
-        let interactor = DetachmentTypeInteractor()
+        let detachmentDataManager = DetachmentDataManager(environmentManager: dependencyManager.environmentManager)
+        let interactor = DetachmentTypeInteractor(detachmentDataManager: detachmentDataManager)
         let presenter = DetachmentTypePresenter()
         let view = DetachmentTypeViewController(roaster: roaster)
 

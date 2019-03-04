@@ -15,6 +15,8 @@ class DetachmentTypeBaseViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.registerCell(cellClass: SingleLabelTableViewCell.self)
+
         view.addSubview(tableView)
 
         NSLayoutConstraint.activate([
