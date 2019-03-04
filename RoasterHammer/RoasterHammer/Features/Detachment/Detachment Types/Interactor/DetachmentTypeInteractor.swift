@@ -19,9 +19,9 @@ final class DetachmentTypeInteractor: DetachmentTypeViewOutput {
     func getDetachmentTypes() {
         detachmentDataManager.getDetachmentTypes { [weak self] (detachmentTypes, error) in
             if let error = error {
-                self?.presenter.didReceiveError(error)
+                self?.presenter.didReceiveError(error: error)
             } else if let detachmentTypes = detachmentTypes {
-                self?.presenter.didReceiveDetachmentTypes(detachmentTypes)
+                self?.presenter.didReceiveDetachmentTypes(detachmentTypes: detachmentTypes)
             }
         }
     }

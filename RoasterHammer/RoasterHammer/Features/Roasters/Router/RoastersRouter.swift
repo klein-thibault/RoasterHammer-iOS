@@ -23,8 +23,8 @@ final class RoastersRouter {
         navigationController?.present(loginViewController, animated: true, completion: nil)
     }
 
-    func presentRoaster(roaster: RoasterResponse) {
-        let roasterViewController = dependencyManager.roasterBuilder().build(roaster: roaster)
-        navigationController?.pushViewController(roasterViewController, animated: true)
+    func presentArmySelection(roaster: RoasterResponse) {
+        let armiesViewController = dependencyManager.armiesBuilder().build(roaster: roaster)
+        navigationController?.pushViewController(armiesViewController, animated: true)
     }
 }

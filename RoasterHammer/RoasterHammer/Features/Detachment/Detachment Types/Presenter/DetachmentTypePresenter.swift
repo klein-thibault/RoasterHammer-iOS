@@ -12,11 +12,11 @@ import RoasterHammerShared
 final class DetachmentTypePresenter: DetachmentTypeInteractorOutput {
     weak var view: DetachmentTypeView!
 
-    func didReceiveError(_ error: Error) {
-        view.didReceiveError(error)
+    func didReceiveError(error: Error) {
+        view.didReceiveError(error: error)
     }
 
-    func didReceiveDetachmentTypes(_ detachmentTypes: [DetachmentShortResponse]) {
+    func didReceiveDetachmentTypes(detachmentTypes: [DetachmentShortResponse]) {
         view.displayDetachmentTypes(detachmentTypes: detachmentTypes)
     }
 }

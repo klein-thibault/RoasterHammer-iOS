@@ -36,6 +36,7 @@
 		8EE227BF22235FB000DF0D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE227BE22235FB000DF0D72 /* Assets.xcassets */; };
 		8EE227C222235FB000DF0D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE227C022235FB000DF0D72 /* LaunchScreen.storyboard */; };
 		8EE227CD22235FB000DF0D72 /* RoasterHammerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE227CC22235FB000DF0D72 /* RoasterHammerTests.swift */; };
+		8EFA0263222DC7BB00DAE956 /* ArmyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA0262222DC7BB00DAE956 /* ArmyDataManager.swift */; };
 		8EFAF03E2224A90500DAE956 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF03D2224A90500DAE956 /* CreateAccountViewController.swift */; };
 		8EFAF0402224A91200DAE956 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF03F2224A91200DAE956 /* LoginViewController.swift */; };
 		8EFAF0422224A9B500DAE956 /* CreateAccountLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF0412224A9B500DAE956 /* CreateAccountLayoutViewController.swift */; };
@@ -90,6 +91,15 @@
 		8EFAFD632228AEF400DAE956 /* FeatureBuilderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFD622228AEF400DAE956 /* FeatureBuilderBase.swift */; };
 		8EFAFFD72229BEDE00DAE956 /* BaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFD62229BEDE00DAE956 /* BaseDataManager.swift */; };
 		8EFAFFDA2229C10B00DAE956 /* RoasterHammerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFD92229C10B00DAE956 /* RoasterHammerError.swift */; };
+		8EFAFFE2222DC44D00DAE956 /* ArmiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFE1222DC44D00DAE956 /* ArmiesView.swift */; };
+		8EFAFFE4222DC47D00DAE956 /* ArmiesBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFE3222DC47D00DAE956 /* ArmiesBaseViewController.swift */; };
+		8EFAFFE6222DC49A00DAE956 /* ArmiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFE5222DC49A00DAE956 /* ArmiesViewController.swift */; };
+		8EFAFFE8222DC4B400DAE956 /* ArmiesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFE7222DC4B400DAE956 /* ArmiesViewOutput.swift */; };
+		8EFAFFEA222DC4C200DAE956 /* ArmiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFE9222DC4C200DAE956 /* ArmiesInteractor.swift */; };
+		8EFAFFEC222DC4D500DAE956 /* ArmiesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFEB222DC4D500DAE956 /* ArmiesInteractorOutput.swift */; };
+		8EFAFFEE222DC4E000DAE956 /* ArmiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFED222DC4E000DAE956 /* ArmiesPresenter.swift */; };
+		8EFAFFF0222DC53100DAE956 /* ArmiesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFEF222DC53100DAE956 /* ArmiesBuilder.swift */; };
+		8EFAFFF2222DC58900DAE956 /* ArmiesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFF1222DC58900DAE956 /* ArmiesRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +147,7 @@
 		8EE227C822235FB000DF0D72 /* RoasterHammerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoasterHammerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE227CC22235FB000DF0D72 /* RoasterHammerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterHammerTests.swift; sourceTree = "<group>"; };
 		8EE227CE22235FB000DF0D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EFA0262222DC7BB00DAE956 /* ArmyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyDataManager.swift; sourceTree = "<group>"; };
 		8EFAF03D2224A90500DAE956 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		8EFAF03F2224A91200DAE956 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8EFAF0412224A9B500DAE956 /* CreateAccountLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountLayoutViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +202,15 @@
 		8EFAFD622228AEF400DAE956 /* FeatureBuilderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureBuilderBase.swift; sourceTree = "<group>"; };
 		8EFAFFD62229BEDE00DAE956 /* BaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataManager.swift; sourceTree = "<group>"; };
 		8EFAFFD92229C10B00DAE956 /* RoasterHammerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterHammerError.swift; sourceTree = "<group>"; };
+		8EFAFFE1222DC44D00DAE956 /* ArmiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesView.swift; sourceTree = "<group>"; };
+		8EFAFFE3222DC47D00DAE956 /* ArmiesBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesBaseViewController.swift; sourceTree = "<group>"; };
+		8EFAFFE5222DC49A00DAE956 /* ArmiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesViewController.swift; sourceTree = "<group>"; };
+		8EFAFFE7222DC4B400DAE956 /* ArmiesViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesViewOutput.swift; sourceTree = "<group>"; };
+		8EFAFFE9222DC4C200DAE956 /* ArmiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesInteractor.swift; sourceTree = "<group>"; };
+		8EFAFFEB222DC4D500DAE956 /* ArmiesInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesInteractorOutput.swift; sourceTree = "<group>"; };
+		8EFAFFED222DC4E000DAE956 /* ArmiesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesPresenter.swift; sourceTree = "<group>"; };
+		8EFAFFEF222DC53100DAE956 /* ArmiesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesBuilder.swift; sourceTree = "<group>"; };
+		8EFAFFF1222DC58900DAE956 /* ArmiesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesRouter.swift; sourceTree = "<group>"; };
 		B4AEE1820CAD5C57303E9F64 /* Pods_RoasterHammer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoasterHammer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -420,6 +440,7 @@
 		8EFAF03A2224A8E400DAE956 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				8EFAFFDB222DC41600DAE956 /* Armies */,
 				8E19B32F222D58C8003F10FA /* Detachment */,
 				8E19E6AE222B367500051784 /* Roaster */,
 				8EFAF53822284A5700DAE956 /* Roasters */,
@@ -494,6 +515,7 @@
 				8EFAFD4A2228A8E900DAE956 /* GameDataManager.swift */,
 				8E19D7EC222ABA2900051784 /* RoasterDataManager.swift */,
 				8E19B5B4222D6383003F10FA /* DetachmentDataManager.swift */,
+				8EFA0262222DC7BB00DAE956 /* ArmyDataManager.swift */,
 			);
 			path = "Data Manager";
 			sourceTree = "<group>";
@@ -684,6 +706,62 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		8EFAFFDB222DC41600DAE956 /* Armies */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAFFE0222DC43A00DAE956 /* Router */,
+				8EFAFFDF222DC43000DAE956 /* Builder */,
+				8EFAFFDE222DC42A00DAE956 /* Presenter */,
+				8EFAFFDD222DC42400DAE956 /* Interactor */,
+				8EFAFFDC222DC41F00DAE956 /* View */,
+			);
+			path = Armies;
+			sourceTree = "<group>";
+		};
+		8EFAFFDC222DC41F00DAE956 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAFFE1222DC44D00DAE956 /* ArmiesView.swift */,
+				8EFAFFE3222DC47D00DAE956 /* ArmiesBaseViewController.swift */,
+				8EFAFFE5222DC49A00DAE956 /* ArmiesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8EFAFFDD222DC42400DAE956 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAFFE7222DC4B400DAE956 /* ArmiesViewOutput.swift */,
+				8EFAFFE9222DC4C200DAE956 /* ArmiesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8EFAFFDE222DC42A00DAE956 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAFFEB222DC4D500DAE956 /* ArmiesInteractorOutput.swift */,
+				8EFAFFED222DC4E000DAE956 /* ArmiesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8EFAFFDF222DC43000DAE956 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAFFEF222DC53100DAE956 /* ArmiesBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		8EFAFFE0222DC43A00DAE956 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAFFF1222DC58900DAE956 /* ArmiesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		C40B1FABD0F7938DD32EDC5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -849,6 +927,7 @@
 				8E19B338222D59F5003F10FA /* DetachmentTypeBaseViewController.swift in Sources */,
 				8EFAF5742228763900DAE956 /* RoastersPresenter.swift in Sources */,
 				8EFAF57D2228948200DAE956 /* LoginRouter.swift in Sources */,
+				8EFAFFF0222DC53100DAE956 /* ArmiesBuilder.swift in Sources */,
 				8EFAF5722228760C00DAE956 /* RoastersInteractorOutput.swift in Sources */,
 				8E19B336222D59E8003F10FA /* DetachmentTypeView.swift in Sources */,
 				8EFAFD5C2228AAF900DAE956 /* HTTPClient.swift in Sources */,
@@ -857,6 +936,7 @@
 				8EFAF56522285B2700DAE956 /* BaseViewController.swift in Sources */,
 				8EFAFD632228AEF400DAE956 /* FeatureBuilderBase.swift in Sources */,
 				8EFAF5332226011000DAE956 /* UserDefaultStore.swift in Sources */,
+				8EFAFFF2222DC58900DAE956 /* ArmiesRouter.swift in Sources */,
 				8E19E6BF222B373F00051784 /* RoasterPresenter.swift in Sources */,
 				8EFAF54822284D4600DAE956 /* LoginView.swift in Sources */,
 				8EFAF54622284CBB00DAE956 /* LoginPresenter.swift in Sources */,
@@ -868,10 +948,12 @@
 				8E19E6B5222B36CE00051784 /* RoasterViewController.swift in Sources */,
 				8EFAF0462224AAB200DAE956 /* UIView+Autolayout.swift in Sources */,
 				8EFAFD492228A61700DAE956 /* UITableView+IdentifiableView.swift in Sources */,
+				8EFAFFE8222DC4B400DAE956 /* ArmiesViewOutput.swift in Sources */,
 				8EFAFD5A2228AAB200DAE956 /* Dictionary+Utils.swift in Sources */,
 				8EFAFD452228A50200DAE956 /* SingleLabelTableViewCell.swift in Sources */,
 				8EFAF56322285AF500DAE956 /* RoastersLayoutViewController.swift in Sources */,
 				8EFAFD4F2228A96300DAE956 /* ResponseHandling.swift in Sources */,
+				8EFAFFE6222DC49A00DAE956 /* ArmiesViewController.swift in Sources */,
 				8EFAFD512228A9CB00DAE956 /* HTTPEnvironment.swift in Sources */,
 				8EFAF55B2228567E00DAE956 /* CreateAccountPresenter.swift in Sources */,
 				8EFAF52A2225FB8300DAE956 /* String+Encoding.swift in Sources */,
@@ -882,10 +964,12 @@
 				8EFAF54422284C6900DAE956 /* LoginBuilder.swift in Sources */,
 				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
 				8E19B5B5222D6383003F10FA /* DetachmentDataManager.swift in Sources */,
+				8EFA0263222DC7BB00DAE956 /* ArmyDataManager.swift in Sources */,
 				8EFAF56722285BE700DAE956 /* RoastersViewController.swift in Sources */,
 				8EFAFFD72229BEDE00DAE956 /* BaseDataManager.swift in Sources */,
 				8E19E6B3222B36A600051784 /* RoasterBaseViewController.swift in Sources */,
 				8EFAF52F2226009F00DAE956 /* AccountDataStore.swift in Sources */,
+				8EFAFFEA222DC4C200DAE956 /* ArmiesInteractor.swift in Sources */,
 				8E19B342222D5B1C003F10FA /* DetachmentTypePresenter.swift in Sources */,
 				8EFAF54122284BC200DAE956 /* LoginInteractorOutput.swift in Sources */,
 				8E19D7EB222AB69E00051784 /* GameDataStore.swift in Sources */,
@@ -903,11 +987,15 @@
 				8EFAFFDA2229C10B00DAE956 /* RoasterHammerError.swift in Sources */,
 				8EFAF54B22284E9F00DAE956 /* FeatureFactory.swift in Sources */,
 				8EFAF536222602F000DAE956 /* LoginLayoutViewController.swift in Sources */,
+				8EFAFFEE222DC4E000DAE956 /* ArmiesPresenter.swift in Sources */,
 				8E19E6B1222B368E00051784 /* RoasterView.swift in Sources */,
 				8EFAFD602228ABDE00DAE956 /* RoasterHammerEnvironmentManager.swift in Sources */,
+				8EFAFFE4222DC47D00DAE956 /* ArmiesBaseViewController.swift in Sources */,
 				8E19B33A222D5A00003F10FA /* DetachmentTypeViewController.swift in Sources */,
+				8EFAFFE2222DC44D00DAE956 /* ArmiesView.swift in Sources */,
 				8EFAF55D222856CA00DAE956 /* CreateAccountBuilder.swift in Sources */,
 				8EFAF5792228782400DAE956 /* RoastersRouter.swift in Sources */,
+				8EFAFFEC222DC4D500DAE956 /* ArmiesInteractorOutput.swift in Sources */,
 				8EE227B822235FAE00DF0D72 /* AppDelegate.swift in Sources */,
 				8EFAFD582228AA5600DAE956 /* HTTPMethod.swift in Sources */,
 				8E19B33C222D5A98003F10FA /* DetachmentTypeViewOutput.swift in Sources */,

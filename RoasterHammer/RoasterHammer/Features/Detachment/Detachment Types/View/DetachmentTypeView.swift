@@ -11,5 +11,5 @@ import RoasterHammerShared
 
 protocol DetachmentTypeView: class {
     func displayDetachmentTypes(detachmentTypes: [DetachmentShortResponse])
-    func didReceiveError(_ error: Error)
+    func didReceiveError(error: Error)
 }

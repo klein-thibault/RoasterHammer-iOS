@@ -1,5 +1,5 @@
 //
-//  DetachmentDataManager.swift
+//  ArmyDataManager.swift
 //  RoasterHammer
 //
 //  Created by Thibault Klein on 3/4/19.
@@ -9,11 +9,11 @@
 import Foundation
 import RoasterHammerShared
 
-final class DetachmentDataManager: BaseDataManager {
-    func getDetachmentTypes(completion: @escaping ([DetachmentShortResponse]?, Error?) -> Void) {
+final class ArmyDataManager: BaseDataManager {
+    func getArmies(completion: @escaping ([ArmyResponse]?, Error?) -> Void) {
         let request = HTTPRequest(method: .get,
                                   baseURL: environmentManager.currentEnvironment.baseURL,
-                                  path: "/detachment-types",
+                                  path: "/armies",
                                   queryItems: nil,
                                   body: nil,
                                   headers: environmentManager.currentEnvironment.defaultHTTPHeaders)
@@ -25,8 +25,8 @@ final class DetachmentDataManager: BaseDataManager {
             }
 
             do {
-                let detachmentTypes: [DetachmentShortResponse] = try JSONDecoder().decodeResponseArray(from: data)
-                completion(detachmentTypes, nil)
+                let armies: [ArmyResponse] = try JSONDecoder().decodeResponseArray(from: data)
+                completion(armies, nil)
             } catch {
                 completion(nil, error)
             }
