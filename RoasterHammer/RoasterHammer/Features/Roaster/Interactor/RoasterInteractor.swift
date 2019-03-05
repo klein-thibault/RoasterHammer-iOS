@@ -10,4 +10,19 @@ import Foundation
 
 final class RoasterInteractor: RoasterViewOutput {
     var presenter: RoasterInteractorOutput!
+    let roasterDataManager: RoasterDataManager
+
+    init(roasterDataManager: RoasterDataManager) {
+        self.roasterDataManager = roasterDataManager
+    }
+
+    func getRoasterDetails(roasterId: Int) {
+        roasterDataManager.getRoaster(byRoasterId: roasterId) { [weak self] (roaster, error) in
+            if let error = error {
+                self?.presenter.didReceiveError(error: error)
+            } else if let roaster = roaster {
+                self?.presenter.didReceiveRoaster(roaster: roaster)
+            }
+        }
+    }
 }

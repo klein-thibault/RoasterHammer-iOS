@@ -32,6 +32,7 @@
 		8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B7322257A5F00C58DBF /* AccountDataManager.swift */; };
 		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
 		8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE72224FBB300599834 /* JSONConvertible.swift */; };
+		8EDA1C87222E088A0005A15B /* DetachmentTypeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */; };
 		8EE227B822235FAE00DF0D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE227B722235FAE00DF0D72 /* AppDelegate.swift */; };
 		8EE227BF22235FB000DF0D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE227BE22235FB000DF0D72 /* Assets.xcassets */; };
 		8EE227C222235FB000DF0D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE227C022235FB000DF0D72 /* LaunchScreen.storyboard */; };
@@ -139,6 +140,7 @@
 		8E311B7322257A5F00C58DBF /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
 		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
 		8E646CE72224FBB300599834 /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
+		8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeRouter.swift; sourceTree = "<group>"; };
 		8EE227B422235FAE00DF0D72 /* RoasterHammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoasterHammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE227B722235FAE00DF0D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EE227BE22235FB000DF0D72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		8E19B330222D58D0003F10FA /* Detachment Types */ = {
 			isa = PBXGroup;
 			children = (
+				8EDA1C85222E087B0005A15B /* Router */,
 				8E19B334222D59D6003F10FA /* Builder */,
 				8E19B333222D59CF003F10FA /* Presenter */,
 				8E19B332222D58F2003F10FA /* Interactor */,
@@ -390,6 +393,14 @@
 				8EFAF5262225F9AE00DAE956 /* JSONDecodingError.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		8EDA1C85222E087B0005A15B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		8EE227AB22235FAE00DF0D72 = {
@@ -934,6 +945,7 @@
 				8EFAF0402224A91200DAE956 /* LoginViewController.swift in Sources */,
 				8E19E6C2222B37AC00051784 /* RoasterBuilder.swift in Sources */,
 				8EFAF56522285B2700DAE956 /* BaseViewController.swift in Sources */,
+				8EDA1C87222E088A0005A15B /* DetachmentTypeRouter.swift in Sources */,
 				8EFAFD632228AEF400DAE956 /* FeatureBuilderBase.swift in Sources */,
 				8EFAF5332226011000DAE956 /* UserDefaultStore.swift in Sources */,
 				8EFAFFF2222DC58900DAE956 /* ArmiesRouter.swift in Sources */,

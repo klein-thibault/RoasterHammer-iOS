@@ -9,5 +9,5 @@
 import Foundation
 
 protocol RoasterViewOutput {
-
+    func getRoasterDetails(roasterId: Int)
 }

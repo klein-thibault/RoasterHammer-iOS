@@ -7,7 +7,16 @@
 //
 
 import Foundation
+import RoasterHammerShared
 
 final class RoasterPresenter: RoasterInteractorOutput {
     weak var view: RoasterView!
+
+    func didReceiveRoaster(roaster: RoasterResponse) {
+        view.didReceiveRoaster(roaster: roaster)
+    }
+
+    func didReceiveError(error: Error) {
+        view.didReceiveError(error: error)
+    }
 }

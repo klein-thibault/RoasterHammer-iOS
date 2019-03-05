@@ -19,8 +19,10 @@ final class DetachmentTypeBuilder: FeatureBuilderBase, DetachmentTypeBuildable {
         let interactor = DetachmentTypeInteractor(detachmentDataManager: detachmentDataManager)
         let presenter = DetachmentTypePresenter()
         let view = DetachmentTypeViewController(armyId: armyId, roaster: roaster)
+        let router = DetachmentTypeRouter(dependencyManager: dependencyManager)
 
         view.interactor = interactor
+        view.router = router
         interactor.presenter = presenter
         presenter.view = view
 

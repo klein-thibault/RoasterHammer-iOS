@@ -73,6 +73,33 @@ final class RoasterDataManager: BaseDataManager {
         }
     }
 
+    func getRoaster(byRoasterId roasterId: Int, completion: @escaping (RoasterResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        if let gameId = gameStore.getGameId() {
+            getRoaster(byRoasterId: roasterId,
+                       token: token,
+                       gameId: gameId,
+                       completion: completion)
+        } else {
+            gameDataManager.getUserGames { [weak self] (games, error) in
+                if let error = error {
+                    completion(nil, error)
+                }
+
+                if let gameId = self?.gameStore.getGameId() {
+                    self?.getRoaster(byRoasterId: roasterId,
+                                     token: token,
+                                     gameId: gameId,
+                                     completion: completion)
+                }
+            }
+        }
+    }
+
     // MARK: - Private Functions
 
     private func createRoasters(token: String, gameId: Int, body: JSON, completion: @escaping (RoasterResponse?, Error?) -> Void) {
@@ -115,6 +142,32 @@ final class RoasterDataManager: BaseDataManager {
             do {
                 let roasters: [RoasterResponse] = try JSONDecoder().decodeResponseArray(from: data)
                 completion(roasters, nil)
+            } catch {
+                completion(nil, error)
+            }
+        }
+    }
+
+    private func getRoaster(byRoasterId roasterId: Int,
+                            token: String,
+                            gameId: Int,
+                            completion: @escaping (RoasterResponse?, Error?) -> Void) {
+        let request = HTTPRequest(method: .get,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/roasters/\(roasterId)",
+            queryItems: nil,
+            body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { (response, error) in
+            guard let data = response?.data else {
+                completion(nil, JSONDecodingError.invalidDataType)
+                return
+            }
+
+            do {
+                let roaster: RoasterResponse = try JSONDecoder().decodeResponse(from: data)
+                completion(roaster, nil)
             } catch {
                 completion(nil, error)
             }

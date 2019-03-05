@@ -12,14 +12,25 @@ import RoasterHammerShared
 
 protocol ArmiesBuildable {
     func build(roaster: RoasterResponse) -> UIViewController
+    func buildInNavigationController(roaster: RoasterResponse) -> UINavigationController
 }
 
 final class ArmiesBuilder: FeatureBuilderBase, ArmiesBuildable {
     func build(roaster: RoasterResponse) -> UIViewController {
+        return createStack(roaster: roaster)
+    }
+
+    func buildInNavigationController(roaster: RoasterResponse) -> UINavigationController {
+        let view = createStack(roaster: roaster, isPresentedModally: true)
+        let navigationController = UINavigationController(rootViewController: view)
+        return navigationController
+    }
+
+    private func createStack(roaster: RoasterResponse, isPresentedModally: Bool = false) -> ArmiesViewController {
         let armyDataManager = ArmyDataManager(environmentManager: dependencyManager.environmentManager)
         let interactor = ArmiesInteractor(armyDataManager: armyDataManager)
         let presenter = ArmiesPresenter()
-        let view = ArmiesViewController(roaster: roaster)
+        let view = ArmiesViewController(roaster: roaster, isPresentedModally: isPresentedModally)
         let router = ArmiesRouter(dependencyManager: dependencyManager)
 
         view.interactor = interactor

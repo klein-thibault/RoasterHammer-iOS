@@ -14,6 +14,7 @@ final class DetachmentTypeViewController: DetachmentTypeBaseViewController {
     let armyId: Int
     let roaster: RoasterResponse
     var interactor: DetachmentTypeViewOutput!
+    var router: DetachmentTypeRouter!
     var detachmentTypes: [DetachmentShortResponse] = []
 
     init(armyId: Int, roaster: RoasterResponse) {
@@ -29,6 +30,10 @@ final class DetachmentTypeViewController: DetachmentTypeBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Detachement Types"
+
+        router.navigationController = navigationController
+
         tableView.dataSource = self
         tableView.delegate = self
 
@@ -43,7 +48,7 @@ extension DetachmentTypeViewController: DetachmentTypeView {
     }
 
     func showUpdatedRoaster(roaster: RoasterResponse) {
-        // TODO: show the roaster detail view
+        router.presentRoasterDetailView(roaster: roaster)
     }
 
     func didReceiveError(error: Error) {

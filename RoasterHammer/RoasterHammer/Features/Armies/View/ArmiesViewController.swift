@@ -15,9 +15,11 @@ final class ArmiesViewController: ArmiesBaseViewController {
     var router: ArmiesRouter!
     let roaster: RoasterResponse
     var armies: [ArmyResponse] = []
+    private let isPresentedModally: Bool
 
-    init(roaster: RoasterResponse) {
+    init(roaster: RoasterResponse, isPresentedModally: Bool = false) {
         self.roaster = roaster
+        self.isPresentedModally = isPresentedModally
         super.init()
     }
 
@@ -28,12 +30,24 @@ final class ArmiesViewController: ArmiesBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if isPresentedModally {
+            let closeButton = UIBarButtonItem(title: "Cancel",
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(closeButtonTapped(_:)))
+            navigationItem.rightBarButtonItem = closeButton
+        }
+
         router.navigationController = navigationController
 
         tableView.dataSource = self
         tableView.delegate = self
 
         interactor.getArmies()
+    }
+
+    @objc private func closeButtonTapped(_ sender: UIButton) {
+        router.dismiss()
     }
 }
 

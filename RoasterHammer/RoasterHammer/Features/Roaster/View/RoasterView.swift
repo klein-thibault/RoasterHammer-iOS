@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import RoasterHammerShared
 
 protocol RoasterView: class {
-    
+    func didReceiveRoaster(roaster: RoasterResponse)
+    func didReceiveError(error: Error)
 }
