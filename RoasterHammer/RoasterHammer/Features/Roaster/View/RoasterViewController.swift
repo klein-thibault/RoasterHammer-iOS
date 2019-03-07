@@ -167,5 +167,6 @@ extension RoasterViewController: UITableViewDelegate {
 extension RoasterViewController: RoasterRoleTableViewCellDelegate {
     func roasterRoleTableViewCellDidTapAddButton(_ sender: UIButton, atIndexPath indexPath: IndexPath) {
         // TODO
+        print(indexPath)
     }
 }

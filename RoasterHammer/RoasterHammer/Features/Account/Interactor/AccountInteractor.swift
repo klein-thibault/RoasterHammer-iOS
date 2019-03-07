@@ -11,13 +11,17 @@ import Foundation
 final class AccountInteractor: AccountViewOutput {
     var presenter: AccountInteractorOutput!
     private let accountDataManager: AccountDataManager
+    private let gameDataManager: GameDataManager
 
-    init(accountDataManager: AccountDataManager) {
+    init(accountDataManager: AccountDataManager,
+         gameDataManager: GameDataManager) {
         self.accountDataManager = accountDataManager
+        self.gameDataManager = gameDataManager
     }
 
     func logoutButtonTapped() {
         accountDataManager.logout()
+        gameDataManager.deleteGameLocally()
         presenter.shouldDismissView()
     }
 }

@@ -17,7 +17,8 @@ protocol AccountBuildable {
 final class AccountBuilder: FeatureBuilderBase, AccountBuildable {
     func build() -> UIViewController {
         let accountDataManager = AccountDataManager(environmentManager: dependencyManager.environmentManager)
-        let interactor = AccountInteractor(accountDataManager: accountDataManager)
+        let gameDataManager = GameDataManager(environmentManager: dependencyManager.environmentManager)
+        let interactor = AccountInteractor(accountDataManager: accountDataManager, gameDataManager: gameDataManager)
         let presenter = AccountPresenter()
         let view = AccountViewController()
         let router = AccountRouter(dependencyManager: dependencyManager)

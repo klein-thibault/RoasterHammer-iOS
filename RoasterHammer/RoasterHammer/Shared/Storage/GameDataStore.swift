@@ -27,4 +27,8 @@ final class GameDataStore {
         let gameId: Int = gameIdData.withUnsafeBytes { $0.pointee }
         return gameId
     }
+
+    func deleteGameId() {
+        store.remove(forKey: gameIdStoringKey)
+    }
 }

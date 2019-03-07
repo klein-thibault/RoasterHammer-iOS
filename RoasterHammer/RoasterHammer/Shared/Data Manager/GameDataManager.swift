@@ -108,4 +108,8 @@ final class GameDataManager: BaseDataManager {
             }
         }
     }
+
+    func deleteGameLocally() {
+        gameStore.deleteGameId()
+    }
 }
