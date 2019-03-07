@@ -11,6 +11,7 @@ import RoasterHammerShared
 
 protocol RoastersView: class {
     func presentLoginView()
+    func presentAccountView()
     func displayRoasters(roasters: [RoasterResponse])
     func didReceiveError(_ error: Error)
 }

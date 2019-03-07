@@ -16,6 +16,10 @@ final class RoastersPresenter: RoastersInteractorOutput {
         view.presentLoginView()
     }
 
+    func shouldPresentAccountView() {
+        view.presentAccountView()
+    }
+
     func didReceiveRoasters(roasters: [RoasterResponse]) {
         view.displayRoasters(roasters: roasters)
     }

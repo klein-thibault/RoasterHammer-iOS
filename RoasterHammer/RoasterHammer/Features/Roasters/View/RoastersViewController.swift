@@ -67,6 +67,10 @@ extension RoastersViewController: RoastersView {
     func presentLoginView() {
         router.presentLoginView()
     }
+
+    func presentAccountView() {
+        router.presentAccountView()
+    }
 }
 
 extension RoastersViewController: UITableViewDataSource {

@@ -32,8 +32,9 @@ final class RoastersInteractor: RoastersViewOutput {
     func accountButtonTapped() {
         if !accountDataManager.isUserLoggedIn() {
             presenter.shouldPresentLoginView()
+        } else {
+            presenter.shouldPresentAccountView()
         }
-        // TODO: if user is logged in, inform presenter to show the account page
     }
 
     func addRoasterButtonTappedWithName(_ name: String) {

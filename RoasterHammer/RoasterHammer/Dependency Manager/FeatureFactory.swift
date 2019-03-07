@@ -10,6 +10,7 @@ import Foundation
 
 protocol FeatureFactory {
     func loginBuilder() -> LoginBuildable
+    func accountBuilder() -> AccountBuildable
     func createAccountBuilder() -> CreateAccountBuildable
     func roastersBuilder() -> RoastersBuildable
     func roasterBuilder() -> RoasterBuildable

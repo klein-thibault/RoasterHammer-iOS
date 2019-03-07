@@ -19,8 +19,13 @@ final class RoastersRouter {
     }
 
     func presentLoginView() {
-        let loginViewController = dependencyManager.loginBuilder().buildInNavigationController()
-        navigationController?.present(loginViewController, animated: true, completion: nil)
+        let loginView = dependencyManager.loginBuilder().buildInNavigationController()
+        navigationController?.present(loginView, animated: true, completion: nil)
+    }
+
+    func presentAccountView() {
+        let accountView = dependencyManager.accountBuilder().buildWithNavigationController()
+        navigationController?.present(accountView, animated: true, completion: nil)
     }
 
     func presentRoasterView(roaster: RoasterResponse) {
