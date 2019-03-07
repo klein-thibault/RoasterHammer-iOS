@@ -36,16 +36,19 @@ final class RoastersInteractor: RoastersViewOutput {
         // TODO: if user is logged in, inform presenter to show the account page
     }
 
-    func addRoasterButtonTapped() {
-        // TODO
-        roastersDataManager.createRoaster(name: "Test Roaster") { [weak self] (roaster, error) in
-            if let roaster = roaster {
-                self?.presenter.didReceiveRoasters(roasters: [roaster])
-            } else if let error = error {
+    func addRoasterButtonTappedWithName(_ name: String) {
+        roastersDataManager.createRoaster(name: name) { [weak self] (roaster, error) in
+            if let error = error {
                 self?.presenter.didReceiveError(error)
+            } else if roaster != nil {
+                self?.roastersDataManager.getRoasters(completion: { (roasters, error) in
+                    if let error = error {
+                        self?.presenter.didReceiveError(error)
+                    } else if let roasters = roasters {
+                        self?.presenter.didReceiveRoasters(roasters: roasters)
+                    }
+                })
             }
         }
     }
-
-
 }

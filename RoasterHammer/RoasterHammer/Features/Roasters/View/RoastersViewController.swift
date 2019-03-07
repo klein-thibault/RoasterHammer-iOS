@@ -41,7 +41,14 @@ final class RoastersViewController: RoastersLayoutViewController {
     }
 
     @objc private func addRoasterButtonTapped(_ sender: UIBarButtonItem) {
-        interactor.addRoasterButtonTapped()
+        let alert = Alerter().informationalAlertWithTextField(title: "Create Roaster",
+                                                              message: "Enter your roaster name",
+                                                              textFieldPlaceholder: "Roaster name") { [weak self] (text) in
+                                                                if let roasterName = text {
+                                                                    self?.interactor.addRoasterButtonTappedWithName(roasterName)
+                                                                }
+        }
+        present(alert, animated: true, completion: nil)
     }
 
 }
