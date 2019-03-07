@@ -19,6 +19,7 @@ class RoasterBaseViewController: BaseViewController {
 
         view.backgroundColor = UIColor.white
 
+        emptyView.backgroundColor = UIColor.white
         addDetachmentButton.setTitle("Add Detachment", for: .normal)
         addDetachmentButton.setTitleColor(UIColor.black, for: .normal)
         tableView.registerCell(cellClass: SingleLabelTableViewCell.self)

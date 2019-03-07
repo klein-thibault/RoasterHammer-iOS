@@ -91,6 +91,7 @@ extension RoastersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedRoaster = roasters[indexPath.row]
         router.presentRoasterView(roaster: selectedRoaster)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

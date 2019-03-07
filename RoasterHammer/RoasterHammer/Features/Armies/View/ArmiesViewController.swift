@@ -88,5 +88,6 @@ extension ArmiesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedArmy = armies[indexPath.row]
         router.presentDetachmentTypesView(armyId: selectedArmy.id, roaster: roaster)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
