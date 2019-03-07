@@ -13,7 +13,7 @@ import RoasterHammerShared
 typealias RoleIndex = [Int: RoleResponse]
 typealias UnitIndex = [Int: SelectedUnitResponse]
 
-final class RoasterViewController: RoasterBaseViewController {
+final class RoasterViewController: RoasterLayoutViewController {
     var interactor: RoasterViewOutput!
     var router: RoasterRouter!
     private var roaster: RoasterResponse

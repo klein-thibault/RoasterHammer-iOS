@@ -9,5 +9,5 @@
 import Foundation
 
 protocol AccountInteractorOutput {
-    
+    func shouldDismissView()
 }

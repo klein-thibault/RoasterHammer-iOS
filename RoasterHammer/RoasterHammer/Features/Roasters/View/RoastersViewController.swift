@@ -13,7 +13,11 @@ import RoasterHammerShared
 final class RoastersViewController: RoastersLayoutViewController {
     var interactor: RoastersViewOutput!
     var router: RoastersRouter!
-    var roasters: [RoasterResponse] = []
+    var roasters: [RoasterResponse] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,10 @@ final class RoastersViewController: RoastersLayoutViewController {
         tableView.delegate = self
         tableView.dataSource = self
         router.navigationController = navigationController
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
         interactor.getRoasters()
     }
@@ -56,12 +64,12 @@ final class RoastersViewController: RoastersLayoutViewController {
 extension RoastersViewController: RoastersView {
     func displayRoasters(roasters: [RoasterResponse]) {
         self.roasters = roasters
-        tableView.reloadData()
     }
 
     func didReceiveError(_ error: Error) {
         let alert = Alerter().informationalAlert(title: "Error", message: error.localizedDescription)
         present(alert, animated: true, completion: nil)
+        self.roasters = []
     }
 
     func presentLoginView() {

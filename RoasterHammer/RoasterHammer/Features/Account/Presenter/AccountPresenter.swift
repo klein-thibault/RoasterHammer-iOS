@@ -10,4 +10,8 @@ import Foundation
 
 final class AccountPresenter: AccountInteractorOutput {
     weak var view: AccountView!
+
+    func shouldDismissView() {
+        view.dismiss()
+    }
 }

@@ -75,4 +75,8 @@ final class AccountDataManager: BaseDataManager {
 
         }
     }
+
+    func logout() {
+        accountStore.deleteAuthToken()
+    }
 }

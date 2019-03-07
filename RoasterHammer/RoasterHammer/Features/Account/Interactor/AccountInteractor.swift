@@ -15,4 +15,9 @@ final class AccountInteractor: AccountViewOutput {
     init(accountDataManager: AccountDataManager) {
         self.accountDataManager = accountDataManager
     }
+
+    func logoutButtonTapped() {
+        accountDataManager.logout()
+        presenter.shouldDismissView()
+    }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ArmiesBaseViewController: BaseViewController {
+class ArmiesLayoutViewController: BaseViewController {
     let tableView = UITableView(forAutoLayout: ())
 
     override func viewDidLoad() {

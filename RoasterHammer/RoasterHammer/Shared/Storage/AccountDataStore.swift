@@ -27,4 +27,8 @@ final class AccountDataStore {
 
         return String(data: authTokenData, encoding: .utf8)
     }
+
+    func deleteAuthToken() {
+        store.remove(forKey: tokenStoringKey)
+    }
 }

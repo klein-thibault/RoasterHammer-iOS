@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RoasterBaseViewController: BaseViewController {
+class RoasterLayoutViewController: BaseViewController {
     let emptyView = UIView(forAutoLayout: ())
     let addDetachmentButton = UIButton(forAutoLayout: ())
     let tableView = UITableView(forAutoLayout: ())

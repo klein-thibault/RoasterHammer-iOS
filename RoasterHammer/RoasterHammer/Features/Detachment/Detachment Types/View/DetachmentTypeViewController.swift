@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RoasterHammerShared
 
-final class DetachmentTypeViewController: DetachmentTypeBaseViewController {
+final class DetachmentTypeViewController: DetachmentTypeLayoutViewController {
     let armyId: Int
     let roaster: RoasterResponse
     var interactor: DetachmentTypeViewOutput!

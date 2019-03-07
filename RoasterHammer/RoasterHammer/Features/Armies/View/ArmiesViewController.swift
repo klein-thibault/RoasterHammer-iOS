@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RoasterHammerShared
 
-final class ArmiesViewController: ArmiesBaseViewController {
+final class ArmiesViewController: ArmiesLayoutViewController {
     var interactor: ArmiesViewOutput!
     var router: ArmiesRouter!
     let roaster: RoasterResponse

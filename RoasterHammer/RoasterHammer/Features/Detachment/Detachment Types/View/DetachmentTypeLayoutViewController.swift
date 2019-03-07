@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DetachmentTypeBaseViewController: BaseViewController {
+class DetachmentTypeLayoutViewController: BaseViewController {
     let tableView = UITableView(forAutoLayout: ())
 
     override func viewDidLoad() {

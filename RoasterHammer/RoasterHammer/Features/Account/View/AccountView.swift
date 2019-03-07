@@ -9,5 +9,5 @@
 import Foundation
 
 protocol AccountView: class {
-    
+    func dismiss()
 }
