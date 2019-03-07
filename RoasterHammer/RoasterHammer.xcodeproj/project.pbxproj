@@ -33,6 +33,7 @@
 		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
 		8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE72224FBB300599834 /* JSONConvertible.swift */; };
 		8EDA1C87222E088A0005A15B /* DetachmentTypeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */; };
+		8EDA1EF8223159450005A15B /* RoasterRoleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */; };
 		8EE227B822235FAE00DF0D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE227B722235FAE00DF0D72 /* AppDelegate.swift */; };
 		8EE227BF22235FB000DF0D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE227BE22235FB000DF0D72 /* Assets.xcassets */; };
 		8EE227C222235FB000DF0D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE227C022235FB000DF0D72 /* LaunchScreen.storyboard */; };
@@ -141,6 +142,7 @@
 		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
 		8E646CE72224FBB300599834 /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
 		8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeRouter.swift; sourceTree = "<group>"; };
+		8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterRoleTableViewCell.swift; sourceTree = "<group>"; };
 		8EE227B422235FAE00DF0D72 /* RoasterHammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoasterHammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE227B722235FAE00DF0D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EE227BE22235FB000DF0D72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				8E19E6B0222B368E00051784 /* RoasterView.swift */,
 				8E19E6B2222B36A600051784 /* RoasterBaseViewController.swift */,
 				8E19E6B4222B36CE00051784 /* RoasterViewController.swift */,
+				8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1001,6 +1004,7 @@
 				8EFAF536222602F000DAE956 /* LoginLayoutViewController.swift in Sources */,
 				8EFAFFEE222DC4E000DAE956 /* ArmiesPresenter.swift in Sources */,
 				8E19E6B1222B368E00051784 /* RoasterView.swift in Sources */,
+				8EDA1EF8223159450005A15B /* RoasterRoleTableViewCell.swift in Sources */,
 				8EFAFD602228ABDE00DAE956 /* RoasterHammerEnvironmentManager.swift in Sources */,
 				8EFAFFE4222DC47D00DAE956 /* ArmiesBaseViewController.swift in Sources */,
 				8E19B33A222D5A00003F10FA /* DetachmentTypeViewController.swift in Sources */,

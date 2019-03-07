@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import RoasterHammerShared
 
 final class SingleLabelTableViewCell: UITableViewCell {
     private let cellSingleLabel = UILabel(forAutoLayout: ())

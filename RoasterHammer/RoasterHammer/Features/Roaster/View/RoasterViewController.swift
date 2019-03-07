@@ -10,10 +10,15 @@ import Foundation
 import UIKit
 import RoasterHammerShared
 
+typealias RoleIndex = [Int: RoleResponse]
+typealias UnitIndex = [Int: SelectedUnitResponse]
+
 final class RoasterViewController: RoasterBaseViewController {
     var interactor: RoasterViewOutput!
     var router: RoasterRouter!
     private var roaster: RoasterResponse
+    private var rolesIndex: RoleIndex = [:]
+    private var unitsIndex: UnitIndex = [:]
 
     init(roaster: RoasterResponse) {
         self.roaster = roaster
@@ -48,6 +53,53 @@ final class RoasterViewController: RoasterBaseViewController {
         router.presentArmySelection(roaster: roaster)
     }
 
+    /*
+     [
+     detachment: [
+     HQ: [a, b],
+     Troop: [c],
+     Elite: []
+     ]
+
+     [HQ, a, b, Troop, c, Elite]
+     [0: HQ, 3: Troop, 5: Elite]
+     */
+    private func rolesIndexes(fromDetachment detachment: DetachmentResponse) -> RoleIndex {
+        var currentIndex = 0
+        var result: RoleIndex = [:]
+        for role in detachment.roles {
+            result[currentIndex] = role
+            currentIndex += role.units.count + 1
+        }
+
+        return result
+    }
+
+    /*
+     [
+     detachment: [
+     HQ: [a, b],
+     Troop: [c],
+     Elite: []
+     ]
+
+     [HQ, a, b, Troop, c, Elite]
+     [1: a, 2: b, 4: c]
+     */
+    private func unitsIndexes(fromDetachment detachment: DetachmentResponse) -> UnitIndex {
+        var currentIndex = 0
+        var result: UnitIndex = [:]
+        for role in detachment.roles {
+            currentIndex += 1
+            for unit in role.units {
+                result[currentIndex] = unit
+                currentIndex += 1
+            }
+        }
+
+        return result
+    }
+
 }
 
 extension RoasterViewController: RoasterView {
@@ -67,12 +119,28 @@ extension RoasterViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        let detachment = roaster.detachments[section]
+        let unitsCount = detachment.roles.reduce(0) { $0 + $1.units.count }
+        return detachment.roles.count + unitsCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: SingleLabelTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
-        return cell
+        let detachment = roaster.detachments[indexPath.section]
+        let roleIndexes = rolesIndexes(fromDetachment: detachment)
+        let unitIndexes = unitsIndexes(fromDetachment: detachment)
+
+        if let role = roleIndexes[indexPath.row] {
+            let cell: RoasterRoleTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
+            cell.setupWithText(role.name, indexPath: indexPath, delegate: self)
+            return cell
+        } else if let unit = unitIndexes[indexPath.row] {
+            let cell: SingleLabelTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
+            cell.setupWithText(unit.unit.name)
+            return cell
+        }
+
+        assertionFailure("The proper cell could not be identified for index path \(indexPath)")
+        return UITableViewCell(forAutoLayout: ())
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -93,5 +161,11 @@ extension RoasterViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
+    }
+}
+
+extension RoasterViewController: RoasterRoleTableViewCellDelegate {
+    func roasterRoleTableViewCellDidTapAddButton(_ sender: UIButton, atIndexPath indexPath: IndexPath) {
+        // TODO
     }
 }
