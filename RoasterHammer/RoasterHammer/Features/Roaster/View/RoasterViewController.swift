@@ -167,6 +167,11 @@ extension RoasterViewController: UITableViewDelegate {
 extension RoasterViewController: RoasterRoleTableViewCellDelegate {
     func roasterRoleTableViewCellDidTapAddButton(_ sender: UIButton, atIndexPath indexPath: IndexPath) {
         // TODO
-        print(indexPath)
+        let detachment = roaster.detachments[indexPath.section]
+        let roleIndexes = rolesIndexes(fromDetachment: detachment)
+        if let role = roleIndexes[indexPath.row] {
+            print(role.name)
+            print(detachment.army.name)
+        }
     }
 }
