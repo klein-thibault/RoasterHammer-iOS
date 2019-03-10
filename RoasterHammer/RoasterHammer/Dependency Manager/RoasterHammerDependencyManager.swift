@@ -57,4 +57,8 @@ final class RoasterHammerDependencyManager: DependencyManager {
         return DetachmentTypeBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
 
+    func unitsBuilder() -> UnitsBuildable {
+        return UnitsBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
+    }
+
 }

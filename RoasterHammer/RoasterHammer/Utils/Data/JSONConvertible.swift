@@ -11,7 +11,5 @@ import Foundation
 typealias JSON = [String: Any]
 
 protocol JSONConvertible {
-
     func toJSON() -> JSON
-    
 }

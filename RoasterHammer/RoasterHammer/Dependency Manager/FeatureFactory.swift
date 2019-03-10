@@ -16,4 +16,5 @@ protocol FeatureFactory {
     func roasterBuilder() -> RoasterBuildable
     func armiesBuilder() -> ArmiesBuildable
     func detachmentTypeBuilder() -> DetachmentTypeBuildable
+    func unitsBuilder() -> UnitsBuildable
 }
