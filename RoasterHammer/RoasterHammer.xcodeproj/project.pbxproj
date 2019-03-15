@@ -439,6 +439,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		8EB6E776223C2DEE0090B125 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8EFAFD442228A50100DAE956 /* SingleLabelTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8EDA1C85222E087B0005A15B /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +677,7 @@
 		8EFAF52B2226006C00DAE956 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8EB6E776223C2DEE0090B125 /* View */,
 				8EFAFD612228AEDF00DAE956 /* Builder */,
 				8EFAF52D2226008C00DAE956 /* Storage */,
 				8EFAF52C2226007100DAE956 /* Data Manager */,
@@ -792,7 +801,6 @@
 				8EFAF5752228767F00DAE956 /* RoastersView.swift */,
 				8EFAF56222285AF500DAE956 /* RoastersLayoutViewController.swift */,
 				8EFAF56622285BE700DAE956 /* RoastersViewController.swift */,
-				8EFAFD442228A50100DAE956 /* SingleLabelTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
