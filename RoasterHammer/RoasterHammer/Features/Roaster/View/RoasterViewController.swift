@@ -16,7 +16,11 @@ typealias UnitIndex = [Int: SelectedUnitResponse]
 final class RoasterViewController: RoasterLayoutViewController {
     var interactor: RoasterViewOutput!
     var router: RoasterRouter!
-    private var roaster: RoasterResponse
+    private var roaster: RoasterResponse {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     private var rolesIndex: RoleIndex = [:]
     private var unitsIndex: UnitIndex = [:]
 
@@ -171,7 +175,7 @@ extension RoasterViewController: RoasterRoleTableViewCellDelegate {
         if let role = roleIndexes[indexPath.row] {
             let filters = UnitFilters(armyId: String(detachment.army.id),
                                       unitType: role.name)
-            router.presentUnitsView(filters: filters)
+            router.presentUnitsView(filters: filters, detachmentId: detachment.id, unitRoleId: role.id)
         }
     }
 }

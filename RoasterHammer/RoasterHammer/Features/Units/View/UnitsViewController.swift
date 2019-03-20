@@ -13,15 +13,14 @@ import RoasterHammerShared
 final class UnitsViewController: UnitsLayoutViewController {
     var interactor: UnitsViewOutput!
     var router: UnitsRouter!
-    private let filters: UnitFilters
+
     private var units: [UnitResponse] = [] {
         didSet {
             tableView.reloadData()
         }
     }
 
-    init(filters: UnitFilters) {
-        self.filters = filters
+    override init() {
         super.init()
     }
     
@@ -45,7 +44,7 @@ final class UnitsViewController: UnitsLayoutViewController {
         tableView.dataSource = self
         tableView.delegate = self
 
-        interactor.getUnits(withFilters: filters)
+        interactor.getUnits()
     }
 
     @objc private func closeButtonTapped(_ sender: UIBarButtonItem) {
@@ -56,6 +55,10 @@ final class UnitsViewController: UnitsLayoutViewController {
 extension UnitsViewController: UnitsView {
     func didReceiveUnits(_ units: [UnitResponse]) {
         self.units = units
+    }
+
+    func didUpdateDetachment(_ detachment: DetachmentResponse) {
+        router.dismiss()
     }
 
     func didReceiveError(_ error: Error) {
@@ -83,5 +86,11 @@ extension UnitsViewController: UITableViewDataSource {
 extension UnitsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let unit = units[indexPath.row]
+        interactor.addUnitToDetachment(unitId: unit.id, quantity: 1)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

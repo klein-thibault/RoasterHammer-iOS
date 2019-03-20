@@ -11,5 +11,6 @@ import RoasterHammerShared
 
 protocol UnitsInteractorOutput {
     func didReceiveUnits(_ units: [UnitResponse])
+    func didUpdateDetachment(_ detachment: DetachmentResponse)
     func didReceiveError(_ error: Error)
 }

@@ -16,6 +16,10 @@ final class UnitsPresenter: UnitsInteractorOutput {
         view.didReceiveUnits(units)
     }
 
+    func didUpdateDetachment(_ detachment: DetachmentResponse) {
+        view.didUpdateDetachment(detachment)
+    }
+
     func didReceiveError(_ error: Error) {
         view.didReceiveError(error)
     }

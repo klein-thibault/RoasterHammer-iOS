@@ -10,5 +10,6 @@ import Foundation
 import RoasterHammerShared
 
 protocol UnitsViewOutput {
-    func getUnits(withFilters filters: UnitFilters)
+    func getUnits()
+    func addUnitToDetachment(unitId: Int, quantity: Int)
 }
