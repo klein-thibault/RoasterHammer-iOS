@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 protocol RoasterRoleTableViewCellDelegate: class {
-    func roasterRoleTableViewCellDidTapAddButton(_ sender: UIButton, atIndexPath indexPath: IndexPath)
+    func roasterRoleTableViewCellDidTapAddButton(_ sender: UIButton,
+                                                 atIndexPath indexPath: IndexPath)
 }
 
 final class RoasterRoleTableViewCell: UITableViewCell {
@@ -45,7 +46,9 @@ final class RoasterRoleTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupWithText(_ text: String, indexPath: IndexPath, delegate: RoasterRoleTableViewCellDelegate) {
+    func setupWithText(_ text: String,
+                       indexPath: IndexPath,
+                       delegate: RoasterRoleTableViewCellDelegate) {
         self.delegate = delegate
         self.indexPath = indexPath
         cellLabel.text = text

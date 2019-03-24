@@ -61,4 +61,8 @@ final class RoasterHammerDependencyManager: DependencyManager {
         return UnitsBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
 
+    func editUnitBuilder() -> EditUnitBuildable {
+        return EditUnitBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
+    }
+
 }

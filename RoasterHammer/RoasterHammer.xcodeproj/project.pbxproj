@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		27EB0BFF28BC7AB9F3D16A62 /* Pods_RoasterHammer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AEE1820CAD5C57303E9F64 /* Pods_RoasterHammer.framework */; };
+		8E03FC38224822F100A39ABF /* RoasterUnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC37224822F100A39ABF /* RoasterUnitTableViewCell.swift */; };
+		8E03FC3F224825E800A39ABF /* EditUnitLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC3E224825E800A39ABF /* EditUnitLayoutViewController.swift */; };
+		8E03FC412248265F00A39ABF /* EditUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC402248265F00A39ABF /* EditUnitViewController.swift */; };
+		8E03FC432248268400A39ABF /* EditUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC422248268400A39ABF /* EditUnitView.swift */; };
+		8E03FC45224826C900A39ABF /* EditUnitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC44224826C900A39ABF /* EditUnitInteractor.swift */; };
+		8E03FC47224826D400A39ABF /* EditUnitViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC46224826D400A39ABF /* EditUnitViewOutput.swift */; };
+		8E03FC492248270100A39ABF /* EditUnitInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC482248270100A39ABF /* EditUnitInteractorOutput.swift */; };
+		8E03FC4B2248271400A39ABF /* EditUnitPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC4A2248271300A39ABF /* EditUnitPresenter.swift */; };
+		8E03FC4D2248277200A39ABF /* EditUnitBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC4C2248277200A39ABF /* EditUnitBuilder.swift */; };
 		8E19B32E222D57BA003F10FA /* RoasterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B32D222D57BA003F10FA /* RoasterRouter.swift */; };
 		8E19B336222D59E8003F10FA /* DetachmentTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B335222D59E8003F10FA /* DetachmentTypeView.swift */; };
 		8E19B338222D59F5003F10FA /* DetachmentTypeLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B337222D59F5003F10FA /* DetachmentTypeLayoutViewController.swift */; };
@@ -137,6 +146,15 @@
 /* Begin PBXFileReference section */
 		5CAB593934FB800EDA79F6FD /* Pods-RoasterHammer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoasterHammer.release.xcconfig"; path = "../Pods/Target Support Files/Pods-RoasterHammer/Pods-RoasterHammer.release.xcconfig"; sourceTree = "<group>"; };
 		844F19CF2A860DC859BFC27C /* Pods-RoasterHammer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoasterHammer.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-RoasterHammer/Pods-RoasterHammer.debug.xcconfig"; sourceTree = "<group>"; };
+		8E03FC37224822F100A39ABF /* RoasterUnitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterUnitTableViewCell.swift; sourceTree = "<group>"; };
+		8E03FC3E224825E800A39ABF /* EditUnitLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitLayoutViewController.swift; sourceTree = "<group>"; };
+		8E03FC402248265F00A39ABF /* EditUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitViewController.swift; sourceTree = "<group>"; };
+		8E03FC422248268400A39ABF /* EditUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitView.swift; sourceTree = "<group>"; };
+		8E03FC44224826C900A39ABF /* EditUnitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitInteractor.swift; sourceTree = "<group>"; };
+		8E03FC46224826D400A39ABF /* EditUnitViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitViewOutput.swift; sourceTree = "<group>"; };
+		8E03FC482248270100A39ABF /* EditUnitInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitInteractorOutput.swift; sourceTree = "<group>"; };
+		8E03FC4A2248271300A39ABF /* EditUnitPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitPresenter.swift; sourceTree = "<group>"; };
+		8E03FC4C2248277200A39ABF /* EditUnitBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitBuilder.swift; sourceTree = "<group>"; };
 		8E19B32D222D57BA003F10FA /* RoasterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterRouter.swift; sourceTree = "<group>"; };
 		8E19B335222D59E8003F10FA /* DetachmentTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeView.swift; sourceTree = "<group>"; };
 		8E19B337222D59F5003F10FA /* DetachmentTypeLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeLayoutViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +304,53 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8E03FC39224825C000A39ABF /* Edit Unit */ = {
+			isa = PBXGroup;
+			children = (
+				8E03FC3D224825D800A39ABF /* Builder */,
+				8E03FC3C224825D300A39ABF /* Presenter */,
+				8E03FC3B224825CE00A39ABF /* Interactor */,
+				8E03FC3A224825C900A39ABF /* View */,
+			);
+			path = "Edit Unit";
+			sourceTree = "<group>";
+		};
+		8E03FC3A224825C900A39ABF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E03FC3E224825E800A39ABF /* EditUnitLayoutViewController.swift */,
+				8E03FC402248265F00A39ABF /* EditUnitViewController.swift */,
+				8E03FC422248268400A39ABF /* EditUnitView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E03FC3B224825CE00A39ABF /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8E03FC46224826D400A39ABF /* EditUnitViewOutput.swift */,
+				8E03FC44224826C900A39ABF /* EditUnitInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8E03FC3C224825D300A39ABF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8E03FC482248270100A39ABF /* EditUnitInteractorOutput.swift */,
+				8E03FC4A2248271300A39ABF /* EditUnitPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8E03FC3D224825D800A39ABF /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				8E03FC4C2248277200A39ABF /* EditUnitBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		8E19B32C222D57A6003F10FA /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +434,7 @@
 				8E19E6B2222B36A600051784 /* RoasterLayoutViewController.swift */,
 				8E19E6B4222B36CE00051784 /* RoasterViewController.swift */,
 				8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */,
+				8E03FC37224822F100A39ABF /* RoasterUnitTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -615,6 +681,7 @@
 		8EFAF03A2224A8E400DAE956 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				8E03FC39224825C000A39ABF /* Edit Unit */,
 				8EFA04D52231AAF300DAE956 /* Account */,
 				8EFAFFDB222DC41600DAE956 /* Armies */,
 				8EFAF03C2224A8F300DAE956 /* Create Account */,
@@ -1098,11 +1165,13 @@
 				8EFAFD542228AA0800DAE956 /* HTTPEnvironmentManager.swift in Sources */,
 				8EFAF53F22284B1F00DAE956 /* LoginInteractor.swift in Sources */,
 				8EE4E3972235B1CB0043BDD7 /* UnitsLayoutViewController.swift in Sources */,
+				8E03FC492248270100A39ABF /* EditUnitInteractorOutput.swift in Sources */,
 				8E19E6BA222B370900051784 /* RoasterInteractor.swift in Sources */,
 				8E19B32E222D57BA003F10FA /* RoasterRouter.swift in Sources */,
 				8EFA04DC2231AB2500DAE956 /* AccountView.swift in Sources */,
 				8EFAF54D22284EBD00DAE956 /* DependencyManager.swift in Sources */,
 				8E19E6B8222B36F200051784 /* RoasterViewOutput.swift in Sources */,
+				8E03FC4D2248277200A39ABF /* EditUnitBuilder.swift in Sources */,
 				8E19B33E222D5AC4003F10FA /* DetachmentTypeInteractor.swift in Sources */,
 				8E19B338222D59F5003F10FA /* DetachmentTypeLayoutViewController.swift in Sources */,
 				8EFAF5742228763900DAE956 /* RoastersPresenter.swift in Sources */,
@@ -1116,6 +1185,7 @@
 				8EFAF56522285B2700DAE956 /* BaseViewController.swift in Sources */,
 				8EE4E39B2235B2020043BDD7 /* UnitsViewOutput.swift in Sources */,
 				8EDA1C87222E088A0005A15B /* DetachmentTypeRouter.swift in Sources */,
+				8E03FC432248268400A39ABF /* EditUnitView.swift in Sources */,
 				8EFAFD632228AEF400DAE956 /* FeatureBuilderBase.swift in Sources */,
 				8EFAF5332226011000DAE956 /* UserDefaultStore.swift in Sources */,
 				8EFAFFF2222DC58900DAE956 /* ArmiesRouter.swift in Sources */,
@@ -1135,6 +1205,7 @@
 				8EFAFD492228A61700DAE956 /* UITableView+IdentifiableView.swift in Sources */,
 				8EFAFFE8222DC4B400DAE956 /* ArmiesViewOutput.swift in Sources */,
 				8EFAFD5A2228AAB200DAE956 /* Dictionary+Utils.swift in Sources */,
+				8E03FC38224822F100A39ABF /* RoasterUnitTableViewCell.swift in Sources */,
 				8EFAFD452228A50200DAE956 /* SingleLabelTableViewCell.swift in Sources */,
 				8EFAF56322285AF500DAE956 /* RoastersLayoutViewController.swift in Sources */,
 				8EFAFD4F2228A96300DAE956 /* ResponseHandling.swift in Sources */,
@@ -1151,6 +1222,7 @@
 				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
 				8E19B5B5222D6383003F10FA /* DetachmentDataManager.swift in Sources */,
 				8EFA0263222DC7BB00DAE956 /* ArmyDataManager.swift in Sources */,
+				8E03FC47224826D400A39ABF /* EditUnitViewOutput.swift in Sources */,
 				8EFAF56722285BE700DAE956 /* RoastersViewController.swift in Sources */,
 				8EFAFFD72229BEDE00DAE956 /* BaseDataManager.swift in Sources */,
 				8E19E6B3222B36A600051784 /* RoasterLayoutViewController.swift in Sources */,
@@ -1165,6 +1237,7 @@
 				8EE4E39D2235B2130043BDD7 /* UnitsInteractor.swift in Sources */,
 				8E19B340222D5B02003F10FA /* DetachmentTypeInteractorOutput.swift in Sources */,
 				8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */,
+				8E03FC45224826C900A39ABF /* EditUnitInteractor.swift in Sources */,
 				8EFAF56F2228752F00DAE956 /* RoastersInteractor.swift in Sources */,
 				8EFA04E82231ACAB00DAE956 /* AccountPresenter.swift in Sources */,
 				8EE4E3992235B1E50043BDD7 /* UnitsViewController.swift in Sources */,
@@ -1175,6 +1248,8 @@
 				8EFA04EC2231ADEB00DAE956 /* AccountBuilder.swift in Sources */,
 				8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */,
 				8EFAF03E2224A90500DAE956 /* CreateAccountViewController.swift in Sources */,
+				8E03FC3F224825E800A39ABF /* EditUnitLayoutViewController.swift in Sources */,
+				8E03FC412248265F00A39ABF /* EditUnitViewController.swift in Sources */,
 				8EE4E3A12235B23C0043BDD7 /* UnitsPresenter.swift in Sources */,
 				8EFAF553222850F500DAE956 /* CreateAccountView.swift in Sources */,
 				8EFAFFDA2229C10B00DAE956 /* RoasterHammerError.swift in Sources */,
@@ -1196,6 +1271,7 @@
 				8EE227B822235FAE00DF0D72 /* AppDelegate.swift in Sources */,
 				8EFAFD582228AA5600DAE956 /* HTTPMethod.swift in Sources */,
 				8EE4EAF92235B7950043BDD7 /* QueryItemConvertible.swift in Sources */,
+				8E03FC4B2248271400A39ABF /* EditUnitPresenter.swift in Sources */,
 				8EFA04E22231AC6E00DAE956 /* AccountViewOutput.swift in Sources */,
 				8E19B33C222D5A98003F10FA /* DetachmentTypeViewOutput.swift in Sources */,
 				8EFAF0422224A9B500DAE956 /* CreateAccountLayoutViewController.swift in Sources */,

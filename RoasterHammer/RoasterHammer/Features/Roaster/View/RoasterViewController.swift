@@ -136,10 +136,11 @@ extension RoasterViewController: UITableViewDataSource {
         if let role = roleIndexes[indexPath.row] {
             let cell: RoasterRoleTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
             cell.setupWithText(role.name, indexPath: indexPath, delegate: self)
+            cell.contentView.backgroundColor = UIColor.lightGray
             return cell
         } else if let unit = unitIndexes[indexPath.row] {
-            let cell: SingleLabelTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
-            cell.setupWithText(unit.unit.name)
+            let cell: RoasterUnitTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
+            cell.setupWithUnitName(unit.unit.name, indexPath: indexPath, delegate: self)
             return cell
         }
 
@@ -177,5 +178,17 @@ extension RoasterViewController: RoasterRoleTableViewCellDelegate {
                                       unitType: role.name)
             router.presentUnitsView(filters: filters, detachmentId: detachment.id, unitRoleId: role.id)
         }
+    }
+}
+
+extension RoasterViewController: RoasterUnitTableViewCellDelegate {
+    func roasterUnitTableViewCellDidTapEditButton(_ sender: UIButton, atIndexPath indexPath: IndexPath) {
+        let detachment = roaster.detachments[indexPath.section]
+        let unitIndexes = unitsIndexes(fromDetachment: detachment)
+        guard let unit = unitIndexes[indexPath.row] else {
+            return
+        }
+
+        router.presentEditUnitView(unit: unit)
     }
 }
