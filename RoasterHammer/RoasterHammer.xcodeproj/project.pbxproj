@@ -17,6 +17,7 @@
 		8E03FC492248270100A39ABF /* EditUnitInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC482248270100A39ABF /* EditUnitInteractorOutput.swift */; };
 		8E03FC4B2248271400A39ABF /* EditUnitPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC4A2248271300A39ABF /* EditUnitPresenter.swift */; };
 		8E03FC4D2248277200A39ABF /* EditUnitBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03FC4C2248277200A39ABF /* EditUnitBuilder.swift */; };
+		8E0F5227224ACFEC0077D859 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F5226224ACFEC0077D859 /* Array+Utils.swift */; };
 		8E19B32E222D57BA003F10FA /* RoasterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B32D222D57BA003F10FA /* RoasterRouter.swift */; };
 		8E19B336222D59E8003F10FA /* DetachmentTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B335222D59E8003F10FA /* DetachmentTypeView.swift */; };
 		8E19B338222D59F5003F10FA /* DetachmentTypeLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B337222D59F5003F10FA /* DetachmentTypeLayoutViewController.swift */; };
@@ -155,6 +156,7 @@
 		8E03FC482248270100A39ABF /* EditUnitInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitInteractorOutput.swift; sourceTree = "<group>"; };
 		8E03FC4A2248271300A39ABF /* EditUnitPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitPresenter.swift; sourceTree = "<group>"; };
 		8E03FC4C2248277200A39ABF /* EditUnitBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitBuilder.swift; sourceTree = "<group>"; };
+		8E0F5226224ACFEC0077D859 /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		8E19B32D222D57BA003F10FA /* RoasterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterRouter.swift; sourceTree = "<group>"; };
 		8E19B335222D59E8003F10FA /* DetachmentTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeView.swift; sourceTree = "<group>"; };
 		8E19B337222D59F5003F10FA /* DetachmentTypeLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeLayoutViewController.swift; sourceTree = "<group>"; };
@@ -737,6 +739,7 @@
 				8EFAF5292225FB8300DAE956 /* String+Encoding.swift */,
 				8EFAFD482228A61700DAE956 /* UITableView+IdentifiableView.swift */,
 				8EFAFD592228AAB200DAE956 /* Dictionary+Utils.swift */,
+				8E0F5226224ACFEC0077D859 /* Array+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1202,6 +1205,7 @@
 				8EFAFD472228A55000DAE956 /* IdentifiableView.swift in Sources */,
 				8E311B712225793A00C58DBF /* HTTPResponse.swift in Sources */,
 				8EFAF5272225F9AE00DAE956 /* JSONDecodingError.swift in Sources */,
+				8E0F5227224ACFEC0077D859 /* Array+Utils.swift in Sources */,
 				8E19E6B5222B36CE00051784 /* RoasterViewController.swift in Sources */,
 				8EFAF0462224AAB200DAE956 /* UIView+Autolayout.swift in Sources */,
 				8EFAFD492228A61700DAE956 /* UITableView+IdentifiableView.swift in Sources */,

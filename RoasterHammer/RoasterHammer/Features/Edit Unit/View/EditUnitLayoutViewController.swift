@@ -10,19 +10,19 @@ import Foundation
 import UIKit
 
 class EditUnitLayoutViewController: BaseViewController {
-    let temporaryLabel = UILabel(forAutoLayout: ())
+    let tableView = UITableView(forAutoLayout: ())
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
-
-        temporaryLabel.text = "Edit Unit View"
-        view.addSubview(temporaryLabel)
+        tableView.registerCell(cellClass: SingleLabelTableViewCell.self)
 
         NSLayoutConstraint.activate([
-            temporaryLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            temporaryLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
     
