@@ -18,6 +18,8 @@ class EditUnitLayoutViewController: BaseViewController {
         view.backgroundColor = UIColor.white
         tableView.registerCell(cellClass: SingleLabelTableViewCell.self)
 
+        view.addSubview(tableView)
+
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
