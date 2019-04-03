@@ -6,5 +6,5 @@ target "RoasterHammer" do
   project "RoasterHammer/RoasterHammer.xcodeproj"
   
   pod 'Alamofire'
-  pod 'RoasterHammerShared', :git => 'git@github.com:klein-thibault/RoasterHammer-Shared.git', :branch => 'master'
+  pod 'RoasterHammerShared', :git => 'git@github.com:klein-thibault/RoasterHammer-Shared.git', :tag => '0.0.12'
 end
