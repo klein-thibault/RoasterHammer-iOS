@@ -66,9 +66,22 @@ extension EditUnitViewController: UITableViewDataSource {
 
         return cell
     }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionName = Array(dataSource.keys)[section]
+        let frame = CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 44.0)
+        let headerView = TableViewHeaderWithAddButton(frame: frame)
+        headerView.setupWithTitle(sectionName, section: section, delegate: self)
+
+        return headerView
+    }
 }
 
 extension EditUnitViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
@@ -76,4 +89,16 @@ extension EditUnitViewController: UITableViewDelegate {
 
 extension EditUnitViewController: EditUnitView {
     
+}
+
+extension EditUnitViewController: TableViewHeaderWithAddButtonDelegate {
+    func tableViewHeaderAddButtonTapped(_ sender: UIButton, inSection section: Int) {
+        let key = Array(dataSource.keys)[section]
+        guard let selectedModel = dataSource[key]?.first else {
+            print("Could not find the model associated with the add button")
+            return
+        }
+
+        print("Add model named \"\(selectedModel.model.name)\" tapped in section: \(section)")
+    }
 }

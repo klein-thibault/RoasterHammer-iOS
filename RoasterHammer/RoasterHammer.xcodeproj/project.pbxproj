@@ -44,6 +44,7 @@
 		8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE72224FBB300599834 /* JSONConvertible.swift */; };
 		8EDA1C87222E088A0005A15B /* DetachmentTypeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */; };
 		8EDA1EF8223159450005A15B /* RoasterRoleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */; };
+		8EE0A2722257C95600CA703B /* TableViewHeaderWithAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE0A2712257C95600CA703B /* TableViewHeaderWithAddButton.swift */; };
 		8EE227B822235FAE00DF0D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE227B722235FAE00DF0D72 /* AppDelegate.swift */; };
 		8EE227BF22235FB000DF0D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE227BE22235FB000DF0D72 /* Assets.xcassets */; };
 		8EE227C222235FB000DF0D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE227C022235FB000DF0D72 /* LaunchScreen.storyboard */; };
@@ -183,6 +184,7 @@
 		8E646CE72224FBB300599834 /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
 		8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeRouter.swift; sourceTree = "<group>"; };
 		8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterRoleTableViewCell.swift; sourceTree = "<group>"; };
+		8EE0A2712257C95600CA703B /* TableViewHeaderWithAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderWithAddButton.swift; sourceTree = "<group>"; };
 		8EE227B422235FAE00DF0D72 /* RoasterHammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoasterHammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE227B722235FAE00DF0D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EE227BE22235FB000DF0D72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 		8EB6E776223C2DEE0090B125 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8EE0A2712257C95600CA703B /* TableViewHeaderWithAddButton.swift */,
 				8EFAFD442228A50100DAE956 /* SingleLabelTableViewCell.swift */,
 			);
 			path = View;
@@ -1179,6 +1182,7 @@
 				8E03FC4D2248277200A39ABF /* EditUnitBuilder.swift in Sources */,
 				8E19B33E222D5AC4003F10FA /* DetachmentTypeInteractor.swift in Sources */,
 				8E19B338222D59F5003F10FA /* DetachmentTypeLayoutViewController.swift in Sources */,
+				8EE0A2722257C95600CA703B /* TableViewHeaderWithAddButton.swift in Sources */,
 				8EFAF5742228763900DAE956 /* RoastersPresenter.swift in Sources */,
 				8EFAF57D2228948200DAE956 /* LoginRouter.swift in Sources */,
 				8EFAFFF0222DC53100DAE956 /* ArmiesBuilder.swift in Sources */,
