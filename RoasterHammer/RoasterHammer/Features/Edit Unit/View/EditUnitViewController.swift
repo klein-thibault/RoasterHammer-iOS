@@ -70,7 +70,7 @@ extension EditUnitViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionName = Array(dataSource.keys)[section]
         let frame = CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 44.0)
-        let headerView = TableViewHeaderWithAddButton(frame: frame)
+        let headerView = TableViewHeaderLabelWithAddButton(frame: frame)
         headerView.setupWithTitle(sectionName, section: section, delegate: self)
 
         return headerView
@@ -91,7 +91,7 @@ extension EditUnitViewController: EditUnitView {
     
 }
 
-extension EditUnitViewController: TableViewHeaderWithAddButtonDelegate {
+extension EditUnitViewController: TableViewHeaderLabelWithAddButtonDelegate {
     func tableViewHeaderAddButtonTapped(_ sender: UIButton, inSection section: Int) {
         let key = Array(dataSource.keys)[section]
         guard let selectedModel = dataSource[key]?.first else {

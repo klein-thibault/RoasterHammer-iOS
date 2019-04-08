@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-protocol TableViewHeaderWithAddButtonDelegate: class {
+protocol TableViewHeaderLabelWithAddButtonDelegate: class {
     func tableViewHeaderAddButtonTapped(_ sender: UIButton, inSection section: Int)
 }
 
-final class TableViewHeaderWithAddButton: UIView {
+final class TableViewHeaderLabelWithAddButton: UIView {
     private let label = UILabel(forAutoLayout: ())
     private let addButton = UIButton(forAutoLayout: ())
     private let stackView = UIStackView(forAutoLayout: ())
     private var section: Int!
-    private weak var delegate: TableViewHeaderWithAddButtonDelegate?
+    private weak var delegate: TableViewHeaderLabelWithAddButtonDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,7 +48,7 @@ final class TableViewHeaderWithAddButton: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupWithTitle(_ title: String, section: Int, delegate: TableViewHeaderWithAddButtonDelegate) {
+    func setupWithTitle(_ title: String, section: Int, delegate: TableViewHeaderLabelWithAddButtonDelegate) {
         label.text = title
         self.section = section
         self.delegate = delegate

@@ -151,18 +151,19 @@ extension RoasterViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let detachment = roaster.detachments[section]
-        let view = UIView(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 20))
-        view.backgroundColor = UIColor.gray
-        let label = UILabel(frame: CGRect.init(x: 10, y: 0, width: tableView.frame.width, height: 20))
-        label.text = "\(detachment.name) - \(detachment.commandPoints) CP"
-        view.addSubview(label)
-        return view
+        let frame = CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 44.0)
+        let headerView = TableViewHeaderLabel(frame: frame)
+        let title = "\(detachment.name) - \(detachment.commandPoints) CP"
+
+        headerView.setupWithTitle(title)
+
+        return headerView
     }
 }
 
 extension RoasterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20.0
+        return 44.0
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
