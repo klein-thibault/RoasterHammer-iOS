@@ -18,6 +18,7 @@ final class RoasterViewController: RoasterLayoutViewController {
     var router: RoasterRouter!
     private var roaster: RoasterResponse {
         didSet {
+            emptyView.isHidden = self.roaster.detachments.count > 0
             tableView.reloadData()
         }
     }
