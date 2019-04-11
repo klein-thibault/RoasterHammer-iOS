@@ -10,4 +10,8 @@ import Foundation
 
 protocol RoasterViewOutput {
     func getRoasterDetails(roasterId: Int)
+    func deleteUnit(_ unitId: Int,
+                    fromDetachment detachmentId: Int,
+                    fromRoaster roasterId: Int,
+                    inUnitRole unitRoleId: Int)
 }

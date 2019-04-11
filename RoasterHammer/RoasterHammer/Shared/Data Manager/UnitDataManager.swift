@@ -85,4 +85,35 @@ final class UnitDataManager: BaseDataManager {
             }
         }
     }
+
+    func removeUnitFromDetachment(detachmentId: Int,
+                                  unitRoleId: Int,
+                                  unitId: Int,
+                                  completion: @escaping (DetachmentResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let request = HTTPRequest(method: .delete,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/detachments/\(detachmentId)/roles/\(unitRoleId)/units/\(unitId)",
+            queryItems: nil,
+            body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { (response, error) in
+            guard let data = response?.data else {
+                completion(nil, JSONDecodingError.invalidDataType)
+                return
+            }
+
+            do {
+                let detachment: DetachmentResponse = try JSONDecoder().decodeResponse(from: data)
+                completion(detachment, nil)
+            } catch {
+                completion(nil, error)
+            }
+        }
+    }
 }

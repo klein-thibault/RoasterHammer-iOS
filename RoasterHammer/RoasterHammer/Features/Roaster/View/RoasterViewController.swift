@@ -169,6 +169,25 @@ extension RoasterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let detachment = roaster.detachments[indexPath.section]
+        let roleIndexes = rolesIndexes(fromDetachment: detachment)
+        var unitIndexes = unitsIndexes(fromDetachment: detachment)
+
+        guard let unit = unitIndexes[indexPath.row],
+            let role = roleIndexes.filter({ $0.value.units.contains(where: { $0.id == unit.id })}).first?.value else {
+            return nil
+        }
+
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [unowned self] (action, indexPath) in
+            // TODO: after updating the data source, remove the unit locally before removing the row
+            // tableView.deleteRows(at: [indexPath], with: .fade)
+            self.interactor.deleteUnit(unit.id, fromDetachment: detachment.id, fromRoaster: self.roaster.id, inUnitRole: role.id)
+        }
+
+        return [delete]
+    }
 }
 
 extension RoasterViewController: RoasterRoleTableViewCellDelegate {
