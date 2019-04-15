@@ -30,8 +30,8 @@ final class RoasterRouter {
         navigationController?.present(unitsView, animated: true, completion: nil)
     }
 
-    func presentEditUnitView(unit: SelectedUnitResponse) {
-        let editUnitView = dependencyManager.editUnitBuilder().build(unit: unit)
+    func presentEditUnitView(detachment: DetachmentResponse, unit: SelectedUnitResponse) {
+        let editUnitView = dependencyManager.editUnitBuilder().build(detachment: detachment, unit: unit)
         navigationController?.pushViewController(editUnitView, animated: true)
     }
 }

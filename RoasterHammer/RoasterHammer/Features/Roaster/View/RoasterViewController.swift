@@ -210,6 +210,6 @@ extension RoasterViewController: RoasterUnitTableViewCellDelegate {
             return
         }
 
-        router.presentEditUnitView(unit: unit)
+        router.presentEditUnitView(detachment: detachment, unit: unit)
     }
 }

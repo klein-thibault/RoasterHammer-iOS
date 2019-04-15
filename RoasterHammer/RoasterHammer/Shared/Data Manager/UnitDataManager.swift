@@ -71,18 +71,8 @@ final class UnitDataManager: BaseDataManager {
             body: body,
             headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
 
-        httpClient.perform(request: request) { (response, error) in
-            guard let data = response?.data else {
-                completion(nil, JSONDecodingError.invalidDataType)
-                return
-            }
-
-            do {
-                let detachment: DetachmentResponse = try JSONDecoder().decodeResponse(from: data)
-                completion(detachment, nil)
-            } catch {
-                completion(nil, error)
-            }
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeDetachment(response: response, error: error, completion: completion)
         }
     }
 
@@ -102,18 +92,68 @@ final class UnitDataManager: BaseDataManager {
             body: nil,
             headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
 
-        httpClient.perform(request: request) { (response, error) in
-            guard let data = response?.data else {
-                completion(nil, JSONDecodingError.invalidDataType)
-                return
-            }
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeDetachment(response: response, error: error, completion: completion)
+        }
+    }
 
-            do {
-                let detachment: DetachmentResponse = try JSONDecoder().decodeResponse(from: data)
-                completion(detachment, nil)
-            } catch {
-                completion(nil, error)
-            }
+    func addModelToUnit(detachmentId: Int,
+                        unitId: Int,
+                        modelId: Int,
+                        completion: @escaping (DetachmentResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let request = HTTPRequest(method: .post,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/detachments/\(detachmentId)/units/\(unitId)/models/\(modelId)",
+            queryItems: nil,
+            body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeDetachment(response: response, error: error, completion: completion)
+        }
+    }
+
+    func removeModelFromUnit(detachmentId: Int,
+                             unitId: Int,
+                             modelId: Int,
+                             completion: @escaping (DetachmentResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let request = HTTPRequest(method: .delete,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/detachments/\(detachmentId)/units/\(unitId)/models/\(modelId)",
+            queryItems: nil,
+            body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeDetachment(response: response, error: error, completion: completion)
+        }
+    }
+
+    // MARK: - Private Functions
+
+    private func decodeDetachment(response: HTTPResponse?,
+                                  error: Error?,
+                                  completion: @escaping (DetachmentResponse?, Error?) -> Void) {
+        guard let data = response?.data else {
+            completion(nil, JSONDecodingError.invalidDataType)
+            return
+        }
+
+        do {
+            let detachment: DetachmentResponse = try JSONDecoder().decodeResponse(from: data)
+            completion(detachment, nil)
+        } catch {
+            completion(nil, error)
         }
     }
 }

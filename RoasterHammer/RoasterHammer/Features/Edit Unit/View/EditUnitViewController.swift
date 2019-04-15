@@ -12,7 +12,14 @@ import RoasterHammerShared
 
 final class EditUnitViewController: EditUnitLayoutViewController {
     var interactor: EditUnitViewOutput!
-    private let selectedUnit: SelectedUnitResponse
+    private let detachment: DetachmentResponse
+    private var selectedUnit: SelectedUnitResponse {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    // Fix the data source structure to not use a lazy var.
+    // If we update the data, the lazy var doesn't get updated
     private lazy var uniqueModels: [SelectedModelResponse] = {
         return selectedUnit.models.unique { $0.model.name }
     }()
@@ -25,7 +32,8 @@ final class EditUnitViewController: EditUnitLayoutViewController {
         return result
     }()
 
-    init(unit: SelectedUnitResponse) {
+    init(detachment: DetachmentResponse, unit: SelectedUnitResponse) {
+        self.detachment = detachment
         self.selectedUnit = unit
         super.init()
     }
@@ -88,7 +96,14 @@ extension EditUnitViewController: UITableViewDelegate {
 }
 
 extension EditUnitViewController: EditUnitView {
-    
+    func didReceiveSelectedUnit(unit: SelectedUnitResponse) {
+        self.selectedUnit = unit
+    }
+
+    func didReceiveError(error: Error) {
+        let alert = Alerter().informationalAlert(title: "Error", message: error.localizedDescription)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension EditUnitViewController: TableViewHeaderLabelWithAddButtonDelegate {
@@ -99,6 +114,6 @@ extension EditUnitViewController: TableViewHeaderLabelWithAddButtonDelegate {
             return
         }
 
-        print("Add model named \"\(selectedModel.model.name)\" tapped in section: \(section)")
+        interactor.addModel(selectedModel.model.id, toUnit: selectedUnit.id, inDetachment: detachment.id)
     }
 }

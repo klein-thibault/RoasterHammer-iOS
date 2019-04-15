@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import RoasterHammerShared
 
 protocol EditUnitView: class {
-
+    func didReceiveSelectedUnit(unit: SelectedUnitResponse)
+    func didReceiveError(error: Error)
 }

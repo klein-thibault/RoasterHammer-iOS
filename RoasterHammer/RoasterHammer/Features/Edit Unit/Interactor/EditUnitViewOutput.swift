@@ -9,5 +9,5 @@
 import Foundation
 
 protocol EditUnitViewOutput {
-
+    func addModel(_ modelId: Int, toUnit unitId: Int, inDetachment detachmentId: Int)
 }
