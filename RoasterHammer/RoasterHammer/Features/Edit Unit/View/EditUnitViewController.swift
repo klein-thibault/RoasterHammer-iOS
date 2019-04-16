@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import RoasterHammerShared
 
+typealias ModelsIndex = [Int: [SelectedModelResponse]]
+
 final class EditUnitViewController: EditUnitLayoutViewController {
     var interactor: EditUnitViewOutput!
     private let detachment: DetachmentResponse
@@ -18,19 +20,12 @@ final class EditUnitViewController: EditUnitLayoutViewController {
             tableView.reloadData()
         }
     }
-    // Fix the data source structure to not use a lazy var.
-    // If we update the data, the lazy var doesn't get updated
-    private lazy var uniqueModels: [SelectedModelResponse] = {
+    private var uniqueModels: [SelectedModelResponse] {
         return selectedUnit.models.unique { $0.model.name }
-    }()
-    private lazy var dataSource: [String: [SelectedModelResponse]] = {
-        var result = [String: [SelectedModelResponse]]()
-        for model in self.uniqueModels {
-            result[model.model.name] = selectedUnit.models.filter { $0.model.name == model.model.name }
-        }
-
-        return result
-    }()
+    }
+    private var dataSource: ModelsIndex {
+        return modelsIndex(fromSelectedUnit: selectedUnit)
+    }
 
     init(detachment: DetachmentResponse, unit: SelectedUnitResponse) {
         self.detachment = detachment
@@ -52,6 +47,15 @@ final class EditUnitViewController: EditUnitLayoutViewController {
 
         tableView.reloadData()
     }
+
+    private func modelsIndex(fromSelectedUnit unit: SelectedUnitResponse) -> ModelsIndex {
+        var result: ModelsIndex = [:]
+        for (index, uniqueModel) in uniqueModels.enumerated() {
+            result[index] = selectedUnit.models.filter { $0.model.name == uniqueModel.model.name }
+        }
+
+        return result
+    }
 }
 
 extension EditUnitViewController: UITableViewDataSource {
@@ -60,14 +64,12 @@ extension EditUnitViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let key = Array(dataSource.keys)[section]
-        return dataSource[key]?.count ?? 0
+        return dataSource[section]?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SingleLabelTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
-        let key = Array(dataSource.keys)[indexPath.section]
-        if let models = dataSource[key] {
+        if let models = dataSource[indexPath.section] {
             let model = models[indexPath.row]
             cell.setupWithText(model.model.name)
         }
@@ -76,7 +78,10 @@ extension EditUnitViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionName = Array(dataSource.keys)[section]
+        guard let sectionName = dataSource[section]?.first?.model.name else {
+            return nil
+        }
+
         let frame = CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 44.0)
         let headerView = TableViewHeaderLabelWithAddButton(frame: frame)
         headerView.setupWithTitle(sectionName, section: section, delegate: self)
@@ -95,8 +100,7 @@ extension EditUnitViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let key = Array(dataSource.keys)[indexPath.section]
-        guard let models = dataSource[key] else {
+        guard let models = dataSource[indexPath.section] else {
             return nil
         }
 
@@ -125,8 +129,7 @@ extension EditUnitViewController: EditUnitView {
 
 extension EditUnitViewController: TableViewHeaderLabelWithAddButtonDelegate {
     func tableViewHeaderAddButtonTapped(_ sender: UIButton, inSection section: Int) {
-        let key = Array(dataSource.keys)[section]
-        guard let selectedModel = dataSource[key]?.first else {
+        guard let selectedModel = dataSource[section]?.first else {
             print("Could not find the model associated with the add button")
             return
         }
