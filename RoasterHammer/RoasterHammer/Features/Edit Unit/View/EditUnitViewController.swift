@@ -93,6 +93,23 @@ extension EditUnitViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let key = Array(dataSource.keys)[indexPath.section]
+        guard let models = dataSource[key] else {
+            return nil
+        }
+
+        let model = models[indexPath.row]
+
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [unowned self] (action, indexPath) in
+            self.interactor.removeModel(model.id,
+                                        fromUnit: self.selectedUnit.id,
+                                        inDetachment: self.detachment.id)
+        }
+
+        return [delete]
+    }
 }
 
 extension EditUnitViewController: EditUnitView {
