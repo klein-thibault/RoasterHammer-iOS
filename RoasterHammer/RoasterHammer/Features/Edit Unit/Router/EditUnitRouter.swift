@@ -1,0 +1,26 @@
+//
+//  EditUnitRouter.swift
+//  RoasterHammer
+//
+//  Created by Thibault Klein on 4/22/19.
+//  Copyright © 2019 Thibault Klein. All rights reserved.
+//
+
+import Foundation
+import UIKit
+import RoasterHammerShared
+
+final class EditUnitRouter {
+    private unowned var dependencyManager: DependencyManager
+    weak var navigationController: UINavigationController?
+
+    init(dependencyManager: DependencyManager) {
+        self.dependencyManager = dependencyManager
+    }
+
+    func presentModelWeaponSelection(selectedModel: SelectedModelResponse) {
+        let modelWeaponSelectionView = dependencyManager.modelWeaponSelectionBuilder().build(selectedModel: selectedModel)
+
+        navigationController?.pushViewController(modelWeaponSelectionView, animated: true)
+    }
+}
