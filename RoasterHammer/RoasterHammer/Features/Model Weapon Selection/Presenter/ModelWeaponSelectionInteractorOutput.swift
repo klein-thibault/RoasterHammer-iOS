@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import RoasterHammerShared
 
-protocol ModelWeaponSelectionInteractorOutput {
-
+protocol ModelWeaponSelectionInteractorOutput {    
+    func didReceiveSelectedUnit(unit: SelectedUnitResponse)
+    func didReceiveError(error: Error)
 }

@@ -12,9 +12,15 @@ import RoasterHammerShared
 
 final class ModelWeaponSelectionViewController: ModelWeaponSelectionLayoutViewController {
     var interactor: ModelWeaponSelectionViewOutput!
-    private let selectedModel: SelectedModelResponse
+    private var selectedModel: SelectedModelResponse {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    private let detachment: DetachmentResponse
 
-    init(selectedModel: SelectedModelResponse) {
+    init(detachment: DetachmentResponse, selectedModel: SelectedModelResponse) {
+        self.detachment = detachment
         self.selectedModel = selectedModel
         super.init()
     }
@@ -30,6 +36,11 @@ final class ModelWeaponSelectionViewController: ModelWeaponSelectionLayoutViewCo
 
         tableView.dataSource = self
         tableView.delegate = self
+    }
+
+    fileprivate func isWeaponSelected(weapon: WeaponResponse) -> Bool {
+        let selectedWeapons = selectedModel.selectedWeapons
+        return selectedWeapons.contains(weapon)
     }
 }
 
@@ -47,8 +58,10 @@ extension ModelWeaponSelectionViewController: UITableViewDataSource {
         let cell: SingleLabelTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
         let weaponBucket = selectedModel.model.weaponBuckets[indexPath.section]
         let weapon = weaponBucket.weapons[indexPath.row]
+        let shouldShowCheckmark = isWeaponSelected(weapon: weapon)
 
         cell.setupWithText(weapon.name)
+        cell.accessoryType = shouldShowCheckmark ? .checkmark : .none
 
         return cell
     }
@@ -72,8 +85,27 @@ extension ModelWeaponSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let weaponBucket = selectedModel.model.weaponBuckets[indexPath.section]
+        let weapon = weaponBucket.weapons[indexPath.row]
+
+        interactor.attachWeaponToSelectedModel(weapon.id,
+                                               fromWeaponBucket: weaponBucket.id,
+                                               forModel: selectedModel.id,
+                                               inDetachment: detachment.id)
+    }
 }
 
 extension ModelWeaponSelectionViewController: ModelWeaponSelectionView {
+    func didReceiveSelectedUnit(unit: SelectedUnitResponse) {
+        if let updatedSelectedModel = unit.models.first(where: { $0.id == selectedModel.id }) {
+            self.selectedModel = updatedSelectedModel
+        }
+    }
 
+    func didReceiveError(error: Error) {
+        let alert = Alerter().informationalAlert(title: "Error", message: error.localizedDescription)
+        present(alert, animated: true, completion: nil)
+    }
 }

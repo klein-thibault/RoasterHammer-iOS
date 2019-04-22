@@ -144,8 +144,8 @@ extension EditUnitViewController: TableViewHeaderLabelWithAddButtonDelegate {
 extension EditUnitViewController: SingleLabelWithActionButtonTableViewCellDelegate {
     func singleLabelCellActionButtonTapped(_ sender: UIButton, atIndexPath indexPath: IndexPath) {
         if let models = dataSource[indexPath.section] {
-            let model = models[indexPath.row]
-            router.presentModelWeaponSelection(selectedModel: model)
+            let selectedModel = models[indexPath.row]
+            router.presentModelWeaponSelection(detachment: detachment, selectedModel: selectedModel)
         }
     }
 }

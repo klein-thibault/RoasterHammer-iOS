@@ -23,3 +23,9 @@ extension Array {
         return result
     }
 }
+
+extension Sequence where Element: Equatable {
+    func commonElements(in array: [Element]) -> [Element] {
+        return self.filter { array.contains($0) }
+    }
+}

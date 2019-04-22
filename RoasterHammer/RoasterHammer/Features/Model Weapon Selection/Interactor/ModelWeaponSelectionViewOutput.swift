@@ -9,5 +9,8 @@
 import Foundation
 
 protocol ModelWeaponSelectionViewOutput {
-
+    func attachWeaponToSelectedModel(_ weaponId: Int,
+                                     fromWeaponBucket weaponBucketId: Int,
+                                     forModel modelId: Int,
+                                     inDetachment detachmentId: Int)
 }

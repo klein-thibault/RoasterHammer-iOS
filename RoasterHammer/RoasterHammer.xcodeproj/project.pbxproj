@@ -38,6 +38,8 @@
 		8E19E6BD222B373700051784 /* RoasterInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19E6BC222B373700051784 /* RoasterInteractorOutput.swift */; };
 		8E19E6BF222B373F00051784 /* RoasterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19E6BE222B373F00051784 /* RoasterPresenter.swift */; };
 		8E19E6C2222B37AC00051784 /* RoasterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19E6C1222B37AC00051784 /* RoasterBuilder.swift */; };
+		8E2711BB226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2711BA226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift */; };
+		8E2711BE226E64DD00EDFBD1 /* ArrayUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2711BD226E64DD00EDFBD1 /* ArrayUtilsTests.swift */; };
 		8E311B712225793A00C58DBF /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B702225793A00C58DBF /* HTTPResponse.swift */; };
 		8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B7322257A5F00C58DBF /* AccountDataManager.swift */; };
 		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
@@ -189,6 +191,8 @@
 		8E19E6BC222B373700051784 /* RoasterInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterInteractorOutput.swift; sourceTree = "<group>"; };
 		8E19E6BE222B373F00051784 /* RoasterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterPresenter.swift; sourceTree = "<group>"; };
 		8E19E6C1222B37AC00051784 /* RoasterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterBuilder.swift; sourceTree = "<group>"; };
+		8E2711BA226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeaponResponse+Equatable.swift"; sourceTree = "<group>"; };
+		8E2711BD226E64DD00EDFBD1 /* ArrayUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUtilsTests.swift; sourceTree = "<group>"; };
 		8E311B702225793A00C58DBF /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		8E311B7322257A5F00C58DBF /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
 		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
@@ -492,6 +496,14 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		8E2711BC226E64CE00EDFBD1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8E2711BD226E64DD00EDFBD1 /* ArrayUtilsTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8E311B7222257A5400C58DBF /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +657,7 @@
 		8EE227CB22235FB000DF0D72 /* RoasterHammerTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E2711BC226E64CE00EDFBD1 /* Utils */,
 				8EE227CC22235FB000DF0D72 /* RoasterHammerTests.swift */,
 				8EE227CE22235FB000DF0D72 /* Info.plist */,
 			);
@@ -824,6 +837,7 @@
 				8EFAFD482228A61700DAE956 /* UITableView+IdentifiableView.swift */,
 				8EFAFD592228AAB200DAE956 /* Dictionary+Utils.swift */,
 				8E0F5226224ACFEC0077D859 /* Array+Utils.swift */,
+				8E2711BA226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1248,6 +1262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EFAF5572228513E00DAE956 /* CreateAccountInteractorOutput.swift in Sources */,
+				8E2711BB226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift in Sources */,
 				8EFAF56D2228750200DAE956 /* RoastersViewOutput.swift in Sources */,
 				8E19E6BD222B373700051784 /* RoasterInteractorOutput.swift in Sources */,
 				8EFAF5762228767F00DAE956 /* RoastersView.swift in Sources */,
@@ -1388,6 +1403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EE227CD22235FB000DF0D72 /* RoasterHammerTests.swift in Sources */,
+				8E2711BE226E64DD00EDFBD1 /* ArrayUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

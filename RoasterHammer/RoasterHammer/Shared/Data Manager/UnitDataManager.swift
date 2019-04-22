@@ -139,6 +139,28 @@ final class UnitDataManager: BaseDataManager {
         }
     }
 
+    func attachWeaponToModel(detachmentId: Int,
+                             modelId: Int,
+                             weaponBucketId: Int,
+                             weaponId: Int,
+                             completion: @escaping (DetachmentResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let request = HTTPRequest(method: .post,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/detachments/\(detachmentId)/models/\(modelId)/weapon-buckets/\(weaponBucketId)/weapons/\(weaponId)",
+            queryItems: nil,
+            body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeDetachment(response: response, error: error, completion: completion)
+        }
+    }
+
     // MARK: - Private Functions
 
     private func decodeDetachment(response: HTTPResponse?,

@@ -18,8 +18,9 @@ final class EditUnitRouter {
         self.dependencyManager = dependencyManager
     }
 
-    func presentModelWeaponSelection(selectedModel: SelectedModelResponse) {
-        let modelWeaponSelectionView = dependencyManager.modelWeaponSelectionBuilder().build(selectedModel: selectedModel)
+    func presentModelWeaponSelection(detachment: DetachmentResponse, selectedModel: SelectedModelResponse) {
+        let modelWeaponSelectionView = dependencyManager.modelWeaponSelectionBuilder().build(detachment: detachment,
+                                                                                             selectedModel: selectedModel)
 
         navigationController?.pushViewController(modelWeaponSelectionView, animated: true)
     }

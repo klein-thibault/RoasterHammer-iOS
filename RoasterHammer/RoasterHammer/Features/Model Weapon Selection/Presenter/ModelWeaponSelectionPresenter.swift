@@ -7,7 +7,16 @@
 //
 
 import Foundation
+import RoasterHammerShared
 
 final class ModelWeaponSelectionPresenter: ModelWeaponSelectionInteractorOutput {
     weak var view: ModelWeaponSelectionView!
+
+    func didReceiveSelectedUnit(unit: SelectedUnitResponse) {
+        view.didReceiveSelectedUnit(unit: unit)
+    }
+
+    func didReceiveError(error: Error) {
+        view.didReceiveError(error: error)
+    }
 }

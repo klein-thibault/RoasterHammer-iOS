@@ -11,14 +11,15 @@ import UIKit
 import RoasterHammerShared
 
 protocol ModelWeaponSelectionBuildable {
-    func build(selectedModel: SelectedModelResponse) -> UIViewController
+    func build(detachment: DetachmentResponse, selectedModel: SelectedModelResponse) -> UIViewController
 }
 
 final class ModelWeaponSelectionBuilder: FeatureBuilderBase, ModelWeaponSelectionBuildable {
-    func build(selectedModel: SelectedModelResponse) -> UIViewController {
-        let interactor = ModelWeaponSelectionInteractor()
+    func build(detachment: DetachmentResponse, selectedModel: SelectedModelResponse) -> UIViewController {
+        let unitDataManager = UnitDataManager(environmentManager: dependencyManager.environmentManager)
+        let interactor = ModelWeaponSelectionInteractor(unitDataManager: unitDataManager)
         let presenter = ModelWeaponSelectionPresenter()
-        let view = ModelWeaponSelectionViewController(selectedModel: selectedModel)
+        let view = ModelWeaponSelectionViewController(detachment: detachment, selectedModel: selectedModel)
 
         view.interactor = interactor
         interactor.presenter = presenter
