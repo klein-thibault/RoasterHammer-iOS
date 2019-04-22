@@ -16,7 +16,7 @@ class EditUnitLayoutViewController: BaseViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
-        tableView.registerCell(cellClass: SingleLabelTableViewCell.self)
+        tableView.registerCell(cellClass: SingleLabelWithActionButtonTableViewCell.self)
 
         view.addSubview(tableView)
 

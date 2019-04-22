@@ -14,6 +14,7 @@ typealias ModelsIndex = [Int: [SelectedModelResponse]]
 
 final class EditUnitViewController: EditUnitLayoutViewController {
     var interactor: EditUnitViewOutput!
+    var router: EditUnitRouter!
     private let detachment: DetachmentResponse
     private var selectedUnit: SelectedUnitResponse {
         didSet {
@@ -42,6 +43,8 @@ final class EditUnitViewController: EditUnitLayoutViewController {
 
         title = selectedUnit.unit.name
 
+        router.navigationController = navigationController
+
         tableView.dataSource = self
         tableView.delegate = self
 
@@ -68,10 +71,10 @@ extension EditUnitViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: SingleLabelTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
+        let cell: SingleLabelWithActionButtonTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
         if let models = dataSource[indexPath.section] {
             let model = models[indexPath.row]
-            cell.setupWithText(model.model.name)
+            cell.setupWithTitle(model.model.name, actionButtonTitle: "Select Weapons", indexPath: indexPath, delegate: self)
         }
 
         return cell
@@ -135,5 +138,14 @@ extension EditUnitViewController: TableViewHeaderLabelWithAddButtonDelegate {
         }
 
         interactor.addModel(selectedModel.model.id, toUnit: selectedUnit.id, inDetachment: detachment.id)
+    }
+}
+
+extension EditUnitViewController: SingleLabelWithActionButtonTableViewCellDelegate {
+    func singleLabelCellActionButtonTapped(_ sender: UIButton, atIndexPath indexPath: IndexPath) {
+        if let models = dataSource[indexPath.section] {
+            let model = models[indexPath.row]
+            router.presentModelWeaponSelection(selectedModel: model)
+        }
     }
 }

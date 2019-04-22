@@ -20,8 +20,10 @@ final class EditUnitBuilder: FeatureBuilderBase, EditUnitBuildable {
         let interactor = EditUnitInteractor(unitDataManager: unitDataManager)
         let presenter = EditUnitPresenter()
         let view = EditUnitViewController(detachment: detachment, unit: unit)
+        let router = EditUnitRouter(dependencyManager: dependencyManager)
 
         view.interactor = interactor
+        view.router = router
         interactor.presenter = presenter
         presenter.view = view
 
