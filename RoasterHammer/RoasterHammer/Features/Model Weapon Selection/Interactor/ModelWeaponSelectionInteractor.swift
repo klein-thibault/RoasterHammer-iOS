@@ -26,13 +26,20 @@ final class ModelWeaponSelectionInteractor: ModelWeaponSelectionViewOutput {
         unitDataManager.attachWeaponToModel(detachmentId: detachmentId,
                                             modelId: modelId,
                                             weaponBucketId: weaponBucketId,
-                                            weaponId: weaponId) { [weak self] (detachmnent, error) in
-                                                if let error = error {
-                                                    self?.presenter.didReceiveError(error: error)
-                                                } else if let detachment = detachmnent,
-                                                    let selectedUnit = self?.findSelectedUnit(forModelId: modelId, inDetachment: detachment) {
-                                                    self?.presenter.didReceiveSelectedUnit(unit: selectedUnit)
-                                                }
+                                            weaponId: weaponId) { [weak self] (detachment, error) in
+                                                self?.handleCompletion(modelId: modelId, detachment: detachment, error: error)
+        }
+    }
+
+    func detachWeaponFromSelectedModel(_ weaponId: Int,
+                                       fromWeaponBucket weaponBucketId: Int,
+                                       forModel modelId: Int,
+                                       inDetachment detachmentId: Int) {
+        unitDataManager.detachWeaponFromModel(detachmentId: detachmentId,
+                                              modelId: modelId,
+                                              weaponBucketId: weaponBucketId,
+                                              weaponId: weaponId) { [weak self] (detachment, error) in
+                                                self?.handleCompletion(modelId: modelId, detachment: detachment, error: error)
         }
     }
 
@@ -45,5 +52,14 @@ final class ModelWeaponSelectionInteractor: ModelWeaponSelectionViewOutput {
             .first(where: { unit in
                 return unit.models.filter({ $0.model.id == modelId }).count > 0
             })
+    }
+
+    private func handleCompletion(modelId: Int, detachment: DetachmentResponse?, error: Error?) {
+        if let error = error {
+            presenter.didReceiveError(error: error)
+        } else if let detachment = detachment,
+            let selectedUnit = findSelectedUnit(forModelId: modelId, inDetachment: detachment) {
+            presenter.didReceiveSelectedUnit(unit: selectedUnit)
+        }
     }
 }

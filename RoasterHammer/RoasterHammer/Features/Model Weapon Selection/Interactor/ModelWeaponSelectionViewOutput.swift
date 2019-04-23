@@ -13,4 +13,8 @@ protocol ModelWeaponSelectionViewOutput {
                                      fromWeaponBucket weaponBucketId: Int,
                                      forModel modelId: Int,
                                      inDetachment detachmentId: Int)
+    func detachWeaponFromSelectedModel(_ weaponId: Int,
+                                       fromWeaponBucket weaponBucketId: Int,
+                                       forModel modelId: Int,
+                                       inDetachment detachmentId: Int)
 }

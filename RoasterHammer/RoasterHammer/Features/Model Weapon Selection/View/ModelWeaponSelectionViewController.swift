@@ -90,10 +90,21 @@ extension ModelWeaponSelectionViewController: UITableViewDelegate {
         let weaponBucket = selectedModel.model.weaponBuckets[indexPath.section]
         let weapon = weaponBucket.weapons[indexPath.row]
 
-        interactor.attachWeaponToSelectedModel(weapon.id,
-                                               fromWeaponBucket: weaponBucket.id,
-                                               forModel: selectedModel.id,
-                                               inDetachment: detachment.id)
+        let shouldAttachWeapon = !isWeaponSelected(weapon: weapon)
+
+        if shouldAttachWeapon {
+            interactor.attachWeaponToSelectedModel(weapon.id,
+                                                   fromWeaponBucket: weaponBucket.id,
+                                                   forModel: selectedModel.id,
+                                                   inDetachment: detachment.id)
+        } else {
+            interactor.detachWeaponFromSelectedModel(weapon.id,
+                                                     fromWeaponBucket: weaponBucket.id,
+                                                     forModel: selectedModel.id,
+                                                     inDetachment: detachment.id)
+        }
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
