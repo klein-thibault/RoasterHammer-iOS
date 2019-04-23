@@ -43,7 +43,13 @@ final class RoasterViewController: RoasterLayoutViewController {
         router.navigationController = navigationController
 
         emptyView.isHidden = !roaster.detachments.isEmpty
-        addDetachmentButton.addTarget(self, action: #selector(addDetachmentButtonTapped(_:)), for: .touchUpInside)
+        addDetachmentButton.addTarget(self,
+                                      action: #selector(addDetachmentButtonTapped(_:)),
+                                      for: .touchUpInside)
+        let addDetachmentBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                         target: self,
+                                                         action: #selector(addDetachmentBarButtonItemTapped(_:)))
+        navigationItem.rightBarButtonItem = addDetachmentBarButtonItem
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +61,10 @@ final class RoasterViewController: RoasterLayoutViewController {
     // MARK: - Private Functions
 
     @objc private func addDetachmentButtonTapped(_ sender: UIButton) {
+        router.presentArmySelection(roaster: roaster)
+    }
+
+    @objc private func addDetachmentBarButtonItemTapped(_ sender: UIBarButtonItem) {
         router.presentArmySelection(roaster: roaster)
     }
 
