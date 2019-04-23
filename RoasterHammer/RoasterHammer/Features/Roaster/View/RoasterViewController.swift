@@ -20,6 +20,7 @@ final class RoasterViewController: RoasterLayoutViewController {
         didSet {
             emptyView.isHidden = self.roaster.detachments.count > 0
             tableView.reloadData()
+            title = "\(roaster.totalCost) points"
         }
     }
     private var rolesIndex: RoleIndex = [:]

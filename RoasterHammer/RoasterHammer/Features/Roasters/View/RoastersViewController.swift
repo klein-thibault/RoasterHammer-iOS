@@ -13,7 +13,7 @@ import RoasterHammerShared
 final class RoastersViewController: RoastersLayoutViewController {
     var interactor: RoastersViewOutput!
     var router: RoastersRouter!
-    var roasters: [RoasterResponse] = [] {
+    private var roasters: [RoasterResponse] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -88,7 +88,8 @@ extension RoastersViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SingleLabelTableViewCell = tableView.dequeueIdentifiableCell(for: indexPath)
-        cell.setupWithText(roasters[indexPath.row].name)
+        let roasterName = roasters[indexPath.row].name
+        cell.setupWithText(roasterName)
         return cell
     }
 
