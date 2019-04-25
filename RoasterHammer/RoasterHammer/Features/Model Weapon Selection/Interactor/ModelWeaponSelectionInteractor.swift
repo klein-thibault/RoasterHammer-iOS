@@ -48,14 +48,20 @@ final class ModelWeaponSelectionInteractor: ModelWeaponSelectionViewOutput {
 
     // MARK: - Private Functions
 
-    // TODO: fix bug where model is not found
     private func findSelectedUnit(forModelId modelId: Int,
                                   inDetachment detachment: DetachmentResponse) -> SelectedUnitResponse? {
-        return detachment.roles
-            .flatMap({ $0.units })
-            .first(where: { unit in
-                return unit.models.filter({ $0.model.id == modelId }).count > 0
-            })
+        // Consider revisiting the data structure to avoid a triple loop
+        for role in detachment.roles {
+            for unit in role.units {
+                for model in unit.models {
+                    if model.id == modelId {
+                        return unit
+                    }
+                }
+            }
+        }
+
+        return nil
     }
 
     private func handleCompletion(modelId: Int, detachment: DetachmentResponse?, error: Error?) {
