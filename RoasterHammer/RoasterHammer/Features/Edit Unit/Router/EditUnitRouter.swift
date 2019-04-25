@@ -20,7 +20,7 @@ final class EditUnitRouter {
 
     func presentModelWeaponSelection(detachment: DetachmentResponse,
                                      selectedModel: SelectedModelResponse,
-                                     delegate: ModelWeaponSelectionInteractorDelegate?) {
+                                     delegate: RoasterDetachmentUpdateDelegate?) {
         let modelWeaponSelectionView = dependencyManager.modelWeaponSelectionBuilder().build(detachment: detachment,
                                                                                              selectedModel: selectedModel,
                                                                                              delegate: delegate)

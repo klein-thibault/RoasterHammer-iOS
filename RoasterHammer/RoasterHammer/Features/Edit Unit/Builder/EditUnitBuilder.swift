@@ -13,13 +13,13 @@ import RoasterHammerShared
 protocol EditUnitBuildable {
     func build(detachment: DetachmentResponse,
                selectedUnit: SelectedUnitResponse,
-               delegate: ModelWeaponSelectionInteractorDelegate?) -> UIViewController
+               delegate: RoasterDetachmentUpdateDelegate?) -> UIViewController
 }
 
 final class EditUnitBuilder: FeatureBuilderBase, EditUnitBuildable {
     func build(detachment: DetachmentResponse,
                selectedUnit: SelectedUnitResponse,
-               delegate: ModelWeaponSelectionInteractorDelegate?) -> UIViewController {
+               delegate: RoasterDetachmentUpdateDelegate?) -> UIViewController {
         let unitDataManager = UnitDataManager(environmentManager: dependencyManager.environmentManager)
         let interactor = EditUnitInteractor(unitDataManager: unitDataManager,
                                             selectedUnit: selectedUnit,

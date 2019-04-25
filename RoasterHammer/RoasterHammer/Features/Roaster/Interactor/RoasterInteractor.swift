@@ -44,7 +44,7 @@ final class RoasterInteractor: RoasterViewOutput {
         }
     }
 
-    func modelWeaponSelectionDidUpdateDetachment(detachment: DetachmentResponse) {
+    func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse) {
         getRoasterById(roasterId: roaster.id)
     }
 

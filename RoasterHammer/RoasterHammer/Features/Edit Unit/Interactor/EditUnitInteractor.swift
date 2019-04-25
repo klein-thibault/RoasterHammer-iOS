@@ -13,11 +13,11 @@ final class EditUnitInteractor: EditUnitViewOutput {
     var presenter: EditUnitInteractorOutput!
     private let unitDataManager: UnitDataManager
     private let selectedUnit: SelectedUnitResponse
-    private weak var delegate: ModelWeaponSelectionInteractorDelegate?
+    private weak var delegate: RoasterDetachmentUpdateDelegate?
 
     init(unitDataManager: UnitDataManager,
          selectedUnit: SelectedUnitResponse,
-         delegate: ModelWeaponSelectionInteractorDelegate?) {
+         delegate: RoasterDetachmentUpdateDelegate?) {
         self.unitDataManager = unitDataManager
         self.selectedUnit = selectedUnit
         self.delegate = delegate
@@ -43,7 +43,7 @@ final class EditUnitInteractor: EditUnitViewOutput {
         }
     }
 
-    func modelWeaponSelectionDidUpdateDetachment(detachment: DetachmentResponse) {
+    func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse) {
         handleDetachmentUpdate(detachment: detachment)
     }
 
@@ -55,7 +55,7 @@ final class EditUnitInteractor: EditUnitViewOutput {
     }
 
     private func handleDetachmentUpdate(detachment: DetachmentResponse) {
-        delegate?.modelWeaponSelectionDidUpdateDetachment(detachment: detachment)
+        delegate?.roasterDidReceiveDetachmentUpdate(detachment: detachment)
 
         if let updatedUnit = findSelectedUnit(forUnitId: selectedUnit.id, inDetachment: detachment) {
             presenter.didReceiveSelectedUnit(unit: updatedUnit)

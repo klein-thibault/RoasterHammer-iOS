@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol RoasterViewOutput: ModelWeaponSelectionInteractorDelegate {
+protocol RoasterViewOutput: RoasterDetachmentUpdateDelegate {
     func getRoasterDetails(roasterId: Int)
     func deleteUnit(_ unitId: Int,
                     fromDetachment detachmentId: Int,

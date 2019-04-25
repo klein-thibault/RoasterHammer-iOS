@@ -54,6 +54,7 @@
 		8E90E0B5226DECE90065BBFE /* ModelWeaponSelectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0B4226DECE90065BBFE /* ModelWeaponSelectionBuilder.swift */; };
 		8E90E0B8226DEE1E0065BBFE /* EditUnitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0B7226DEE1E0065BBFE /* EditUnitRouter.swift */; };
 		8E90E0BA226DEF750065BBFE /* SingleLabelWithActionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0B9226DEF750065BBFE /* SingleLabelWithActionButtonTableViewCell.swift */; };
+		8ECBE7292271645F006917CA /* RoasterDetachmentUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBE7282271645F006917CA /* RoasterDetachmentUpdateDelegate.swift */; };
 		8EDA1C87222E088A0005A15B /* DetachmentTypeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */; };
 		8EDA1EF8223159450005A15B /* RoasterRoleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */; };
 		8EE0A2722257C95600CA703B /* TableViewHeaderLabelWithAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE0A2712257C95600CA703B /* TableViewHeaderLabelWithAddButton.swift */; };
@@ -207,6 +208,7 @@
 		8E90E0B4226DECE90065BBFE /* ModelWeaponSelectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionBuilder.swift; sourceTree = "<group>"; };
 		8E90E0B7226DEE1E0065BBFE /* EditUnitRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitRouter.swift; sourceTree = "<group>"; };
 		8E90E0B9226DEF750065BBFE /* SingleLabelWithActionButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelWithActionButtonTableViewCell.swift; sourceTree = "<group>"; };
+		8ECBE7282271645F006917CA /* RoasterDetachmentUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDetachmentUpdateDelegate.swift; sourceTree = "<group>"; };
 		8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeRouter.swift; sourceTree = "<group>"; };
 		8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterRoleTableViewCell.swift; sourceTree = "<group>"; };
 		8EE0A2712257C95600CA703B /* TableViewHeaderLabelWithAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderLabelWithAddButton.swift; sourceTree = "<group>"; };
@@ -610,6 +612,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8ECBE7272271644D006917CA /* Delegation */ = {
+			isa = PBXGroup;
+			children = (
+				8ECBE7282271645F006917CA /* RoasterDetachmentUpdateDelegate.swift */,
+			);
+			path = Delegation;
+			sourceTree = "<group>";
+		};
 		8EDA1C85222E087B0005A15B /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,6 +855,7 @@
 		8EFAF52B2226006C00DAE956 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8ECBE7272271644D006917CA /* Delegation */,
 				8EB6E776223C2DEE0090B125 /* View */,
 				8EFAFD612228AEDF00DAE956 /* Builder */,
 				8EFAF52D2226008C00DAE956 /* Storage */,
@@ -1335,6 +1346,7 @@
 				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
 				8E19B5B5222D6383003F10FA /* DetachmentDataManager.swift in Sources */,
 				8E90E0A9226DEB740065BBFE /* ModelWeaponSelectionViewController.swift in Sources */,
+				8ECBE7292271645F006917CA /* RoasterDetachmentUpdateDelegate.swift in Sources */,
 				8EFA0263222DC7BB00DAE956 /* ArmyDataManager.swift in Sources */,
 				8E03FC47224826D400A39ABF /* EditUnitViewOutput.swift in Sources */,
 				8EFAF56722285BE700DAE956 /* RoastersViewController.swift in Sources */,

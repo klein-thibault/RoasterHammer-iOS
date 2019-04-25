@@ -9,16 +9,13 @@
 import Foundation
 import RoasterHammerShared
 
-protocol ModelWeaponSelectionInteractorDelegate: class {
-    func modelWeaponSelectionDidUpdateDetachment(detachment: DetachmentResponse)
-}
 
 final class ModelWeaponSelectionInteractor: ModelWeaponSelectionViewOutput {
     var presenter: ModelWeaponSelectionInteractorOutput!
-    private weak var delegate: ModelWeaponSelectionInteractorDelegate?
+    private weak var delegate: RoasterDetachmentUpdateDelegate?
     private let unitDataManager: UnitDataManager
 
-    init(unitDataManager: UnitDataManager, delegate: ModelWeaponSelectionInteractorDelegate?) {
+    init(unitDataManager: UnitDataManager, delegate: RoasterDetachmentUpdateDelegate?) {
         self.unitDataManager = unitDataManager
         self.delegate = delegate
     }
@@ -65,7 +62,7 @@ final class ModelWeaponSelectionInteractor: ModelWeaponSelectionViewOutput {
         if let error = error {
             presenter.didReceiveError(error: error)
         } else if let detachment = detachment {
-            delegate?.modelWeaponSelectionDidUpdateDetachment(detachment: detachment)
+            delegate?.roasterDidReceiveDetachmentUpdate(detachment: detachment)
             if let selectedUnit = findSelectedUnit(forModelId: modelId, inDetachment: detachment) {
                 presenter.didReceiveSelectedUnit(unit: selectedUnit)
             }

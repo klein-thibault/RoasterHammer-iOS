@@ -32,7 +32,7 @@ final class RoasterRouter {
 
     func presentEditUnitView(detachment: DetachmentResponse,
                              unit: SelectedUnitResponse,
-                             delegate: ModelWeaponSelectionInteractorDelegate?) {
+                             delegate: RoasterDetachmentUpdateDelegate?) {
         let editUnitView = dependencyManager.editUnitBuilder().build(detachment: detachment,
                                                                      selectedUnit: unit,
                                                                      delegate: delegate)
