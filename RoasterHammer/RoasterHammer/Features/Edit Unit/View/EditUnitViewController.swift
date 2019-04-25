@@ -145,7 +145,9 @@ extension EditUnitViewController: SingleLabelWithActionButtonTableViewCellDelega
     func singleLabelCellActionButtonTapped(_ sender: UIButton, atIndexPath indexPath: IndexPath) {
         if let models = dataSource[indexPath.section] {
             let selectedModel = models[indexPath.row]
-            router.presentModelWeaponSelection(detachment: detachment, selectedModel: selectedModel)
+            router.presentModelWeaponSelection(detachment: detachment,
+                                               selectedModel: selectedModel,
+                                               delegate: interactor)
         }
     }
 }

@@ -11,15 +11,15 @@ import UIKit
 import RoasterHammerShared
 
 protocol EditUnitBuildable {
-    func build(detachment: DetachmentResponse, unit: SelectedUnitResponse) -> UIViewController
+    func build(detachment: DetachmentResponse, selectedUnit: SelectedUnitResponse) -> UIViewController
 }
 
 final class EditUnitBuilder: FeatureBuilderBase, EditUnitBuildable {
-    func build(detachment: DetachmentResponse, unit: SelectedUnitResponse) -> UIViewController {
+    func build(detachment: DetachmentResponse, selectedUnit: SelectedUnitResponse) -> UIViewController {
         let unitDataManager = UnitDataManager(environmentManager: dependencyManager.environmentManager)
-        let interactor = EditUnitInteractor(unitDataManager: unitDataManager)
+        let interactor = EditUnitInteractor(unitDataManager: unitDataManager, selectedUnit: selectedUnit)
         let presenter = EditUnitPresenter()
-        let view = EditUnitViewController(detachment: detachment, unit: unit)
+        let view = EditUnitViewController(detachment: detachment, unit: selectedUnit)
         let router = EditUnitRouter(dependencyManager: dependencyManager)
 
         view.interactor = interactor

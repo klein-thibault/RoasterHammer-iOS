@@ -12,9 +12,12 @@ import RoasterHammerShared
 final class EditUnitInteractor: EditUnitViewOutput {
     var presenter: EditUnitInteractorOutput!
     private let unitDataManager: UnitDataManager
+    private let selectedUnit: SelectedUnitResponse
 
-    init(unitDataManager: UnitDataManager) {
+    init(unitDataManager: UnitDataManager,
+         selectedUnit: SelectedUnitResponse) {
         self.unitDataManager = unitDataManager
+        self.selectedUnit = selectedUnit
     }
 
     func addModel(_ modelId: Int, toUnit unitId: Int, inDetachment detachmentId: Int) {
@@ -39,10 +42,17 @@ final class EditUnitInteractor: EditUnitViewOutput {
         }
     }
 
+    func modelWeaponSelectionDidUpdateDetachment(detachment: DetachmentResponse) {
+        if let updatedUnit = findSelectedUnit(forUnitId: selectedUnit.id, inDetachment: detachment) {
+            presenter.didReceiveSelectedUnit(unit: updatedUnit)
+        }
+    }
+
     // MARK: - Private Functions
 
     private func findSelectedUnit(forUnitId unitId: Int,
                                   inDetachment detachment: DetachmentResponse) -> SelectedUnitResponse? {
         return detachment.roles.flatMap({ $0.units }).first(where: { $0.id == unitId })
     }
+
 }
