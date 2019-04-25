@@ -7,15 +7,20 @@
 //
 
 import Foundation
+import RoasterHammerShared
 
 final class RoasterInteractor: RoasterViewOutput {
     var presenter: RoasterInteractorOutput!
-    let roasterDataManager: RoasterDataManager
-    let unitDataManager: UnitDataManager
+    private let roasterDataManager: RoasterDataManager
+    private let unitDataManager: UnitDataManager
+    private let roaster: RoasterResponse
 
-    init(roasterDataManager: RoasterDataManager, unitDataManager: UnitDataManager) {
+    init(roasterDataManager: RoasterDataManager,
+         unitDataManager: UnitDataManager,
+         roaster: RoasterResponse) {
         self.roasterDataManager = roasterDataManager
         self.unitDataManager = unitDataManager
+        self.roaster = roaster
     }
 
     // MARK: - Public Functions
@@ -37,6 +42,10 @@ final class RoasterInteractor: RoasterViewOutput {
                                                         self?.getRoasterById(roasterId: roasterId)
                                                     }
         }
+    }
+
+    func modelWeaponSelectionDidUpdateDetachment(detachment: DetachmentResponse) {
+        getRoasterById(roasterId: roaster.id)
     }
 
     // MARK: - Private Functions

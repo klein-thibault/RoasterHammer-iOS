@@ -51,10 +51,6 @@ final class RoasterViewController: RoasterLayoutViewController {
                                                          target: self,
                                                          action: #selector(addDetachmentBarButtonItemTapped(_:)))
         navigationItem.rightBarButtonItem = addDetachmentBarButtonItem
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
 
         interactor.getRoasterDetails(roasterId: roaster.id)
     }
@@ -221,6 +217,8 @@ extension RoasterViewController: RoasterUnitTableViewCellDelegate {
             return
         }
 
-        router.presentEditUnitView(detachment: detachment, unit: unit)
+        router.presentEditUnitView(detachment: detachment,
+                                   unit: unit,
+                                   delegate: interactor)
     }
 }

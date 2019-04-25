@@ -51,6 +51,7 @@ final class ModelWeaponSelectionInteractor: ModelWeaponSelectionViewOutput {
 
     // MARK: - Private Functions
 
+    // TODO: fix bug where model is not found
     private func findSelectedUnit(forModelId modelId: Int,
                                   inDetachment detachment: DetachmentResponse) -> SelectedUnitResponse? {
         return detachment.roles
@@ -63,10 +64,11 @@ final class ModelWeaponSelectionInteractor: ModelWeaponSelectionViewOutput {
     private func handleCompletion(modelId: Int, detachment: DetachmentResponse?, error: Error?) {
         if let error = error {
             presenter.didReceiveError(error: error)
-        } else if let detachment = detachment,
-            let selectedUnit = findSelectedUnit(forModelId: modelId, inDetachment: detachment) {
-            presenter.didReceiveSelectedUnit(unit: selectedUnit)
+        } else if let detachment = detachment {
             delegate?.modelWeaponSelectionDidUpdateDetachment(detachment: detachment)
+            if let selectedUnit = findSelectedUnit(forModelId: modelId, inDetachment: detachment) {
+                presenter.didReceiveSelectedUnit(unit: selectedUnit)
+            }
         }
     }
 }

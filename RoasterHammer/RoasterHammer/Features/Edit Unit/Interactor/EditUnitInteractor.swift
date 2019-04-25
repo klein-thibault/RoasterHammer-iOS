@@ -13,20 +13,22 @@ final class EditUnitInteractor: EditUnitViewOutput {
     var presenter: EditUnitInteractorOutput!
     private let unitDataManager: UnitDataManager
     private let selectedUnit: SelectedUnitResponse
+    private weak var delegate: ModelWeaponSelectionInteractorDelegate?
 
     init(unitDataManager: UnitDataManager,
-         selectedUnit: SelectedUnitResponse) {
+         selectedUnit: SelectedUnitResponse,
+         delegate: ModelWeaponSelectionInteractorDelegate?) {
         self.unitDataManager = unitDataManager
         self.selectedUnit = selectedUnit
+        self.delegate = delegate
     }
 
     func addModel(_ modelId: Int, toUnit unitId: Int, inDetachment detachmentId: Int) {
         unitDataManager.addModelToUnit(detachmentId: detachmentId, unitId: unitId, modelId: modelId) { [weak self] (detachment, error) in
             if let error = error {
                 self?.presenter.didReceiveError(error: error)
-            } else if let detachment = detachment,
-                let updatedUnit = self?.findSelectedUnit(forUnitId: unitId, inDetachment: detachment) {
-                self?.presenter.didReceiveSelectedUnit(unit: updatedUnit)
+            } else if let detachment = detachment {
+                self?.handleDetachmentUpdate(detachment: detachment)
             }
         }
     }
@@ -35,17 +37,14 @@ final class EditUnitInteractor: EditUnitViewOutput {
         unitDataManager.removeModelFromUnit(detachmentId: detachmentId, unitId: unitId, modelId: modelId) { [weak self] (detachment, error) in
             if let error = error {
                 self?.presenter.didReceiveError(error: error)
-            } else if let detachment = detachment,
-                let updatedUnit = self?.findSelectedUnit(forUnitId: unitId, inDetachment: detachment) {
-                self?.presenter.didReceiveSelectedUnit(unit: updatedUnit)
+            } else if let detachment = detachment {
+                self?.handleDetachmentUpdate(detachment: detachment)
             }
         }
     }
 
     func modelWeaponSelectionDidUpdateDetachment(detachment: DetachmentResponse) {
-        if let updatedUnit = findSelectedUnit(forUnitId: selectedUnit.id, inDetachment: detachment) {
-            presenter.didReceiveSelectedUnit(unit: updatedUnit)
-        }
+        handleDetachmentUpdate(detachment: detachment)
     }
 
     // MARK: - Private Functions
@@ -53,6 +52,14 @@ final class EditUnitInteractor: EditUnitViewOutput {
     private func findSelectedUnit(forUnitId unitId: Int,
                                   inDetachment detachment: DetachmentResponse) -> SelectedUnitResponse? {
         return detachment.roles.flatMap({ $0.units }).first(where: { $0.id == unitId })
+    }
+
+    private func handleDetachmentUpdate(detachment: DetachmentResponse) {
+        delegate?.modelWeaponSelectionDidUpdateDetachment(detachment: detachment)
+
+        if let updatedUnit = findSelectedUnit(forUnitId: selectedUnit.id, inDetachment: detachment) {
+            presenter.didReceiveSelectedUnit(unit: updatedUnit)
+        }
     }
 
 }

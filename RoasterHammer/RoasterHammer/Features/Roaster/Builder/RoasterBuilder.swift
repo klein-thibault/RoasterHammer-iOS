@@ -18,7 +18,9 @@ final class RoasterBuilder: FeatureBuilderBase, RoasterBuildable {
     func build(roaster: RoasterResponse) -> UIViewController {
         let roasterDataManager = RoasterDataManager(environmentManager: dependencyManager.environmentManager)
         let unitDataManager = UnitDataManager(environmentManager: dependencyManager.environmentManager)
-        let interactor = RoasterInteractor(roasterDataManager: roasterDataManager, unitDataManager: unitDataManager)
+        let interactor = RoasterInteractor(roasterDataManager: roasterDataManager,
+                                           unitDataManager: unitDataManager,
+                                           roaster: roaster)
         let presenter = RoasterPresenter()
         let view = RoasterViewController(roaster: roaster)
         let router = RoasterRouter(dependencyManager: dependencyManager)
