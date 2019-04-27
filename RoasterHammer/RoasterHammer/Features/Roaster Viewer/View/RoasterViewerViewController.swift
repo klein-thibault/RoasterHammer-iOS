@@ -49,11 +49,14 @@ final class RoasterViewerViewController: RoasterViewerLayoutViewController {
 
 extension RoasterViewerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: RoasterSelectedModelCollectionViewCell = collectionView.dequeueIdentifiableCell(for: indexPath)
+
+        let unit = roaster.detachments[0].roles[1].units[0]
+        cell.setupWithUnit(unit)
 
         return cell
     }

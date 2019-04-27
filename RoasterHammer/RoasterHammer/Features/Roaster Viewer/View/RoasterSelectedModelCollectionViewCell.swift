@@ -21,9 +21,12 @@ final class RoasterSelectedModelCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        stackView.axis = .vertical
+        stackView.spacing = 15.0
         stackView.addArrangedSubview(unitHeaderView)
         stackView.addArrangedSubview(modelCharacteristicsView)
         stackView.addArrangedSubview(weaponCharacteristicsView)
+        stackView.addArrangedSubview(UIView(forAutoLayout: ()))
         contentView.addSubview(stackView)
 
         backgroundColor = UIColor.lightGray
@@ -42,6 +45,14 @@ final class RoasterSelectedModelCollectionViewCell: UICollectionViewCell {
 
     func setupWithUnit(_ selectedUnit: SelectedUnitResponse) {
         unitHeaderView.setupWithUnit(selectedUnit)
+
+        if let model = selectedUnit.models.first {
+            modelCharacteristicsView.setupWithModel(model)
+
+            if let weapon = model.selectedWeapons.first {
+                weaponCharacteristicsView.setupWithWeapon(weapon)
+            }
+        }
     }
 }
 
@@ -57,6 +68,8 @@ final class UnitHeaderView: UIView {
         costLabel.textColor = UIColor.black
         stackView.axis = .horizontal
         stackView.alignment = .fill
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 5.0
         stackView.addArrangedSubview(costLabel)
         stackView.addArrangedSubview(nameLabel)
 
@@ -166,6 +179,7 @@ final class ModelCharacteristicsView: UIView {
 
         stackView.axis = .vertical
         stackView.alignment = .fill
+        stackView.spacing = 5.0
         characteristicsHeaderStackView.distribution = .fillEqually
         stackView.addArrangedSubview(characteristicsHeaderStackView)
         stackView.addArrangedSubview(characteristicsValueStackView)
@@ -269,6 +283,8 @@ final class WeaponCharacteristicsView: UIView {
 
         stackView.axis = .vertical
         stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = 5.0
         characteristicsHeaderStackView.distribution = .fillEqually
         stackView.addArrangedSubview(characteristicsHeaderStackView)
         stackView.addArrangedSubview(characteristicsValueStackView)
