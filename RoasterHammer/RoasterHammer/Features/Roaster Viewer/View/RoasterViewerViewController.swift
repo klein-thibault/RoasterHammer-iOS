@@ -29,6 +29,9 @@ final class RoasterViewerViewController: RoasterViewerLayoutViewController {
 
         router.navigationController = navigationController
 
+        collectionView.dataSource = self
+        collectionView.delegate = self
+
         let closeBarButtonItem = UIBarButtonItem(title: "Close",
                                                  style: .plain,
                                                  target: self,
@@ -41,6 +44,22 @@ final class RoasterViewerViewController: RoasterViewerLayoutViewController {
     @objc private func closeBarButtonItemTapped(_ sender: UIBarButtonItem) {
         router.dismiss()
     }
+
+}
+
+extension RoasterViewerViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: RoasterSelectedModelCollectionViewCell = collectionView.dequeueIdentifiableCell(for: indexPath)
+
+        return cell
+    }
+}
+
+extension RoasterViewerViewController: UICollectionViewDelegate {
 
 }
 

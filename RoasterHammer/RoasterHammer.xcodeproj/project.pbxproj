@@ -64,6 +64,8 @@
 		8ED7EE0B22748FAA00A21A38 /* RoasterViewerInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7EE0A22748FAA00A21A38 /* RoasterViewerInteractorOutput.swift */; };
 		8ED7EE0D22748FC300A21A38 /* RoasterViewerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7EE0C22748FC300A21A38 /* RoasterViewerRouter.swift */; };
 		8ED7EE0F22748FD200A21A38 /* RoasterViewerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7EE0E22748FD200A21A38 /* RoasterViewerBuilder.swift */; };
+		8ED7EE132274983800A21A38 /* RoasterSelectedModelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7EE122274983800A21A38 /* RoasterSelectedModelCollectionViewCell.swift */; };
+		8ED7EE152274A2F700A21A38 /* UICollectionView+IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7EE142274A2F700A21A38 /* UICollectionView+IdentifiableView.swift */; };
 		8EDA1C87222E088A0005A15B /* DetachmentTypeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */; };
 		8EDA1EF8223159450005A15B /* RoasterRoleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */; };
 		8EE0A2722257C95600CA703B /* TableViewHeaderLabelWithAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE0A2712257C95600CA703B /* TableViewHeaderLabelWithAddButton.swift */; };
@@ -227,6 +229,8 @@
 		8ED7EE0A22748FAA00A21A38 /* RoasterViewerInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerInteractorOutput.swift; sourceTree = "<group>"; };
 		8ED7EE0C22748FC300A21A38 /* RoasterViewerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerRouter.swift; sourceTree = "<group>"; };
 		8ED7EE0E22748FD200A21A38 /* RoasterViewerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerBuilder.swift; sourceTree = "<group>"; };
+		8ED7EE122274983800A21A38 /* RoasterSelectedModelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterSelectedModelCollectionViewCell.swift; sourceTree = "<group>"; };
+		8ED7EE142274A2F700A21A38 /* UICollectionView+IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+IdentifiableView.swift"; sourceTree = "<group>"; };
 		8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeRouter.swift; sourceTree = "<group>"; };
 		8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterRoleTableViewCell.swift; sourceTree = "<group>"; };
 		8EE0A2712257C95600CA703B /* TableViewHeaderLabelWithAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderLabelWithAddButton.swift; sourceTree = "<group>"; };
@@ -656,6 +660,7 @@
 				8ED7EE0022748F0200A21A38 /* RoasterViewerLayoutViewController.swift */,
 				8ED7EE0222748F2200A21A38 /* RoasterViewerViewController.swift */,
 				8ED7EDFE22748EEE00A21A38 /* RoasterViewerView.swift */,
+				8ED7EE122274983800A21A38 /* RoasterSelectedModelCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -923,6 +928,7 @@
 				8EFAFD592228AAB200DAE956 /* Dictionary+Utils.swift */,
 				8E0F5226224ACFEC0077D859 /* Array+Utils.swift */,
 				8E2711BA226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift */,
+				8ED7EE142274A2F700A21A38 /* UICollectionView+IdentifiableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1372,6 +1378,7 @@
 				8EFAFFF0222DC53100DAE956 /* ArmiesBuilder.swift in Sources */,
 				8EFAF5722228760C00DAE956 /* RoastersInteractorOutput.swift in Sources */,
 				8E19B336222D59E8003F10FA /* DetachmentTypeView.swift in Sources */,
+				8ED7EE132274983800A21A38 /* RoasterSelectedModelCollectionViewCell.swift in Sources */,
 				8EFAFD5C2228AAF900DAE956 /* HTTPClient.swift in Sources */,
 				8ED7EE0722748F7900A21A38 /* RoasterViewerViewOutput.swift in Sources */,
 				8EFAF0402224A91200DAE956 /* LoginViewController.swift in Sources */,
@@ -1409,6 +1416,7 @@
 				8EFAFD452228A50200DAE956 /* SingleLabelTableViewCell.swift in Sources */,
 				8EFAF56322285AF500DAE956 /* RoastersLayoutViewController.swift in Sources */,
 				8EFAFD4F2228A96300DAE956 /* ResponseHandling.swift in Sources */,
+				8ED7EE152274A2F700A21A38 /* UICollectionView+IdentifiableView.swift in Sources */,
 				8EFAFFE6222DC49A00DAE956 /* ArmiesViewController.swift in Sources */,
 				8EFAFD512228A9CB00DAE956 /* HTTPEnvironment.swift in Sources */,
 				8EE0A274225BE60300CA703B /* TableViewHeaderLabel.swift in Sources */,
