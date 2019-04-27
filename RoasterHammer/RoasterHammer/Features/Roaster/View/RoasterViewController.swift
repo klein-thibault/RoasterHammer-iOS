@@ -50,7 +50,10 @@ final class RoasterViewController: RoasterLayoutViewController {
         let addDetachmentBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                          target: self,
                                                          action: #selector(addDetachmentBarButtonItemTapped(_:)))
-        navigationItem.rightBarButtonItem = addDetachmentBarButtonItem
+        let showRoasterViewBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera,
+                                                           target: self,
+                                                           action: #selector(showRoasterViewerBarButtonItemTapped(_:)))
+        navigationItem.rightBarButtonItems = [addDetachmentBarButtonItem, showRoasterViewBarButtonItem]
 
         interactor.getRoasterDetails(roasterId: roaster.id)
     }
@@ -63,6 +66,10 @@ final class RoasterViewController: RoasterLayoutViewController {
 
     @objc private func addDetachmentBarButtonItemTapped(_ sender: UIBarButtonItem) {
         router.presentArmySelection(roaster: roaster)
+    }
+
+    @objc private func showRoasterViewerBarButtonItemTapped(_ sender: UIBarButtonItem) {
+        router.presentRoasterViewer(roaster: roaster)
     }
 
     /*

@@ -38,4 +38,9 @@ final class RoasterRouter {
                                                                      delegate: delegate)
         navigationController?.pushViewController(editUnitView, animated: true)
     }
+
+    func presentRoasterViewer(roaster: RoasterResponse) {
+        let roasterViewer = dependencyManager.roasterViewerBuilder().buildWithNavigationController(roaster: roaster)
+        navigationController?.present(roasterViewer, animated: true, completion: nil)
+    }
 }

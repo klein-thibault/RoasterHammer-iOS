@@ -9,7 +9,6 @@
 import Foundation
 import RoasterHammerShared
 
-
 final class ModelWeaponSelectionInteractor: ModelWeaponSelectionViewOutput {
     var presenter: ModelWeaponSelectionInteractorOutput!
     private weak var delegate: RoasterDetachmentUpdateDelegate?
