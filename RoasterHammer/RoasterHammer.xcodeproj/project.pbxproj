@@ -44,6 +44,9 @@
 		8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B7322257A5F00C58DBF /* AccountDataManager.swift */; };
 		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
 		8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE72224FBB300599834 /* JSONConvertible.swift */; };
+		8E6A8A892275E0D0001DE3D2 /* UnitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */; };
+		8E6A8A8B2275E0EC001DE3D2 /* ModelCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A8A2275E0EC001DE3D2 /* ModelCharacteristicsView.swift */; };
+		8E6A8A8D2275E113001DE3D2 /* WeaponCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A8C2275E113001DE3D2 /* WeaponCharacteristicsView.swift */; };
 		8E90E0A7226DEB230065BBFE /* ModelWeaponSelectionLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0A6226DEB230065BBFE /* ModelWeaponSelectionLayoutViewController.swift */; };
 		8E90E0A9226DEB740065BBFE /* ModelWeaponSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0A8226DEB740065BBFE /* ModelWeaponSelectionViewController.swift */; };
 		8E90E0AB226DEB930065BBFE /* ModelWeaponSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0AA226DEB930065BBFE /* ModelWeaponSelectionView.swift */; };
@@ -209,6 +212,9 @@
 		8E311B7322257A5F00C58DBF /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
 		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
 		8E646CE72224FBB300599834 /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
+		8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitHeaderView.swift; sourceTree = "<group>"; };
+		8E6A8A8A2275E0EC001DE3D2 /* ModelCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCharacteristicsView.swift; sourceTree = "<group>"; };
+		8E6A8A8C2275E113001DE3D2 /* WeaponCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCharacteristicsView.swift; sourceTree = "<group>"; };
 		8E90E0A6226DEB230065BBFE /* ModelWeaponSelectionLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionLayoutViewController.swift; sourceTree = "<group>"; };
 		8E90E0A8226DEB740065BBFE /* ModelWeaponSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionViewController.swift; sourceTree = "<group>"; };
 		8E90E0AA226DEB930065BBFE /* ModelWeaponSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionView.swift; sourceTree = "<group>"; };
@@ -229,7 +235,7 @@
 		8ED7EE0A22748FAA00A21A38 /* RoasterViewerInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerInteractorOutput.swift; sourceTree = "<group>"; };
 		8ED7EE0C22748FC300A21A38 /* RoasterViewerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerRouter.swift; sourceTree = "<group>"; };
 		8ED7EE0E22748FD200A21A38 /* RoasterViewerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerBuilder.swift; sourceTree = "<group>"; };
-		8ED7EE122274983800A21A38 /* RoasterSelectedModelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterSelectedModelCollectionViewCell.swift; sourceTree = "<group>"; };
+		8ED7EE122274983800A21A38 /* RoasterSelectedModelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoasterSelectedModelCollectionViewCell.swift; path = ../RoasterSelectedModelCollectionViewCell.swift; sourceTree = "<group>"; };
 		8ED7EE142274A2F700A21A38 /* UICollectionView+IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+IdentifiableView.swift"; sourceTree = "<group>"; };
 		8EDA1C86222E088A0005A15B /* DetachmentTypeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypeRouter.swift; sourceTree = "<group>"; };
 		8EDA1EF7223159450005A15B /* RoasterRoleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterRoleTableViewCell.swift; sourceTree = "<group>"; };
@@ -568,6 +574,17 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		8E6A8A862275E09D001DE3D2 /* Roaster Viewer Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8ED7EE122274983800A21A38 /* RoasterSelectedModelCollectionViewCell.swift */,
+				8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */,
+				8E6A8A8A2275E0EC001DE3D2 /* ModelCharacteristicsView.swift */,
+				8E6A8A8C2275E113001DE3D2 /* WeaponCharacteristicsView.swift */,
+			);
+			path = "Roaster Viewer Cell";
+			sourceTree = "<group>";
+		};
 		8E90E0A1226DEAEE0065BBFE /* Model Weapon Selection */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,10 +674,10 @@
 		8ED7EDF922748EBE00A21A38 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8E6A8A862275E09D001DE3D2 /* Roaster Viewer Cell */,
 				8ED7EE0022748F0200A21A38 /* RoasterViewerLayoutViewController.swift */,
 				8ED7EE0222748F2200A21A38 /* RoasterViewerViewController.swift */,
 				8ED7EDFE22748EEE00A21A38 /* RoasterViewerView.swift */,
-				8ED7EE122274983800A21A38 /* RoasterSelectedModelCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1414,6 +1431,7 @@
 				8EFAFD5A2228AAB200DAE956 /* Dictionary+Utils.swift in Sources */,
 				8E03FC38224822F100A39ABF /* RoasterUnitTableViewCell.swift in Sources */,
 				8EFAFD452228A50200DAE956 /* SingleLabelTableViewCell.swift in Sources */,
+				8E6A8A8B2275E0EC001DE3D2 /* ModelCharacteristicsView.swift in Sources */,
 				8EFAF56322285AF500DAE956 /* RoastersLayoutViewController.swift in Sources */,
 				8EFAFD4F2228A96300DAE956 /* ResponseHandling.swift in Sources */,
 				8ED7EE152274A2F700A21A38 /* UICollectionView+IdentifiableView.swift in Sources */,
@@ -1426,6 +1444,7 @@
 				8EE4E3A32235B2A30043BDD7 /* UnitsBuilder.swift in Sources */,
 				8E19B344222D5B52003F10FA /* DetachmentTypeBuilder.swift in Sources */,
 				8ED7EE0122748F0200A21A38 /* RoasterViewerLayoutViewController.swift in Sources */,
+				8E6A8A8D2275E113001DE3D2 /* WeaponCharacteristicsView.swift in Sources */,
 				8EFAF531222600C300DAE956 /* Storable.swift in Sources */,
 				8EFAFD5E2228AB1D00DAE956 /* AlamofireHTTPClient.swift in Sources */,
 				8EFAF5552228511900DAE956 /* CreateAccountViewOutput.swift in Sources */,
@@ -1441,6 +1460,7 @@
 				8E19E6B3222B36A600051784 /* RoasterLayoutViewController.swift in Sources */,
 				8ED7EE0D22748FC300A21A38 /* RoasterViewerRouter.swift in Sources */,
 				8EFAF52F2226009F00DAE956 /* AccountDataStore.swift in Sources */,
+				8E6A8A892275E0D0001DE3D2 /* UnitHeaderView.swift in Sources */,
 				8EFAFFEA222DC4C200DAE956 /* ArmiesInteractor.swift in Sources */,
 				8E19B342222D5B1C003F10FA /* DetachmentTypePresenter.swift in Sources */,
 				8EFAF54122284BC200DAE956 /* LoginInteractorOutput.swift in Sources */,
