@@ -13,6 +13,8 @@ import RoasterHammerShared
 final class ModelCharacteristicsView: UIView {
     private let stackView = UIStackView(forAutoLayout: ())
 
+    private let modelNameLabel = UILabel(forAutoLayout: ())
+
     private let characteristicsHeaderStackView = UIStackView(forAutoLayout: ())
     private let characteristicsValueStackView = UIStackView(forAutoLayout: ())
 
@@ -37,6 +39,9 @@ final class ModelCharacteristicsView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        modelNameLabel.textColor = UIColor.black
+        modelNameLabel.font = UIFont.preferredFont(forTextStyle: .headline)
 
         movementHeaderLabel.textColor = UIColor.black
         weaponSkillHeaderLabel.textColor = UIColor.black
@@ -98,6 +103,7 @@ final class ModelCharacteristicsView: UIView {
         stackView.alignment = .fill
         stackView.spacing = 5.0
         characteristicsHeaderStackView.distribution = .fillEqually
+        stackView.addArrangedSubview(modelNameLabel)
         stackView.addArrangedSubview(characteristicsHeaderStackView)
         stackView.addArrangedSubview(characteristicsValueStackView)
 
@@ -116,6 +122,7 @@ final class ModelCharacteristicsView: UIView {
     }
 
     func setupWithModel(_ selectedModel: SelectedModelResponse) {
+        modelNameLabel.text = selectedModel.model.name
         movementLabel.text = selectedModel.model.characteristics.movement
         weaponSkillLabel.text = selectedModel.model.characteristics.weaponSkill
         balisticSkillLabel.text = selectedModel.model.characteristics.balisticSkill
