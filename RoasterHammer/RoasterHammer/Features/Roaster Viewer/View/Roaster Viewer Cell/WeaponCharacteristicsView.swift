@@ -43,12 +43,15 @@ final class WeaponCharacteristicsView: UIView {
         abilityHeaderLabel.textColor = UIColor.black
 
         nameLabel.textColor = UIColor.black
+        nameLabel.numberOfLines = 2
         rangeLabel.textColor = UIColor.black
         typeLabel.textColor = UIColor.black
+        typeLabel.numberOfLines = 2
         strengthLabel.textColor = UIColor.black
         armorPiercingLabel.textColor = UIColor.black
         damageLabel.textColor = UIColor.black
         abilityLabel.textColor = UIColor.black
+        abilityLabel.numberOfLines = 0
 
         nameHeaderLabel.text = "Name"
         rangeHeaderLabel.text = "Range"
