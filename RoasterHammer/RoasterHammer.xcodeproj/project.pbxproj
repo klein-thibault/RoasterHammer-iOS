@@ -59,6 +59,7 @@
 		8E90E0BA226DEF750065BBFE /* SingleLabelWithActionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0B9226DEF750065BBFE /* SingleLabelWithActionButtonTableViewCell.swift */; };
 		8EAEB933227CB9680047BB61 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEB932227CB9680047BB61 /* RulesView.swift */; };
 		8EAEBBA4227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEBBA3227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift */; };
+		8EAEBBA6227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEBBA5227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift */; };
 		8ECBE7292271645F006917CA /* RoasterDetachmentUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBE7282271645F006917CA /* RoasterDetachmentUpdateDelegate.swift */; };
 		8ED7EDFF22748EEE00A21A38 /* RoasterViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7EDFE22748EEE00A21A38 /* RoasterViewerView.swift */; };
 		8ED7EE0122748F0200A21A38 /* RoasterViewerLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7EE0022748F0200A21A38 /* RoasterViewerLayoutViewController.swift */; };
@@ -229,6 +230,7 @@
 		8E90E0B9226DEF750065BBFE /* SingleLabelWithActionButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelWithActionButtonTableViewCell.swift; sourceTree = "<group>"; };
 		8EAEB932227CB9680047BB61 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		8EAEBBA3227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterSelectedDetachmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		8EAEBBA5227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterSelectionBaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		8ECBE7282271645F006917CA /* RoasterDetachmentUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDetachmentUpdateDelegate.swift; sourceTree = "<group>"; };
 		8ED7EDFE22748EEE00A21A38 /* RoasterViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerView.swift; sourceTree = "<group>"; };
 		8ED7EE0022748F0200A21A38 /* RoasterViewerLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerLayoutViewController.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 		8E6A8A862275E09D001DE3D2 /* Roaster Viewer Cell */ = {
 			isa = PBXGroup;
 			children = (
+				8EAEBBA5227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift */,
 				8EAEBBA3227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift */,
 				8ED7EE122274983800A21A38 /* RoasterSelectedModelCollectionViewCell.swift */,
 				8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */,
@@ -1471,6 +1474,7 @@
 				8EFAFFEA222DC4C200DAE956 /* ArmiesInteractor.swift in Sources */,
 				8E19B342222D5B1C003F10FA /* DetachmentTypePresenter.swift in Sources */,
 				8EFAF54122284BC200DAE956 /* LoginInteractorOutput.swift in Sources */,
+				8EAEBBA6227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift in Sources */,
 				8E19D7EB222AB69E00051784 /* GameDataStore.swift in Sources */,
 				8EFAF56A22285D1400DAE956 /* RoastersBuilder.swift in Sources */,
 				8E19D7ED222ABA2900051784 /* RoasterDataManager.swift in Sources */,
