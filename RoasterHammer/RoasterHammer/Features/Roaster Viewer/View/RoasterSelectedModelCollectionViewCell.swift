@@ -25,7 +25,6 @@ final class RoasterSelectedModelCollectionViewCell: UICollectionViewCell {
         stackView.distribution = .fill
         stackView.spacing = 15.0
         stackView.addArrangedSubview(unitHeaderView)
-        stackView.addArrangedSubview(UIView(forAutoLayout: ()))
         scrollView.addSubview(stackView)
 
         contentView.addSubview(scrollView)
@@ -45,6 +44,16 @@ final class RoasterSelectedModelCollectionViewCell: UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        let arrangedSubviews = stackView.arrangedSubviews
+
+        for index in 1...arrangedSubviews.count - 1 {
+            arrangedSubviews[index].removeFromSuperview()
+        }
     }
 
     func setupWithUnit(_ selectedUnit: SelectedUnitResponse) {
@@ -67,6 +76,9 @@ final class RoasterSelectedModelCollectionViewCell: UICollectionViewCell {
             rulesView.setupWithRules(selectedUnit.unit.rules)
             stackView.addArrangedSubview(rulesView)
         }
+
+        // Bottom spacing view
+        stackView.addArrangedSubview(UIView(forAutoLayout: ()))
     }
 }
 

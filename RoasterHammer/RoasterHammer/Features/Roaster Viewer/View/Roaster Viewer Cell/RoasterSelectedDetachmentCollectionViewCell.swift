@@ -47,6 +47,16 @@ final class RoasterSelectedDetachmentCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        let arrangedSubviews = stackView.arrangedSubviews
+
+        for index in 1...arrangedSubviews.count - 1 {
+            arrangedSubviews[index].removeFromSuperview()
+        }
+    }
+
     func setupWithDetachment(_ detachment: DetachmentResponse) {
         detachmentNameLabel.text = detachment.name
 
