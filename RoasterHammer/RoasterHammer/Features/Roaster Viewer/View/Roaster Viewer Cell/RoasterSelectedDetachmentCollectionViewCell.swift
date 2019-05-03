@@ -11,12 +11,12 @@ import UIKit
 import RoasterHammerShared
 
 final class RoasterSelectedDetachmentCollectionViewCell: RoasterSelectionBaseCollectionViewCell {
-    private let detachmentNameLabel = UILabel(forAutoLayout: ())
+    private let detachmentHeaderView = DetachmentHeaderView(forAutoLayout: ())
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        stackView.addArrangedSubview(detachmentNameLabel)
+        stackView.addArrangedSubview(detachmentHeaderView)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ final class RoasterSelectedDetachmentCollectionViewCell: RoasterSelectionBaseCol
     }
 
     func setupWithDetachment(_ detachment: DetachmentResponse) {
-        detachmentNameLabel.text = detachment.name
+        detachmentHeaderView.setupWithDetachment(detachment)
 
         if detachment.army.rules.count > 0 {
             let rulesView = RulesView(forAutoLayout: ())
