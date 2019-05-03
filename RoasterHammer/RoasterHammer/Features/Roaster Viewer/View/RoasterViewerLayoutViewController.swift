@@ -26,6 +26,8 @@ class RoasterViewerLayoutViewController: BaseViewController {
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: collectionViewFlowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isPagingEnabled = true
+        collectionView.backgroundColor = UIColor.white
+        collectionView.registerCell(cellClass: RoasterSelectedDetachmentCollectionViewCell.self)
         collectionView.registerCell(cellClass: RoasterSelectedModelCollectionViewCell.self)
 
         view.addSubview(collectionView)

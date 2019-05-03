@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 import RoasterHammerShared
 
-final class UnitRulesView: UIView {
+final class RulesView: UIView {
     private let stackView = UIStackView(forAutoLayout: ())
-    private let unitRuleViewHeaderLabel = UILabel(forAutoLayout: ())
+    private let ruleViewHeaderLabel = UILabel(forAutoLayout: ())
 
     private let rulesHeaderStackView = UIStackView(forAutoLayout: ())
 
@@ -22,9 +22,9 @@ final class UnitRulesView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        unitRuleViewHeaderLabel.textColor = UIColor.black
-        unitRuleViewHeaderLabel.font = UIFont.preferredFont(forTextStyle: .headline)
-        unitRuleViewHeaderLabel.text = "Rules"
+        ruleViewHeaderLabel.textColor = UIColor.black
+        ruleViewHeaderLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        ruleViewHeaderLabel.text = "Rules"
 
         ruleNameHeaderLabel.textColor = UIColor.black
         ruleDescriptionHeaderLabel.textColor = UIColor.black
@@ -34,15 +34,16 @@ final class UnitRulesView: UIView {
 
         rulesHeaderStackView.axis = .horizontal
         rulesHeaderStackView.alignment = .fill
-        rulesHeaderStackView.distribution = .fillEqually
+        rulesHeaderStackView.distribution = .fill
+        rulesHeaderStackView.spacing = 5.0
         rulesHeaderStackView.addArrangedSubview(ruleNameHeaderLabel)
         rulesHeaderStackView.addArrangedSubview(ruleDescriptionHeaderLabel)
 
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
-        stackView.spacing = 5.0
-        stackView.addArrangedSubview(unitRuleViewHeaderLabel)
+        stackView.spacing = 10.0
+        stackView.addArrangedSubview(ruleViewHeaderLabel)
         stackView.addArrangedSubview(rulesHeaderStackView)
 
         addSubview(stackView)
@@ -60,19 +61,26 @@ final class UnitRulesView: UIView {
     }
 
     func setupWithRules(_ rules: [RuleResponse]) {
+        ruleNameHeaderLabel.widthAnchor.constraint(equalToConstant: 75.0).isActive = true
+
         for rule in rules {
             let ruleStackView = UIStackView(forAutoLayout: ())
             let ruleNameLabel = UILabel(forAutoLayout: ())
             let ruleDescriptionLabel = UILabel(forAutoLayout: ())
 
+            ruleNameLabel.widthAnchor.constraint(equalToConstant: 75.0).isActive = true
+
             ruleNameLabel.textColor = UIColor.black
             ruleNameLabel.text = rule.name
+            ruleNameLabel.numberOfLines = 0
             ruleDescriptionLabel.textColor = UIColor.black
             ruleDescriptionLabel.text = rule.description
+            ruleDescriptionLabel.numberOfLines = 0
 
             ruleStackView.axis = .horizontal
             ruleStackView.alignment = .fill
-            ruleStackView.distribution = .fillEqually
+            ruleStackView.distribution = .fill
+            ruleStackView.spacing = 10.0
             ruleStackView.addArrangedSubview(ruleNameLabel)
             ruleStackView.addArrangedSubview(ruleDescriptionLabel)
 

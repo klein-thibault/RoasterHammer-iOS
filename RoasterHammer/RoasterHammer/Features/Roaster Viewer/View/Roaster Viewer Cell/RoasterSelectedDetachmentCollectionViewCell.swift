@@ -1,8 +1,8 @@
 //
-//  RoasterSelectedModelCollectionViewCell.swift
+//  RoasterSelectedDetachmentCollectionViewCell.swift
 //  RoasterHammer
 //
-//  Created by Thibault Klein on 4/27/19.
+//  Created by Thibault Klein on 5/3/19.
 //  Copyright © 2019 Thibault Klein. All rights reserved.
 //
 
@@ -10,24 +10,24 @@ import Foundation
 import UIKit
 import RoasterHammerShared
 
-final class RoasterSelectedModelCollectionViewCell: UICollectionViewCell {
+final class RoasterSelectedDetachmentCollectionViewCell: UICollectionViewCell {
     private let scrollView = UIScrollView(forAutoLayout: ())
     private let stackView = UIStackView(forAutoLayout: ())
-    private let unitHeaderView = UnitHeaderView(forAutoLayout: ())
+    private let detachmentNameLabel = UILabel(forAutoLayout: ())
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         backgroundColor = UIColor.white
 
+        detachmentNameLabel.textColor = UIColor.black
+
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.spacing = 15.0
-        stackView.addArrangedSubview(unitHeaderView)
-        stackView.addArrangedSubview(UIView(forAutoLayout: ()))
+        stackView.addArrangedSubview(detachmentNameLabel)
         scrollView.addSubview(stackView)
-
         contentView.addSubview(scrollView)
 
         NSLayoutConstraint.activate([
@@ -47,26 +47,13 @@ final class RoasterSelectedModelCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupWithUnit(_ selectedUnit: SelectedUnitResponse) {
-        unitHeaderView.setupWithUnit(selectedUnit)
+    func setupWithDetachment(_ detachment: DetachmentResponse) {
+        detachmentNameLabel.text = detachment.name
 
-        for model in selectedUnit.models {
-            let modelCharacteristicsView = ModelCharacteristicsView(forAutoLayout: ())
-            stackView.addArrangedSubview(modelCharacteristicsView)
-            modelCharacteristicsView.setupWithModel(model)
-
-            for weapon in model.selectedWeapons {
-                let weaponCharacteristicsView = WeaponCharacteristicsView(forAutoLayout: ())
-                stackView.addArrangedSubview(weaponCharacteristicsView)
-                weaponCharacteristicsView.setupWithWeapon(weapon)
-            }
-        }
-
-        if selectedUnit.unit.rules.count > 0 {
+        if detachment.army.rules.count > 0 {
             let rulesView = RulesView(forAutoLayout: ())
-            rulesView.setupWithRules(selectedUnit.unit.rules)
+            rulesView.setupWithRules(detachment.army.rules)
             stackView.addArrangedSubview(rulesView)
         }
     }
 }
-
