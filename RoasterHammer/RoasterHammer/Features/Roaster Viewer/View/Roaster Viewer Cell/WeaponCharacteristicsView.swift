@@ -87,7 +87,6 @@ final class WeaponCharacteristicsView: UIView {
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.spacing = 5.0
-        characteristicsHeaderStackView.distribution = .fillEqually
         stackView.addArrangedSubview(characteristicsHeaderStackView)
         stackView.addArrangedSubview(characteristicsValueStackView)
 

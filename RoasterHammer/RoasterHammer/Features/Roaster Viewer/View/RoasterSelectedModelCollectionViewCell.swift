@@ -14,6 +14,7 @@ final class RoasterSelectedModelCollectionViewCell: UICollectionViewCell {
     private let scrollView = UIScrollView(forAutoLayout: ())
     private let stackView = UIStackView(forAutoLayout: ())
     private let unitHeaderView = UnitHeaderView(forAutoLayout: ())
+    private let unitRulesView = UnitRulesView(forAutoLayout: ())
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,6 +61,12 @@ final class RoasterSelectedModelCollectionViewCell: UICollectionViewCell {
                 weaponCharacteristicsView.setupWithWeapon(weapon)
             }
         }
+
+        if selectedUnit.unit.rules.count > 0 {
+
+        }
+        unitRulesView.setupWithRules(selectedUnit.unit.rules)
+        stackView.addArrangedSubview(unitRulesView)
     }
 }
 
