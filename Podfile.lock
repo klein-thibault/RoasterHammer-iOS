@@ -1,12 +1,12 @@
 PODS:
   - Alamofire (4.8.2)
-  - RoasterHammerShared (0.0.20):
-    - RoasterHammerShared/Core (= 0.0.20)
-  - RoasterHammerShared/Core (0.0.20)
+  - RoasterHammerShared (0.0.30):
+    - RoasterHammerShared/Core (= 0.0.30)
+  - RoasterHammerShared/Core (0.0.30)
 
 DEPENDENCIES:
   - Alamofire
-  - "RoasterHammerShared (from `git@github.com:klein-thibault/RoasterHammer-Shared.git`, tag `0.0.20`)"
+  - "RoasterHammerShared (from `git@github.com:klein-thibault/RoasterHammer-Shared.git`, tag `0.0.30`)"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -15,17 +15,17 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   RoasterHammerShared:
     :git: "git@github.com:klein-thibault/RoasterHammer-Shared.git"
-    :tag: 0.0.20
+    :tag: 0.0.30
 
 CHECKOUT OPTIONS:
   RoasterHammerShared:
     :git: "git@github.com:klein-thibault/RoasterHammer-Shared.git"
-    :tag: 0.0.20
+    :tag: 0.0.30
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  RoasterHammerShared: 53fdb64da1239bb5c21efb4d7a50a0e82cb80feb
+  RoasterHammerShared: 53d84fa4ea78b261b69ed6b73eb24f5ce3796cd4
 
-PODFILE CHECKSUM: 437e3b77be3c2bb4befbc4dc9b18ad5b69e02abf
+PODFILE CHECKSUM: b378e851a036c9c335255aa92dd01149612a4022
 
 COCOAPODS: 1.5.3

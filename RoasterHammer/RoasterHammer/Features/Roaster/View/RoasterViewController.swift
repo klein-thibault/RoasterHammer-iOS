@@ -187,7 +187,7 @@ extension RoasterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let detachment = roaster.detachments[indexPath.section]
         let roleIndexes = rolesIndexes(fromDetachment: detachment)
-        var unitIndexes = unitsIndexes(fromDetachment: detachment)
+        let unitIndexes = unitsIndexes(fromDetachment: detachment)
 
         guard let unit = unitIndexes[indexPath.row],
             let role = roleIndexes.filter({ $0.value.units.contains(where: { $0.id == unit.id })}).first?.value else {
