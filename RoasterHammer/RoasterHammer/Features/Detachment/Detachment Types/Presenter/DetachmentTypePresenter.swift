@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 final class DetachmentTypePresenter: DetachmentTypeInteractorOutput {
     weak var view: DetachmentTypeView!

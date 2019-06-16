@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 typealias RoleIndex = [Int: RoleResponse]
 typealias UnitIndex = [Int: SelectedUnitResponse]

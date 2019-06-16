@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 protocol UnitsBuildable {
     func build(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UIViewController

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 final class GameDataManager: BaseDataManager {
     private let accountStore = AccountDataStore()

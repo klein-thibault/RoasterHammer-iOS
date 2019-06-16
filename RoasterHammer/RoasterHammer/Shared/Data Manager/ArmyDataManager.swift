@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 final class ArmyDataManager: BaseDataManager {
     func getArmies(completion: @escaping ([ArmyResponse]?, Error?) -> Void) {

@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import UIKit
+import RoasterHammer_Shared
 
 protocol DetachmentTypeBuildable {
     func build(armyId: Int, roaster: RoasterResponse) -> UIViewController

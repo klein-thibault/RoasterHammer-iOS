@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 final class RoasterSelectedDetachmentCollectionViewCell: RoasterSelectionBaseCollectionViewCell {
     private let detachmentHeaderView = DetachmentHeaderView(forAutoLayout: ())

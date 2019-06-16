@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 extension WeaponResponse: Equatable {
     public static func == (lhs: WeaponResponse, rhs: WeaponResponse) -> Bool {

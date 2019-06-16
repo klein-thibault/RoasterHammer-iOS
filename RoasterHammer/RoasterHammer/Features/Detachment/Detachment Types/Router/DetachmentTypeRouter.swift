@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 final class DetachmentTypeRouter {
     private unowned var dependencyManager: DependencyManager

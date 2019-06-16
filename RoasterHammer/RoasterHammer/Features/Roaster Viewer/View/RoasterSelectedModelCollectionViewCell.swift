@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 final class RoasterSelectedModelCollectionViewCell: RoasterSelectionBaseCollectionViewCell {
     private let unitHeaderView = UnitHeaderView(forAutoLayout: ())

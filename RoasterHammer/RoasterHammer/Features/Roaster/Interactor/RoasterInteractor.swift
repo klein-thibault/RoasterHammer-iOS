@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 final class RoasterInteractor: RoasterViewOutput {
     var presenter: RoasterInteractorOutput!

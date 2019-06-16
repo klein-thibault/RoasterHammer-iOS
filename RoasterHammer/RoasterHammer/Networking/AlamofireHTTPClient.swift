@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Alamofire
 
 final class AlamofireHTTPClient: HTTPClient, ResponseHandling {

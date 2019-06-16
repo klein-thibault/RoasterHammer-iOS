@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 final class ArmiesRouter {
     private unowned var dependencyManager: DependencyManager

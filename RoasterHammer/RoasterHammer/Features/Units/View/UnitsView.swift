@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 protocol UnitsView: class {
     func didReceiveUnits(_ units: [UnitResponse])

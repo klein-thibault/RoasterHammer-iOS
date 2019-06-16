@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 final class RoastersPresenter: RoastersInteractorOutput {
     weak var view: RoastersView!

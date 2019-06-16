@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 protocol DetachmentTypeView: class {
     func displayDetachmentTypes(detachmentTypes: [DetachmentShortResponse])

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 protocol RoasterDetachmentUpdateDelegate: class {
     func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse)

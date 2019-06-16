@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 extension CreateUserRequest: JSONConvertible {
     func toJSON() -> JSON {

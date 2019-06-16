@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 protocol ModelWeaponSelectionBuildable {
     func build(detachment: DetachmentResponse,

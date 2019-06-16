@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 extension AddUnitToDetachmentRequest: JSONConvertible {
     func toJSON() -> JSON {

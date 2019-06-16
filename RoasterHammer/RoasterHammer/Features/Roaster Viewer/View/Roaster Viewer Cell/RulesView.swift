@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 final class RulesView: UIView {
     private let stackView = UIStackView(forAutoLayout: ())

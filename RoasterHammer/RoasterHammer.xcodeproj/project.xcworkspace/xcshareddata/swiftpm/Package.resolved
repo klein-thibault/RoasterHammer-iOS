@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire",
+        "state": {
+          "branch": null,
+          "revision": "75bba56748359f297a83f620d45f72cf4ebee4e7",
+          "version": "4.8.2"
+        }
+      },
+      {
+        "package": "RoasterHammerShared",
+        "repositoryURL": "https://github.com/klein-thibault/RoasterHammer-Shared.git",
+        "state": {
+          "branch": null,
+          "revision": "1e8298607279cfd17cab263e118b927e82eff332",
+          "version": "0.0.30"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

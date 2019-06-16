@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RoasterHammerShared
+import RoasterHammer_Shared
 
 protocol ModelWeaponSelectionView: class {
     func didReceiveSelectedUnit(unit: SelectedUnitResponse)
