@@ -11,6 +11,7 @@ import UIKit
 
 protocol RoastersBuildable {
     func build() -> UIViewController
+    func buildDataStore() -> RoastersInteractor
 }
 
 final class RoastersBuilder: FeatureBuilderBase, RoastersBuildable {
@@ -29,5 +30,14 @@ final class RoastersBuilder: FeatureBuilderBase, RoastersBuildable {
         presenter.view = view
 
         return view
+    }
+
+    func buildDataStore() -> RoastersInteractor {
+        let environmentManager = dependencyManager.environmentManager
+        let accountDataManager = AccountDataManager(environmentManager: environmentManager)
+        let roastersDataManager = RoasterDataManager(environmentManager: environmentManager)
+        let interactor = RoastersInteractor(accountDataManager: accountDataManager, roastersDataManager: roastersDataManager)
+
+        return interactor
     }
 }

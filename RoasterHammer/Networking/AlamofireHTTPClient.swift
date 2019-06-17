@@ -7,19 +7,16 @@
 //
 
 import Foundation
-import UIKit
 import Alamofire
 
 final class AlamofireHTTPClient: HTTPClient, ResponseHandling {
     func perform(request: HTTPRequest, completion: @escaping (HTTPResponse?, Error?) -> Void) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         Alamofire.request(request.endpoint,
                           method: request.method.alamofireMethod,
                           parameters: request.body,
                           encoding: JSONEncoding.default,
                           headers: request.headers)
             .responseData { [weak self] (response: DataResponse<Data>) in
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self?.handleResponse(response: response, completion: completion)
         }
     }

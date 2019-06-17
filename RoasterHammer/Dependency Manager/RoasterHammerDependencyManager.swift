@@ -20,12 +20,7 @@ final class RoasterHammerDependencyManager: DependencyManager {
 
     // MARK: - DependencyManager
 
-    func startApplication(window: UIWindow?) {
-        let roastersViewController = RoasterHammerDependencyManager.shared.roastersBuilder().build()
-        let navigationController = UINavigationController(rootViewController: roastersViewController)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
-    }
+    func startApplication() { }
 
     // MARK: - FeatureFactory
 

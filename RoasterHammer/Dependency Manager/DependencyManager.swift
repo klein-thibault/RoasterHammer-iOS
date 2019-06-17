@@ -12,5 +12,5 @@ import UIKit
 protocol DependencyManager: class, FeatureFactory {
     var environmentManager: HTTPEnvironmentManager { get }
 
-    func startApplication(window: UIWindow?)
+    func startApplication()
 }
