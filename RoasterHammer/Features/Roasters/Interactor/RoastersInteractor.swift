@@ -12,7 +12,6 @@ import Combine
 import RoasterHammer_Shared
 
 final class RoastersInteractor: RoastersViewOutput, BindableObject {
-    var presenter: RoastersInteractorOutput!
     var roasters: [RoasterResponse] = [] {
         didSet {
             didChange.send(self)
@@ -35,30 +34,6 @@ final class RoastersInteractor: RoastersViewOutput, BindableObject {
                 self?.roasters = roasters
             } else if let _ = error {
                 self?.roasters = []
-            }
-        }
-    }
-
-    func accountButtonTapped() {
-        if !accountDataManager.isUserLoggedIn() {
-            presenter.shouldPresentLoginView()
-        } else {
-            presenter.shouldPresentAccountView()
-        }
-    }
-
-    func addRoasterButtonTappedWithName(_ name: String) {
-        roastersDataManager.createRoaster(name: name) { [weak self] (roaster, error) in
-            if let error = error {
-                self?.presenter.didReceiveError(error)
-            } else if roaster != nil {
-                self?.roastersDataManager.getRoasters(completion: { (roasters, error) in
-                    if let error = error {
-                        self?.presenter.didReceiveError(error)
-                    } else if let roasters = roasters {
-                        self?.presenter.didReceiveRoasters(roasters: roasters)
-                    }
-                })
             }
         }
     }

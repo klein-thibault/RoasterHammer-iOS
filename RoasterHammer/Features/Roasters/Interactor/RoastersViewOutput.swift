@@ -10,6 +10,4 @@ import Foundation
 
 protocol RoastersViewOutput {
     func getRoasters()
-    func accountButtonTapped()
-    func addRoasterButtonTappedWithName(_ name: String)
 }

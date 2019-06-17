@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let roastersBuilder = RoasterHammerDependencyManager.shared.roastersBuilder()
         window.rootViewController = UIHostingController(
-            rootView: RoastersUI().environmentObject(roastersBuilder.buildDataStore())
+            rootView: RoastersView().environmentObject(roastersBuilder.buildDataStore())
         )
         self.window = window
         window.makeKeyAndVisible()
