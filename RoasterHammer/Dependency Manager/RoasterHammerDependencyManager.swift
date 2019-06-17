@@ -24,16 +24,8 @@ final class RoasterHammerDependencyManager: DependencyManager {
 
     // MARK: - FeatureFactory
 
-    func loginBuilder() -> LoginBuildable {
-        return LoginBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
-    }
-
     func accountBuilder() -> AccountBuildable {
         return AccountBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
-    }
-
-    func createAccountBuilder() -> CreateAccountBuildable {
-        return CreateAccountBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
 
     func roastersBuilder() -> RoastersBuildable {
