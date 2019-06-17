@@ -10,15 +10,14 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct RoasterRow : View {
-    var roaster: RoasterResponse
+    let roaster: RoasterResponse
 
     var body: some View {
-        Text(self.roaster.name)
-//        VStack(alignment: .leading) {
-//            Text(self.roaster.name)
-//            Text(self.roaster.totalCost)
-//        }
-//        .padding()
+        HStack {
+            Text(self.roaster.name)
+            Spacer()
+            Text("\(self.roaster.totalCost) points")
+        }
     }
 }
 
