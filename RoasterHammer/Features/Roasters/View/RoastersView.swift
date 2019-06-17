@@ -25,7 +25,7 @@ struct RoastersView: View {
                         .imageScale(.large)
                         .accessibility(label: Text("User Profile"))
                         .padding(),
-                    destination: AccountUI()
+                    destination: AccountView(accountInteractor: RoasterHammerDependencyManager.shared.accountBuilder().buildDataStore())
                 )
             )
         }

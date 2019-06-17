@@ -7,10 +7,19 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 
-final class LoginInteractor: LoginViewOutput {
+final class LoginInteractor: LoginViewOutput, BindableObject {
+    var token: String? {
+        didSet {
+            didChange.send(self)
+        }
+    }
     var presenter: LoginInteractorOutput!
     private let dataManager: AccountDataManager
+
+    var didChange = PassthroughSubject<LoginInteractor, Never>()
 
     init(dataManager: AccountDataManager) {
         self.dataManager = dataManager
@@ -22,7 +31,7 @@ final class LoginInteractor: LoginViewOutput {
                 self?.presenter.didReceiveError(error)
             }
 
-            self?.presenter.didLogin()
+            self?.token = token
         }
     }
 

@@ -64,7 +64,7 @@
 		8EAEBBA8227CD50A0047BB61 /* DetachmentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEBBA7227CD50A0047BB61 /* DetachmentHeaderView.swift */; };
 		8EC084A522B7067500554850 /* RoastersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC084A422B7067500554850 /* RoastersView.swift */; };
 		8EC084A722B7201600554850 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC084A622B7201600554850 /* SceneDelegate.swift */; };
-		8EC084A922B72BE900554850 /* AccountUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC084A822B72BE900554850 /* AccountUI.swift */; };
+		8EC084A922B72BE900554850 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC084A822B72BE900554850 /* AccountView.swift */; };
 		8EC084AB22B72C7700554850 /* RoasterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC084AA22B72C7700554850 /* RoasterRow.swift */; };
 		8EC084AE22B72EE100554850 /* RoasterResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC084AD22B72EE100554850 /* RoasterResponse+Identifiable.swift */; };
 		8ECBE7292271645F006917CA /* RoasterDetachmentUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBE7282271645F006917CA /* RoasterDetachmentUpdateDelegate.swift */; };
@@ -101,14 +101,8 @@
 		8EE4EAF72235B6FF0043BDD7 /* UnitDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4EAF62235B6FF0043BDD7 /* UnitDataManager.swift */; };
 		8EE4EAF92235B7950043BDD7 /* QueryItemConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4EAF82235B7950043BDD7 /* QueryItemConvertible.swift */; };
 		8EFA0263222DC7BB00DAE956 /* ArmyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA0262222DC7BB00DAE956 /* ArmyDataManager.swift */; };
-		8EFA04DC2231AB2500DAE956 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04DB2231AB2500DAE956 /* AccountView.swift */; };
-		8EFA04DE2231AB8600DAE956 /* AccountLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04DD2231AB8600DAE956 /* AccountLayoutViewController.swift */; };
-		8EFA04E02231ABB400DAE956 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04DF2231ABB400DAE956 /* AccountViewController.swift */; };
 		8EFA04E22231AC6E00DAE956 /* AccountViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04E12231AC6E00DAE956 /* AccountViewOutput.swift */; };
 		8EFA04E42231AC7B00DAE956 /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04E32231AC7B00DAE956 /* AccountInteractor.swift */; };
-		8EFA04E62231AC9D00DAE956 /* AccountInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04E52231AC9D00DAE956 /* AccountInteractorOutput.swift */; };
-		8EFA04E82231ACAB00DAE956 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04E72231ACAB00DAE956 /* AccountPresenter.swift */; };
-		8EFA04EA2231ACF900DAE956 /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04E92231ACF900DAE956 /* AccountRouter.swift */; };
 		8EFA04EC2231ADEB00DAE956 /* AccountBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04EB2231ADEB00DAE956 /* AccountBuilder.swift */; };
 		8EFAF03E2224A90500DAE956 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF03D2224A90500DAE956 /* CreateAccountViewController.swift */; };
 		8EFAF0402224A91200DAE956 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAF03F2224A91200DAE956 /* LoginViewController.swift */; };
@@ -237,7 +231,7 @@
 		8EAEBBA7227CD50A0047BB61 /* DetachmentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentHeaderView.swift; sourceTree = "<group>"; };
 		8EC084A422B7067500554850 /* RoastersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastersView.swift; sourceTree = "<group>"; };
 		8EC084A622B7201600554850 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8EC084A822B72BE900554850 /* AccountUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUI.swift; sourceTree = "<group>"; };
+		8EC084A822B72BE900554850 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		8EC084AA22B72C7700554850 /* RoasterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterRow.swift; sourceTree = "<group>"; };
 		8EC084AD22B72EE100554850 /* RoasterResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoasterResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8ECBE7282271645F006917CA /* RoasterDetachmentUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDetachmentUpdateDelegate.swift; sourceTree = "<group>"; };
@@ -276,14 +270,8 @@
 		8EE4EAF62235B6FF0043BDD7 /* UnitDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDataManager.swift; sourceTree = "<group>"; };
 		8EE4EAF82235B7950043BDD7 /* QueryItemConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItemConvertible.swift; sourceTree = "<group>"; };
 		8EFA0262222DC7BB00DAE956 /* ArmyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyDataManager.swift; sourceTree = "<group>"; };
-		8EFA04DB2231AB2500DAE956 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		8EFA04DD2231AB8600DAE956 /* AccountLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLayoutViewController.swift; sourceTree = "<group>"; };
-		8EFA04DF2231ABB400DAE956 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		8EFA04E12231AC6E00DAE956 /* AccountViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewOutput.swift; sourceTree = "<group>"; };
 		8EFA04E32231AC7B00DAE956 /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
-		8EFA04E52231AC9D00DAE956 /* AccountInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractorOutput.swift; sourceTree = "<group>"; };
-		8EFA04E72231ACAB00DAE956 /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
-		8EFA04E92231ACF900DAE956 /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
 		8EFA04EB2231ADEB00DAE956 /* AccountBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBuilder.swift; sourceTree = "<group>"; };
 		8EFAF03D2224A90500DAE956 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		8EFAF03F2224A91200DAE956 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -840,9 +828,7 @@
 		8EFA04D52231AAF300DAE956 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				8EFA04DA2231AB1700DAE956 /* Router */,
 				8EFA04D92231AB0E00DAE956 /* Builder */,
-				8EFA04D82231AB0800DAE956 /* Presenter */,
 				8EFA04D72231AB0100DAE956 /* Interactor */,
 				8EFA04D62231AAFB00DAE956 /* View */,
 			);
@@ -852,10 +838,7 @@
 		8EFA04D62231AAFB00DAE956 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8EFA04DB2231AB2500DAE956 /* AccountView.swift */,
-				8EC084A822B72BE900554850 /* AccountUI.swift */,
-				8EFA04DD2231AB8600DAE956 /* AccountLayoutViewController.swift */,
-				8EFA04DF2231ABB400DAE956 /* AccountViewController.swift */,
+				8EC084A822B72BE900554850 /* AccountView.swift */,
 				8E7C402C22B7B72100AB2275 /* CredentialsView.swift */,
 				8E7C402E22B7B72B00AB2275 /* ProfileView.swift */,
 			);
@@ -871,29 +854,12 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		8EFA04D82231AB0800DAE956 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				8EFA04E52231AC9D00DAE956 /* AccountInteractorOutput.swift */,
-				8EFA04E72231ACAB00DAE956 /* AccountPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		8EFA04D92231AB0E00DAE956 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
 				8EFA04EB2231ADEB00DAE956 /* AccountBuilder.swift */,
 			);
 			path = Builder;
-			sourceTree = "<group>";
-		};
-		8EFA04DA2231AB1700DAE956 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				8EFA04E92231ACF900DAE956 /* AccountRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		8EFAF03A2224A8E400DAE956 /* Features */ = {
@@ -1333,7 +1299,6 @@
 				8E03FC492248270100A39ABF /* EditUnitInteractorOutput.swift in Sources */,
 				8E19E6BA222B370900051784 /* RoasterInteractor.swift in Sources */,
 				8E19B32E222D57BA003F10FA /* RoasterRouter.swift in Sources */,
-				8EFA04DC2231AB2500DAE956 /* AccountView.swift in Sources */,
 				8E90E0AB226DEB930065BBFE /* ModelWeaponSelectionView.swift in Sources */,
 				8EFAF54D22284EBD00DAE956 /* DependencyManager.swift in Sources */,
 				8E19E6B8222B36F200051784 /* RoasterViewOutput.swift in Sources */,
@@ -1364,7 +1329,6 @@
 				8EFA04E42231AC7B00DAE956 /* AccountInteractor.swift in Sources */,
 				8E19E6BF222B373F00051784 /* RoasterPresenter.swift in Sources */,
 				8EFAF54822284D4600DAE956 /* LoginView.swift in Sources */,
-				8EFA04E62231AC9D00DAE956 /* AccountInteractorOutput.swift in Sources */,
 				8EFAF54622284CBB00DAE956 /* LoginPresenter.swift in Sources */,
 				8EFAF5602228575C00DAE956 /* Alerter.swift in Sources */,
 				8EE4E3952235B1B50043BDD7 /* UnitsView.swift in Sources */,
@@ -1429,18 +1393,15 @@
 				8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */,
 				8E03FC45224826C900A39ABF /* EditUnitInteractor.swift in Sources */,
 				8EFAF56F2228752F00DAE956 /* RoastersInteractor.swift in Sources */,
-				8EFA04E82231ACAB00DAE956 /* AccountPresenter.swift in Sources */,
 				8EE4E3992235B1E50043BDD7 /* UnitsViewController.swift in Sources */,
 				8EFAF5592228560E00DAE956 /* CreateAccountInteractor.swift in Sources */,
-				8EFA04EA2231ACF900DAE956 /* AccountRouter.swift in Sources */,
 				8EFAF53D22284B0700DAE956 /* LoginViewOutput.swift in Sources */,
-				8EFA04DE2231AB8600DAE956 /* AccountLayoutViewController.swift in Sources */,
 				8EFA04EC2231ADEB00DAE956 /* AccountBuilder.swift in Sources */,
 				8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */,
 				8EFAF03E2224A90500DAE956 /* CreateAccountViewController.swift in Sources */,
 				8E90E0B3226DEC8C0065BBFE /* ModelWeaponSelectionInteractorOutput.swift in Sources */,
 				8E03FC3F224825E800A39ABF /* EditUnitLayoutViewController.swift in Sources */,
-				8EC084A922B72BE900554850 /* AccountUI.swift in Sources */,
+				8EC084A922B72BE900554850 /* AccountView.swift in Sources */,
 				8E03FC412248265F00A39ABF /* EditUnitViewController.swift in Sources */,
 				8EE4E3A12235B23C0043BDD7 /* UnitsPresenter.swift in Sources */,
 				8EFAF553222850F500DAE956 /* CreateAccountView.swift in Sources */,
@@ -1451,7 +1412,6 @@
 				8EE4E3A62235B3290043BDD7 /* UnitsRouter.swift in Sources */,
 				8EFAFFEE222DC4E000DAE956 /* ArmiesPresenter.swift in Sources */,
 				8EE4EAF72235B6FF0043BDD7 /* UnitDataManager.swift in Sources */,
-				8EFA04E02231ABB400DAE956 /* AccountViewController.swift in Sources */,
 				8E90E0AF226DEC5F0065BBFE /* ModelWeaponSelectionViewOutput.swift in Sources */,
 				8E19E6B1222B368E00051784 /* RoasterView.swift in Sources */,
 				8EDA1EF8223159450005A15B /* RoasterRoleTableViewCell.swift in Sources */,

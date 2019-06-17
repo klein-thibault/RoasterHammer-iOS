@@ -12,6 +12,7 @@ import UIKit
 protocol LoginBuildable {
     func build() -> UIViewController
     func buildInNavigationController() -> UINavigationController
+    func buildDataStore() -> LoginInteractor
 }
 
 final class LoginBuilder: FeatureBuilderBase, LoginBuildable {
@@ -33,5 +34,13 @@ final class LoginBuilder: FeatureBuilderBase, LoginBuildable {
         let view = build()
         let navigationController = UINavigationController(rootViewController: view)
         return navigationController
+    }
+
+    func buildDataStore() -> LoginInteractor {
+        let environmentManager = dependencyManager.environmentManager
+        let dataManager = AccountDataManager(environmentManager: environmentManager)
+        let interactor = LoginInteractor(dataManager: dataManager)
+
+        return interactor
     }
 }

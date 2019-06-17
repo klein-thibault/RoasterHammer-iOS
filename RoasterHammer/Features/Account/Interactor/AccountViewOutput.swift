@@ -9,5 +9,8 @@
 import Foundation
 
 protocol AccountViewOutput {
-    func logoutButtonTapped()
+    func isUserLoggedIn() -> Bool
+    func login(email: String, password: String)
+    func createAccount(email: String, password: String)
+    func logout()
 }

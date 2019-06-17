@@ -9,15 +9,23 @@
 import SwiftUI
 
 struct ProfileView : View {
+    @ObjectBinding var accountInteractor: AccountInteractor
+
     var body: some View {
-        Text("Profile")
+        HStack {
+            Button(action: {
+                self.accountInteractor.logout()
+            }) {
+                Text("Log Out")
+            }
+        }
     }
 }
 
 #if DEBUG
 struct ProfileView_Previews : PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(accountInteractor: RoasterHammerDependencyManager.shared.accountBuilder().buildDataStore())
     }
 }
 #endif

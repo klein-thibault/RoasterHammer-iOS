@@ -11,6 +11,7 @@ import UIKit
 
 protocol CreateAccountBuildable {
     func build() -> UIViewController
+    func buildDataStore() -> CreateAccountInteractor
 }
 
 final class CreateAccountBuilder: FeatureBuilderBase, CreateAccountBuildable {
@@ -26,5 +27,13 @@ final class CreateAccountBuilder: FeatureBuilderBase, CreateAccountBuildable {
         presenter.view = view
 
         return view
+    }
+
+    func buildDataStore() -> CreateAccountInteractor {
+        let environmentManager = dependencyManager.environmentManager
+        let dataManager = AccountDataManager(environmentManager: environmentManager)
+        let interactor = CreateAccountInteractor(dataManager: dataManager)
+
+        return interactor
     }
 }

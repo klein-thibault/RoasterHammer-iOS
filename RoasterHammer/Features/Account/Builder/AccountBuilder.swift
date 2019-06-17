@@ -10,34 +10,10 @@ import Foundation
 import UIKit
 
 protocol AccountBuildable {
-    func build() -> UIViewController
-    func buildWithNavigationController() -> UINavigationController
     func buildDataStore() -> AccountInteractor
 }
 
 final class AccountBuilder: FeatureBuilderBase, AccountBuildable {
-    func build() -> UIViewController {
-        let accountDataManager = AccountDataManager(environmentManager: dependencyManager.environmentManager)
-        let gameDataManager = GameDataManager(environmentManager: dependencyManager.environmentManager)
-        let interactor = AccountInteractor(accountDataManager: accountDataManager, gameDataManager: gameDataManager)
-        let presenter = AccountPresenter()
-        let view = AccountViewController()
-        let router = AccountRouter(dependencyManager: dependencyManager)
-
-        view.interactor = interactor
-        view.router = router
-        interactor.presenter = presenter
-        presenter.view = view
-
-        return view
-    }
-
-    func buildWithNavigationController() -> UINavigationController {
-        let view = build()
-        let navigationController = UINavigationController(rootViewController: view)
-        return navigationController
-    }
-
     func buildDataStore() -> AccountInteractor {
         let accountDataManager = AccountDataManager(environmentManager: dependencyManager.environmentManager)
         let gameDataManager = GameDataManager(environmentManager: dependencyManager.environmentManager)
