@@ -7,16 +7,24 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 
-final class AccountInteractor: AccountViewOutput {
+final class AccountInteractor: AccountViewOutput, BindableObject {
     var presenter: AccountInteractorOutput!
     private let accountDataManager: AccountDataManager
     private let gameDataManager: GameDataManager
+
+    var didChange = PassthroughSubject<AccountInteractor, Never>()
 
     init(accountDataManager: AccountDataManager,
          gameDataManager: GameDataManager) {
         self.accountDataManager = accountDataManager
         self.gameDataManager = gameDataManager
+    }
+
+    func isUserLoggedIn() -> Bool {
+        return accountDataManager.isUserLoggedIn()
     }
 
     func logoutButtonTapped() {

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RoastersView: View {
-    @EnvironmentObject private var roastersData: RoastersInteractor
+    @ObjectBinding private var roastersData = RoasterHammerDependencyManager.shared.roastersBuilder().buildDataStore()
 
     var body: some View {
         NavigationView {

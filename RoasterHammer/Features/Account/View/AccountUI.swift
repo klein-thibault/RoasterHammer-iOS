@@ -9,8 +9,16 @@
 import SwiftUI
 
 struct AccountUI : View {
+    @ObjectBinding private var accountInteractor = RoasterHammerDependencyManager.shared.accountBuilder().buildDataStore()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if accountInteractor.isUserLoggedIn() {
+                ProfileView()
+            } else {
+                CredentialsView()
+            }
+        }
     }
 }
 

@@ -12,6 +12,7 @@ import UIKit
 protocol AccountBuildable {
     func build() -> UIViewController
     func buildWithNavigationController() -> UINavigationController
+    func buildDataStore() -> AccountInteractor
 }
 
 final class AccountBuilder: FeatureBuilderBase, AccountBuildable {
@@ -35,5 +36,13 @@ final class AccountBuilder: FeatureBuilderBase, AccountBuildable {
         let view = build()
         let navigationController = UINavigationController(rootViewController: view)
         return navigationController
+    }
+
+    func buildDataStore() -> AccountInteractor {
+        let accountDataManager = AccountDataManager(environmentManager: dependencyManager.environmentManager)
+        let gameDataManager = GameDataManager(environmentManager: dependencyManager.environmentManager)
+        let interactor = AccountInteractor(accountDataManager: accountDataManager, gameDataManager: gameDataManager)
+
+        return interactor
     }
 }

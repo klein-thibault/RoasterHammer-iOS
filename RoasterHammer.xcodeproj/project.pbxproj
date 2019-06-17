@@ -46,6 +46,8 @@
 		8E6A8A892275E0D0001DE3D2 /* UnitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */; };
 		8E6A8A8B2275E0EC001DE3D2 /* ModelCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A8A2275E0EC001DE3D2 /* ModelCharacteristicsView.swift */; };
 		8E6A8A8D2275E113001DE3D2 /* WeaponCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A8C2275E113001DE3D2 /* WeaponCharacteristicsView.swift */; };
+		8E7C402D22B7B72100AB2275 /* CredentialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C402C22B7B72100AB2275 /* CredentialsView.swift */; };
+		8E7C402F22B7B72B00AB2275 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C402E22B7B72B00AB2275 /* ProfileView.swift */; };
 		8E90E0A7226DEB230065BBFE /* ModelWeaponSelectionLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0A6226DEB230065BBFE /* ModelWeaponSelectionLayoutViewController.swift */; };
 		8E90E0A9226DEB740065BBFE /* ModelWeaponSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0A8226DEB740065BBFE /* ModelWeaponSelectionViewController.swift */; };
 		8E90E0AB226DEB930065BBFE /* ModelWeaponSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0AA226DEB930065BBFE /* ModelWeaponSelectionView.swift */; };
@@ -217,6 +219,8 @@
 		8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitHeaderView.swift; sourceTree = "<group>"; };
 		8E6A8A8A2275E0EC001DE3D2 /* ModelCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCharacteristicsView.swift; sourceTree = "<group>"; };
 		8E6A8A8C2275E113001DE3D2 /* WeaponCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCharacteristicsView.swift; sourceTree = "<group>"; };
+		8E7C402C22B7B72100AB2275 /* CredentialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsView.swift; sourceTree = "<group>"; };
+		8E7C402E22B7B72B00AB2275 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8E90E0A6226DEB230065BBFE /* ModelWeaponSelectionLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionLayoutViewController.swift; sourceTree = "<group>"; };
 		8E90E0A8226DEB740065BBFE /* ModelWeaponSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionViewController.swift; sourceTree = "<group>"; };
 		8E90E0AA226DEB930065BBFE /* ModelWeaponSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionView.swift; sourceTree = "<group>"; };
@@ -852,6 +856,8 @@
 				8EC084A822B72BE900554850 /* AccountUI.swift */,
 				8EFA04DD2231AB8600DAE956 /* AccountLayoutViewController.swift */,
 				8EFA04DF2231ABB400DAE956 /* AccountViewController.swift */,
+				8E7C402C22B7B72100AB2275 /* CredentialsView.swift */,
+				8E7C402E22B7B72B00AB2275 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1465,8 +1471,10 @@
 				8E19B33C222D5A98003F10FA /* DetachmentTypeViewOutput.swift in Sources */,
 				8EFAF0422224A9B500DAE956 /* CreateAccountLayoutViewController.swift in Sources */,
 				8EFAFD4B2228A8E900DAE956 /* GameDataManager.swift in Sources */,
+				8E7C402D22B7B72100AB2275 /* CredentialsView.swift in Sources */,
 				8EFAFD562228AA3B00DAE956 /* HTTPRequest.swift in Sources */,
 				8ED7EE0F22748FD200A21A38 /* RoasterViewerBuilder.swift in Sources */,
+				8E7C402F22B7B72B00AB2275 /* ProfileView.swift in Sources */,
 				8EE4E39F2235B2290043BDD7 /* UnitsInteractorOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

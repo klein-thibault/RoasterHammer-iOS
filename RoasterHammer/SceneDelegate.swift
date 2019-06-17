@@ -22,10 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Use a UIHostingController as window root view controller
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let roastersBuilder = RoasterHammerDependencyManager.shared.roastersBuilder()
-        window.rootViewController = UIHostingController(
-            rootView: RoastersView().environmentObject(roastersBuilder.buildDataStore())
-        )
+        window.rootViewController = UIHostingController(rootView: RoastersView())
         self.window = window
         window.makeKeyAndVisible()
     }
