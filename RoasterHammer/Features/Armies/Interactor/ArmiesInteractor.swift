@@ -17,7 +17,7 @@ final class ArmiesInteractor: ArmiesViewOutput, BindableObject {
             didChange.send(self)
         }
     }
-    var presenter: ArmiesInteractorOutput!
+
     private let armyDataManager: ArmyDataManager
 
     var didChange = PassthroughSubject<ArmiesInteractor, Never>()

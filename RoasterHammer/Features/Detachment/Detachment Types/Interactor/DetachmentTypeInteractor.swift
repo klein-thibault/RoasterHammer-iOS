@@ -18,11 +18,9 @@ final class DetachmentTypeInteractor: DetachmentTypeViewOutput, BindableObject {
         }
     }
     var armyId: Int
-
-    var presenter: DetachmentTypeInteractorOutput!
-    private let detachmentDataManager: DetachmentDataManager
-
     var didChange = PassthroughSubject<DetachmentTypeInteractor, Never>()
+
+    private let detachmentDataManager: DetachmentDataManager
 
     init(detachmentDataManager: DetachmentDataManager, armyId: Int) {
         self.detachmentDataManager = detachmentDataManager

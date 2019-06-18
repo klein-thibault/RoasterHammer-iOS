@@ -22,7 +22,7 @@ struct RoasterUI : View {
         .navigationBarItems(trailing:
             PresentationButton(
                 Text("Add Detachment"),
-                destination: ArmiesUI(roastersData: roastersData)
+                destination: ArmiesView(roastersData: roastersData)
             )
         )
         .onAppear {

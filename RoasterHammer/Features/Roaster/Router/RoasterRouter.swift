@@ -19,8 +19,8 @@ final class RoasterRouter {
     }
 
     func presentArmySelection(roaster: RoasterResponse) {
-        let armiesViewController = dependencyManager.armiesBuilder().buildInNavigationController(roaster: roaster)
-        navigationController?.present(armiesViewController, animated: true, completion: nil)
+//        let armiesViewController = dependencyManager.armiesBuilder().buildInNavigationController(roaster: roaster)
+//        navigationController?.present(armiesViewController, animated: true, completion: nil)
     }
 
     func presentUnitsView(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) {
