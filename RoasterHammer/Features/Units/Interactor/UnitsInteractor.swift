@@ -17,7 +17,6 @@ final class UnitsInteractor: UnitsViewOutput, BindableObject {
             didChange.send(self)
         }
     }
-    var presenter: UnitsInteractorOutput!
     let detachmentId: Int
     let unitRoleId: Int
     var didChange = PassthroughSubject<UnitsInteractor, Never>()

@@ -11,37 +11,10 @@ import UIKit
 import RoasterHammer_Shared
 
 protocol UnitsBuildable {
-    func build(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UIViewController
-    func buildInNavigationController(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UINavigationController
     func buildDataStore(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UnitsInteractor
 }
 
 final class UnitsBuilder: FeatureBuilderBase, UnitsBuildable {
-    func build(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UIViewController {
-        let unitDataManager = UnitDataManager(environmentManager: dependencyManager.environmentManager)
-        let interactor = UnitsInteractor(unitDataManager: unitDataManager,
-                                         filters: filters,
-                                         detachmentId: detachmentId,
-                                         unitRoleId: unitRoleId)
-        let presenter = UnitsPresenter()
-        let view = UnitsViewController()
-        let router = UnitsRouter(dependencyManager: dependencyManager)
-
-        view.interactor = interactor
-        view.router = router
-        interactor.presenter = presenter
-        presenter.view = view
-
-        return view
-    }
-
-    func buildInNavigationController(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UINavigationController {
-        let view = build(filters: filters, detachmentId: detachmentId, unitRoleId: unitRoleId)
-        let navigationController = UINavigationController(rootViewController: view)
-
-        return navigationController
-    }
-
     func buildDataStore(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UnitsInteractor {
         let unitDataManager = UnitDataManager(environmentManager: dependencyManager.environmentManager)
         let interactor = UnitsInteractor(unitDataManager: unitDataManager,

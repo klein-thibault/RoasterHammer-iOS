@@ -54,7 +54,7 @@ struct RoasterUI : View {
 
     func makeHeader(detachment: DetachmentResponse, role: RoleResponse) -> some View {
         let unitFilters = UnitFilters(armyId: "\(detachment.army.id)", unitType: role.name)
-        let destination = UnitsUI(
+        let destination = UnitsView(
             unitsData: RoasterHammerDependencyManager
                 .shared
                 .unitsBuilder()

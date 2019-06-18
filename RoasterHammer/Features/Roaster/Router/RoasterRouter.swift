@@ -24,10 +24,10 @@ final class RoasterRouter {
     }
 
     func presentUnitsView(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) {
-        let unitsView = dependencyManager.unitsBuilder().buildInNavigationController(filters: filters,
-                                                                                     detachmentId: detachmentId,
-                                                                                     unitRoleId: unitRoleId)
-        navigationController?.present(unitsView, animated: true, completion: nil)
+//        let unitsView = dependencyManager.unitsBuilder().buildInNavigationController(filters: filters,
+//                                                                                     detachmentId: detachmentId,
+//                                                                                     unitRoleId: unitRoleId)
+//        navigationController?.present(unitsView, animated: true, completion: nil)
     }
 
     func presentEditUnitView(detachment: DetachmentResponse,

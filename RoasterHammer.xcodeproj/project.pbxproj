@@ -44,7 +44,7 @@
 		8E36450D22B967D700ED227E /* RoleResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */; };
 		8E36450F22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36450E22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift */; };
 		8E36451222B96EDF00ED227E /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 8E36451122B96EDF00ED227E /* SFSafeSymbols */; };
-		8E36451422B977D100ED227E /* UnitsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451322B977D100ED227E /* UnitsUI.swift */; };
+		8E36451422B977D100ED227E /* UnitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451322B977D100ED227E /* UnitsView.swift */; };
 		8E36451622B97A4E00ED227E /* UnitResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451522B97A4E00ED227E /* UnitResponse+Identifiable.swift */; };
 		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
 		8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE72224FBB300599834 /* JSONConvertible.swift */; };
@@ -94,15 +94,9 @@
 		8EE227BF22235FB000DF0D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE227BE22235FB000DF0D72 /* Assets.xcassets */; };
 		8EE227C222235FB000DF0D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE227C022235FB000DF0D72 /* LaunchScreen.storyboard */; };
 		8EE227CD22235FB000DF0D72 /* RoasterHammerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE227CC22235FB000DF0D72 /* RoasterHammerTests.swift */; };
-		8EE4E3952235B1B50043BDD7 /* UnitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4E3942235B1B50043BDD7 /* UnitsView.swift */; };
-		8EE4E3972235B1CB0043BDD7 /* UnitsLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4E3962235B1CB0043BDD7 /* UnitsLayoutViewController.swift */; };
-		8EE4E3992235B1E50043BDD7 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4E3982235B1E50043BDD7 /* UnitsViewController.swift */; };
 		8EE4E39B2235B2020043BDD7 /* UnitsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4E39A2235B2020043BDD7 /* UnitsViewOutput.swift */; };
 		8EE4E39D2235B2130043BDD7 /* UnitsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4E39C2235B2130043BDD7 /* UnitsInteractor.swift */; };
-		8EE4E39F2235B2290043BDD7 /* UnitsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4E39E2235B2290043BDD7 /* UnitsInteractorOutput.swift */; };
-		8EE4E3A12235B23C0043BDD7 /* UnitsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4E3A02235B23C0043BDD7 /* UnitsPresenter.swift */; };
 		8EE4E3A32235B2A30043BDD7 /* UnitsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4E3A22235B2A30043BDD7 /* UnitsBuilder.swift */; };
-		8EE4E3A62235B3290043BDD7 /* UnitsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4E3A52235B3290043BDD7 /* UnitsRouter.swift */; };
 		8EE4EAF72235B6FF0043BDD7 /* UnitDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4EAF62235B6FF0043BDD7 /* UnitDataManager.swift */; };
 		8EE4EAF92235B7950043BDD7 /* QueryItemConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4EAF82235B7950043BDD7 /* QueryItemConvertible.swift */; };
 		8EFA0263222DC7BB00DAE956 /* ArmyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA0262222DC7BB00DAE956 /* ArmyDataManager.swift */; };
@@ -191,7 +185,7 @@
 		8E311B7322257A5F00C58DBF /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
 		8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoleResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8E36450E22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectedUnitResponse+Identifiable.swift"; sourceTree = "<group>"; };
-		8E36451322B977D100ED227E /* UnitsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsUI.swift; sourceTree = "<group>"; };
+		8E36451322B977D100ED227E /* UnitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsView.swift; sourceTree = "<group>"; };
 		8E36451522B97A4E00ED227E /* UnitResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnitResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
 		8E646CE72224FBB300599834 /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
@@ -243,15 +237,9 @@
 		8EE227C822235FB000DF0D72 /* RoasterHammerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoasterHammerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE227CC22235FB000DF0D72 /* RoasterHammerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterHammerTests.swift; sourceTree = "<group>"; };
 		8EE227CE22235FB000DF0D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8EE4E3942235B1B50043BDD7 /* UnitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsView.swift; sourceTree = "<group>"; };
-		8EE4E3962235B1CB0043BDD7 /* UnitsLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsLayoutViewController.swift; sourceTree = "<group>"; };
-		8EE4E3982235B1E50043BDD7 /* UnitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsViewController.swift; sourceTree = "<group>"; };
 		8EE4E39A2235B2020043BDD7 /* UnitsViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsViewOutput.swift; sourceTree = "<group>"; };
 		8EE4E39C2235B2130043BDD7 /* UnitsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsInteractor.swift; sourceTree = "<group>"; };
-		8EE4E39E2235B2290043BDD7 /* UnitsInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsInteractorOutput.swift; sourceTree = "<group>"; };
-		8EE4E3A02235B23C0043BDD7 /* UnitsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsPresenter.swift; sourceTree = "<group>"; };
 		8EE4E3A22235B2A30043BDD7 /* UnitsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsBuilder.swift; sourceTree = "<group>"; };
-		8EE4E3A52235B3290043BDD7 /* UnitsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsRouter.swift; sourceTree = "<group>"; };
 		8EE4EAF62235B6FF0043BDD7 /* UnitDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDataManager.swift; sourceTree = "<group>"; };
 		8EE4EAF82235B7950043BDD7 /* QueryItemConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItemConvertible.swift; sourceTree = "<group>"; };
 		8EFA0262222DC7BB00DAE956 /* ArmyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyDataManager.swift; sourceTree = "<group>"; };
@@ -700,9 +688,7 @@
 		8EE4E38F2235B1740043BDD7 /* Units */ = {
 			isa = PBXGroup;
 			children = (
-				8EE4E3A42235B3220043BDD7 /* Router */,
 				8EE4E3932235B1A90043BDD7 /* Builder */,
-				8EE4E3922235B1A40043BDD7 /* Presenter */,
 				8EE4E3912235B19F0043BDD7 /* Interactor */,
 				8EE4E3902235B1990043BDD7 /* View */,
 			);
@@ -712,10 +698,7 @@
 		8EE4E3902235B1990043BDD7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8EE4E3942235B1B50043BDD7 /* UnitsView.swift */,
-				8EE4E3962235B1CB0043BDD7 /* UnitsLayoutViewController.swift */,
-				8EE4E3982235B1E50043BDD7 /* UnitsViewController.swift */,
-				8E36451322B977D100ED227E /* UnitsUI.swift */,
+				8E36451322B977D100ED227E /* UnitsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -729,29 +712,12 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		8EE4E3922235B1A40043BDD7 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				8EE4E39E2235B2290043BDD7 /* UnitsInteractorOutput.swift */,
-				8EE4E3A02235B23C0043BDD7 /* UnitsPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		8EE4E3932235B1A90043BDD7 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
 				8EE4E3A22235B2A30043BDD7 /* UnitsBuilder.swift */,
 			);
 			path = Builder;
-			sourceTree = "<group>";
-		};
-		8EE4E3A42235B3220043BDD7 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				8EE4E3A52235B3290043BDD7 /* UnitsRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		8EFA04D52231AAF300DAE956 /* Account */ = {
@@ -1110,7 +1076,6 @@
 				8E19E6BD222B373700051784 /* RoasterInteractorOutput.swift in Sources */,
 				8EFAFD542228AA0800DAE956 /* HTTPEnvironmentManager.swift in Sources */,
 				8E90E0B8226DEE1E0065BBFE /* EditUnitRouter.swift in Sources */,
-				8EE4E3972235B1CB0043BDD7 /* UnitsLayoutViewController.swift in Sources */,
 				8E03FC492248270100A39ABF /* EditUnitInteractorOutput.swift in Sources */,
 				8E19E6BA222B370900051784 /* RoasterInteractor.swift in Sources */,
 				8E19B32E222D57BA003F10FA /* RoasterRouter.swift in Sources */,
@@ -1139,7 +1104,6 @@
 				8E19E6BF222B373F00051784 /* RoasterPresenter.swift in Sources */,
 				8E36450D22B967D700ED227E /* RoleResponse+Identifiable.swift in Sources */,
 				8EFAF5602228575C00DAE956 /* Alerter.swift in Sources */,
-				8EE4E3952235B1B50043BDD7 /* UnitsView.swift in Sources */,
 				8EFAF54F22284ECF00DAE956 /* RoasterHammerDependencyManager.swift in Sources */,
 				8EFAFD472228A55000DAE956 /* IdentifiableView.swift in Sources */,
 				8E90E0B1226DEC7A0065BBFE /* ModelWeaponSelectionPresenter.swift in Sources */,
@@ -1172,7 +1136,7 @@
 				8EFAFD5E2228AB1D00DAE956 /* AlamofireHTTPClient.swift in Sources */,
 				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
 				8E19B5B5222D6383003F10FA /* DetachmentDataManager.swift in Sources */,
-				8E36451422B977D100ED227E /* UnitsUI.swift in Sources */,
+				8E36451422B977D100ED227E /* UnitsView.swift in Sources */,
 				8E90E0A9226DEB740065BBFE /* ModelWeaponSelectionViewController.swift in Sources */,
 				8E36450F22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift in Sources */,
 				8ECBE7292271645F006917CA /* RoasterDetachmentUpdateDelegate.swift in Sources */,
@@ -1199,18 +1163,15 @@
 				8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */,
 				8E03FC45224826C900A39ABF /* EditUnitInteractor.swift in Sources */,
 				8EFAF56F2228752F00DAE956 /* RoastersInteractor.swift in Sources */,
-				8EE4E3992235B1E50043BDD7 /* UnitsViewController.swift in Sources */,
 				8EFA04EC2231ADEB00DAE956 /* AccountBuilder.swift in Sources */,
 				8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */,
 				8E90E0B3226DEC8C0065BBFE /* ModelWeaponSelectionInteractorOutput.swift in Sources */,
 				8E03FC3F224825E800A39ABF /* EditUnitLayoutViewController.swift in Sources */,
 				8EC084A922B72BE900554850 /* AccountView.swift in Sources */,
 				8E03FC412248265F00A39ABF /* EditUnitViewController.swift in Sources */,
-				8EE4E3A12235B23C0043BDD7 /* UnitsPresenter.swift in Sources */,
 				8EFAFFDA2229C10B00DAE956 /* RoasterHammerError.swift in Sources */,
 				8EFAF54B22284E9F00DAE956 /* FeatureFactory.swift in Sources */,
 				8EAEBBA4227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift in Sources */,
-				8EE4E3A62235B3290043BDD7 /* UnitsRouter.swift in Sources */,
 				8EE4EAF72235B6FF0043BDD7 /* UnitDataManager.swift in Sources */,
 				8E90E0AF226DEC5F0065BBFE /* ModelWeaponSelectionViewOutput.swift in Sources */,
 				8E19E6B1222B368E00051784 /* RoasterView.swift in Sources */,
@@ -1231,7 +1192,6 @@
 				8E2724B822B90F4200534449 /* ArmyResponse+Identifiable.swift in Sources */,
 				8ED7EE0F22748FD200A21A38 /* RoasterViewerBuilder.swift in Sources */,
 				8E7C402F22B7B72B00AB2275 /* ProfileView.swift in Sources */,
-				8EE4E39F2235B2290043BDD7 /* UnitsInteractorOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
