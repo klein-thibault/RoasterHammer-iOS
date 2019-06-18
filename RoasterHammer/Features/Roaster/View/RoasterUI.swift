@@ -17,9 +17,7 @@ struct RoasterUI : View {
             VStack(alignment: .leading) {
                 ForEach(roastersData.roaster.detachments) { detachment in
                     VStack(alignment: .leading) {
-                        Text(detachment.name)
-                            .font(.headline)
-                            .padding()
+                        DetachmentNameView(detachment: detachment)
 
                         List {
                             ForEach(detachment.roles) { role in
@@ -66,6 +64,24 @@ struct RoasterUI : View {
         return HeaderAndButtonListHeaderView(text: role.name,
                                              buttonTitle: "Add",
                                              destination: destination)
+    }
+}
+
+struct DetachmentNameView: View {
+    let detachment: DetachmentResponse
+
+    var body: some View {
+        HStack {
+            Text(detachment.name)
+                .font(.headline)
+                .padding()
+
+            Spacer()
+
+            Text("\(detachment.totalCost) points")
+                .font(.headline)
+                .padding()
+        }
     }
 }
 
