@@ -41,6 +41,9 @@
 		8E2724BA22B90FCE00534449 /* ArmiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2724B922B90FCE00534449 /* ArmiesView.swift */; };
 		8E311B712225793A00C58DBF /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B702225793A00C58DBF /* HTTPResponse.swift */; };
 		8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B7322257A5F00C58DBF /* AccountDataManager.swift */; };
+		8E36450D22B967D700ED227E /* RoleResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */; };
+		8E36450F22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36450E22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift */; };
+		8E36451222B96EDF00ED227E /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 8E36451122B96EDF00ED227E /* SFSafeSymbols */; };
 		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
 		8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE72224FBB300599834 /* JSONConvertible.swift */; };
 		8E6A8A892275E0D0001DE3D2 /* UnitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */; };
@@ -184,6 +187,8 @@
 		8E2724B922B90FCE00534449 /* ArmiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesView.swift; sourceTree = "<group>"; };
 		8E311B702225793A00C58DBF /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		8E311B7322257A5F00C58DBF /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
+		8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoleResponse+Identifiable.swift"; sourceTree = "<group>"; };
+		8E36450E22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectedUnitResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
 		8E646CE72224FBB300599834 /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
 		8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitHeaderView.swift; sourceTree = "<group>"; };
@@ -289,6 +294,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E36451222B96EDF00ED227E /* SFSafeSymbols in Frameworks */,
 				8ED9AA9322B6957B00455FD8 /* RoasterHammer-Shared in Frameworks */,
 				8ED9AA9622B6958C00455FD8 /* Alamofire in Frameworks */,
 			);
@@ -564,14 +570,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		8EC084AC22B72ED000554850 /* Models */ = {
+		8EC084AC22B72ED000554850 /* Identifiable */ = {
 			isa = PBXGroup;
 			children = (
 				8EC084AD22B72EE100554850 /* RoasterResponse+Identifiable.swift */,
 				8E2724B122B90AB100534449 /* DetachmentResponse+Identifiable.swift */,
 				8E2724B722B90F4200534449 /* ArmyResponse+Identifiable.swift */,
+				8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */,
+				8E36450E22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift */,
 			);
-			path = Models;
+			path = Identifiable;
 			sourceTree = "<group>";
 		};
 		8ECBE7272271644D006917CA /* Delegation */ = {
@@ -807,7 +815,7 @@
 		8EFAF0442224AAA700DAE956 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8EC084AC22B72ED000554850 /* Models */,
+				8EC084AC22B72ED000554850 /* Identifiable */,
 				8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */,
 				8EFAF0452224AAB200DAE956 /* UIView+Autolayout.swift */,
 				8EFAF5292225FB8300DAE956 /* String+Encoding.swift */,
@@ -997,6 +1005,7 @@
 			packageProductDependencies = (
 				8ED9AA9222B6957B00455FD8 /* RoasterHammer-Shared */,
 				8ED9AA9522B6958C00455FD8 /* Alamofire */,
+				8E36451122B96EDF00ED227E /* SFSafeSymbols */,
 			);
 			productName = RoasterHammer;
 			productReference = 8EE227B422235FAE00DF0D72 /* RoasterHammer.app */;
@@ -1053,6 +1062,7 @@
 			packageReferences = (
 				8ED9AA9122B6957B00455FD8 /* XCRemoteSwiftPackageReference "RoasterHammer-Shared" */,
 				8ED9AA9422B6958C00455FD8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8E36451022B96EDF00ED227E /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = 8EE227B522235FAE00DF0D72 /* Products */;
 			projectDirPath = "";
@@ -1121,6 +1131,7 @@
 				8EC084AE22B72EE100554850 /* RoasterResponse+Identifiable.swift in Sources */,
 				8EFA04E42231AC7B00DAE956 /* AccountInteractor.swift in Sources */,
 				8E19E6BF222B373F00051784 /* RoasterPresenter.swift in Sources */,
+				8E36450D22B967D700ED227E /* RoleResponse+Identifiable.swift in Sources */,
 				8EFAF5602228575C00DAE956 /* Alerter.swift in Sources */,
 				8EE4E3952235B1B50043BDD7 /* UnitsView.swift in Sources */,
 				8EFAF54F22284ECF00DAE956 /* RoasterHammerDependencyManager.swift in Sources */,
@@ -1156,6 +1167,7 @@
 				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
 				8E19B5B5222D6383003F10FA /* DetachmentDataManager.swift in Sources */,
 				8E90E0A9226DEB740065BBFE /* ModelWeaponSelectionViewController.swift in Sources */,
+				8E36450F22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift in Sources */,
 				8ECBE7292271645F006917CA /* RoasterDetachmentUpdateDelegate.swift in Sources */,
 				8EFA0263222DC7BB00DAE956 /* ArmyDataManager.swift in Sources */,
 				8E03FC47224826D400A39ABF /* EditUnitViewOutput.swift in Sources */,
@@ -1474,6 +1486,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8E36451022B96EDF00ED227E /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/piknotech/SFSafeSymbols/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 		8ED9AA9122B6957B00455FD8 /* XCRemoteSwiftPackageReference "RoasterHammer-Shared" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/klein-thibault/RoasterHammer-Shared.git";
@@ -1493,6 +1513,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8E36451122B96EDF00ED227E /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E36451022B96EDF00ED227E /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
 		8ED9AA9222B6957B00455FD8 /* RoasterHammer-Shared */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8ED9AA9122B6957B00455FD8 /* XCRemoteSwiftPackageReference "RoasterHammer-Shared" */;

@@ -18,6 +18,15 @@
           "revision": "1e8298607279cfd17cab263e118b927e82eff332",
           "version": "0.0.30"
         }
+      },
+      {
+        "package": "SFSafeSymbols",
+        "repositoryURL": "https://github.com/piknotech/SFSafeSymbols/",
+        "state": {
+          "branch": null,
+          "revision": "a797dc668c9d31ab811df6b34100875481dd1696",
+          "version": "0.3.0"
+        }
       }
     ]
   },
