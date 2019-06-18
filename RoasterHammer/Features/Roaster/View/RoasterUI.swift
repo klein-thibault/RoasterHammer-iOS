@@ -16,20 +16,7 @@ struct RoasterUI : View {
         ScrollView {
             VStack(alignment: .leading) {
                 ForEach(roastersData.roaster.detachments) { detachment in
-                    VStack(alignment: .leading) {
-                        DetachmentNameView(detachment: detachment)
-
-                        List {
-                            ForEach(detachment.roles) { role in
-                                Section(header: self.makeHeader(detachment: detachment, role: role)) {
-                                    ForEach(role.units) { selectedUnit in
-                                        Text(selectedUnit.unit.name)
-                                    }
-                                }
-                            }
-                        }
-                        .frame(minHeight: 200, maxHeight: .infinity)
-                    }
+                    DetachmentRow(roastersData: self.roastersData, detachment: detachment)
                 }
             }
             .frame(width: UIScreen.main.bounds.width)
@@ -48,22 +35,6 @@ struct RoasterUI : View {
         .onAppear {
             self.roastersData.getRoasterDetails()
         }
-    }
-
-    func makeHeader(detachment: DetachmentResponse, role: RoleResponse) -> some View {
-        let unitFilters = UnitFilters(armyId: "\(detachment.army.id)", unitType: role.name)
-        let destination = UnitsView(
-            unitsData: RoasterHammerDependencyManager
-                .shared
-                .unitsBuilder()
-                .buildDataStore(filters: unitFilters,
-                                detachmentId: detachment.id,
-                                unitRoleId: role.id),
-            roastersData: roastersData)
-
-        return HeaderAndButtonListHeaderView(text: role.name,
-                                             buttonTitle: "Add",
-                                             destination: destination)
     }
 }
 
@@ -96,6 +67,53 @@ struct HeaderAndButtonListHeaderView<Destination>: View where Destination: View 
             Spacer()
             PresentationButton(Text(buttonTitle), destination: destination)
         }
+    }
+}
+
+struct DetachmentRow: View {
+    @ObjectBinding var roastersData: RoasterInteractor
+    let detachment: DetachmentResponse
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            DetachmentNameView(detachment: detachment)
+
+            DetachmentRoleListView(roastersData: roastersData, detachment: detachment)
+                .frame(minHeight: 200, maxHeight: .infinity)
+        }
+    }
+}
+
+struct DetachmentRoleListView: View {
+    @ObjectBinding var roastersData: RoasterInteractor
+    let detachment: DetachmentResponse
+
+    var body: some View {
+        List {
+            ForEach(detachment.roles) { role in
+                Section(header: self.makeHeader(detachment: self.detachment, role: role)) {
+                    ForEach(role.units) { selectedUnit in
+                        Text(selectedUnit.unit.name)
+                    }
+                }
+            }
+        }
+    }
+
+    private func makeHeader(detachment: DetachmentResponse, role: RoleResponse) -> some View {
+        let unitFilters = UnitFilters(armyId: "\(detachment.army.id)", unitType: role.name)
+        let destination = UnitsView(
+            unitsData: RoasterHammerDependencyManager
+                .shared
+                .unitsBuilder()
+                .buildDataStore(filters: unitFilters,
+                                detachmentId: detachment.id,
+                                unitRoleId: role.id),
+            roastersData: roastersData)
+
+        return HeaderAndButtonListHeaderView(text: role.name,
+                                             buttonTitle: "Add",
+                                             destination: destination)
     }
 }
 
