@@ -30,7 +30,10 @@ struct RoastersView: View {
                     destination: AccountView(accountInteractor: RoasterHammerDependencyManager.shared.accountBuilder().buildDataStore())
                 ),
                 trailing: PresentationButton(
-                    Text("Create Roster"),
+                    Image(systemName: "plus")
+                        .imageScale(.large)
+                        .accessibility(label: Text("Create Detachment"))
+                        .padding(),
                     destination: CreateRoasterView(roastersData: self.roastersData)
                 )
             )

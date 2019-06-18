@@ -40,7 +40,10 @@ struct RoasterUI : View {
         .navigationBarTitle(Text(roastersData.roaster.name))
         .navigationBarItems(trailing:
             PresentationButton(
-                Text("Add Detachment"),
+                Image(systemName: "plus")
+                    .imageScale(.large)
+                    .accessibility(label: Text("Add Detachment"))
+                    .padding(),
                 destination: ArmiesView(roastersData: roastersData)
             )
         )
