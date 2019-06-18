@@ -79,8 +79,15 @@ struct DetachmentRow: View {
             DetachmentNameView(detachment: detachment)
 
             DetachmentRoleListView(roastersData: roastersData, detachment: detachment)
-                .frame(minHeight: 200, maxHeight: .infinity)
+                .frame(height: listHeight(forDetachment: detachment))
         }
+    }
+
+    private func listHeight(forDetachment detachment: DetachmentResponse) -> Length {
+        let rolesHeight = Length(detachment.roles.count * 44)
+        let unitsHeight = Length(detachment.totalUnits * 44)
+
+        return rolesHeight + unitsHeight
     }
 }
 
