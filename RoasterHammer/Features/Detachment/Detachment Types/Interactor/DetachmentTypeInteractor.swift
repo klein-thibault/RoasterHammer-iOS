@@ -18,16 +18,15 @@ final class DetachmentTypeInteractor: DetachmentTypeViewOutput, BindableObject {
         }
     }
     var armyId: Int
-    var roaster: RoasterResponse
+
     var presenter: DetachmentTypeInteractorOutput!
     private let detachmentDataManager: DetachmentDataManager
 
     var didChange = PassthroughSubject<DetachmentTypeInteractor, Never>()
 
-    init(detachmentDataManager: DetachmentDataManager, armyId: Int, roaster: RoasterResponse) {
+    init(detachmentDataManager: DetachmentDataManager, armyId: Int) {
         self.detachmentDataManager = detachmentDataManager
         self.armyId = armyId
-        self.roaster = roaster
     }
 
     func getDetachmentTypes() {
@@ -38,14 +37,14 @@ final class DetachmentTypeInteractor: DetachmentTypeViewOutput, BindableObject {
         }
     }
 
-    func createDetachment(ofType type: DetachmentShortResponse) {
+    func createDetachment(ofType type: DetachmentShortResponse, forRoster rosterData: RoasterInteractor) {
         detachmentDataManager.createDetachment(armyId: armyId, selectedDetachmentType: type) { [weak self] (detachment, error) in
-            if let detachment = detachment, let roasterId = self?.roaster.id {
-                self?.detachmentDataManager.addDetachmentToRoaster(roasterId: roasterId,
+            if let detachment = detachment {
+                self?.detachmentDataManager.addDetachmentToRoaster(roasterId: rosterData.roaster.id,
                                                                    detachmentId: detachment.id,
-                                                                   completion: { (roaster, error) in
-                                                                    if let roaster = roaster {
-                                                                        self?.roaster = roaster
+                                                                   completion: { (newRoster, error) in
+                                                                    if let newRoster = newRoster {
+                                                                        rosterData.roaster = newRoster
                                                                     }
                 })
             }

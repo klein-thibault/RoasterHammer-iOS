@@ -11,17 +11,20 @@ import RoasterHammer_Shared
 
 struct ArmiesUI : View {
     @ObjectBinding var armiesData = RoasterHammerDependencyManager.shared.armiesBuilder().buildDataStore()
-    let roaster: RoasterResponse
+    @ObjectBinding var roastersData: RoasterInteractor
 
     var body: some View {
         NavigationView {
             List {
                 ForEach(armiesData.armies) { army in
                     NavigationButton(
-                        destination: DetachmentTypesView(detachmentTypesData: RoasterHammerDependencyManager.shared.detachmentTypeBuilder().buildDataStore(armyId: army.id,
-                                                                                                                                                           roaster: self.roaster),
-                                                     armyId: army.id,
-                                                     roaster: self.roaster)) {
+                        destination: DetachmentTypesView(
+                            detachmentTypesData: RoasterHammerDependencyManager
+                                .shared
+                                .detachmentTypeBuilder()
+                                .buildDataStore(armyId: army.id),
+                            roastersData: self.roastersData)
+                    ) {
                         Text(army.name)
                     }
                 }

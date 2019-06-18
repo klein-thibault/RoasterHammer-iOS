@@ -11,16 +11,14 @@ import RoasterHammer_Shared
 
 struct DetachmentTypesView : View {
     @ObjectBinding var detachmentTypesData: DetachmentTypeInteractor
+    @ObjectBinding var roastersData: RoasterInteractor
     @Environment(\.isPresented) private var isPresented
-
-    let armyId: Int
-    let roaster: RoasterResponse
 
     var body: some View {
         List {
             ForEach(detachmentTypesData.detachmentTypes.identified(by: \.name)) { detachmentType in
                 Button(action: {
-                    self.detachmentTypesData.createDetachment(ofType: detachmentType)
+                    self.detachmentTypesData.createDetachment(ofType: detachmentType, forRoster: self.roastersData)
                     self.isPresented?.value = false
                 }) {
                     HStack {
