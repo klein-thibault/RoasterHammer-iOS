@@ -48,6 +48,7 @@
 		8E6A8A8D2275E113001DE3D2 /* WeaponCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A8C2275E113001DE3D2 /* WeaponCharacteristicsView.swift */; };
 		8E7C402D22B7B72100AB2275 /* CredentialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C402C22B7B72100AB2275 /* CredentialsView.swift */; };
 		8E7C402F22B7B72B00AB2275 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C402E22B7B72B00AB2275 /* ProfileView.swift */; };
+		8E7C403122B86B5900AB2275 /* CreateRoasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C403022B86B5900AB2275 /* CreateRoasterView.swift */; };
 		8E90E0A7226DEB230065BBFE /* ModelWeaponSelectionLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0A6226DEB230065BBFE /* ModelWeaponSelectionLayoutViewController.swift */; };
 		8E90E0A9226DEB740065BBFE /* ModelWeaponSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0A8226DEB740065BBFE /* ModelWeaponSelectionViewController.swift */; };
 		8E90E0AB226DEB930065BBFE /* ModelWeaponSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0AA226DEB930065BBFE /* ModelWeaponSelectionView.swift */; };
@@ -197,6 +198,7 @@
 		8E6A8A8C2275E113001DE3D2 /* WeaponCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCharacteristicsView.swift; sourceTree = "<group>"; };
 		8E7C402C22B7B72100AB2275 /* CredentialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsView.swift; sourceTree = "<group>"; };
 		8E7C402E22B7B72B00AB2275 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8E7C403022B86B5900AB2275 /* CreateRoasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoasterView.swift; sourceTree = "<group>"; };
 		8E90E0A6226DEB230065BBFE /* ModelWeaponSelectionLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionLayoutViewController.swift; sourceTree = "<group>"; };
 		8E90E0A8226DEB740065BBFE /* ModelWeaponSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionViewController.swift; sourceTree = "<group>"; };
 		8E90E0AA226DEB930065BBFE /* ModelWeaponSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionView.swift; sourceTree = "<group>"; };
@@ -922,6 +924,7 @@
 			children = (
 				8EC084A422B7067500554850 /* RoastersView.swift */,
 				8EC084AA22B72C7700554850 /* RoasterRow.swift */,
+				8E7C403022B86B5900AB2275 /* CreateRoasterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1211,6 +1214,7 @@
 				8ECBE7292271645F006917CA /* RoasterDetachmentUpdateDelegate.swift in Sources */,
 				8EFA0263222DC7BB00DAE956 /* ArmyDataManager.swift in Sources */,
 				8E03FC47224826D400A39ABF /* EditUnitViewOutput.swift in Sources */,
+				8E7C403122B86B5900AB2275 /* CreateRoasterView.swift in Sources */,
 				8EFAFFD72229BEDE00DAE956 /* BaseDataManager.swift in Sources */,
 				8E19E6B3222B36A600051784 /* RoasterLayoutViewController.swift in Sources */,
 				8ED7EE0D22748FC300A21A38 /* RoasterViewerRouter.swift in Sources */,

@@ -37,4 +37,12 @@ final class RoastersInteractor: RoastersViewOutput, BindableObject {
             }
         }
     }
+
+    func createRoaster(name: String) {
+        roastersDataManager.createRoaster(name: name) { [weak self] (roaster, error) in
+            if roaster != nil {
+                self?.getRoasters()
+            }
+        }
+    }
 }

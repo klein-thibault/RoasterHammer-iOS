@@ -26,6 +26,10 @@ struct RoastersView: View {
                         .accessibility(label: Text("User Profile"))
                         .padding(),
                     destination: AccountView(accountInteractor: RoasterHammerDependencyManager.shared.accountBuilder().buildDataStore())
+                ),
+                trailing: PresentationButton(
+                    Text("Create Roster"),
+                    destination: CreateRoasterView(roastersData: self.roastersData)
                 )
             )
         }
