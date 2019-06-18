@@ -80,7 +80,7 @@ extension DetachmentTypeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedDetachmentType = detachmentTypes[indexPath.row]
-        interactor.createDetachment(ofType: selectedDetachmentType, forRoaster: roaster, inArmy: armyId)
+        interactor.createDetachment(ofType: selectedDetachmentType)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

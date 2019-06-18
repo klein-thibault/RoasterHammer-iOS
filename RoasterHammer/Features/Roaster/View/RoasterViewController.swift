@@ -55,7 +55,7 @@ final class RoasterViewController: RoasterLayoutViewController {
                                                            action: #selector(showRoasterViewerBarButtonItemTapped(_:)))
         navigationItem.rightBarButtonItems = [addDetachmentBarButtonItem, showRoasterViewBarButtonItem]
 
-        interactor.getRoasterDetails(roasterId: roaster.id)
+        interactor.getRoasterDetails()
     }
 
     // MARK: - Private Functions

@@ -11,7 +11,5 @@ import RoasterHammer_Shared
 
 protocol DetachmentTypeViewOutput {
     func getDetachmentTypes()
-    func createDetachment(ofType type: DetachmentShortResponse,
-                          forRoaster roaster: RoasterResponse,
-                          inArmy armyId: Int)
+    func createDetachment(ofType type: DetachmentShortResponse)
 }

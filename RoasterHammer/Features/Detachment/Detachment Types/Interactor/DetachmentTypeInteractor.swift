@@ -7,41 +7,46 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 import RoasterHammer_Shared
 
-final class DetachmentTypeInteractor: DetachmentTypeViewOutput {
+final class DetachmentTypeInteractor: DetachmentTypeViewOutput, BindableObject {
+    var detachmentTypes: [DetachmentShortResponse] = [] {
+        didSet {
+            didChange.send(self)
+        }
+    }
+    var armyId: Int
+    var roaster: RoasterResponse
     var presenter: DetachmentTypeInteractorOutput!
     private let detachmentDataManager: DetachmentDataManager
 
-    init(detachmentDataManager: DetachmentDataManager) {
+    var didChange = PassthroughSubject<DetachmentTypeInteractor, Never>()
+
+    init(detachmentDataManager: DetachmentDataManager, armyId: Int, roaster: RoasterResponse) {
         self.detachmentDataManager = detachmentDataManager
+        self.armyId = armyId
+        self.roaster = roaster
     }
 
     func getDetachmentTypes() {
         detachmentDataManager.getDetachmentTypes { [weak self] (detachmentTypes, error) in
-            if let error = error {
-                self?.presenter.didReceiveError(error: error)
-            } else if let detachmentTypes = detachmentTypes {
-                self?.presenter.didReceiveDetachmentTypes(detachmentTypes: detachmentTypes)
+            if let detachmentTypes = detachmentTypes {
+                self?.detachmentTypes = detachmentTypes
             }
         }
     }
 
-    func createDetachment(ofType type: DetachmentShortResponse,
-                          forRoaster roaster: RoasterResponse,
-                          inArmy armyId: Int) {
+    func createDetachment(ofType type: DetachmentShortResponse) {
         detachmentDataManager.createDetachment(armyId: armyId, selectedDetachmentType: type) { [weak self] (detachment, error) in
-            if let error = error {
-                self?.presenter.didReceiveError(error: error)
-            } else if let detachment = detachment {
-                self?.detachmentDataManager.addDetachmentToRoaster(roasterId: roaster.id,
-                                                             detachmentId: detachment.id,
-                                                             completion: { (roaster, error) in
-                                                                if let error = error {
-                                                                    self?.presenter.didReceiveError(error: error)
-                                                                } else if let roaster = roaster {
-                                                                    self?.presenter.didCreateNewDetachmentInRoaster(roaster: roaster)
-                                                                }
+            if let detachment = detachment, let roasterId = self?.roaster.id {
+                self?.detachmentDataManager.addDetachmentToRoaster(roasterId: roasterId,
+                                                                   detachmentId: detachment.id,
+                                                                   completion: { (roaster, error) in
+                                                                    if let roaster = roaster {
+                                                                        self?.roaster = roaster
+                                                                    }
                 })
             }
         }

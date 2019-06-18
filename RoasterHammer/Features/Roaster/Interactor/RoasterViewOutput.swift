@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RoasterViewOutput: RoasterDetachmentUpdateDelegate {
-    func getRoasterDetails(roasterId: Int)
+    func getRoasterDetails()
     func deleteUnit(_ unitId: Int,
                     fromDetachment detachmentId: Int,
                     fromRoaster roasterId: Int,

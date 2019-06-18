@@ -12,6 +12,7 @@ import RoasterHammer_Shared
 
 protocol RoasterBuildable {
     func build(roaster: RoasterResponse) -> UIViewController
+    func buildDataStore(roaster: RoasterResponse) -> RoasterInteractor
 }
 
 final class RoasterBuilder: FeatureBuilderBase, RoasterBuildable {
@@ -31,5 +32,15 @@ final class RoasterBuilder: FeatureBuilderBase, RoasterBuildable {
         presenter.view = view
 
         return view
+    }
+
+    func buildDataStore(roaster: RoasterResponse) -> RoasterInteractor {
+        let roasterDataManager = RoasterDataManager(environmentManager: dependencyManager.environmentManager)
+        let unitDataManager = UnitDataManager(environmentManager: dependencyManager.environmentManager)
+        let interactor = RoasterInteractor(roasterDataManager: roasterDataManager,
+                                           unitDataManager: unitDataManager,
+                                           roaster: roaster)
+
+        return interactor
     }
 }

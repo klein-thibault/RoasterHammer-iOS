@@ -7,13 +7,21 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 import RoasterHammer_Shared
 
-final class RoasterInteractor: RoasterViewOutput {
+final class RoasterInteractor: RoasterViewOutput, BindableObject {
     var presenter: RoasterInteractorOutput!
     private let roasterDataManager: RoasterDataManager
     private let unitDataManager: UnitDataManager
-    private let roaster: RoasterResponse
+    var roaster: RoasterResponse {
+        didSet {
+            didChange.send(self)
+        }
+    }
+
+    var didChange = PassthroughSubject<RoasterInteractor, Never>()
 
     init(roasterDataManager: RoasterDataManager,
          unitDataManager: UnitDataManager,
@@ -25,8 +33,8 @@ final class RoasterInteractor: RoasterViewOutput {
 
     // MARK: - Public Functions
 
-    func getRoasterDetails(roasterId: Int) {
-        getRoasterById(roasterId: roasterId)
+    func getRoasterDetails() {
+        getRoasterById(roasterId: roaster.id)
     }
 
     func deleteUnit(_ unitId: Int,
@@ -52,10 +60,8 @@ final class RoasterInteractor: RoasterViewOutput {
 
     private func getRoasterById(roasterId: Int) {
         roasterDataManager.getRoaster(byRoasterId: roasterId) { [weak self] (roaster, error) in
-            if let error = error {
-                self?.presenter.didReceiveError(error: error)
-            } else if let roaster = roaster {
-                self?.presenter.didReceiveRoaster(roaster: roaster)
+            if let roaster = roaster {
+                self?.roaster = roaster
             }
         }
     }

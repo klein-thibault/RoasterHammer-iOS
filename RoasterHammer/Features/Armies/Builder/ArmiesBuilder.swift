@@ -13,6 +13,7 @@ import RoasterHammer_Shared
 protocol ArmiesBuildable {
     func build(roaster: RoasterResponse) -> UIViewController
     func buildInNavigationController(roaster: RoasterResponse) -> UINavigationController
+    func buildDataStore() -> ArmiesInteractor
 }
 
 final class ArmiesBuilder: FeatureBuilderBase, ArmiesBuildable {
@@ -39,5 +40,12 @@ final class ArmiesBuilder: FeatureBuilderBase, ArmiesBuildable {
         presenter.view = view
 
         return view
+    }
+
+    func buildDataStore() -> ArmiesInteractor {
+        let armyDataManager = ArmyDataManager(environmentManager: dependencyManager.environmentManager)
+        let interactor = ArmiesInteractor(armyDataManager: armyDataManager)
+
+        return interactor
     }
 }

@@ -15,7 +15,9 @@ struct RoastersView: View {
         NavigationView {
             List {
                 ForEach(roastersData.roasters) { roaster in
-                    RoasterRow(roaster: roaster)
+                    NavigationButton(destination: RoasterUI(roastersData: RoasterHammerDependencyManager.shared.roasterBuilder().buildDataStore(roaster: roaster))) {
+                        RoasterRow(roaster: roaster)
+                    }
                 }
             }
             .navigationBarTitle(Text("Rosters"), displayMode: .large)

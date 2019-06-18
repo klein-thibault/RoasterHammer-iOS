@@ -7,10 +7,20 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
+import RoasterHammer_Shared
 
-final class ArmiesInteractor: ArmiesViewOutput {
+final class ArmiesInteractor: ArmiesViewOutput, BindableObject {
+    var armies: [ArmyResponse] = [] {
+        didSet {
+            didChange.send(self)
+        }
+    }
     var presenter: ArmiesInteractorOutput!
     private let armyDataManager: ArmyDataManager
+
+    var didChange = PassthroughSubject<ArmiesInteractor, Never>()
 
     init(armyDataManager: ArmyDataManager) {
         self.armyDataManager = armyDataManager
@@ -18,10 +28,8 @@ final class ArmiesInteractor: ArmiesViewOutput {
 
     func getArmies() {
         armyDataManager.getArmies { [weak self] (armies, error) in
-            if let error = error {
-                self?.presenter.didReceiveError(error: error)
-            } else if let armies = armies {
-                self?.presenter.didReceiveArmies(armies: armies)
+            if let armies = armies {
+                self?.armies = armies
             }
         }
     }
