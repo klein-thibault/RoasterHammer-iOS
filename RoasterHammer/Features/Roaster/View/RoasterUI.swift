@@ -23,7 +23,7 @@ struct RoasterUI : View {
 
                         List {
                             ForEach(detachment.roles) { role in
-                                Section(header: Text(role.name)) {
+                                Section(header: self.makeHeader(detachment: detachment, role: role)) {
                                     ForEach(role.units) { selectedUnit in
                                         Text(selectedUnit.unit.name)
                                     }
@@ -49,6 +49,36 @@ struct RoasterUI : View {
         )
         .onAppear {
             self.roastersData.getRoasterDetails()
+        }
+    }
+
+    func makeHeader(detachment: DetachmentResponse, role: RoleResponse) -> some View {
+        let unitFilters = UnitFilters(armyId: "\(detachment.army.id)", unitType: role.name)
+        let destination = UnitsUI(
+            unitsData: RoasterHammerDependencyManager
+                .shared
+                .unitsBuilder()
+                .buildDataStore(filters: unitFilters,
+                                detachmentId: detachment.id,
+                                unitRoleId: role.id),
+            roastersData: roastersData)
+
+        return HeaderAndButtonListHeaderView(text: role.name,
+                                             buttonTitle: "Add",
+                                             destination: destination)
+    }
+}
+
+struct HeaderAndButtonListHeaderView<Destination>: View where Destination: View {
+    let text: String
+    let buttonTitle: String
+    let destination: Destination
+
+    var body: some View {
+        HStack {
+            Text(text)
+            Spacer()
+            PresentationButton(Text(buttonTitle), destination: destination)
         }
     }
 }

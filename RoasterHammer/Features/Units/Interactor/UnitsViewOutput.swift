@@ -11,5 +11,4 @@ import RoasterHammer_Shared
 
 protocol UnitsViewOutput {
     func getUnits()
-    func addUnitToDetachment(unitId: Int, quantity: Int)
 }

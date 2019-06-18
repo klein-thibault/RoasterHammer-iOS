@@ -52,6 +52,15 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         }
     }
 
+    func addUnitToDetachment(unitId: Int, detachmentId: Int, unitRoleId: Int, quantity: Int) {
+        unitDataManager.addUnitToDetachment(detachmentId: detachmentId,
+                                            unitRoleId: unitRoleId,
+                                            unitId: unitId,
+                                            quantity: quantity) { [weak self] (detachment, error) in
+                                                self?.getRoasterDetails()
+        }
+    }
+
     func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse) {
         getRoasterById(roasterId: roaster.id)
     }

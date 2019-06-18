@@ -90,7 +90,7 @@ extension UnitsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let unit = units[indexPath.row]
-        interactor.addUnitToDetachment(unitId: unit.id, quantity: 1)
+//        interactor.addUnitToDetachment(unitId: unit.id, quantity: 1)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

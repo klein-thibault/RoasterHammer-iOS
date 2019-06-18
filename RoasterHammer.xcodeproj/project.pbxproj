@@ -44,6 +44,8 @@
 		8E36450D22B967D700ED227E /* RoleResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */; };
 		8E36450F22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36450E22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift */; };
 		8E36451222B96EDF00ED227E /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 8E36451122B96EDF00ED227E /* SFSafeSymbols */; };
+		8E36451422B977D100ED227E /* UnitsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451322B977D100ED227E /* UnitsUI.swift */; };
+		8E36451622B97A4E00ED227E /* UnitResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451522B97A4E00ED227E /* UnitResponse+Identifiable.swift */; };
 		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
 		8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE72224FBB300599834 /* JSONConvertible.swift */; };
 		8E6A8A892275E0D0001DE3D2 /* UnitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */; };
@@ -189,6 +191,8 @@
 		8E311B7322257A5F00C58DBF /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
 		8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoleResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8E36450E22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectedUnitResponse+Identifiable.swift"; sourceTree = "<group>"; };
+		8E36451322B977D100ED227E /* UnitsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsUI.swift; sourceTree = "<group>"; };
+		8E36451522B97A4E00ED227E /* UnitResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnitResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
 		8E646CE72224FBB300599834 /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
 		8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitHeaderView.swift; sourceTree = "<group>"; };
@@ -578,6 +582,7 @@
 				8E2724B722B90F4200534449 /* ArmyResponse+Identifiable.swift */,
 				8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */,
 				8E36450E22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift */,
+				8E36451522B97A4E00ED227E /* UnitResponse+Identifiable.swift */,
 			);
 			path = Identifiable;
 			sourceTree = "<group>";
@@ -710,6 +715,7 @@
 				8EE4E3942235B1B50043BDD7 /* UnitsView.swift */,
 				8EE4E3962235B1CB0043BDD7 /* UnitsLayoutViewController.swift */,
 				8EE4E3982235B1E50043BDD7 /* UnitsViewController.swift */,
+				8E36451322B977D100ED227E /* UnitsUI.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1166,6 +1172,7 @@
 				8EFAFD5E2228AB1D00DAE956 /* AlamofireHTTPClient.swift in Sources */,
 				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
 				8E19B5B5222D6383003F10FA /* DetachmentDataManager.swift in Sources */,
+				8E36451422B977D100ED227E /* UnitsUI.swift in Sources */,
 				8E90E0A9226DEB740065BBFE /* ModelWeaponSelectionViewController.swift in Sources */,
 				8E36450F22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift in Sources */,
 				8ECBE7292271645F006917CA /* RoasterDetachmentUpdateDelegate.swift in Sources */,
@@ -1181,6 +1188,7 @@
 				8EAEBBA8227CD50A0047BB61 /* DetachmentHeaderView.swift in Sources */,
 				8EC084A722B7201600554850 /* SceneDelegate.swift in Sources */,
 				8EAEBBA6227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift in Sources */,
+				8E36451622B97A4E00ED227E /* UnitResponse+Identifiable.swift in Sources */,
 				8E19D7EB222AB69E00051784 /* GameDataStore.swift in Sources */,
 				8EC084AB22B72C7700554850 /* RoasterRow.swift in Sources */,
 				8EFAF56A22285D1400DAE956 /* RoastersBuilder.swift in Sources */,

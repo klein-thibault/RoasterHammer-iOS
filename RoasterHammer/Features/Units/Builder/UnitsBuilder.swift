@@ -13,6 +13,7 @@ import RoasterHammer_Shared
 protocol UnitsBuildable {
     func build(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UIViewController
     func buildInNavigationController(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UINavigationController
+    func buildDataStore(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UnitsInteractor
 }
 
 final class UnitsBuilder: FeatureBuilderBase, UnitsBuildable {
@@ -39,5 +40,16 @@ final class UnitsBuilder: FeatureBuilderBase, UnitsBuildable {
         let navigationController = UINavigationController(rootViewController: view)
 
         return navigationController
+    }
+
+    func buildDataStore(filters: UnitFilters, detachmentId: Int, unitRoleId: Int) -> UnitsInteractor {
+        let unitDataManager = UnitDataManager(environmentManager: dependencyManager.environmentManager)
+        let interactor = UnitsInteractor(unitDataManager: unitDataManager,
+                                         filters: filters,
+                                         detachmentId: detachmentId,
+                                         unitRoleId: unitRoleId)
+
+
+        return interactor
     }
 }
