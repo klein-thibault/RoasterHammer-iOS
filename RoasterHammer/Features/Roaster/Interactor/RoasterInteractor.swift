@@ -90,7 +90,7 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
                 self?.roaster = roaster
             }
 
-            _ = completion
+            completion?()
         }
     }
 

@@ -56,20 +56,6 @@ struct DetachmentNameView: View {
     }
 }
 
-struct HeaderAndButtonListHeaderView<Destination>: View where Destination: View {
-    let text: String
-    let buttonTitle: String
-    let destination: Destination
-
-    var body: some View {
-        HStack {
-            Text(text)
-            Spacer()
-            PresentationButton(Text(buttonTitle), destination: destination)
-        }
-    }
-}
-
 struct DetachmentRow: View {
     @ObjectBinding var roastersData: RoasterInteractor
     let detachment: DetachmentResponse
@@ -101,7 +87,12 @@ struct DetachmentRoleListView: View {
                 Section(header: self.makeHeader(detachment: self.detachment, role: role)) {
                     ForEach(role.units) { selectedUnit in
                         NavigationButton(destination: EditUnitUI(rosterData: self.roastersData,
-                                                                 selectedUnit: selectedUnit)) {
+                                                                 selectedUnit: selectedUnit,
+                                                                 detachment: self.detachment),
+                                         onTrigger: { () -> Bool in
+                                            self.roastersData.selectedUnit = selectedUnit
+                                            return true
+                        }) {
                             Text(selectedUnit.unit.name)
                         }
                     }
@@ -121,9 +112,9 @@ struct DetachmentRoleListView: View {
                                 unitRoleId: role.id),
             roastersData: roastersData)
 
-        return HeaderAndButtonListHeaderView(text: role.name,
-                                             buttonTitle: "Add",
-                                             destination: destination)
+        return HeaderAndNavigationButtonHeader(text: role.name,
+                                               buttonTitle: "Add",
+                                               destination: destination)
     }
 }
 

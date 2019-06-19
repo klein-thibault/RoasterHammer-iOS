@@ -12,28 +12,38 @@ import RoasterHammer_Shared
 struct EditUnitUI : View {
     @ObjectBinding var rosterData: RoasterInteractor
     var selectedUnit: SelectedUnitResponse
+    let detachment: DetachmentResponse
 
     private var uniqueModels: [SelectedModelResponse] {
-        return selectedUnit.models.unique { $0.model.name }
+        return rosterData.selectedUnit?.models.unique { $0.model.name } ?? []
     }
 
     var body: some View {
         List {
             ForEach(uniqueModels) { uniqueSelectedModel in
-                Section(header: EditUnitHeader(selectedModel: uniqueSelectedModel)) {
+                Section(header: self.makeHeader(uniqueSelectedModel: uniqueSelectedModel)) {
                     ForEach(self.modelsByName(uniqueSelectedModel.model.name)) { selectedModel in
-                        EditUnitRow(selectedModel: selectedModel)
+                        NavigationButton(destination: Text("Edit Model \(selectedModel.model.name)")) {
+                            EditUnitRow(selectedModel: selectedModel)
+                        }
                     }
                 }
             }
         }
-        .onAppear {
-            self.rosterData.selectedUnit = self.selectedUnit
-        }
     }
 
     private func modelsByName(_ name: String) -> [SelectedModelResponse] {
-        return selectedUnit.models.filter { $0.model.name == name }
+        return rosterData.selectedUnit?.models.filter { $0.model.name == name } ?? []
+    }
+
+    private func makeHeader(uniqueSelectedModel: SelectedModelResponse) -> some View {
+        return HeaderAndActionButtonHeader(text: uniqueSelectedModel.model.name,
+                                           buttonTitle: "Add",
+                                           action: {
+                                            self.rosterData.addModel(uniqueSelectedModel.model.id,
+                                                                     toUnit: self.selectedUnit.id,
+                                                                     inDetachment: self.detachment.id)
+        })
     }
 }
 
