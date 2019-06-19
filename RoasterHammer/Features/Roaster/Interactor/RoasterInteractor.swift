@@ -20,6 +20,11 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
             didChange.send(self)
         }
     }
+    var selectedUnit: SelectedUnitResponse? {
+        didSet {
+            didChange.send(self)
+        }
+    }
 
     var didChange = PassthroughSubject<RoasterInteractor, Never>()
 
@@ -61,17 +66,50 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         }
     }
 
+    func addModel(_ modelId: Int, toUnit unitId: Int, inDetachment detachmentId: Int) {
+        unitDataManager.addModelToUnit(detachmentId: detachmentId, unitId: unitId, modelId: modelId) { [weak self] (detachment, error) in
+            self?.handleModelUpdate(modelId: modelId, toUnit: unitId, inDetachment: detachmentId)
+        }
+    }
+
+    func removeModel(_ modelId: Int, fromUnit unitId: Int, inDetachment detachmentId: Int) {
+        unitDataManager.removeModelFromUnit(detachmentId: detachmentId, unitId: unitId, modelId: modelId) { [weak self] (detachment, error) in
+            self?.handleModelUpdate(modelId: modelId, toUnit: unitId, inDetachment: detachmentId)
+        }
+    }
+
     func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse) {
         getRoasterById(roasterId: roaster.id)
     }
 
     // MARK: - Private Functions
 
-    private func getRoasterById(roasterId: Int) {
+    private func getRoasterById(roasterId: Int, completion: (() -> Void)? = nil) {
         roasterDataManager.getRoaster(byRoasterId: roasterId) { [weak self] (roaster, error) in
             if let roaster = roaster {
                 self?.roaster = roaster
             }
+
+            _ = completion
         }
+    }
+
+    private func findDetachment(forDetachmentId detachmentId: Int) -> DetachmentResponse? {
+        return roaster.detachments.first(where: { $0.id == detachmentId})
+    }
+
+    private func findSelectedUnit(forUnitId unitId: Int,
+                                  inDetachment detachment: DetachmentResponse) -> SelectedUnitResponse? {
+        return detachment.roles.flatMap({ $0.units }).first(where: { $0.id == unitId })
+    }
+
+    private func handleModelUpdate(modelId: Int, toUnit unitId: Int, inDetachment detachmentId: Int) {
+        getRoasterById(roasterId: roaster.id, completion: {
+            guard let detachment = self.findDetachment(forDetachmentId: detachmentId) else {
+                return
+            }
+            let selectedUnitResponse = self.findSelectedUnit(forUnitId: unitId, inDetachment: detachment)
+            self.selectedUnit = selectedUnitResponse
+        })
     }
 }

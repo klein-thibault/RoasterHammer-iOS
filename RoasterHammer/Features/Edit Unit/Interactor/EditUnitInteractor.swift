@@ -7,12 +7,19 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 import RoasterHammer_Shared
 
-final class EditUnitInteractor: EditUnitViewOutput {
+final class EditUnitInteractor: EditUnitViewOutput, BindableObject {
+    var selectedUnit: SelectedUnitResponse {
+        didSet {
+
+        }
+    }
+    var didChange = PassthroughSubject<EditUnitInteractor, Never>()
     var presenter: EditUnitInteractorOutput!
     private let unitDataManager: UnitDataManager
-    private let selectedUnit: SelectedUnitResponse
     private weak var delegate: RoasterDetachmentUpdateDelegate?
 
     init(unitDataManager: UnitDataManager,

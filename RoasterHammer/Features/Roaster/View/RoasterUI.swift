@@ -100,7 +100,10 @@ struct DetachmentRoleListView: View {
             ForEach(detachment.roles) { role in
                 Section(header: self.makeHeader(detachment: self.detachment, role: role)) {
                     ForEach(role.units) { selectedUnit in
-                        Text(selectedUnit.unit.name)
+                        NavigationButton(destination: EditUnitUI(rosterData: self.roastersData,
+                                                                 selectedUnit: selectedUnit)) {
+                            Text(selectedUnit.unit.name)
+                        }
                     }
                 }
             }
