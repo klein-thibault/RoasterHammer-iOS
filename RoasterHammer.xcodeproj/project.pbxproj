@@ -128,6 +128,8 @@
 		8EFAFFE8222DC4B400DAE956 /* ArmiesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFE7222DC4B400DAE956 /* ArmiesViewOutput.swift */; };
 		8EFAFFEA222DC4C200DAE956 /* ArmiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFE9222DC4C200DAE956 /* ArmiesInteractor.swift */; };
 		8EFAFFF0222DC53100DAE956 /* ArmiesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFEF222DC53100DAE956 /* ArmiesBuilder.swift */; };
+		8EFCBD7022BBE0780044E726 /* IfLetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFCBD6F22BBE0780044E726 /* IfLetView.swift */; };
+		8EFCBD7222BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFCBD7122BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -263,6 +265,8 @@
 		8EFAFFE7222DC4B400DAE956 /* ArmiesViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesViewOutput.swift; sourceTree = "<group>"; };
 		8EFAFFE9222DC4C200DAE956 /* ArmiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesInteractor.swift; sourceTree = "<group>"; };
 		8EFAFFEF222DC53100DAE956 /* ArmiesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesBuilder.swift; sourceTree = "<group>"; };
+		8EFCBD6F22BBE0780044E726 /* IfLetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfLetView.swift; sourceTree = "<group>"; };
+		8EFCBD7122BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PsychicPowerResponse+Identifiable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,6 +518,7 @@
 				8E36451A22BA7D0700ED227E /* HeaderAndNavigationButtonHeader.swift */,
 				8E36451C22BA7D7600ED227E /* HeaderAndActionButtonHeader.swift */,
 				8E97AFEA22BBB6F8009D08AE /* WeaponRow.swift */,
+				8EFCBD6F22BBE0780044E726 /* IfLetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -529,6 +534,7 @@
 				8E36451522B97A4E00ED227E /* UnitResponse+Identifiable.swift */,
 				8E0DF9F322BA668200B752E4 /* SelectedModelResponse+Identifiable.swift */,
 				8E97AFE822BBB361009D08AE /* WeaponResponse+Identifiable.swift */,
+				8EFCBD7122BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift */,
 			);
 			path = Identifiable;
 			sourceTree = "<group>";
@@ -1063,6 +1069,7 @@
 				8EFAFD472228A55000DAE956 /* IdentifiableView.swift in Sources */,
 				8E90E0B1226DEC7A0065BBFE /* ModelWeaponSelectionPresenter.swift in Sources */,
 				8E311B712225793A00C58DBF /* HTTPResponse.swift in Sources */,
+				8EFCBD7022BBE0780044E726 /* IfLetView.swift in Sources */,
 				8E0DF9F422BA668200B752E4 /* SelectedModelResponse+Identifiable.swift in Sources */,
 				8EFAF5272225F9AE00DAE956 /* JSONDecodingError.swift in Sources */,
 				8E0F5227224ACFEC0077D859 /* Array+Utils.swift in Sources */,
@@ -1081,6 +1088,7 @@
 				8EE0A274225BE60300CA703B /* TableViewHeaderLabel.swift in Sources */,
 				8EFAF52A2225FB8300DAE956 /* String+Encoding.swift in Sources */,
 				8E90E0B5226DECE90065BBFE /* ModelWeaponSelectionBuilder.swift in Sources */,
+				8EFCBD7222BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift in Sources */,
 				8EE4E3A32235B2A30043BDD7 /* UnitsBuilder.swift in Sources */,
 				8E19B344222D5B52003F10FA /* DetachmentTypeBuilder.swift in Sources */,
 				8ED7EE0122748F0200A21A38 /* RoasterViewerLayoutViewController.swift in Sources */,

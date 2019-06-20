@@ -12,7 +12,9 @@ import RoasterHammer_Shared
 struct EditUnitView : View {
     @ObjectBinding var rosterData: RoasterInteractor
     var selectedUnit: SelectedUnitResponse
+    let unitType: String
     let detachment: DetachmentResponse
+    @State var isWarlord: Bool
 
     private var uniqueModels: [SelectedModelResponse] {
         return rosterData.selectedUnit?.models.unique { $0.model.name } ?? []
@@ -31,8 +33,22 @@ struct EditUnitView : View {
                             EditUnitRow(selectedModel: selectedModel)
                         }
                     }
+                    if self.unitType == "HQ" {
+                        Toggle(isOn: self.$isWarlord) {
+                            Text("Warlord")
+                        }
+                    }
                 }
             }
+
+            if self.isWarlord {
+                Section(header: Text("Psychic Powers")) {
+                    ForEach(selectedUnit.psychicPowers) { psychicPower in
+                        Text(psychicPower.name)
+                    }
+                }
+            }
+//            .navigationBarTitle(Text(selectedUnit.unit.name))
         }
     }
 

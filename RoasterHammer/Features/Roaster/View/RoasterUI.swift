@@ -88,7 +88,9 @@ struct DetachmentRoleListView: View {
                     ForEach(role.units) { selectedUnit in
                         NavigationButton(destination: EditUnitView(rosterData: self.roastersData,
                                                                    selectedUnit: selectedUnit,
-                                                                   detachment: self.detachment),
+                                                                   unitType: role.name,
+                                                                   detachment: self.detachment,
+                                                                   isWarlord: selectedUnit.isWarlord),
                                          onTrigger: { () -> Bool in
                                             self.roastersData.selectedUnit = selectedUnit
                                             return true
