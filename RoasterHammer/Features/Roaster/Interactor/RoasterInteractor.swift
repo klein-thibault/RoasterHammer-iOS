@@ -12,9 +12,6 @@ import Combine
 import RoasterHammer_Shared
 
 final class RoasterInteractor: RoasterViewOutput, BindableObject {
-    var presenter: RoasterInteractorOutput!
-    private let roasterDataManager: RoasterDataManager
-    private let unitDataManager: UnitDataManager
     var roaster: RoasterResponse {
         didSet {
             didChange.send(self)
@@ -25,6 +22,9 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
             didChange.send(self)
         }
     }
+
+    private let roasterDataManager: RoasterDataManager
+    private let unitDataManager: UnitDataManager
 
     var didChange = PassthroughSubject<RoasterInteractor, Never>()
 
@@ -49,11 +49,7 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         unitDataManager.removeUnitFromDetachment(detachmentId: detachmentId,
                                                  unitRoleId: unitRoleId,
                                                  unitId: unitId) { [weak self] (detachment, error) in
-                                                    if let error = error {
-                                                        self?.presenter.didReceiveError(error: error)
-                                                    } else {
-                                                        self?.getRoasterById(roasterId: roasterId)
-                                                    }
+                                                    self?.getRoasterById(roasterId: roasterId)
         }
     }
 
