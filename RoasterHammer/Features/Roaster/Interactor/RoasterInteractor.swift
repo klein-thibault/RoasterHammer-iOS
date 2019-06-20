@@ -22,6 +22,11 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
             didChange.send(self)
         }
     }
+    var selectedModel: SelectedModelResponse? {
+        didSet {
+            didChange.send(self)
+        }
+    }
 
     private let roasterDataManager: RoasterDataManager
     private let unitDataManager: UnitDataManager

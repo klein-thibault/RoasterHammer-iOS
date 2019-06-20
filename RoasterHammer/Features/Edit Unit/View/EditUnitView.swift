@@ -23,7 +23,11 @@ struct EditUnitView : View {
             ForEach(uniqueModels) { uniqueSelectedModel in
                 Section(header: self.makeHeader(uniqueSelectedModel: uniqueSelectedModel)) {
                     ForEach(self.modelsByName(uniqueSelectedModel.model.name)) { selectedModel in
-                        NavigationButton(destination: Text("Edit Model \(selectedModel.model.name)")) {
+                        NavigationButton(destination: EditModelView(rosterData: self.rosterData),
+                                         onTrigger: { () -> Bool in
+                                            self.rosterData.selectedModel = selectedModel
+                                            return true
+                        }) {
                             EditUnitRow(selectedModel: selectedModel)
                         }
                     }

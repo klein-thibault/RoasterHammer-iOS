@@ -54,6 +54,9 @@
 		8E90E0B3226DEC8C0065BBFE /* ModelWeaponSelectionInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0B2226DEC8C0065BBFE /* ModelWeaponSelectionInteractorOutput.swift */; };
 		8E90E0B5226DECE90065BBFE /* ModelWeaponSelectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0B4226DECE90065BBFE /* ModelWeaponSelectionBuilder.swift */; };
 		8E90E0BA226DEF750065BBFE /* SingleLabelWithActionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E90E0B9226DEF750065BBFE /* SingleLabelWithActionButtonTableViewCell.swift */; };
+		8E97AFE722BBB1AB009D08AE /* EditModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97AFE622BBB1AB009D08AE /* EditModelView.swift */; };
+		8E97AFE922BBB361009D08AE /* WeaponResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97AFE822BBB361009D08AE /* WeaponResponse+Identifiable.swift */; };
+		8E97AFEB22BBB6F8009D08AE /* WeaponRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97AFEA22BBB6F8009D08AE /* WeaponRow.swift */; };
 		8EAEB933227CB9680047BB61 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEB932227CB9680047BB61 /* RulesView.swift */; };
 		8EAEBBA4227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEBBA3227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift */; };
 		8EAEBBA6227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEBBA5227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift */; };
@@ -184,6 +187,9 @@
 		8E90E0B2226DEC8C0065BBFE /* ModelWeaponSelectionInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionInteractorOutput.swift; sourceTree = "<group>"; };
 		8E90E0B4226DECE90065BBFE /* ModelWeaponSelectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWeaponSelectionBuilder.swift; sourceTree = "<group>"; };
 		8E90E0B9226DEF750065BBFE /* SingleLabelWithActionButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelWithActionButtonTableViewCell.swift; sourceTree = "<group>"; };
+		8E97AFE622BBB1AB009D08AE /* EditModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModelView.swift; sourceTree = "<group>"; };
+		8E97AFE822BBB361009D08AE /* WeaponResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeaponResponse+Identifiable.swift"; sourceTree = "<group>"; };
+		8E97AFEA22BBB6F8009D08AE /* WeaponRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponRow.swift; sourceTree = "<group>"; };
 		8EAEB932227CB9680047BB61 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		8EAEBBA3227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterSelectedDetachmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EAEBBA5227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterSelectionBaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -482,6 +488,22 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		8E97AFE422BBB182009D08AE /* Edit Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E97AFE522BBB18F009D08AE /* View */,
+			);
+			path = "Edit Model";
+			sourceTree = "<group>";
+		};
+		8E97AFE522BBB18F009D08AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E97AFE622BBB1AB009D08AE /* EditModelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8EB6E776223C2DEE0090B125 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +513,7 @@
 				8EE0A273225BE60300CA703B /* TableViewHeaderLabel.swift */,
 				8E36451A22BA7D0700ED227E /* HeaderAndNavigationButtonHeader.swift */,
 				8E36451C22BA7D7600ED227E /* HeaderAndActionButtonHeader.swift */,
+				8E97AFEA22BBB6F8009D08AE /* WeaponRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -505,6 +528,7 @@
 				8E36450E22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift */,
 				8E36451522B97A4E00ED227E /* UnitResponse+Identifiable.swift */,
 				8E0DF9F322BA668200B752E4 /* SelectedModelResponse+Identifiable.swift */,
+				8E97AFE822BBB361009D08AE /* WeaponResponse+Identifiable.swift */,
 			);
 			path = Identifiable;
 			sourceTree = "<group>";
@@ -694,6 +718,7 @@
 		8EFAF03A2224A8E400DAE956 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				8E97AFE422BBB182009D08AE /* Edit Model */,
 				8E90E0A1226DEAEE0065BBFE /* Model Weapon Selection */,
 				8E03FC39224825C000A39ABF /* Edit Unit */,
 				8EFA04D52231AAF300DAE956 /* Account */,
@@ -1009,6 +1034,7 @@
 				8E2711BB226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift in Sources */,
 				8EFAF56D2228750200DAE956 /* RoastersViewOutput.swift in Sources */,
 				8EFAFD542228AA0800DAE956 /* HTTPEnvironmentManager.swift in Sources */,
+				8E97AFEB22BBB6F8009D08AE /* WeaponRow.swift in Sources */,
 				8E19E6BA222B370900051784 /* RoasterInteractor.swift in Sources */,
 				8E90E0AB226DEB930065BBFE /* ModelWeaponSelectionView.swift in Sources */,
 				8EFAF54D22284EBD00DAE956 /* DependencyManager.swift in Sources */,
@@ -1060,6 +1086,7 @@
 				8ED7EE0122748F0200A21A38 /* RoasterViewerLayoutViewController.swift in Sources */,
 				8E6A8A8D2275E113001DE3D2 /* WeaponCharacteristicsView.swift in Sources */,
 				8EFAF531222600C300DAE956 /* Storable.swift in Sources */,
+				8E97AFE922BBB361009D08AE /* WeaponResponse+Identifiable.swift in Sources */,
 				8E2724B422B90BFF00534449 /* DetachmentTypesView.swift in Sources */,
 				8EFAFD5E2228AB1D00DAE956 /* AlamofireHTTPClient.swift in Sources */,
 				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
@@ -1101,6 +1128,7 @@
 				8EE4EAF72235B6FF0043BDD7 /* UnitDataManager.swift in Sources */,
 				8E90E0AF226DEC5F0065BBFE /* ModelWeaponSelectionViewOutput.swift in Sources */,
 				8EFAFD602228ABDE00DAE956 /* RoasterHammerEnvironmentManager.swift in Sources */,
+				8E97AFE722BBB1AB009D08AE /* EditModelView.swift in Sources */,
 				8E36451D22BA7D7600ED227E /* HeaderAndActionButtonHeader.swift in Sources */,
 				8EE227B822235FAE00DF0D72 /* AppDelegate.swift in Sources */,
 				8E90E0BA226DEF750065BBFE /* SingleLabelWithActionButtonTableViewCell.swift in Sources */,
