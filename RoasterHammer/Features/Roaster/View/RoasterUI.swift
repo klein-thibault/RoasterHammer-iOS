@@ -89,7 +89,7 @@ struct DetachmentRoleListView: View {
                         NavigationButton(destination: EditUnitView(rosterData: self.roastersData,
                                                                    selectedUnit: selectedUnit,
                                                                    unitType: role.name,
-                                                                   detachment: self.detachment,
+                                                                   detachment: self.detachment, role: role,
                                                                    isWarlord: selectedUnit.isWarlord),
                                          onTrigger: { () -> Bool in
                                             self.roastersData.selectedUnit = selectedUnit

@@ -14,6 +14,7 @@ struct EditUnitView : View {
     var selectedUnit: SelectedUnitResponse
     let unitType: String
     let detachment: DetachmentResponse
+    let role: RoleResponse
     @State var isWarlord: Bool
 
     private var uniqueModels: [SelectedModelResponse] {
@@ -37,18 +38,28 @@ struct EditUnitView : View {
                         Toggle(isOn: self.$isWarlord) {
                             Text("Warlord")
                         }
+                        .tapAction {
+                            self.rosterData.setUnitAsWarlord(detachmentId: self.detachment.id,
+                                                             roleId: self.role.id,
+                                                             unitId: self.selectedUnit.id)
+                        }
                     }
                 }
             }
 
-            if self.isWarlord {
-                Section(header: Text("Psychic Powers")) {
-                    ForEach(selectedUnit.psychicPowers) { psychicPower in
-                        Text(psychicPower.name)
+            // Warlord Traits
+            if self.rosterData.selectedUnit?.isWarlord ?? false {
+                Section(header: Text("Warlord Traits")) {
+                    ForEach(selectedUnit.unit.availableWarlordTraits) { warlordTrait in
+                        Button(action: {
+
+                        }) {
+                            WarlordTraitRow(warlordTrait: warlordTrait,
+                                            isSelected: self.isWarlordTraitSelected(warlordTrait: warlordTrait, unit: self.selectedUnit))
+                        }
                     }
                 }
             }
-//            .navigationBarTitle(Text(selectedUnit.unit.name))
         }
     }
 
@@ -64,6 +75,11 @@ struct EditUnitView : View {
                                                                      toUnit: self.selectedUnit.id,
                                                                      inDetachment: self.detachment.id)
         })
+    }
+
+    private func isWarlordTraitSelected(warlordTrait: WarlordTraitResponse, unit: SelectedUnitResponse) -> Bool {
+        guard let selectedWarlordTrait = unit.warlordTrait else { return false }
+        return selectedWarlordTrait.id == warlordTrait.id
     }
 }
 
@@ -91,6 +107,28 @@ struct EditUnitRow: View {
             Text(selectedModel.model.name)
             Spacer()
             Text("\(selectedModel.cost) points")
+        }
+    }
+}
+
+struct WarlordTraitRow: View {
+    let warlordTrait: WarlordTraitResponse
+    let isSelected: Bool
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Text(warlordTrait.name)
+                Spacer()
+                if isSelected {
+                    Image(systemName: "checkmark")
+                        .imageScale(.large)
+                        .accessibility(label: Text("Create Detachment"))
+                }
+            }
+
+            Text(warlordTrait.description)
+                .font(.footnote)
         }
     }
 }

@@ -130,6 +130,7 @@
 		8EFAFFF0222DC53100DAE956 /* ArmiesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAFFEF222DC53100DAE956 /* ArmiesBuilder.swift */; };
 		8EFCBD7022BBE0780044E726 /* IfLetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFCBD6F22BBE0780044E726 /* IfLetView.swift */; };
 		8EFCBD7222BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFCBD7122BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift */; };
+		8EFCBD7422BD61DD0044E726 /* WarlordTraitResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFCBD7322BD61DD0044E726 /* WarlordTraitResponse+Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +268,7 @@
 		8EFAFFEF222DC53100DAE956 /* ArmiesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesBuilder.swift; sourceTree = "<group>"; };
 		8EFCBD6F22BBE0780044E726 /* IfLetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfLetView.swift; sourceTree = "<group>"; };
 		8EFCBD7122BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PsychicPowerResponse+Identifiable.swift"; sourceTree = "<group>"; };
+		8EFCBD7322BD61DD0044E726 /* WarlordTraitResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WarlordTraitResponse+Identifiable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,6 +537,7 @@
 				8E0DF9F322BA668200B752E4 /* SelectedModelResponse+Identifiable.swift */,
 				8E97AFE822BBB361009D08AE /* WeaponResponse+Identifiable.swift */,
 				8EFCBD7122BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift */,
+				8EFCBD7322BD61DD0044E726 /* WarlordTraitResponse+Identifiable.swift */,
 			);
 			path = Identifiable;
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				8EFAF0462224AAB200DAE956 /* UIView+Autolayout.swift in Sources */,
 				8EFAFD492228A61700DAE956 /* UITableView+IdentifiableView.swift in Sources */,
 				8E2724B022B9077000534449 /* RoasterUI.swift in Sources */,
+				8EFCBD7422BD61DD0044E726 /* WarlordTraitResponse+Identifiable.swift in Sources */,
 				8EFAFFE8222DC4B400DAE956 /* ArmiesViewOutput.swift in Sources */,
 				8EFAFD5A2228AAB200DAE956 /* Dictionary+Utils.swift in Sources */,
 				8EC084A522B7067500554850 /* RoastersView.swift in Sources */,

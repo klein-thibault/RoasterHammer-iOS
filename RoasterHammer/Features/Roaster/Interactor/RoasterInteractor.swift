@@ -69,16 +69,25 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
 
     func addModel(_ modelId: Int, toUnit unitId: Int, inDetachment detachmentId: Int) {
         unitDataManager.addModelToUnit(detachmentId: detachmentId, unitId: unitId, modelId: modelId) { [weak self] (detachment, error) in
-            self?.handleModelUpdate(modelId: modelId, toUnit: unitId, inDetachment: detachmentId)
+            self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
         }
     }
 
     func removeModel(_ modelId: Int, fromUnit unitId: Int, inDetachment detachmentId: Int) {
         unitDataManager.removeModelFromUnit(detachmentId: detachmentId, unitId: unitId, modelId: modelId) { [weak self] (detachment, error) in
-            self?.handleModelUpdate(modelId: modelId, toUnit: unitId, inDetachment: detachmentId)
+            self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
         }
     }
 
+    func setUnitAsWarlord(detachmentId: Int, roleId: Int, unitId: Int) {
+        unitDataManager.setUnitAsWarlord(detachmentId: detachmentId,
+                                         roleId: roleId,
+                                         unitId: unitId) { [weak self] (detachment, error) in
+                                            self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
+        }
+    }
+
+    // TODO: remove
     func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse) {
         getRoasterById(roasterId: roaster.id)
     }
@@ -104,7 +113,7 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         return detachment.roles.flatMap({ $0.units }).first(where: { $0.id == unitId })
     }
 
-    private func handleModelUpdate(modelId: Int, toUnit unitId: Int, inDetachment detachmentId: Int) {
+    private func handleUnitUpdate(unitId: Int, inDetachment detachmentId: Int) {
         getRoasterById(roasterId: roaster.id, completion: {
             guard let detachment = self.findDetachment(forDetachmentId: detachmentId) else {
                 return
