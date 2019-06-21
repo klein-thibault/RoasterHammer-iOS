@@ -87,6 +87,15 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         }
     }
 
+    func setWarlordTraitToUnit(warlordTraitId: Int, detachmentId: Int, roleId: Int, unitId: Int) {
+        unitDataManager.setWarlordTraitToUnit(warlordTraitId: warlordTraitId,
+                                              detachmentId: detachmentId,
+                                              roleId: roleId,
+                                              unitId: unitId) { [weak self] (detachment, error) in
+                                                self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
+        }
+    }
+
     // TODO: remove
     func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse) {
         getRoasterById(roasterId: roaster.id)

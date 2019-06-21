@@ -25,6 +25,22 @@ extension UnitFilters: QueryItemConvertible {
     }
 }
 
+extension EditSelectedUnitRequest: JSONConvertible {
+    func toJSON() -> JSON {
+        var json: JSON = [:]
+
+        if let warlordTraitId = warlordTraitId {
+            json["warlordTraitId"] = warlordTraitId
+        }
+
+        if let relicId = relicId {
+            json["relicId"] = relicId
+        }
+
+        return json
+    }
+}
+
 final class UnitDataManager: BaseDataManager {
     private let accountStore = AccountDataStore()
 
@@ -197,6 +213,29 @@ final class UnitDataManager: BaseDataManager {
                                   path: "/detachments/\(detachmentId)/roles/\(roleId)/units/\(unitId)/warlord",
             queryItems: nil,
             body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeDetachment(response: response, error: error, completion: completion)
+        }
+    }
+
+    func setWarlordTraitToUnit(warlordTraitId: Int,
+                               detachmentId: Int,
+                               roleId: Int,
+                               unitId: Int,
+                               completion: @escaping (DetachmentResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let body = EditSelectedUnitRequest(warlordTraitId: warlordTraitId, relicId: nil).toJSON()
+        let request = HTTPRequest(method: .patch,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/detachments/\(detachmentId)/roles/\(roleId)/units/\(unitId)",
+            queryItems: nil,
+            body: body,
             headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
 
         httpClient.perform(request: request) { [weak self] (response, error) in

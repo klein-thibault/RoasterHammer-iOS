@@ -52,7 +52,10 @@ struct EditUnitView : View {
                 Section(header: Text("Warlord Traits")) {
                     ForEach(selectedUnit.unit.availableWarlordTraits) { warlordTrait in
                         Button(action: {
-
+                            self.rosterData.setWarlordTraitToUnit(warlordTraitId: warlordTrait.id,
+                                                                  detachmentId: self.detachment.id,
+                                                                  roleId: self.role.id,
+                                                                  unitId: self.selectedUnit.id)
                         }) {
                             WarlordTraitRow(warlordTrait: warlordTrait,
                                             isSelected: self.isWarlordTraitSelected(warlordTrait: warlordTrait, unit: self.selectedUnit))
