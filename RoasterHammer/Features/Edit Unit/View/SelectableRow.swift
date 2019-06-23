@@ -1,5 +1,5 @@
 //
-//  WarlordTraitRow.swift
+//  SelectableRow.swift
 //  RoasterHammer
 //
 //  Created by Thibault Klein on 6/23/19.
@@ -9,14 +9,15 @@
 import SwiftUI
 import RoasterHammer_Shared
 
-struct WarlordTraitRow: View {
-    let warlordTrait: WarlordTraitResponse
+struct SelectableRow: View {
+    let name: String
+    let description: String
     let isSelected: Bool
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
-                Text(warlordTrait.name)
+                Text(name)
                 Spacer()
                 if isSelected {
                     Image(systemName: "checkmark")
@@ -25,7 +26,7 @@ struct WarlordTraitRow: View {
                 }
             }
 
-            Text(warlordTrait.description)
+            Text(description)
                 .font(.footnote)
         }
     }
@@ -34,10 +35,7 @@ struct WarlordTraitRow: View {
 #if DEBUG
 struct WarlordTraitRow_Previews : PreviewProvider {
     static var previews: some View {
-        WarlordTraitRow(warlordTrait: WarlordTraitResponse(warlordTraitDTO: WarlordTraitDTO(id: 1,
-                                                                                            name: "Warlord Trait",
-                                                                                            description: "Warlord Trait Description")),
-                        isSelected: true)
+        SelectableRow(name: "Name", description: "Description", isSelected: true)
     }
 }
 #endif

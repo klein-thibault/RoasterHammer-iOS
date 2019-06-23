@@ -47,21 +47,18 @@ struct EditUnitView : View {
                 }
             }
 
-            // Warlord Traits
             if self.rosterData.selectedUnit?.isWarlord ?? false {
-                Section(header: Text("Warlord Traits")) {
-                    ForEach(selectedUnit.unit.availableWarlordTraits) { warlordTrait in
-                        Button(action: {
-                            self.rosterData.setWarlordTraitToUnit(warlordTraitId: warlordTrait.id,
-                                                                  detachmentId: self.detachment.id,
-                                                                  roleId: self.role.id,
-                                                                  unitId: self.selectedUnit.id)
-                        }) {
-                            WarlordTraitRow(warlordTrait: warlordTrait,
-                                            isSelected: self.isWarlordTraitSelected(warlordTrait: warlordTrait, unit: self.selectedUnit))
-                        }
-                    }
-                }
+                WarlordTraitSection(rosterData: rosterData,
+                                    selectedUnit: selectedUnit,
+                                    unitType: unitType,
+                                    detachment: detachment,
+                                    role: role)
+
+                RelicSection(rosterData: rosterData,
+                             selectedUnit: selectedUnit,
+                             unitType: unitType,
+                             detachment: detachment,
+                             role: role)
             }
         }
     }
@@ -78,11 +75,6 @@ struct EditUnitView : View {
                                                                      toUnit: self.selectedUnit.id,
                                                                      inDetachment: self.detachment.id)
         })
-    }
-
-    private func isWarlordTraitSelected(warlordTrait: WarlordTraitResponse, unit: SelectedUnitResponse) -> Bool {
-        guard let selectedWarlordTrait = unit.warlordTrait else { return false }
-        return selectedWarlordTrait.id == warlordTrait.id
     }
 }
 
