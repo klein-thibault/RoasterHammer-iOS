@@ -20,21 +20,24 @@ struct RelicSection : View {
         Section(header: Text("Relics")) {
             ForEach(detachment.army.relics) { relic in
                 Button(action: {
-                    // TODO
-                    print("Select relic")
+                    self.rosterData.setRelicToUnit(relicId: relic.id,
+                                                   detachmentId: self.detachment.id,
+                                                   roleId: self.role.id,
+                                                   unitId: self.selectedUnit.id)
                 }) {
                     SelectableRow(name: relic.name,
                                     description: relic.description,
-                                    isSelected: self.isRelicSelected(relic: relic, relics: self.detachment.army.relics))
+                                    isSelected: self.isRelicSelected(relic: relic,
+                                                                     selectedRelic: self.rosterData.selectedUnit?.relic))
                 }
             }
         }
     }
 
-    private func isRelicSelected(relic: RelicResponse, relics: [RelicResponse]) -> Bool {
-        return relics.contains { (relicResponse) -> Bool in
-            relicResponse.id == relic.id
-        }
+    private func isRelicSelected(relic: RelicResponse, selectedRelic: RelicResponse?) -> Bool {
+        guard let selectedRelic = selectedRelic else { return false }
+
+        return relic.id == selectedRelic.id
     }
 }
 

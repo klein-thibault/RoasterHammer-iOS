@@ -243,6 +243,29 @@ final class UnitDataManager: BaseDataManager {
         }
     }
 
+    func setRelicToUnit(relicId: Int,
+                        detachmentId: Int,
+                        roleId: Int,
+                        unitId: Int,
+                        completion: @escaping (DetachmentResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let body = EditSelectedUnitRequest(warlordTraitId: nil, relicId: relicId).toJSON()
+        let request = HTTPRequest(method: .patch,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/detachments/\(detachmentId)/roles/\(roleId)/units/\(unitId)",
+            queryItems: nil,
+            body: body,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeDetachment(response: response, error: error, completion: completion)
+        }
+    }
+
     // MARK: - Private Functions
 
     private func decodeDetachment(response: HTTPResponse?,
