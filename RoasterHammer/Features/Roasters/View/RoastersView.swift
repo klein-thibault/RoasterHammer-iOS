@@ -22,20 +22,19 @@ struct RoastersView: View {
             }
             .navigationBarTitle(Text("Rosters"), displayMode: .large)
             .navigationBarItems(leading:
-                PresentationButton(
+                PresentationButton(destination: AccountView(accountInteractor: RoasterHammerDependencyManager.shared.accountBuilder().buildDataStore()), label: {
                     Image(systemName: "person.crop.circle")
                         .imageScale(.large)
                         .accessibility(label: Text("User Profile"))
-                        .padding(),
-                    destination: AccountView(accountInteractor: RoasterHammerDependencyManager.shared.accountBuilder().buildDataStore())
-                ),
-                trailing: PresentationButton(
+                        .padding()
+                }),
+                                trailing:
+                PresentationButton(destination: CreateRoasterView(roastersData: self.roastersData), label: {
                     Image(systemName: "plus")
                         .imageScale(.large)
                         .accessibility(label: Text("Create Detachment"))
-                        .padding(),
-                    destination: CreateRoasterView(roastersData: self.roastersData)
-                )
+                        .padding()
+                })
             )
         }
         .onAppear {

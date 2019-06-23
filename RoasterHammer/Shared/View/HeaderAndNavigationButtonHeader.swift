@@ -17,7 +17,9 @@ struct HeaderAndNavigationButtonHeader<Destination>: View where Destination: Vie
         HStack {
             Text(text)
             Spacer()
-            PresentationButton(Text(buttonTitle), destination: destination)
+            PresentationButton(destination: destination) {
+                Text(buttonTitle)
+            }
         }
     }
 }

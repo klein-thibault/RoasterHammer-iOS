@@ -24,13 +24,12 @@ struct RoasterUI : View {
         .frame(width: UIScreen.main.bounds.width)
         .navigationBarTitle(Text(roastersData.roaster.name))
         .navigationBarItems(trailing:
-            PresentationButton(
+            PresentationButton(destination: ArmiesView(roastersData: roastersData), label: {
                 Image(systemName: "plus")
                     .imageScale(.large)
                     .accessibility(label: Text("Add Detachment"))
-                    .padding(),
-                destination: ArmiesView(roastersData: roastersData)
-            )
+                    .padding()
+            })
         )
         .onAppear {
             self.roastersData.getRoasterDetails()

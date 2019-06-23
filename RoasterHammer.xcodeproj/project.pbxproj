@@ -37,6 +37,7 @@
 		8E36451922B9A3F400ED227E /* DetachmentResponse+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451822B9A3F400ED227E /* DetachmentResponse+Utils.swift */; };
 		8E36451B22BA7D0700ED227E /* HeaderAndNavigationButtonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451A22BA7D0700ED227E /* HeaderAndNavigationButtonHeader.swift */; };
 		8E36451D22BA7D7600ED227E /* HeaderAndActionButtonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451C22BA7D7600ED227E /* HeaderAndActionButtonHeader.swift */; };
+		8E55D71722BFE0FD00B813C4 /* WarlordTraitRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55D71622BFE0FD00B813C4 /* WarlordTraitRow.swift */; };
 		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
 		8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE72224FBB300599834 /* JSONConvertible.swift */; };
 		8E6A8A892275E0D0001DE3D2 /* UnitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */; };
@@ -173,6 +174,7 @@
 		8E36451822B9A3F400ED227E /* DetachmentResponse+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetachmentResponse+Utils.swift"; sourceTree = "<group>"; };
 		8E36451A22BA7D0700ED227E /* HeaderAndNavigationButtonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAndNavigationButtonHeader.swift; sourceTree = "<group>"; };
 		8E36451C22BA7D7600ED227E /* HeaderAndActionButtonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAndActionButtonHeader.swift; sourceTree = "<group>"; };
+		8E55D71622BFE0FD00B813C4 /* WarlordTraitRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarlordTraitRow.swift; sourceTree = "<group>"; };
 		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
 		8E646CE72224FBB300599834 /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
 		8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitHeaderView.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				8E0DF9F122BA5D5D00B752E4 /* EditUnitView.swift */,
+				8E55D71622BFE0FD00B813C4 /* WarlordTraitRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1148,6 +1151,7 @@
 				8EE4EAF92235B7950043BDD7 /* QueryItemConvertible.swift in Sources */,
 				8E2724B222B90AB100534449 /* DetachmentResponse+Identifiable.swift in Sources */,
 				8EFA04E22231AC6E00DAE956 /* AccountViewOutput.swift in Sources */,
+				8E55D71722BFE0FD00B813C4 /* WarlordTraitRow.swift in Sources */,
 				8ED7EE0922748F9100A21A38 /* RoasterViewerPresenter.swift in Sources */,
 				8E19B33C222D5A98003F10FA /* DetachmentTypeViewOutput.swift in Sources */,
 				8EFAFD4B2228A8E900DAE956 /* GameDataManager.swift in Sources */,
