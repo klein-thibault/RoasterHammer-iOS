@@ -17,7 +17,7 @@ struct RoasterView : View {
             VStack(alignment: .leading) {
                 ForEach(roastersData.roaster.detachments) { detachment in
                     VStack {
-                        FactionView(detachment: detachment)
+                        FactionView(roastersData: self.roastersData, detachment: detachment)
                         DetachmentRow(roastersData: self.roastersData, detachment: detachment)
                     }
                 }
@@ -41,6 +41,7 @@ struct RoasterView : View {
 }
 
 struct FactionView: View {
+    @ObjectBinding var roastersData: RoasterInteractor
     let detachment: DetachmentResponse
 
     var body: some View {
@@ -49,7 +50,8 @@ struct FactionView: View {
                 Text("Faction")
                     .font(.headline)
                 Spacer()
-                NavigationButton(destination: Text("Faction")) {
+                NavigationButton(destination: DetachmentFactionView(rosterData: self.roastersData,
+                                                                    detachment: self.detachment)) {
                     Text("Edit")
                 }
             }

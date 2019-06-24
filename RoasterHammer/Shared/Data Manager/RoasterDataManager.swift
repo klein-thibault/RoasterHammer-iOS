@@ -100,6 +100,27 @@ final class RoasterDataManager: BaseDataManager {
         }
     }
 
+    func setDetachmentFaction(factionId: Int,
+                              detachmentId: Int,
+                              rosterId: Int,
+                              completion: @escaping (RoasterResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let request = HTTPRequest(method: .post,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/roasters/\(rosterId)/detachments/\(detachmentId)/factions/\(factionId)",
+            queryItems: nil,
+            body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeRosterResponse(fromResponse: response, completion: completion)
+        }
+    }
+
     // MARK: - Private Functions
 
     private func createRoasters(token: String, gameId: Int, body: JSON, completion: @escaping (RoasterResponse?, Error?) -> Void) {
@@ -110,18 +131,8 @@ final class RoasterDataManager: BaseDataManager {
             body: body,
             headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
 
-        httpClient.perform(request: request) { (response, error) in
-            guard let data = response?.data else {
-                completion(nil, JSONDecodingError.invalidDataType)
-                return
-            }
-
-            do {
-                let roaster: RoasterResponse = try JSONDecoder().decodeResponse(from: data)
-                completion(roaster, nil)
-            } catch {
-                completion(nil, error)
-            }
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeRosterResponse(fromResponse: response, completion: completion)
         }
     }
 
@@ -159,18 +170,23 @@ final class RoasterDataManager: BaseDataManager {
             body: nil,
             headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
 
-        httpClient.perform(request: request) { (response, error) in
-            guard let data = response?.data else {
-                completion(nil, JSONDecodingError.invalidDataType)
-                return
-            }
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeRosterResponse(fromResponse: response, completion: completion)
+        }
+    }
 
-            do {
-                let roaster: RoasterResponse = try JSONDecoder().decodeResponse(from: data)
-                completion(roaster, nil)
-            } catch {
-                completion(nil, error)
-            }
+    private func decodeRosterResponse(fromResponse response: HTTPResponse?,
+                                      completion: @escaping (RoasterResponse?, Error?) -> Void) {
+        guard let data = response?.data else {
+            completion(nil, JSONDecodingError.invalidDataType)
+            return
+        }
+
+        do {
+            let roaster: RoasterResponse = try JSONDecoder().decodeResponse(from: data)
+            completion(roaster, nil)
+        } catch {
+            completion(nil, error)
         }
     }
 }

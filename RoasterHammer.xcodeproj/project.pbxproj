@@ -27,6 +27,8 @@
 		8E2724B422B90BFF00534449 /* DetachmentTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2724B322B90BFF00534449 /* DetachmentTypesView.swift */; };
 		8E2724B822B90F4200534449 /* ArmyResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2724B722B90F4200534449 /* ArmyResponse+Identifiable.swift */; };
 		8E2724BA22B90FCE00534449 /* ArmiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2724B922B90FCE00534449 /* ArmiesView.swift */; };
+		8E2DF38922C144590080DD5C /* DetachmentFactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2DF38822C144590080DD5C /* DetachmentFactionView.swift */; };
+		8E2DF38B22C144FB0080DD5C /* FactionResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2DF38A22C144FB0080DD5C /* FactionResponse+Identifiable.swift */; };
 		8E311B712225793A00C58DBF /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B702225793A00C58DBF /* HTTPResponse.swift */; };
 		8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B7322257A5F00C58DBF /* AccountDataManager.swift */; };
 		8E36450D22B967D700ED227E /* RoleResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */; };
@@ -170,6 +172,8 @@
 		8E2724B322B90BFF00534449 /* DetachmentTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypesView.swift; sourceTree = "<group>"; };
 		8E2724B722B90F4200534449 /* ArmyResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArmyResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8E2724B922B90FCE00534449 /* ArmiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmiesView.swift; sourceTree = "<group>"; };
+		8E2DF38822C144590080DD5C /* DetachmentFactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentFactionView.swift; sourceTree = "<group>"; };
+		8E2DF38A22C144FB0080DD5C /* FactionResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FactionResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8E311B702225793A00C58DBF /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		8E311B7322257A5F00C58DBF /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
 		8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoleResponse+Identifiable.swift"; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 		8E19B32F222D58C8003F10FA /* Detachment */ = {
 			isa = PBXGroup;
 			children = (
+				8E2DF38622C144410080DD5C /* Detachment Factions */,
 				8E19B330222D58D0003F10FA /* Detachment Types */,
 			);
 			path = Detachment;
@@ -417,6 +422,22 @@
 				8E2711BD226E64DD00EDFBD1 /* ArrayUtilsTests.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8E2DF38622C144410080DD5C /* Detachment Factions */ = {
+			isa = PBXGroup;
+			children = (
+				8E2DF38722C1444A0080DD5C /* View */,
+			);
+			path = "Detachment Factions";
+			sourceTree = "<group>";
+		};
+		8E2DF38722C1444A0080DD5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E2DF38822C144590080DD5C /* DetachmentFactionView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8E36451722B9A3E700ED227E /* Models */ = {
@@ -555,6 +576,7 @@
 				8EFCBD7122BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift */,
 				8EFCBD7322BD61DD0044E726 /* WarlordTraitResponse+Identifiable.swift */,
 				8E67EB4722BFEA9200EB7F72 /* RelicResponse+Identifiable.swift */,
+				8E2DF38A22C144FB0080DD5C /* FactionResponse+Identifiable.swift */,
 			);
 			path = Identifiable;
 			sourceTree = "<group>";
@@ -1079,6 +1101,7 @@
 				8EFAF56522285B2700DAE956 /* BaseViewController.swift in Sources */,
 				8EE4E39B2235B2020043BDD7 /* UnitsViewOutput.swift in Sources */,
 				8E90E0A7226DEB230065BBFE /* ModelWeaponSelectionLayoutViewController.swift in Sources */,
+				8E2DF38922C144590080DD5C /* DetachmentFactionView.swift in Sources */,
 				8ED7EE0B22748FAA00A21A38 /* RoasterViewerInteractorOutput.swift in Sources */,
 				8E90E0AD226DEC4A0065BBFE /* ModelWeaponSelectionInteractor.swift in Sources */,
 				8EFAFD632228AEF400DAE956 /* FeatureBuilderBase.swift in Sources */,
@@ -1086,6 +1109,7 @@
 				8EC084AE22B72EE100554850 /* RoasterResponse+Identifiable.swift in Sources */,
 				8EFA04E42231AC7B00DAE956 /* AccountInteractor.swift in Sources */,
 				8E36450D22B967D700ED227E /* RoleResponse+Identifiable.swift in Sources */,
+				8E2DF38B22C144FB0080DD5C /* FactionResponse+Identifiable.swift in Sources */,
 				8EFAF5602228575C00DAE956 /* Alerter.swift in Sources */,
 				8EFAF54F22284ECF00DAE956 /* RoasterHammerDependencyManager.swift in Sources */,
 				8EFAFD472228A55000DAE956 /* IdentifiableView.swift in Sources */,

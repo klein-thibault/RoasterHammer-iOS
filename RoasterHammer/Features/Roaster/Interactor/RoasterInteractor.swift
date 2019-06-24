@@ -125,6 +125,16 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         }
     }
 
+    func setDetachmentFaction(factionId: Int, detachmentId: Int, rosterId: Int) {
+        roasterDataManager.setDetachmentFaction(factionId: factionId,
+                                                detachmentId: detachmentId,
+                                                rosterId: rosterId) { [weak self] (roster, error) in
+                                                    if let roster = roster {
+                                                        self?.roaster = roster
+                                                    }
+        }
+    }
+
     // TODO: remove
     func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse) {
         getRoasterById(roasterId: roaster.id)
