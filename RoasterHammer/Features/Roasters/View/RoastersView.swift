@@ -15,7 +15,7 @@ struct RoastersView: View {
         NavigationView {
             List {
                 ForEach(roastersData.roasters) { roaster in
-                    NavigationButton(destination: RoasterUI(roastersData: RoasterHammerDependencyManager.shared.roasterBuilder().buildDataStore(roaster: roaster))) {
+                    NavigationButton(destination: RoasterView(roastersData: RoasterHammerDependencyManager.shared.roasterBuilder().buildDataStore(roaster: roaster))) {
                         RoasterRow(roaster: roaster)
                     }
                 }

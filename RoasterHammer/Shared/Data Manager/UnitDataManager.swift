@@ -266,6 +266,48 @@ final class UnitDataManager: BaseDataManager {
         }
     }
 
+    func setPsychicPowerToUnit(unitId: Int,
+                               detachmentId: Int,
+                               psychicPowerId: Int,
+                               completion: @escaping (DetachmentResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let request = HTTPRequest(method: .post,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/detachments/\(detachmentId)/units/\(unitId)/psychic-powers/\(psychicPowerId)",
+            queryItems: nil,
+            body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeDetachment(response: response, error: error, completion: completion)
+        }
+    }
+
+    func unsetPsychicPowerFromUnit(unitId: Int,
+                                   detachmentId: Int,
+                                   psychicPowerId: Int,
+                                   completion: @escaping (DetachmentResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let request = HTTPRequest(method: .delete,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/detachments/\(detachmentId)/units/\(unitId)/psychic-powers/\(psychicPowerId)",
+            queryItems: nil,
+            body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.decodeDetachment(response: response, error: error, completion: completion)
+        }
+    }
+
     // MARK: - Private Functions
 
     private func decodeDetachment(response: HTTPResponse?,

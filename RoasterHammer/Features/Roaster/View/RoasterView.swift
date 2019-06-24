@@ -1,5 +1,5 @@
 //
-//  RoasterUI.swift
+//  RoasterView.swift
 //  RoasterHammer
 //
 //  Created by Thibault Klein on 6/18/19.
@@ -9,7 +9,7 @@
 import SwiftUI
 import RoasterHammer_Shared
 
-struct RoasterUI : View {
+struct RoasterView : View {
     @ObjectBinding var roastersData: RoasterInteractor
 
     var body: some View {

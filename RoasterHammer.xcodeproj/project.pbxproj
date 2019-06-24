@@ -22,7 +22,7 @@
 		8E19E6C2222B37AC00051784 /* RoasterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19E6C1222B37AC00051784 /* RoasterBuilder.swift */; };
 		8E2711BB226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2711BA226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift */; };
 		8E2711BE226E64DD00EDFBD1 /* ArrayUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2711BD226E64DD00EDFBD1 /* ArrayUtilsTests.swift */; };
-		8E2724B022B9077000534449 /* RoasterUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2724AF22B9077000534449 /* RoasterUI.swift */; };
+		8E2724B022B9077000534449 /* RoasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2724AF22B9077000534449 /* RoasterView.swift */; };
 		8E2724B222B90AB100534449 /* DetachmentResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2724B122B90AB100534449 /* DetachmentResponse+Identifiable.swift */; };
 		8E2724B422B90BFF00534449 /* DetachmentTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2724B322B90BFF00534449 /* DetachmentTypesView.swift */; };
 		8E2724B822B90F4200534449 /* ArmyResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2724B722B90F4200534449 /* ArmyResponse+Identifiable.swift */; };
@@ -165,7 +165,7 @@
 		8E19E6C1222B37AC00051784 /* RoasterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterBuilder.swift; sourceTree = "<group>"; };
 		8E2711BA226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeaponResponse+Equatable.swift"; sourceTree = "<group>"; };
 		8E2711BD226E64DD00EDFBD1 /* ArrayUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUtilsTests.swift; sourceTree = "<group>"; };
-		8E2724AF22B9077000534449 /* RoasterUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterUI.swift; sourceTree = "<group>"; };
+		8E2724AF22B9077000534449 /* RoasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterView.swift; sourceTree = "<group>"; };
 		8E2724B122B90AB100534449 /* DetachmentResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetachmentResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8E2724B322B90BFF00534449 /* DetachmentTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentTypesView.swift; sourceTree = "<group>"; };
 		8E2724B722B90F4200534449 /* ArmyResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArmyResponse+Identifiable.swift"; sourceTree = "<group>"; };
@@ -389,7 +389,7 @@
 		8E19E6AF222B368400051784 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8E2724AF22B9077000534449 /* RoasterUI.swift */,
+				8E2724AF22B9077000534449 /* RoasterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1098,7 +1098,7 @@
 				8ED7EE0522748F6200A21A38 /* RoasterViewerInteractor.swift in Sources */,
 				8EFAF0462224AAB200DAE956 /* UIView+Autolayout.swift in Sources */,
 				8EFAFD492228A61700DAE956 /* UITableView+IdentifiableView.swift in Sources */,
-				8E2724B022B9077000534449 /* RoasterUI.swift in Sources */,
+				8E2724B022B9077000534449 /* RoasterView.swift in Sources */,
 				8EFCBD7422BD61DD0044E726 /* WarlordTraitResponse+Identifiable.swift in Sources */,
 				8EFAFFE8222DC4B400DAE956 /* ArmiesViewOutput.swift in Sources */,
 				8EFAFD5A2228AAB200DAE956 /* Dictionary+Utils.swift in Sources */,

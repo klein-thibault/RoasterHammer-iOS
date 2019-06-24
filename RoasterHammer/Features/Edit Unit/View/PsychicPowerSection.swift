@@ -18,14 +18,33 @@ struct PsychicPowerSection : View {
         Section(header: Text("Psychic Powers")) {
             ForEach(selectedUnit.unit.availablePsychicPowers) { psychicPower in
                 Button(action: {
-                    // TODO: attach psychic power
+                    if self.isPsychicPowerSelected(psychicPower: psychicPower,
+                                                   selectedPsychicPowers: self.rosterData.selectedUnit?.psychicPowers) {
+                        self.rosterData.unsetPsychicPowerFromUnit(unitId: self.selectedUnit.id,
+                                                                  detachmentId: self.detachment.id,
+                                                                  psychicPowerId: psychicPower.id)
+                    } else {
+                        self.rosterData.setPsychicPowerToUnit(unitId: self.selectedUnit.id,
+                                                              detachmentId: self.detachment.id,
+                                                              psychicPowerId: psychicPower.id)
+                    }
                 }) {
                     SelectableRow(name: psychicPower.name,
                                   description: psychicPower.description,
-                                  isSelected: false)
+                                  isSelected: self.isPsychicPowerSelected(psychicPower: psychicPower,
+                                                                          selectedPsychicPowers: self.rosterData.selectedUnit?.psychicPowers))
                 }
             }
         }
+    }
+
+    private func isPsychicPowerSelected(psychicPower: PsychicPowerResponse,
+                                        selectedPsychicPowers: [PsychicPowerResponse]?) -> Bool {
+        guard let selectedPsychicPowers = selectedPsychicPowers else { return false }
+
+        return selectedPsychicPowers
+            .filter { $0.id == psychicPower.id }
+            .first != nil
     }
 }
 

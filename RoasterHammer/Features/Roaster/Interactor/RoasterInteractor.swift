@@ -105,6 +105,26 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         }
     }
 
+    func setPsychicPowerToUnit(unitId: Int,
+                               detachmentId: Int,
+                               psychicPowerId: Int) {
+        unitDataManager.setPsychicPowerToUnit(unitId: unitId,
+                                              detachmentId: detachmentId,
+                                              psychicPowerId: psychicPowerId) { [weak self] (detachment, error) in
+                                                self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
+        }
+    }
+
+    func unsetPsychicPowerFromUnit(unitId: Int,
+                                   detachmentId: Int,
+                                   psychicPowerId: Int) {
+        unitDataManager.unsetPsychicPowerFromUnit(unitId: unitId,
+                                              detachmentId: detachmentId,
+                                              psychicPowerId: psychicPowerId) { [weak self] (detachment, error) in
+                                                self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
+        }
+    }
+
     // TODO: remove
     func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse) {
         getRoasterById(roasterId: roaster.id)
