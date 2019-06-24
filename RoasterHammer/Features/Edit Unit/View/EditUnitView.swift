@@ -60,6 +60,12 @@ struct EditUnitView : View {
                              detachment: detachment,
                              role: role)
             }
+
+            if self.rosterData.selectedUnit?.unit.isPsycher ?? false {
+                PsychicPowerSection(rosterData: rosterData,
+                                    selectedUnit: selectedUnit,
+                                    detachment: detachment)
+            }
         }
     }
 

@@ -43,6 +43,8 @@
 		8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */; };
 		8E646CE82224FBB300599834 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E646CE72224FBB300599834 /* JSONConvertible.swift */; };
 		8E67EB4822BFEA9200EB7F72 /* RelicResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67EB4722BFEA9200EB7F72 /* RelicResponse+Identifiable.swift */; };
+		8E67EDBA22C05C7800EB7F72 /* UnitResponse+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67EDB922C05C7800EB7F72 /* UnitResponse+Utils.swift */; };
+		8E67EDBC22C05E1600EB7F72 /* PsychicPowerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67EDBB22C05E1600EB7F72 /* PsychicPowerSection.swift */; };
 		8E6A8A892275E0D0001DE3D2 /* UnitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */; };
 		8E6A8A8B2275E0EC001DE3D2 /* ModelCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A8A2275E0EC001DE3D2 /* ModelCharacteristicsView.swift */; };
 		8E6A8A8D2275E113001DE3D2 /* WeaponCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A8A8C2275E113001DE3D2 /* WeaponCharacteristicsView.swift */; };
@@ -183,6 +185,8 @@
 		8E646CE52224FA4800599834 /* JSONDecoder+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Data.swift"; sourceTree = "<group>"; };
 		8E646CE72224FBB300599834 /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
 		8E67EB4722BFEA9200EB7F72 /* RelicResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelicResponse+Identifiable.swift"; sourceTree = "<group>"; };
+		8E67EDB922C05C7800EB7F72 /* UnitResponse+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnitResponse+Utils.swift"; sourceTree = "<group>"; };
+		8E67EDBB22C05E1600EB7F72 /* PsychicPowerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychicPowerSection.swift; sourceTree = "<group>"; };
 		8E6A8A882275E0D0001DE3D2 /* UnitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitHeaderView.swift; sourceTree = "<group>"; };
 		8E6A8A8A2275E0EC001DE3D2 /* ModelCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCharacteristicsView.swift; sourceTree = "<group>"; };
 		8E6A8A8C2275E113001DE3D2 /* WeaponCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCharacteristicsView.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 				8E55D71622BFE0FD00B813C4 /* SelectableRow.swift */,
 				8E55D71822BFE75B00B813C4 /* WarlordTraitSection.swift */,
 				8E55D71A22BFE82000B813C4 /* RelicSection.swift */,
+				8E67EDBB22C05E1600EB7F72 /* PsychicPowerSection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -777,6 +782,7 @@
 				8E0F5226224ACFEC0077D859 /* Array+Utils.swift */,
 				8E2711BA226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift */,
 				8ED7EE142274A2F700A21A38 /* UICollectionView+IdentifiableView.swift */,
+				8E67EDB922C05C7800EB7F72 /* UnitResponse+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1061,6 +1067,7 @@
 				8EFAF54D22284EBD00DAE956 /* DependencyManager.swift in Sources */,
 				8E19E6B8222B36F200051784 /* RoasterViewOutput.swift in Sources */,
 				8E03FC4D2248277200A39ABF /* EditUnitBuilder.swift in Sources */,
+				8E67EDBA22C05C7800EB7F72 /* UnitResponse+Utils.swift in Sources */,
 				8E19B33E222D5AC4003F10FA /* DetachmentTypeInteractor.swift in Sources */,
 				8EE0A2722257C95600CA703B /* TableViewHeaderLabelWithAddButton.swift in Sources */,
 				8EAEB933227CB9680047BB61 /* RulesView.swift in Sources */,
@@ -1136,6 +1143,7 @@
 				8E19D7EB222AB69E00051784 /* GameDataStore.swift in Sources */,
 				8EC084AB22B72C7700554850 /* RoasterRow.swift in Sources */,
 				8EFAF56A22285D1400DAE956 /* RoastersBuilder.swift in Sources */,
+				8E67EDBC22C05E1600EB7F72 /* PsychicPowerSection.swift in Sources */,
 				8E55D71922BFE75B00B813C4 /* WarlordTraitSection.swift in Sources */,
 				8E19D7ED222ABA2900051784 /* RoasterDataManager.swift in Sources */,
 				8ED7EDFF22748EEE00A21A38 /* RoasterViewerView.swift in Sources */,
