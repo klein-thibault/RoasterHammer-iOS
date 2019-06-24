@@ -16,7 +16,10 @@ struct RoasterView : View {
         ScrollView {
             VStack(alignment: .leading) {
                 ForEach(roastersData.roaster.detachments) { detachment in
-                    DetachmentRow(roastersData: self.roastersData, detachment: detachment)
+                    VStack {
+                        FactionView(detachment: detachment)
+                        DetachmentRow(roastersData: self.roastersData, detachment: detachment)
+                    }
                 }
             }
             .frame(width: UIScreen.main.bounds.width)
@@ -34,6 +37,26 @@ struct RoasterView : View {
         .onAppear {
             self.roastersData.getRoasterDetails()
         }
+    }
+}
+
+struct FactionView: View {
+    let detachment: DetachmentResponse
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            HStack {
+                Text("Faction")
+                    .font(.headline)
+                Spacer()
+                NavigationButton(destination: Text("Faction")) {
+                    Text("Edit")
+                }
+            }
+
+            Text(detachment.selectedFaction?.name ?? "Select a faction")
+        }
+        .padding()
     }
 }
 
