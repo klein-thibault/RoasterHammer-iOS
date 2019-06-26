@@ -45,4 +45,12 @@ final class RoastersInteractor: RoastersViewOutput, BindableObject {
             }
         }
     }
+
+    func removeRoster(rosterId: Int) {
+        roastersDataManager.removeRoster(rosterId: rosterId) { [weak self] (rosters, error) in
+            if let rosters = rosters {
+                self?.roasters = rosters
+            }
+        }
+    }
 }

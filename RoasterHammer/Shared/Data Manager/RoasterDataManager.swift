@@ -52,6 +52,24 @@ final class RoasterDataManager: BaseDataManager {
         }
     }
 
+    func removeRoster(rosterId: Int, completion: @escaping ([RoasterResponse]?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let request = HTTPRequest(method: .delete,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/roasters/\(rosterId)",
+            queryItems: nil,
+            body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.getRoasters(completion: completion)
+        }
+    }
+
     func getRoasters(completion: @escaping ([RoasterResponse]?, Error?) -> Void) {
         guard let token = accountStore.getAuthToken() else {
             completion(nil, RoasterHammerError.userNotLoggedIn)

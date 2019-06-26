@@ -19,6 +19,7 @@ struct RoastersView: View {
                         RoasterRow(roaster: roaster)
                     }
                 }
+                .onDelete(perform: deleteRoster)
             }
             .navigationBarTitle(Text("Rosters"), displayMode: .large)
             .navigationBarItems(leading:
@@ -39,6 +40,13 @@ struct RoastersView: View {
         }
         .onAppear {
             self.roastersData.getRoasters()
+        }
+    }
+
+    func deleteRoster(at offsets: IndexSet) {
+        if let first = offsets.first {
+            let roster = roastersData.roasters[first]
+            roastersData.removeRoster(rosterId: roster.id)
         }
     }
 }
