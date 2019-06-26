@@ -19,6 +19,12 @@ struct RoasterView : View {
                     VStack {
                         FactionView(roastersData: self.roastersData, detachment: detachment)
                         DetachmentRow(roastersData: self.roastersData, detachment: detachment)
+                        Button(action: {
+                            self.roastersData.removeDetachment(detachmentId: detachment.id, rosterId: self.roastersData.roaster.id)
+                        }) {
+                            Text("Remove")
+                                .color(.red)
+                        }
                     }
                 }
             }

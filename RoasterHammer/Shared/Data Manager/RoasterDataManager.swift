@@ -118,6 +118,26 @@ final class RoasterDataManager: BaseDataManager {
         }
     }
 
+    func removeDetachmentFromRoster(detachmentId: Int,
+                                    rosterId: Int,
+                                    completion: @escaping (RoasterResponse?, Error?) -> Void) {
+        guard let token = accountStore.getAuthToken() else {
+            completion(nil, RoasterHammerError.userNotLoggedIn)
+            return
+        }
+
+        let request = HTTPRequest(method: .delete,
+                                  baseURL: environmentManager.currentEnvironment.baseURL,
+                                  path: "/roasters/\(rosterId)/detachments/\(detachmentId)",
+            queryItems: nil,
+            body: nil,
+            headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))
+
+        httpClient.perform(request: request) { [weak self] (response, error) in
+            self?.getRoaster(byRoasterId: rosterId, completion: completion)
+        }
+    }
+
     func setDetachmentFaction(factionId: Int,
                               detachmentId: Int,
                               rosterId: Int,

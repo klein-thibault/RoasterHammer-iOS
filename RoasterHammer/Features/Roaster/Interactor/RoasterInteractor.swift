@@ -47,6 +47,15 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         getRoasterById(roasterId: roaster.id)
     }
 
+    func removeDetachment(detachmentId: Int, rosterId: Int) {
+        roasterDataManager.removeDetachmentFromRoster(detachmentId: detachmentId,
+                                                      rosterId: rosterId) { (roster, error) in
+                                                        if let roster = roster {
+                                                            self.roaster = roster
+                                                        }
+        }
+    }
+
     func deleteUnit(_ unitId: Int,
                     fromDetachment detachmentId: Int,
                     fromRoaster roasterId: Int,
