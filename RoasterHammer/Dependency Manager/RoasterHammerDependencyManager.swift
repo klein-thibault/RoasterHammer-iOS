@@ -52,10 +52,6 @@ final class RoasterHammerDependencyManager: DependencyManager {
         return EditUnitBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
 
-    func modelWeaponSelectionBuilder() -> ModelWeaponSelectionBuildable {
-        return ModelWeaponSelectionBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
-    }
-
     func roasterViewerBuilder() -> RoasterViewerBuildable {
         return RoasterViewerBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }

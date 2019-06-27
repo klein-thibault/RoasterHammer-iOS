@@ -7,18 +7,35 @@
 //
 
 import SwiftUI
+import RoasterHammer_Shared
 
 struct EditModelView : View {
     @ObjectBinding var rosterData: RoasterInteractor
+    let detachment: DetachmentResponse
+    let selectedUnit: SelectedUnitResponse
 
     var body: some View {
         List {
-            Section(header: Text("Weapons")) {
-                ForEach(rosterData.selectedModel?.selectedWeapons ?? []) { weapon in
-                    WeaponRow(weapon: weapon)
-                }
+            ForEach(rosterData.selectedModel?.selectedWeapons ?? []) { weapon in
+                WeaponRow(weapon: weapon)
             }
-            .navigationBarTitle(Text(rosterData.selectedModel?.model.name ?? ""))
+            .onDelete(perform: deleteWeapon)
+        }
+        .navigationBarTitle(Text(rosterData.selectedModel?.model.name ?? ""))
+        .navigationBarItems(trailing:
+            PresentationButton(destination: WeaponSelectionView(rosterData: rosterData, detachment: detachment, selectedUnit: selectedUnit),
+                               label: {
+                                Text("Add Weapons")
+            }))
+    }
+
+    func deleteWeapon(at offsets: IndexSet) {
+        if let first = offsets.first,
+            let weapon = rosterData.selectedModel?.selectedWeapons[first] {
+            rosterData.detachWeaponFromSelectedModel(weapon.id,
+                                                     forModel: rosterData.selectedModel?.id ?? 0,
+                                                     ofUnit: selectedUnit.id,
+                                                     inDetachment: detachment.id)
         }
     }
 }

@@ -179,7 +179,6 @@ final class UnitDataManager: BaseDataManager {
 
     func detachWeaponFromModel(detachmentId: Int,
                                modelId: Int,
-                               weaponBucketId: Int,
                                weaponId: Int,
                                completion: @escaping (DetachmentResponse?, Error?) -> Void) {
         guard let token = accountStore.getAuthToken() else {
@@ -189,7 +188,7 @@ final class UnitDataManager: BaseDataManager {
 
         let request = HTTPRequest(method: .delete,
                                   baseURL: environmentManager.currentEnvironment.baseURL,
-                                  path: "/detachments/\(detachmentId)/models/\(modelId)/weapon-buckets/\(weaponBucketId)/weapons/\(weaponId)",
+                                  path: "/detachments/\(detachmentId)/models/\(modelId)/weapons/\(weaponId)",
             queryItems: nil,
             body: nil,
             headers: environmentManager.currentEnvironment.bearerAuthHeaders(token: token))

@@ -144,6 +144,31 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         }
     }
 
+    func attachWeaponToSelectedModel(_ weaponId: Int,
+                                     fromWeaponBucket weaponBucketId: Int,
+                                     forModel modelId: Int,
+                                     ofUnit unitId: Int,
+                                     inDetachment detachmentId: Int) {
+        unitDataManager.attachWeaponToModel(detachmentId: detachmentId,
+                                            modelId: modelId,
+                                            weaponBucketId: weaponBucketId,
+                                            weaponId: weaponId) { [weak self] (detachment, error) in
+                                                self?.handleModelUpdate(unitId: unitId, modelId: modelId, inDetachment: detachmentId)
+        }
+    }
+
+    func detachWeaponFromSelectedModel(_ weaponId: Int,
+                                       forModel modelId: Int,
+                                       ofUnit unitId: Int,
+                                       inDetachment detachmentId: Int) {
+        unitDataManager.detachWeaponFromModel(detachmentId: detachmentId,
+                                              modelId: modelId,
+                                              weaponId: weaponId) { [weak self] (detachment, error) in
+                                                self?.handleModelUpdate(unitId: unitId, modelId: modelId, inDetachment: detachmentId)
+                                                self?.getRoasterDetails()
+        }
+    }
+
     // TODO: remove
     func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse) {
         getRoasterById(roasterId: roaster.id)
@@ -177,6 +202,19 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
             }
             let selectedUnitResponse = self.findSelectedUnit(forUnitId: unitId, inDetachment: detachment)
             self.selectedUnit = selectedUnitResponse
+        })
+    }
+
+    private func handleModelUpdate(unitId: Int, modelId: Int, inDetachment detachmentId: Int) {
+        getRoasterById(roasterId: roaster.id, completion: {
+            guard let detachment = self.findDetachment(forDetachmentId: detachmentId) else {
+                return
+            }
+
+            let selectedUnitResponse = self.findSelectedUnit(forUnitId: unitId, inDetachment: detachment)
+            self.selectedUnit = selectedUnitResponse
+            let selectedModelResponse = selectedUnitResponse?.models.first(where: { $0.id == modelId })
+            self.selectedModel = selectedModelResponse
         })
     }
 }

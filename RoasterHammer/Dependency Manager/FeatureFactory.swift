@@ -16,6 +16,5 @@ protocol FeatureFactory {
     func detachmentTypeBuilder() -> DetachmentTypeBuildable
     func unitsBuilder() -> UnitsBuildable
     func editUnitBuilder() -> EditUnitBuildable
-    func modelWeaponSelectionBuilder() -> ModelWeaponSelectionBuildable
     func roasterViewerBuilder() -> RoasterViewerBuildable
 }

@@ -26,7 +26,9 @@ struct EditUnitView : View {
             ForEach(uniqueModels) { uniqueSelectedModel in
                 Section(header: self.makeHeader(uniqueSelectedModel: uniqueSelectedModel)) {
                     ForEach(self.modelsByName(uniqueSelectedModel.model.name)) { selectedModel in
-                        NavigationButton(destination: EditModelView(rosterData: self.rosterData),
+                        NavigationButton(destination: EditModelView(rosterData: self.rosterData,
+                                                                    detachment: self.detachment,
+                                                                    selectedUnit: self.selectedUnit),
                                          onTrigger: { () -> Bool in
                                             self.rosterData.selectedModel = selectedModel
                                             return true
@@ -104,10 +106,16 @@ struct EditUnitRow: View {
     let selectedModel: SelectedModelResponse
 
     var body: some View {
-        HStack {
-            Text(selectedModel.model.name)
-            Spacer()
-            Text("\(selectedModel.cost) points")
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text(selectedModel.model.name)
+                Spacer()
+                Text("\(selectedModel.cost) points")
+            }
+
+            ForEach(selectedModel.selectedWeapons) { weapon in
+                Text(weapon.name)
+            }
         }
     }
 }
