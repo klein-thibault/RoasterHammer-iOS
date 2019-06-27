@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct CredentialsView : View {
-    @State var email: String = ""
-    @State var password: String = ""
+    @State var email = ""
+    @State var password = ""
 
     @ObjectBinding var accountInteractor: AccountInteractor
 
@@ -27,11 +27,14 @@ struct CredentialsView : View {
                     .textContentType(.password)
 
                 HStack {
-                    Button(action: {
-                        self.accountInteractor.login(email: self.email, password: self.password)
-                    }) {
-                        Text("Login")
+                    Group {
+                        Button(action: {
+                            self.accountInteractor.login(email: self.email, password: self.password)
+                        }) {
+                            Text("Login")
+                        }
                     }
+                    .disabled(!accountInteractor.areCredentialsValid(email: email, password: password))
 
                     Text("or")
 
@@ -40,6 +43,7 @@ struct CredentialsView : View {
                     }) {
                         Text("Create Account")
                     }
+                    .disabled(!accountInteractor.areCredentialsValid(email: email, password: password))
                 }
 
                 Spacer()

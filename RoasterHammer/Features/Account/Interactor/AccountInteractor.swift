@@ -51,4 +51,8 @@ final class AccountInteractor: AccountViewOutput, BindableObject {
             })
         }
     }
+
+    func areCredentialsValid(email: String, password: String) -> Bool {
+        return email.count > 0 && password.count > 4
+    }
 }
