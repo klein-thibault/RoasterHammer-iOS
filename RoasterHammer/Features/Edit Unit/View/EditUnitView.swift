@@ -26,7 +26,7 @@ struct EditUnitView : View {
             ForEach(uniqueModels) { uniqueSelectedModel in
                 Section(header: self.makeHeader(uniqueSelectedModel: uniqueSelectedModel)) {
                     ForEach(self.modelsByName(uniqueSelectedModel.model.name)) { selectedModel in
-                        NavigationButton(destination: EditModelView(rosterData: self.rosterData,
+                        NavigationLink(destination: EditModelView(rosterData: self.rosterData,
                                                                     detachment: self.detachment,
                                                                     selectedUnit: self.selectedUnit),
                                          onTrigger: { () -> Bool in
@@ -36,6 +36,7 @@ struct EditUnitView : View {
                             EditUnitRow(selectedModel: selectedModel)
                         }
                     }
+
                     if self.unitType == "HQ" {
                         Toggle(isOn: self.$isWarlord) {
                             Text("Warlord")
@@ -48,6 +49,7 @@ struct EditUnitView : View {
                     }
                 }
             }
+            .onDelete(perform: self.deleteModel)
 
             if self.rosterData.selectedUnit?.isWarlord ?? false {
                 WarlordTraitSection(rosterData: rosterData,
@@ -83,6 +85,10 @@ struct EditUnitView : View {
                                                                      toUnit: self.selectedUnit.id,
                                                                      inDetachment: self.detachment.id)
         })
+    }
+
+    private func deleteModel(at offsets: IndexSet) {
+        print(offsets)
     }
 }
 

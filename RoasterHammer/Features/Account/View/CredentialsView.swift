@@ -21,9 +21,9 @@ struct CredentialsView : View {
                     .font(.title)
                     .bold()
 
-                TextField($email, placeholder: Text("Email"))
+                TextField("Email", text: $email)
                     .textContentType(.emailAddress)
-                TextField($password, placeholder: Text("Password"))
+                SecureField("Password", text: $password)
                     .textContentType(.password)
 
                 HStack {

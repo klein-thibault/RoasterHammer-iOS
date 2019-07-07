@@ -15,7 +15,7 @@ struct CreateRoasterView : View {
 
     var body: some View {
         VStack(spacing: 20) {
-            TextField($roasterName, placeholder: Text("Roster Name"))
+            TextField("Roster Name", text: $roasterName)
 
             Button(action: {
                 if self.roasterName.count > 0 {

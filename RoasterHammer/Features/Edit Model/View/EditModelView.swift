@@ -23,7 +23,7 @@ struct EditModelView : View {
         }
         .navigationBarTitle(Text(rosterData.selectedModel?.model.name ?? ""))
         .navigationBarItems(trailing:
-            PresentationButton(destination: WeaponSelectionView(rosterData: rosterData, detachment: detachment, selectedUnit: selectedUnit),
+            PresentationLink(destination: WeaponSelectionView(rosterData: rosterData, detachment: detachment, selectedUnit: selectedUnit),
                                label: {
                                 Text("Add Weapons")
             }))

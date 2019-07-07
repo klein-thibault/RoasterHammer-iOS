@@ -17,7 +17,7 @@ struct ArmiesView : View {
         NavigationView {
             List {
                 ForEach(armiesData.armies) { army in
-                    NavigationButton(
+                    NavigationLink(
                         destination: DetachmentTypesView(
                             detachmentTypesData: RoasterHammerDependencyManager
                                 .shared

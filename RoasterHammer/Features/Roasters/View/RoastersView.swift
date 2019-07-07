@@ -15,7 +15,7 @@ struct RoastersView: View {
         NavigationView {
             List {
                 ForEach(roastersData.roasters) { roaster in
-                    NavigationButton(destination: RoasterView(roastersData: RoasterHammerDependencyManager.shared.roasterBuilder().buildDataStore(roaster: roaster))) {
+                    NavigationLink(destination: RoasterView(roastersData: RoasterHammerDependencyManager.shared.roasterBuilder().buildDataStore(roaster: roaster))) {
                         RoasterRow(roaster: roaster)
                     }
                 }
@@ -23,14 +23,14 @@ struct RoastersView: View {
             }
             .navigationBarTitle(Text("Rosters"), displayMode: .large)
             .navigationBarItems(leading:
-                PresentationButton(destination: AccountView(accountInteractor: RoasterHammerDependencyManager.shared.accountBuilder().buildDataStore()), label: {
+                PresentationLink(destination: AccountView(accountInteractor: RoasterHammerDependencyManager.shared.accountBuilder().buildDataStore()), label: {
                     Image(systemName: "person.crop.circle")
                         .imageScale(.large)
                         .accessibility(label: Text("User Profile"))
                         .padding()
                 }),
                                 trailing:
-                PresentationButton(destination: CreateRoasterView(roastersData: self.roastersData), label: {
+                PresentationLink(destination: CreateRoasterView(roastersData: self.roastersData), label: {
                     Image(systemName: "plus")
                         .imageScale(.large)
                         .accessibility(label: Text("Create Detachment"))

@@ -33,7 +33,7 @@ struct RoasterView : View {
         .frame(width: UIScreen.main.bounds.width)
         .navigationBarTitle(Text(roastersData.roaster.name))
         .navigationBarItems(trailing:
-            PresentationButton(destination: ArmiesView(roastersData: roastersData), label: {
+            PresentationLink(destination: ArmiesView(roastersData: roastersData), label: {
                 Image(systemName: "plus")
                     .imageScale(.large)
                     .accessibility(label: Text("Add Detachment"))
@@ -56,9 +56,9 @@ struct FactionView: View {
                 Text("Faction")
                     .font(.headline)
                 Spacer()
-                NavigationButton(destination: DetachmentFactionView(rosterData: self.roastersData,
-                                                                    detachment: self.detachment)) {
-                    Text("Edit")
+                NavigationLink(destination: DetachmentFactionView(rosterData: self.roastersData,
+                                                                  detachment: self.detachment)) {
+                                                                    Text("Edit")
                 }
             }
 
@@ -76,9 +76,7 @@ struct DetachmentNameView: View {
             Text(detachment.name)
                 .font(.headline)
                 .padding()
-
             Spacer()
-
             Text("\(detachment.totalCost) points")
                 .font(.headline)
                 .padding()
@@ -116,17 +114,26 @@ struct DetachmentRoleListView: View {
             ForEach(detachment.roles) { role in
                 Section(header: self.makeHeader(detachment: self.detachment, role: role)) {
                     ForEach(role.units) { selectedUnit in
-                        NavigationButton(destination: EditUnitView(rosterData: self.roastersData,
-                                                                   selectedUnit: selectedUnit,
-                                                                   unitType: role.name,
-                                                                   detachment: self.detachment, role: role,
-                                                                   isWarlord: selectedUnit.isWarlord),
-                                         onTrigger: { () -> Bool in
-                                            self.roastersData.selectedUnit = selectedUnit
-                                            return true
-                        }) {
-                            Text(selectedUnit.unit.name)
+                        NavigationLink(destination: EditUnitView(rosterData: self.roastersData,
+                                                                 selectedUnit: selectedUnit,
+                                                                 unitType: role.name,
+                                                                 detachment: self.detachment,
+                                                                 role: role,
+                                                                 isWarlord: selectedUnit.isWarlord)) {
+                                                                    Text(selectedUnit.unit.name)
                         }
+
+//                        NavigationLink(destination: EditUnitView(rosterData: self.roastersData,
+//                                                                 selectedUnit: selectedUnit,
+//                                                                 unitType: role.name,
+//                                                                 detachment: self.detachment, role: role,
+//                                                                 isWarlord: selectedUnit.isWarlord),
+//                                       onTrigger: { () -> Bool in
+//                                        self.roastersData.selectedUnit = selectedUnit
+//                                        return true
+//                        }) {
+//                            Text(selectedUnit.unit.name)
+//                        }
                     }
                 }
             }
