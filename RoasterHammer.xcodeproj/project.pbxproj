@@ -59,6 +59,7 @@
 		8E97AFE722BBB1AB009D08AE /* EditModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97AFE622BBB1AB009D08AE /* EditModelView.swift */; };
 		8E97AFE922BBB361009D08AE /* WeaponResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97AFE822BBB361009D08AE /* WeaponResponse+Identifiable.swift */; };
 		8E97AFEB22BBB6F8009D08AE /* WeaponRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97AFEA22BBB6F8009D08AE /* WeaponRow.swift */; };
+		8E9B462822D6D78E00738443 /* EditUnitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9B462722D6D78E00738443 /* EditUnitInteractor.swift */; };
 		8EAEB933227CB9680047BB61 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEB932227CB9680047BB61 /* RulesView.swift */; };
 		8EAEBBA4227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEBBA3227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift */; };
 		8EAEBBA6227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEBBA5227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift */; };
@@ -197,6 +198,7 @@
 		8E97AFE622BBB1AB009D08AE /* EditModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModelView.swift; sourceTree = "<group>"; };
 		8E97AFE822BBB361009D08AE /* WeaponResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeaponResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8E97AFEA22BBB6F8009D08AE /* WeaponRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponRow.swift; sourceTree = "<group>"; };
+		8E9B462722D6D78E00738443 /* EditUnitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitInteractor.swift; sourceTree = "<group>"; };
 		8EAEB932227CB9680047BB61 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		8EAEBBA3227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterSelectedDetachmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EAEBBA5227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterSelectionBaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 		8E03FC39224825C000A39ABF /* Edit Unit */ = {
 			isa = PBXGroup;
 			children = (
+				8E9B462622D6D78100738443 /* Interactor */,
 				8E03FC3D224825D800A39ABF /* Builder */,
 				8E03FC3A224825C900A39ABF /* View */,
 			);
@@ -502,6 +505,14 @@
 				8E97AFE622BBB1AB009D08AE /* EditModelView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8E9B462622D6D78100738443 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8E9B462722D6D78E00738443 /* EditUnitInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		8EB6E776223C2DEE0090B125 /* View */ = {
@@ -1065,6 +1076,7 @@
 				8EFA04E42231AC7B00DAE956 /* AccountInteractor.swift in Sources */,
 				8E36450D22B967D700ED227E /* RoleResponse+Identifiable.swift in Sources */,
 				8E2DF38B22C144FB0080DD5C /* FactionResponse+Identifiable.swift in Sources */,
+				8E9B462822D6D78E00738443 /* EditUnitInteractor.swift in Sources */,
 				8EFAF5602228575C00DAE956 /* Alerter.swift in Sources */,
 				8EFAF54F22284ECF00DAE956 /* RoasterHammerDependencyManager.swift in Sources */,
 				8EFAFD472228A55000DAE956 /* IdentifiableView.swift in Sources */,

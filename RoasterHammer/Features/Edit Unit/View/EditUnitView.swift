@@ -10,7 +10,8 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct EditUnitView : View {
-    @ObjectBinding var rosterData: RoasterInteractor
+    @ObjectBinding var editUnitData: EditUnitInteractor
+    var rosterData: RoasterInteractor
     var selectedUnit: SelectedUnitResponse
     let unitType: String
     let detachment: DetachmentResponse
@@ -18,7 +19,7 @@ struct EditUnitView : View {
     @State var isWarlord: Bool
 
     private var uniqueModels: [SelectedModelResponse] {
-        return rosterData.selectedUnit?.models.unique { $0.model.name } ?? []
+        return editUnitData.selectedUnit.models.unique { $0.model.name }
     }
 
     var body: some View {
@@ -42,16 +43,16 @@ struct EditUnitView : View {
                             Text("Warlord")
                         }
                         .tapAction {
-                            self.rosterData.setUnitAsWarlord(detachmentId: self.detachment.id,
-                                                             roleId: self.role.id,
-                                                             unitId: self.selectedUnit.id)
+                            self.editUnitData.setUnitAsWarlord(detachmentId: self.detachment.id,
+                                                               roleId: self.role.id,
+                                                               unitId: self.selectedUnit.id)
                         }
                     }
                 }
             }
             .onDelete(perform: self.deleteModel)
 
-            if self.rosterData.selectedUnit?.isWarlord ?? false {
+            if self.editUnitData.selectedUnit.isWarlord {
                 WarlordTraitSection(rosterData: rosterData,
                                     selectedUnit: selectedUnit,
                                     unitType: unitType,
@@ -65,25 +66,26 @@ struct EditUnitView : View {
                              role: role)
             }
 
-            if self.rosterData.selectedUnit?.unit.isPsycher ?? false {
+            if self.editUnitData.selectedUnit.unit.isPsycher {
                 PsychicPowerSection(rosterData: rosterData,
                                     selectedUnit: selectedUnit,
                                     detachment: detachment)
             }
         }
+        .navigationBarTitle(selectedUnit.unit.name)
     }
 
     private func modelsByName(_ name: String) -> [SelectedModelResponse] {
-        return rosterData.selectedUnit?.models.filter { $0.model.name == name } ?? []
+        return editUnitData.selectedUnit.models.filter { $0.model.name == name }
     }
 
     private func makeHeader(uniqueSelectedModel: SelectedModelResponse) -> some View {
         return HeaderAndActionButtonHeader(text: uniqueSelectedModel.model.name,
                                            buttonTitle: "Add",
                                            action: {
-                                            self.rosterData.addModel(uniqueSelectedModel.model.id,
-                                                                     toUnit: self.selectedUnit.id,
-                                                                     inDetachment: self.detachment.id)
+                                            self.editUnitData.addModel(uniqueSelectedModel.model.id,
+                                                                       toUnit: self.selectedUnit.id,
+                                                                       inDetachment: self.detachment.id)
         })
     }
 

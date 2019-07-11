@@ -12,9 +12,9 @@ protocol FeatureFactory {
     func accountBuilder() -> AccountBuildable
     func roastersBuilder() -> RoastersBuildable
     func roasterBuilder() -> RoasterBuildable
+    func editUnitBuilder() -> EditUnitBuildable
     func armiesBuilder() -> ArmiesBuildable
     func detachmentTypeBuilder() -> DetachmentTypeBuildable
     func unitsBuilder() -> UnitsBuildable
-    func editUnitBuilder() -> EditUnitBuildable
     func roasterViewerBuilder() -> RoasterViewerBuildable
 }

@@ -76,23 +76,9 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         }
     }
 
-    func addModel(_ modelId: Int, toUnit unitId: Int, inDetachment detachmentId: Int) {
-        unitDataManager.addModelToUnit(detachmentId: detachmentId, unitId: unitId, modelId: modelId) { [weak self] (detachment, error) in
-            self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
-        }
-    }
-
     func removeModel(_ modelId: Int, fromUnit unitId: Int, inDetachment detachmentId: Int) {
         unitDataManager.removeModelFromUnit(detachmentId: detachmentId, unitId: unitId, modelId: modelId) { [weak self] (detachment, error) in
             self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
-        }
-    }
-
-    func setUnitAsWarlord(detachmentId: Int, roleId: Int, unitId: Int) {
-        unitDataManager.setUnitAsWarlord(detachmentId: detachmentId,
-                                         roleId: roleId,
-                                         unitId: unitId) { [weak self] (detachment, error) in
-                                            self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
         }
     }
 
@@ -174,9 +160,7 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         getRoasterById(roasterId: roaster.id)
     }
 
-    // MARK: - Private Functions
-
-    private func getRoasterById(roasterId: Int, completion: (() -> Void)? = nil) {
+    func getRoasterById(roasterId: Int, completion: (() -> Void)? = nil) {
         roasterDataManager.getRoaster(byRoasterId: roasterId) { [weak self] (roaster, error) in
             if let roaster = roaster {
                 self?.roaster = roaster
@@ -186,14 +170,16 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
         }
     }
 
-    private func findDetachment(forDetachmentId detachmentId: Int) -> DetachmentResponse? {
+    func findDetachment(forDetachmentId detachmentId: Int) -> DetachmentResponse? {
         return roaster.detachments.first(where: { $0.id == detachmentId})
     }
 
-    private func findSelectedUnit(forUnitId unitId: Int,
-                                  inDetachment detachment: DetachmentResponse) -> SelectedUnitResponse? {
+    func findSelectedUnit(forUnitId unitId: Int,
+                          inDetachment detachment: DetachmentResponse) -> SelectedUnitResponse? {
         return detachment.roles.flatMap({ $0.units }).first(where: { $0.id == unitId })
     }
+
+    // MARK: - Private Functions
 
     private func handleUnitUpdate(unitId: Int, inDetachment detachmentId: Int) {
         getRoasterById(roasterId: roaster.id, completion: {

@@ -36,6 +36,10 @@ final class RoasterHammerDependencyManager: DependencyManager {
         return RoasterBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
 
+    func editUnitBuilder() -> EditUnitBuildable {
+        return EditUnitBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
+    }
+
     func armiesBuilder() -> ArmiesBuildable {
         return ArmiesBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
@@ -46,10 +50,6 @@ final class RoasterHammerDependencyManager: DependencyManager {
 
     func unitsBuilder() -> UnitsBuildable {
         return UnitsBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
-    }
-
-    func editUnitBuilder() -> EditUnitBuildable {
-        return EditUnitBuilder(dependencyManager: RoasterHammerDependencyManager.shared)
     }
 
     func roasterViewerBuilder() -> RoasterViewerBuildable {

@@ -114,26 +114,15 @@ struct DetachmentRoleListView: View {
             ForEach(detachment.roles) { role in
                 Section(header: self.makeHeader(detachment: self.detachment, role: role)) {
                     ForEach(role.units) { selectedUnit in
-                        NavigationLink(destination: EditUnitView(rosterData: self.roastersData,
-                                                                 selectedUnit: selectedUnit,
-                                                                 unitType: role.name,
-                                                                 detachment: self.detachment,
-                                                                 role: role,
-                                                                 isWarlord: selectedUnit.isWarlord)) {
-                                                                    Text(selectedUnit.unit.name)
+                        NavigationLink(destination: EditUnitView(editUnitData: RoasterHammerDependencyManager.shared.editUnitBuilder().buildDataStore(selectedUnit: selectedUnit, rosterInteractor: self.roastersData),
+                            rosterData: self.roastersData,
+                            selectedUnit: selectedUnit,
+                            unitType: role.name,
+                            detachment: self.detachment,
+                            role: role,
+                            isWarlord: selectedUnit.isWarlord)) {
+                                Text(selectedUnit.unit.name)
                         }
-
-//                        NavigationLink(destination: EditUnitView(rosterData: self.roastersData,
-//                                                                 selectedUnit: selectedUnit,
-//                                                                 unitType: role.name,
-//                                                                 detachment: self.detachment, role: role,
-//                                                                 isWarlord: selectedUnit.isWarlord),
-//                                       onTrigger: { () -> Bool in
-//                                        self.roastersData.selectedUnit = selectedUnit
-//                                        return true
-//                        }) {
-//                            Text(selectedUnit.unit.name)
-//                        }
                     }
                 }
             }
