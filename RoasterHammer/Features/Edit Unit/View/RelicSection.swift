@@ -10,8 +10,7 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct RelicSection : View {
-    @ObjectBinding var rosterData: RoasterInteractor
-    let selectedUnit: SelectedUnitResponse
+    @ObjectBinding var editUnitData: EditUnitInteractor
     let unitType: String
     let detachment: DetachmentResponse
     let role: RoleResponse
@@ -20,15 +19,15 @@ struct RelicSection : View {
         Section(header: Text("Relics")) {
             ForEach(detachment.army.relics) { relic in
                 Button(action: {
-                    self.rosterData.setRelicToUnit(relicId: relic.id,
-                                                   detachmentId: self.detachment.id,
-                                                   roleId: self.role.id,
-                                                   unitId: self.selectedUnit.id)
+                    self.editUnitData.setRelicToUnit(relicId: relic.id,
+                                                     detachmentId: self.detachment.id,
+                                                     roleId: self.role.id,
+                                                     unitId: self.editUnitData.selectedUnit.id)
                 }) {
                     SelectableRow(name: relic.name,
-                                    description: relic.description,
-                                    isSelected: self.isRelicSelected(relic: relic,
-                                                                     selectedRelic: self.rosterData.selectedUnit?.relic))
+                                  description: relic.description,
+                                  isSelected: self.isRelicSelected(relic: relic,
+                                                                   selectedRelic: self.editUnitData.selectedUnit.relic))
                 }
             }
         }
@@ -36,7 +35,6 @@ struct RelicSection : View {
 
     private func isRelicSelected(relic: RelicResponse, selectedRelic: RelicResponse?) -> Bool {
         guard let selectedRelic = selectedRelic else { return false }
-
         return relic.id == selectedRelic.id
     }
 }

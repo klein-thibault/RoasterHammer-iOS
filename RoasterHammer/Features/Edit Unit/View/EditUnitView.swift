@@ -27,13 +27,10 @@ struct EditUnitView : View {
             ForEach(uniqueModels) { uniqueSelectedModel in
                 Section(header: self.makeHeader(uniqueSelectedModel: uniqueSelectedModel)) {
                     ForEach(self.modelsByName(uniqueSelectedModel.model.name)) { selectedModel in
-                        NavigationLink(destination: EditModelView(rosterData: self.rosterData,
-                                                                    detachment: self.detachment,
-                                                                    selectedUnit: self.selectedUnit),
-                                         onTrigger: { () -> Bool in
-                                            self.rosterData.selectedModel = selectedModel
-                                            return true
-                        }) {
+                        NavigationLink(destination: EditModelView(editModelData: RoasterHammerDependencyManager.shared.editModelBuildable().buildDataStore(selectedModel: selectedModel,
+                                                                                                                                                           rosterInteractor: self.rosterData),
+                                                                  detachment: self.detachment,
+                                                                  selectedUnit: self.selectedUnit)) {
                             EditUnitRow(selectedModel: selectedModel)
                         }
                     }
@@ -53,22 +50,19 @@ struct EditUnitView : View {
             .onDelete(perform: self.deleteModel)
 
             if self.editUnitData.selectedUnit.isWarlord {
-                WarlordTraitSection(rosterData: rosterData,
-                                    selectedUnit: selectedUnit,
+                WarlordTraitSection(editUnitData: editUnitData,
                                     unitType: unitType,
                                     detachment: detachment,
                                     role: role)
 
-                RelicSection(rosterData: rosterData,
-                             selectedUnit: selectedUnit,
+                RelicSection(editUnitData: editUnitData,
                              unitType: unitType,
                              detachment: detachment,
                              role: role)
             }
 
             if self.editUnitData.selectedUnit.unit.isPsycher {
-                PsychicPowerSection(rosterData: rosterData,
-                                    selectedUnit: selectedUnit,
+                PsychicPowerSection(editUnitData: editUnitData,
                                     detachment: detachment)
             }
         }

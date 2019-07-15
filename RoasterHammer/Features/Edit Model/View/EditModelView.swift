@@ -10,32 +10,32 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct EditModelView : View {
-    @ObjectBinding var rosterData: RoasterInteractor
+    @ObjectBinding var editModelData: EditModelInteractor
     let detachment: DetachmentResponse
     let selectedUnit: SelectedUnitResponse
 
     var body: some View {
         List {
-            ForEach(rosterData.selectedModel?.selectedWeapons ?? []) { weapon in
+            ForEach(editModelData.selectedModel.selectedWeapons) { weapon in
                 WeaponRow(weapon: weapon)
             }
             .onDelete(perform: deleteWeapon)
         }
-        .navigationBarTitle(Text(rosterData.selectedModel?.model.name ?? ""))
+        .navigationBarTitle(Text(editModelData.selectedModel.model.name))
         .navigationBarItems(trailing:
-            PresentationLink(destination: WeaponSelectionView(rosterData: rosterData, detachment: detachment, selectedUnit: selectedUnit),
-                               label: {
+            PresentationLink(destination: WeaponSelectionView(editModelData: editModelData, detachment: detachment, selectedUnit: selectedUnit),
+                             label: {
                                 Text("Add Weapons")
             }))
     }
 
     func deleteWeapon(at offsets: IndexSet) {
-        if let first = offsets.first,
-            let weapon = rosterData.selectedModel?.selectedWeapons[first] {
-            rosterData.detachWeaponFromSelectedModel(weapon.id,
-                                                     forModel: rosterData.selectedModel?.id ?? 0,
-                                                     ofUnit: selectedUnit.id,
-                                                     inDetachment: detachment.id)
+        if let first = offsets.first {
+            let weapon = editModelData.selectedModel.selectedWeapons[first]
+            editModelData.detachWeaponFromSelectedModel(weapon.id,
+                                                        forModel: editModelData.selectedModel.id,
+                                                        ofUnit: selectedUnit.id,
+                                                        inDetachment: detachment.id)
         }
     }
 }

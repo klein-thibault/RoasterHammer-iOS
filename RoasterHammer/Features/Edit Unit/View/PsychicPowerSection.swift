@@ -10,29 +10,28 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct PsychicPowerSection : View {
-    @ObjectBinding var rosterData: RoasterInteractor
-    let selectedUnit: SelectedUnitResponse
+    @ObjectBinding var editUnitData: EditUnitInteractor
     let detachment: DetachmentResponse
 
     var body: some View {
         Section(header: Text("Psychic Powers")) {
-            ForEach(selectedUnit.unit.availablePsychicPowers) { psychicPower in
+            ForEach(editUnitData.selectedUnit.unit.availablePsychicPowers) { psychicPower in
                 Button(action: {
                     if self.isPsychicPowerSelected(psychicPower: psychicPower,
-                                                   selectedPsychicPowers: self.rosterData.selectedUnit?.psychicPowers) {
-                        self.rosterData.unsetPsychicPowerFromUnit(unitId: self.selectedUnit.id,
-                                                                  detachmentId: self.detachment.id,
-                                                                  psychicPowerId: psychicPower.id)
+                                                   selectedPsychicPowers: self.editUnitData.selectedUnit.psychicPowers) {
+                        self.editUnitData.unsetPsychicPowerFromUnit(unitId: self.editUnitData.selectedUnit.id,
+                                                                    detachmentId: self.detachment.id,
+                                                                    psychicPowerId: psychicPower.id)
                     } else {
-                        self.rosterData.setPsychicPowerToUnit(unitId: self.selectedUnit.id,
-                                                              detachmentId: self.detachment.id,
-                                                              psychicPowerId: psychicPower.id)
+                        self.editUnitData.setPsychicPowerToUnit(unitId: self.editUnitData.selectedUnit.id,
+                                                                detachmentId: self.detachment.id,
+                                                                psychicPowerId: psychicPower.id)
                     }
                 }) {
                     SelectableRow(name: psychicPower.name,
                                   description: psychicPower.description,
                                   isSelected: self.isPsychicPowerSelected(psychicPower: psychicPower,
-                                                                          selectedPsychicPowers: self.rosterData.selectedUnit?.psychicPowers))
+                                                                          selectedPsychicPowers: self.editUnitData.selectedUnit.psychicPowers))
                 }
             }
         }
@@ -41,7 +40,6 @@ struct PsychicPowerSection : View {
     private func isPsychicPowerSelected(psychicPower: PsychicPowerResponse,
                                         selectedPsychicPowers: [PsychicPowerResponse]?) -> Bool {
         guard let selectedPsychicPowers = selectedPsychicPowers else { return false }
-
         return selectedPsychicPowers
             .filter { $0.id == psychicPower.id }
             .first != nil

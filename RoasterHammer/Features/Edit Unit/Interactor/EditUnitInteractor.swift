@@ -38,11 +38,55 @@ final class EditUnitInteractor: BindableObject {
         }
     }
 
+    func removeModel(_ modelId: Int, fromUnit unitId: Int, inDetachment detachmentId: Int) {
+        unitDataManager.removeModelFromUnit(detachmentId: detachmentId, unitId: unitId, modelId: modelId) { [weak self] (detachment, error) in
+            self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
+        }
+    }
+
     func setUnitAsWarlord(detachmentId: Int, roleId: Int, unitId: Int) {
         unitDataManager.setUnitAsWarlord(detachmentId: detachmentId,
                                          roleId: roleId,
                                          unitId: unitId) { [weak self] (detachment, error) in
                                             self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
+        }
+    }
+
+    func setWarlordTraitToUnit(warlordTraitId: Int, detachmentId: Int, roleId: Int, unitId: Int) {
+        unitDataManager.setWarlordTraitToUnit(warlordTraitId: warlordTraitId,
+                                              detachmentId: detachmentId,
+                                              roleId: roleId,
+                                              unitId: unitId) { [weak self] (detachment, error) in
+                                                self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
+        }
+    }
+
+    func setRelicToUnit(relicId: Int, detachmentId: Int, roleId: Int, unitId: Int) {
+        unitDataManager.setRelicToUnit(relicId: relicId,
+                                       detachmentId: detachmentId,
+                                       roleId: roleId,
+                                       unitId: unitId) { [weak self] (detachment, error) in
+                                        self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
+        }
+    }
+
+    func setPsychicPowerToUnit(unitId: Int,
+                               detachmentId: Int,
+                               psychicPowerId: Int) {
+        unitDataManager.setPsychicPowerToUnit(unitId: unitId,
+                                              detachmentId: detachmentId,
+                                              psychicPowerId: psychicPowerId) { [weak self] (detachment, error) in
+                                                self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
+        }
+    }
+
+    func unsetPsychicPowerFromUnit(unitId: Int,
+                                   detachmentId: Int,
+                                   psychicPowerId: Int) {
+        unitDataManager.unsetPsychicPowerFromUnit(unitId: unitId,
+                                                  detachmentId: detachmentId,
+                                                  psychicPowerId: psychicPowerId) { [weak self] (detachment, error) in
+                                                    self?.handleUnitUpdate(unitId: unitId, inDetachment: detachmentId)
         }
     }
 

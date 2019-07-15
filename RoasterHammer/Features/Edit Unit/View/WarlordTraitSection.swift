@@ -10,24 +10,23 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct WarlordTraitSection : View {
-    @ObjectBinding var rosterData: RoasterInteractor
-    let selectedUnit: SelectedUnitResponse
+    @ObjectBinding var editUnitData: EditUnitInteractor
     let unitType: String
     let detachment: DetachmentResponse
     let role: RoleResponse
 
     var body: some View {
         Section(header: Text("Warlord Traits")) {
-            ForEach(selectedUnit.unit.availableWarlordTraits) { warlordTrait in
+            ForEach(editUnitData.selectedUnit.unit.availableWarlordTraits) { warlordTrait in
                 Button(action: {
-                    self.rosterData.setWarlordTraitToUnit(warlordTraitId: warlordTrait.id,
-                                                          detachmentId: self.detachment.id,
-                                                          roleId: self.role.id,
-                                                          unitId: self.selectedUnit.id)
+                    self.editUnitData.setWarlordTraitToUnit(warlordTraitId: warlordTrait.id,
+                                                            detachmentId: self.detachment.id,
+                                                            roleId: self.role.id,
+                                                            unitId: self.editUnitData.selectedUnit.id)
                 }) {
                     SelectableRow(name: warlordTrait.name,
-                                    description: warlordTrait.description,
-                                    isSelected: self.isWarlordTraitSelected(warlordTrait: warlordTrait, unit: self.selectedUnit))
+                                  description: warlordTrait.description,
+                                  isSelected: self.isWarlordTraitSelected(warlordTrait: warlordTrait, unit: self.editUnitData.selectedUnit))
                 }
             }
         }

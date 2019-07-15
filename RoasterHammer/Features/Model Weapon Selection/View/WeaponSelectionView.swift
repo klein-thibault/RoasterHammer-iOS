@@ -10,7 +10,7 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct WeaponSelectionView : View {
-    @ObjectBinding var rosterData: RoasterInteractor
+    @ObjectBinding var editModelData: EditModelInteractor
     @Environment(\.isPresented) private var isPresented
     let detachment: DetachmentResponse
     let selectedUnit: SelectedUnitResponse
@@ -18,15 +18,15 @@ struct WeaponSelectionView : View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(rosterData.selectedModel?.model.weaponBuckets ?? []) { weaponBucket in
+                ForEach(editModelData.selectedModel.model.weaponBuckets) { weaponBucket in
                     Section(header: Text(weaponBucket.name)) {
                         ForEach(weaponBucket.weapons) { weapon in
                             Button(action: {
-                                self.rosterData.attachWeaponToSelectedModel(weapon.id,
-                                                                            fromWeaponBucket: weaponBucket.id,
-                                                                            forModel: self.rosterData.selectedModel?.id ?? 0,
-                                                                            ofUnit: self.selectedUnit.id,
-                                                                            inDetachment: self.detachment.id)
+                                self.editModelData.attachWeaponToSelectedModel(weapon.id,
+                                                                               fromWeaponBucket: weaponBucket.id,
+                                                                               forModel: self.editModelData.selectedModel.id,
+                                                                               ofUnit: self.selectedUnit.id,
+                                                                               inDetachment: self.detachment.id)
                                 self.isPresented?.value = false
                             }) {
                                 Text(weapon.name)
