@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 import RoasterHammer_Shared
 
-final class RoasterInteractor: RoasterViewOutput, BindableObject {
+final class RoasterInteractor: BindableObject {
     var roaster: RoasterResponse {
         didSet {
             didChange.send(self)
@@ -84,11 +84,6 @@ final class RoasterInteractor: RoasterViewOutput, BindableObject {
                                                         self?.roaster = roster
                                                     }
         }
-    }
-
-    // TODO: remove
-    func roasterDidReceiveDetachmentUpdate(detachment: DetachmentResponse) {
-        getRoasterById(roasterId: roaster.id)
     }
 
     func getRoasterById(roasterId: Int, completion: (() -> Void)? = nil) {

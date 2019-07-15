@@ -17,7 +17,6 @@
 		8E19B5B5222D6383003F10FA /* DetachmentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19B5B4222D6383003F10FA /* DetachmentDataManager.swift */; };
 		8E19D7EB222AB69E00051784 /* GameDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D7EA222AB69E00051784 /* GameDataStore.swift */; };
 		8E19D7ED222ABA2900051784 /* RoasterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D7EC222ABA2900051784 /* RoasterDataManager.swift */; };
-		8E19E6B8222B36F200051784 /* RoasterViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19E6B7222B36F200051784 /* RoasterViewOutput.swift */; };
 		8E19E6BA222B370900051784 /* RoasterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19E6B9222B370900051784 /* RoasterInteractor.swift */; };
 		8E19E6C2222B37AC00051784 /* RoasterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19E6C1222B37AC00051784 /* RoasterBuilder.swift */; };
 		8E2711BB226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2711BA226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift */; };
@@ -71,7 +70,6 @@
 		8EC084A922B72BE900554850 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC084A822B72BE900554850 /* AccountView.swift */; };
 		8EC084AB22B72C7700554850 /* RoasterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC084AA22B72C7700554850 /* RoasterRow.swift */; };
 		8EC084AE22B72EE100554850 /* RoasterResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC084AD22B72EE100554850 /* RoasterResponse+Identifiable.swift */; };
-		8ECBE7292271645F006917CA /* RoasterDetachmentUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBE7282271645F006917CA /* RoasterDetachmentUpdateDelegate.swift */; };
 		8ED7EDFF22748EEE00A21A38 /* RoasterViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7EDFE22748EEE00A21A38 /* RoasterViewerView.swift */; };
 		8ED7EE0122748F0200A21A38 /* RoasterViewerLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7EE0022748F0200A21A38 /* RoasterViewerLayoutViewController.swift */; };
 		8ED7EE0322748F2200A21A38 /* RoasterViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7EE0222748F2200A21A38 /* RoasterViewerViewController.swift */; };
@@ -159,7 +157,6 @@
 		8E19B5B4222D6383003F10FA /* DetachmentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachmentDataManager.swift; sourceTree = "<group>"; };
 		8E19D7EA222AB69E00051784 /* GameDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataStore.swift; sourceTree = "<group>"; };
 		8E19D7EC222ABA2900051784 /* RoasterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDataManager.swift; sourceTree = "<group>"; };
-		8E19E6B7222B36F200051784 /* RoasterViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewOutput.swift; sourceTree = "<group>"; };
 		8E19E6B9222B370900051784 /* RoasterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterInteractor.swift; sourceTree = "<group>"; };
 		8E19E6C1222B37AC00051784 /* RoasterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterBuilder.swift; sourceTree = "<group>"; };
 		8E2711BA226E62BE00EDFBD1 /* WeaponResponse+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeaponResponse+Equatable.swift"; sourceTree = "<group>"; };
@@ -212,7 +209,6 @@
 		8EC084A822B72BE900554850 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		8EC084AA22B72C7700554850 /* RoasterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterRow.swift; sourceTree = "<group>"; };
 		8EC084AD22B72EE100554850 /* RoasterResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoasterResponse+Identifiable.swift"; sourceTree = "<group>"; };
-		8ECBE7282271645F006917CA /* RoasterDetachmentUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDetachmentUpdateDelegate.swift; sourceTree = "<group>"; };
 		8ED7EDFE22748EEE00A21A38 /* RoasterViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerView.swift; sourceTree = "<group>"; };
 		8ED7EE0022748F0200A21A38 /* RoasterViewerLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerLayoutViewController.swift; sourceTree = "<group>"; };
 		8ED7EE0222748F2200A21A38 /* RoasterViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewerViewController.swift; sourceTree = "<group>"; };
@@ -397,7 +393,6 @@
 		8E19E6B6222B36E700051784 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				8E19E6B7222B36F200051784 /* RoasterViewOutput.swift */,
 				8E19E6B9222B370900051784 /* RoasterInteractor.swift */,
 			);
 			path = Interactor;
@@ -570,14 +565,6 @@
 				8E60472322C54AD2008D448A /* WeaponBucketResponse+Identifiable.swift */,
 			);
 			path = Identifiable;
-			sourceTree = "<group>";
-		};
-		8ECBE7272271644D006917CA /* Delegation */ = {
-			isa = PBXGroup;
-			children = (
-				8ECBE7282271645F006917CA /* RoasterDetachmentUpdateDelegate.swift */,
-			);
-			path = Delegation;
 			sourceTree = "<group>";
 		};
 		8ED7EDF822748EB000A21A38 /* Roaster Viewer */ = {
@@ -803,7 +790,6 @@
 		8EFAF52B2226006C00DAE956 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				8ECBE7272271644D006917CA /* Delegation */,
 				8EB6E776223C2DEE0090B125 /* View */,
 				8EFAFD612228AEDF00DAE956 /* Builder */,
 				8EFAF52D2226008C00DAE956 /* Storage */,
@@ -1077,7 +1063,6 @@
 				8E97AFEB22BBB6F8009D08AE /* WeaponRow.swift in Sources */,
 				8E19E6BA222B370900051784 /* RoasterInteractor.swift in Sources */,
 				8EFAF54D22284EBD00DAE956 /* DependencyManager.swift in Sources */,
-				8E19E6B8222B36F200051784 /* RoasterViewOutput.swift in Sources */,
 				8E03FC4D2248277200A39ABF /* EditUnitBuilder.swift in Sources */,
 				8E67EDBA22C05C7800EB7F72 /* UnitResponse+Utils.swift in Sources */,
 				8E19B33E222D5AC4003F10FA /* DetachmentTypeInteractor.swift in Sources */,
@@ -1137,7 +1122,6 @@
 				8E36451B22BA7D0700ED227E /* HeaderAndNavigationButtonHeader.swift in Sources */,
 				8E36451422B977D100ED227E /* UnitsView.swift in Sources */,
 				8E36450F22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift in Sources */,
-				8ECBE7292271645F006917CA /* RoasterDetachmentUpdateDelegate.swift in Sources */,
 				8EFA0263222DC7BB00DAE956 /* ArmyDataManager.swift in Sources */,
 				8E36451922B9A3F400ED227E /* DetachmentResponse+Utils.swift in Sources */,
 				8E7C403122B86B5900AB2275 /* CreateRoasterView.swift in Sources */,
