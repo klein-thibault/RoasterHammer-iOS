@@ -104,24 +104,6 @@ struct EditUnitHeader: View {
     }
 }
 
-struct EditUnitRow: View {
-    let selectedModel: SelectedModelResponse
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Text(selectedModel.model.name)
-                Spacer()
-                Text("\(selectedModel.cost) points")
-            }
-
-            ForEach(selectedModel.selectedWeapons) { weapon in
-                Text(weapon.name)
-            }
-        }
-    }
-}
-
 //#if DEBUG
 //struct EditUnitUI_Previews : PreviewProvider {
 //    static var previews: some View {
