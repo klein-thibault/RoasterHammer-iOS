@@ -13,13 +13,13 @@ import Combine
 final class AccountInteractor: AccountViewOutput, BindableObject {
     var token: String? {
         didSet {
-            didChange.send(self)
+            willChange.send(self)
         }
     }
     private let accountDataManager: AccountDataManager
     private let gameDataManager: GameDataManager
 
-    var didChange = PassthroughSubject<AccountInteractor, Never>()
+    var willChange = PassthroughSubject<AccountInteractor, Never>()
 
     init(accountDataManager: AccountDataManager,
          gameDataManager: GameDataManager) {

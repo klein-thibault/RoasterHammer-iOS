@@ -14,12 +14,12 @@ import RoasterHammer_Shared
 final class UnitsInteractor: UnitsViewOutput, BindableObject {
     var units: [UnitResponse] = [] {
         didSet {
-            didChange.send(self)
+            willChange.send(self)
         }
     }
     let detachmentId: Int
     let unitRoleId: Int
-    var didChange = PassthroughSubject<UnitsInteractor, Never>()
+    var willChange = PassthroughSubject<UnitsInteractor, Never>()
 
     private let unitDataManager: UnitDataManager
     private let filters: UnitFilters

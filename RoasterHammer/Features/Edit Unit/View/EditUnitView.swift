@@ -12,14 +12,16 @@ import RoasterHammer_Shared
 struct EditUnitView : View {
     @ObjectBinding var editUnitData: EditUnitInteractor
     var rosterData: RoasterInteractor
-    var selectedUnit: SelectedUnitResponse
     let unitType: String
     let detachment: DetachmentResponse
     let role: RoleResponse
     @State var isWarlord: Bool
 
     private var uniqueModels: [SelectedModelResponse] {
-        return editUnitData.selectedUnit.models.unique { $0.model.name }
+        editUnitData.selectedUnit.models.unique { $0.model.name }
+    }
+    private var selectedUnit: SelectedUnitResponse {
+        editUnitData.selectedUnit
     }
 
     var body: some View {
@@ -27,11 +29,15 @@ struct EditUnitView : View {
             ForEach(uniqueModels) { uniqueSelectedModel in
                 Section(header: self.makeHeader(uniqueSelectedModel: uniqueSelectedModel)) {
                     ForEach(self.modelsByName(uniqueSelectedModel.model.name)) { selectedModel in
-                        NavigationLink(destination: EditModelView(editModelData: RoasterHammerDependencyManager.shared.editModelBuildable().buildDataStore(selectedModel: selectedModel,
-                                                                                                                                                           rosterInteractor: self.rosterData),
+                        NavigationLink(destination: EditModelView(editModelData:
+                            RoasterHammerDependencyManager
+                                .shared
+                                .editModelBuildable()
+                                .buildDataStore(selectedModel: selectedModel,
+                                                rosterInteractor: self.rosterData),
                                                                   detachment: self.detachment,
                                                                   selectedUnit: self.selectedUnit)) {
-                            EditUnitRow(selectedModel: selectedModel)
+                                                                    EditUnitRow(selectedModel: selectedModel)
                         }
                     }
 
@@ -49,7 +55,7 @@ struct EditUnitView : View {
             }
             .onDelete(perform: self.deleteModel)
 
-            if self.editUnitData.selectedUnit.isWarlord {
+            if self.selectedUnit.isWarlord {
                 WarlordTraitSection(editUnitData: editUnitData,
                                     unitType: unitType,
                                     detachment: detachment,
@@ -61,7 +67,7 @@ struct EditUnitView : View {
                              role: role)
             }
 
-            if self.editUnitData.selectedUnit.unit.isPsycher {
+            if self.selectedUnit.unit.isPsycher {
                 PsychicPowerSection(editUnitData: editUnitData,
                                     detachment: detachment)
             }
@@ -70,7 +76,7 @@ struct EditUnitView : View {
     }
 
     private func modelsByName(_ name: String) -> [SelectedModelResponse] {
-        return editUnitData.selectedUnit.models.filter { $0.model.name == name }
+        return selectedUnit.models.filter { $0.model.name == name }
     }
 
     private func makeHeader(uniqueSelectedModel: SelectedModelResponse) -> some View {

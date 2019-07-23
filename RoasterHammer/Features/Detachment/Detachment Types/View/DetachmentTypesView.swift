@@ -16,17 +16,17 @@ struct DetachmentTypesView : View {
 
     var body: some View {
         List {
-            ForEach(detachmentTypesData.detachmentTypes.identified(by: \.name)) { detachmentType in
+            ForEach(detachmentTypesData.detachmentTypes, id: \.name) { detachmentType in
                 Button(action: {
-                    self.detachmentTypesData.createDetachment(ofType: detachmentType, forRoster: self.roastersData)
-                    self.isPresented?.value = false
-                }) {
-                    HStack {
-                        Text(detachmentType.name)
-                        Spacer()
-                        Text("\(detachmentType.commandPoints) CP")
-                    }
-                }
+                                    self.detachmentTypesData.createDetachment(ofType: detachmentType, forRoster: self.roastersData)
+                                    self.isPresented?.value = false
+                                }) {
+                                    HStack {
+                                        Text(detachmentType.name)
+                                        Spacer()
+                                        Text("\(detachmentType.commandPoints) CP")
+                                    }
+                                }
             }
         }
         .navigationBarTitle(Text("Detachment Selection"))

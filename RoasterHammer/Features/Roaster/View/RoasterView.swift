@@ -12,18 +12,25 @@ import RoasterHammer_Shared
 struct RoasterView : View {
     @ObjectBinding var roastersData: RoasterInteractor
 
+    private var detachments: [DetachmentResponse] {
+        roastersData.roaster.detachments
+    }
+    private var roasterId: Int {
+        roastersData.roaster.id
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                ForEach(roastersData.roaster.detachments) { detachment in
+                ForEach(detachments) { detachment in
                     VStack {
                         FactionView(roastersData: self.roastersData, detachment: detachment)
                         DetachmentRow(roastersData: self.roastersData, detachment: detachment)
                         Button(action: {
-                            self.roastersData.removeDetachment(detachmentId: detachment.id, rosterId: self.roastersData.roaster.id)
+                            self.roastersData.removeDetachment(detachmentId: detachment.id, rosterId: self.roasterId)
                         }) {
                             Text("Remove")
-                                .color(.red)
+                                .foregroundColor(.red)
                         }
                     }
                 }
@@ -116,7 +123,6 @@ struct DetachmentRoleListView: View {
                     ForEach(role.units) { selectedUnit in
                         NavigationLink(destination: EditUnitView(editUnitData: RoasterHammerDependencyManager.shared.editUnitBuilder().buildDataStore(selectedUnit: selectedUnit, rosterInteractor: self.roastersData),
                             rosterData: self.roastersData,
-                            selectedUnit: selectedUnit,
                             unitType: role.name,
                             detachment: self.detachment,
                             role: role,

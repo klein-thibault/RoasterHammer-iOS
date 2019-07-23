@@ -14,16 +14,22 @@ struct EditModelView : View {
     let detachment: DetachmentResponse
     let selectedUnit: SelectedUnitResponse
 
+    private var selectedModel: SelectedModelResponse {
+        editModelData.selectedModel
+    }
+
     var body: some View {
         List {
-            ForEach(editModelData.selectedModel.selectedWeapons) { weapon in
+            ForEach(selectedModel.selectedWeapons) { weapon in
                 WeaponRow(weapon: weapon)
             }
             .onDelete(perform: deleteWeapon)
         }
-        .navigationBarTitle(Text(editModelData.selectedModel.model.name))
+        .navigationBarTitle(Text(selectedModel.model.name))
         .navigationBarItems(trailing:
-            PresentationLink(destination: WeaponSelectionView(editModelData: editModelData, detachment: detachment, selectedUnit: selectedUnit),
+            PresentationLink(destination: WeaponSelectionView(editModelData: editModelData,
+                                                              detachment: detachment,
+                                                              selectedUnit: selectedUnit),
                              label: {
                                 Text("Add Weapons")
             }))
@@ -31,9 +37,9 @@ struct EditModelView : View {
 
     func deleteWeapon(at offsets: IndexSet) {
         if let first = offsets.first {
-            let weapon = editModelData.selectedModel.selectedWeapons[first]
+            let weapon = selectedModel.selectedWeapons[first]
             editModelData.detachWeaponFromSelectedModel(weapon.id,
-                                                        forModel: editModelData.selectedModel.id,
+                                                        forModel: selectedModel.id,
                                                         ofUnit: selectedUnit.id,
                                                         inDetachment: detachment.id)
         }

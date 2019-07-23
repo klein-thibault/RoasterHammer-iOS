@@ -7,16 +7,25 @@
 //
 
 import SwiftUI
+import RoasterHammer_Shared
 
 struct RoastersView: View {
     @ObjectBinding private var roastersData = RoasterHammerDependencyManager.shared.roastersBuilder().buildDataStore()
 
+    private var rosters: [RoasterResponse] {
+        roastersData.roasters
+    }
+
     var body: some View {
         NavigationView {
             List {
-                ForEach(roastersData.roasters) { roaster in
-                    NavigationLink(destination: RoasterView(roastersData: RoasterHammerDependencyManager.shared.roasterBuilder().buildDataStore(roaster: roaster))) {
-                        RoasterRow(roaster: roaster)
+                ForEach(rosters) { roaster in
+                    NavigationLink(destination:
+                        RoasterView(roastersData: RoasterHammerDependencyManager
+                            .shared
+                            .roasterBuilder()
+                            .buildDataStore(roaster: roaster))) {
+                                RoasterRow(roaster: roaster)
                     }
                 }
                 .onDelete(perform: deleteRoster)
@@ -45,7 +54,7 @@ struct RoastersView: View {
 
     func deleteRoster(at offsets: IndexSet) {
         if let first = offsets.first {
-            let roster = roastersData.roasters[first]
+            let roster = rosters[first]
             roastersData.removeRoster(rosterId: roster.id)
         }
     }
