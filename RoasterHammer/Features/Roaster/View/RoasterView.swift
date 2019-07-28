@@ -11,6 +11,18 @@ import RoasterHammer_Shared
 
 struct RoasterView : View {
     @ObjectBinding var roastersData: RoasterInteractor
+    @State var isArmyPresented = false
+
+    var armyButton: some View {
+        Button(action: {
+            self.isArmyPresented.toggle()
+        }) {
+            Image(systemName: "plus")
+                .imageScale(.large)
+                .accessibility(label: Text("Add Detachment"))
+                .padding()
+        }
+    }
 
     private var detachments: [DetachmentResponse] {
         roastersData.roaster.detachments
@@ -39,14 +51,10 @@ struct RoasterView : View {
         }
         .frame(width: UIScreen.main.bounds.width)
         .navigationBarTitle(Text(roastersData.roaster.name))
-        .navigationBarItems(trailing:
-            PresentationLink(destination: ArmiesView(roastersData: roastersData), label: {
-                Image(systemName: "plus")
-                    .imageScale(.large)
-                    .accessibility(label: Text("Add Detachment"))
-                    .padding()
-            })
-        )
+        .navigationBarItems(trailing: armyButton)
+        .sheet(isPresented: $isArmyPresented) {
+            ArmiesView(roastersData: self.roastersData)
+        }
         .onAppear {
             self.roastersData.getRoasterDetails()
         }

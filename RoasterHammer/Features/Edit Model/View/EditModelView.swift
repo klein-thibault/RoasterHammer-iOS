@@ -11,11 +11,20 @@ import RoasterHammer_Shared
 
 struct EditModelView : View {
     @ObjectBinding var editModelData: EditModelInteractor
+    @State var isWeaponSelectionPresented = false
     let detachment: DetachmentResponse
     let selectedUnit: SelectedUnitResponse
 
     private var selectedModel: SelectedModelResponse {
         editModelData.selectedModel
+    }
+
+    var weaponSelectionButton: some View {
+        Button(action: {
+            self.isWeaponSelectionPresented.toggle()
+        }) {
+            Text("Add Weapons")
+        }
     }
 
     var body: some View {
@@ -26,13 +35,12 @@ struct EditModelView : View {
             .onDelete(perform: deleteWeapon)
         }
         .navigationBarTitle(Text(selectedModel.model.name))
-        .navigationBarItems(trailing:
-            PresentationLink(destination: WeaponSelectionView(editModelData: editModelData,
-                                                              detachment: detachment,
-                                                              selectedUnit: selectedUnit),
-                             label: {
-                                Text("Add Weapons")
-            }))
+        .navigationBarItems(trailing: weaponSelectionButton)
+        .sheet(isPresented: $isWeaponSelectionPresented) {
+            WeaponSelectionView(editModelData: self.editModelData,
+                                detachment: self.detachment,
+                                selectedUnit: self.selectedUnit)
+        }
     }
 
     func deleteWeapon(at offsets: IndexSet) {

@@ -9,17 +9,28 @@
 import SwiftUI
 
 struct HeaderAndNavigationButtonHeader<Destination>: View where Destination: View {
+    @State private var isModalPresented = false
+
     let text: String
     let buttonTitle: String
     let destination: Destination
+
+    private var presentationButton: some View {
+        Button(action: {
+            self.isModalPresented.toggle()
+        }) {
+            Text(buttonTitle)
+        }
+    }
 
     var body: some View {
         HStack {
             Text(text)
             Spacer()
-            PresentationLink(destination: destination) {
-                Text(buttonTitle)
-            }
+            presentationButton
+        }
+        .sheet(isPresented: $isModalPresented) {
+            self.destination
         }
     }
 }
