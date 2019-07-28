@@ -32,7 +32,6 @@
 		8E311B7422257A5F00C58DBF /* AccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E311B7322257A5F00C58DBF /* AccountDataManager.swift */; };
 		8E36450D22B967D700ED227E /* RoleResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36450C22B967D700ED227E /* RoleResponse+Identifiable.swift */; };
 		8E36450F22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36450E22B9680600ED227E /* SelectedUnitResponse+Identifiable.swift */; };
-		8E36451222B96EDF00ED227E /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 8E36451122B96EDF00ED227E /* SFSafeSymbols */; };
 		8E36451422B977D100ED227E /* UnitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451322B977D100ED227E /* UnitsView.swift */; };
 		8E36451622B97A4E00ED227E /* UnitResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451522B97A4E00ED227E /* UnitResponse+Identifiable.swift */; };
 		8E36451922B9A3F400ED227E /* DetachmentResponse+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36451822B9A3F400ED227E /* DetachmentResponse+Utils.swift */; };
@@ -284,7 +283,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E36451222B96EDF00ED227E /* SFSafeSymbols in Frameworks */,
 				8ED9AA9322B6957B00455FD8 /* RoasterHammer-Shared in Frameworks */,
 				8ED9AA9622B6958C00455FD8 /* Alamofire in Frameworks */,
 			);
@@ -966,7 +964,6 @@
 			packageProductDependencies = (
 				8ED9AA9222B6957B00455FD8 /* RoasterHammer-Shared */,
 				8ED9AA9522B6958C00455FD8 /* Alamofire */,
-				8E36451122B96EDF00ED227E /* SFSafeSymbols */,
 			);
 			productName = RoasterHammer;
 			productReference = 8EE227B422235FAE00DF0D72 /* RoasterHammer.app */;
@@ -1023,7 +1020,6 @@
 			packageReferences = (
 				8ED9AA9122B6957B00455FD8 /* XCRemoteSwiftPackageReference "RoasterHammer-Shared" */,
 				8ED9AA9422B6958C00455FD8 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				8E36451022B96EDF00ED227E /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = 8EE227B522235FAE00DF0D72 /* Products */;
 			projectDirPath = "";
@@ -1442,14 +1438,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8E36451022B96EDF00ED227E /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/piknotech/SFSafeSymbols/";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.0;
-			};
-		};
 		8ED9AA9122B6957B00455FD8 /* XCRemoteSwiftPackageReference "RoasterHammer-Shared" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/klein-thibault/RoasterHammer-Shared.git";
@@ -1469,11 +1457,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8E36451122B96EDF00ED227E /* SFSafeSymbols */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8E36451022B96EDF00ED227E /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
-			productName = SFSafeSymbols;
-		};
 		8ED9AA9222B6957B00455FD8 /* RoasterHammer-Shared */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8ED9AA9122B6957B00455FD8 /* XCRemoteSwiftPackageReference "RoasterHammer-Shared" */;
