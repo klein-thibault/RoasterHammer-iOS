@@ -10,7 +10,7 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct EditModelView : View {
-    @ObjectBinding var editModelData: EditModelInteractor
+    @ObservedObject var editModelData: EditModelInteractor
     @State var isWeaponSelectionPresented = false
     let detachment: DetachmentResponse
     let selectedUnit: SelectedUnitResponse

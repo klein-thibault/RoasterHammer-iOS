@@ -10,8 +10,8 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct ArmiesView : View {
-    @ObjectBinding var armiesData = RoasterHammerDependencyManager.shared.armiesBuilder().buildDataStore()
-    @ObjectBinding var roastersData: RoasterInteractor
+    @ObservedObject var armiesData = RoasterHammerDependencyManager.shared.armiesBuilder().buildDataStore()
+    @ObservedObject var roastersData: RoasterInteractor
 
     var body: some View {
         NavigationView {

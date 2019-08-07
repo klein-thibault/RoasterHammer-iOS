@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 import RoasterHammer_Shared
 
-final class UnitsInteractor: UnitsViewOutput, BindableObject {
+final class UnitsInteractor: UnitsViewOutput, ObservableObject {
     var units: [UnitResponse] = [] {
         didSet {
             willChange.send(self)

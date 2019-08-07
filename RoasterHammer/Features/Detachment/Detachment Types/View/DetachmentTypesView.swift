@@ -10,16 +10,16 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct DetachmentTypesView : View {
-    @ObjectBinding var detachmentTypesData: DetachmentTypeInteractor
-    @ObjectBinding var roastersData: RoasterInteractor
-    @Environment(\.isPresented) private var isPresented
+    @ObservedObject var detachmentTypesData: DetachmentTypeInteractor
+    @ObservedObject var roastersData: RoasterInteractor
+    @Environment(\.presentationMode) private var presentationMode
 
     var body: some View {
         List {
             ForEach(detachmentTypesData.detachmentTypes, id: \.name) { detachmentType in
                 Button(action: {
                                     self.detachmentTypesData.createDetachment(ofType: detachmentType, forRoster: self.roastersData)
-                                    self.isPresented?.value = false
+                                    self.presentationMode.value.dismiss()
                                 }) {
                                     HStack {
                                         Text(detachmentType.name)

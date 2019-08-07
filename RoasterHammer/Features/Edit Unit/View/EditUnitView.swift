@@ -10,7 +10,7 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct EditUnitView : View {
-    @ObjectBinding var editUnitData: EditUnitInteractor
+    @ObservedObject var editUnitData: EditUnitInteractor
     var rosterData: RoasterInteractor
     let unitType: String
     let detachment: DetachmentResponse
@@ -45,7 +45,7 @@ struct EditUnitView : View {
                         Toggle(isOn: self.$isWarlord) {
                             Text("Warlord")
                         }
-                        .tapAction {
+                        .onTapGesture {
                             self.editUnitData.setUnitAsWarlord(detachmentId: self.detachment.id,
                                                                roleId: self.role.id,
                                                                unitId: self.selectedUnit.id)

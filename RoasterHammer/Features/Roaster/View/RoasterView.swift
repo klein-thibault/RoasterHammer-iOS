@@ -10,7 +10,7 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct RoasterView : View {
-    @ObjectBinding var roastersData: RoasterInteractor
+    @ObservedObject var roastersData: RoasterInteractor
     @State var isArmyPresented = false
 
     var armyButton: some View {
@@ -62,7 +62,7 @@ struct RoasterView : View {
 }
 
 struct FactionView: View {
-    @ObjectBinding var roastersData: RoasterInteractor
+    @ObservedObject var roastersData: RoasterInteractor
     let detachment: DetachmentResponse
 
     var body: some View {
@@ -100,7 +100,7 @@ struct DetachmentNameView: View {
 }
 
 struct DetachmentRow: View {
-    @ObjectBinding var roastersData: RoasterInteractor
+    @ObservedObject var roastersData: RoasterInteractor
     let detachment: DetachmentResponse
 
     var body: some View {
@@ -112,16 +112,16 @@ struct DetachmentRow: View {
         }
     }
 
-    private func listHeight(forDetachment detachment: DetachmentResponse) -> Length {
-        let rolesHeight = Length(detachment.roles.count * 44)
-        let unitsHeight = Length(detachment.totalUnits * 44)
+    private func listHeight(forDetachment detachment: DetachmentResponse) -> CGFloat {
+        let rolesHeight = CGFloat(detachment.roles.count * 44)
+        let unitsHeight = CGFloat(detachment.totalUnits * 44)
 
         return rolesHeight + unitsHeight
     }
 }
 
 struct DetachmentRoleListView: View {
-    @ObjectBinding var roastersData: RoasterInteractor
+    @ObservedObject var roastersData: RoasterInteractor
     let detachment: DetachmentResponse
 
     var body: some View {

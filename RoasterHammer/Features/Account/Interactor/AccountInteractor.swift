@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-final class AccountInteractor: AccountViewOutput, BindableObject {
+final class AccountInteractor: AccountViewOutput, ObservableObject {
     var token: String? {
         didSet {
             willChange.send(self)

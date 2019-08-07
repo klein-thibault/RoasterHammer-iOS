@@ -12,7 +12,7 @@ struct CredentialsView : View {
     @State var email = ""
     @State var password = ""
 
-    @ObjectBinding var accountInteractor: AccountInteractor
+    @ObservedObject var accountInteractor: AccountInteractor
 
     var body: some View {
         NavigationView {

@@ -10,8 +10,8 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct WeaponSelectionView : View {
-    @ObjectBinding var editModelData: EditModelInteractor
-    @Environment(\.isPresented) private var isPresented
+    @ObservedObject var editModelData: EditModelInteractor
+    @Environment(\.presentationMode) private var presentationMode
     let detachment: DetachmentResponse
     let selectedUnit: SelectedUnitResponse
 
@@ -27,7 +27,7 @@ struct WeaponSelectionView : View {
                                                                                forModel: self.editModelData.selectedModel.id,
                                                                                ofUnit: self.selectedUnit.id,
                                                                                inDetachment: self.detachment.id)
-                                self.isPresented?.value = false
+                                self.presentationMode.value.dismiss()
                             }) {
                                 Text(weapon.name)
                             }

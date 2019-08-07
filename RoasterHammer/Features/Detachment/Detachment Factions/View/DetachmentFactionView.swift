@@ -10,7 +10,7 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct DetachmentFactionView : View {
-    @ObjectBinding var rosterData: RoasterInteractor
+    @ObservedObject var rosterData: RoasterInteractor
     let detachment: DetachmentResponse
 
     var body: some View {

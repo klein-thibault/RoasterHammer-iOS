@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct UnitsView : View {
-    @ObjectBinding var unitsData: UnitsInteractor
-    @ObjectBinding var roastersData: RoasterInteractor
-    @Environment(\.isPresented) private var isPresented
+    @ObservedObject var unitsData: UnitsInteractor
+    @ObservedObject var roastersData: RoasterInteractor
+    @Environment(\.presentationMode) private var presentationMode
 
     var body: some View {
         NavigationView {
@@ -22,7 +22,7 @@ struct UnitsView : View {
                                                               detachmentId: self.unitsData.detachmentId,
                                                               unitRoleId: self.unitsData.unitRoleId,
                                                               quantity: 1)
-                        self.isPresented?.value = false
+                        self.presentationMode.value.dismiss()
                     }) {
                         Text(unit.name)
                     }

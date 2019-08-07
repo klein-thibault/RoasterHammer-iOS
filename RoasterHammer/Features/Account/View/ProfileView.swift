@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ProfileView : View {
-    @ObjectBinding var accountInteractor: AccountInteractor
+    @ObservedObject var accountInteractor: AccountInteractor
 
     var body: some View {
         HStack {

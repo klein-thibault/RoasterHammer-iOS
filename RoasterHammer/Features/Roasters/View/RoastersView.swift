@@ -16,7 +16,7 @@ fileprivate enum ModalViewIndex: Int {
 }
 
 struct RoastersView: View {
-    @ObjectBinding private var roastersData = RoasterHammerDependencyManager.shared.roastersBuilder().buildDataStore()
+    @ObservedObject private var roastersData = RoasterHammerDependencyManager.shared.roastersBuilder().buildDataStore()
     @State var showModal = false
     @State var modalSelected = ModalViewIndex.notSupported.rawValue
 

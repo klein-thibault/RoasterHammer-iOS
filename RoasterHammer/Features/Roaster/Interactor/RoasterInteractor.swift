@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 import RoasterHammer_Shared
 
-final class RoasterInteractor: BindableObject {
+final class RoasterInteractor: ObservableObject {
     var roaster: RoasterResponse {
         didSet {
             willChange.send(self)

@@ -10,7 +10,7 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct RelicSection : View {
-    @ObjectBinding var editUnitData: EditUnitInteractor
+    @ObservedObject var editUnitData: EditUnitInteractor
     let unitType: String
     let detachment: DetachmentResponse
     let role: RoleResponse

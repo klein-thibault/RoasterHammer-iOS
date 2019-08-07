@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct CreateRoasterView : View {
-    @ObjectBinding var roastersData: RoastersInteractor
+    @ObservedObject var roastersData: RoastersInteractor
     @State var roasterName: String = ""
-    @Environment(\.isPresented) private var isPresented
+    @Environment(\.presentationMode) private var presentationMode
 
     var body: some View {
         VStack(spacing: 20) {
@@ -20,7 +20,7 @@ struct CreateRoasterView : View {
             Button(action: {
                 if self.roasterName.count > 0 {
                     self.roastersData.createRoaster(name: self.roasterName)
-                    self.isPresented?.value = false
+                    self.presentationMode.value.dismiss()
                 }
             }) {
                 Text("Create")

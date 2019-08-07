@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 import RoasterHammer_Shared
 
-final class EditUnitInteractor: BindableObject {
+final class EditUnitInteractor: ObservableObject {
     var selectedUnit: SelectedUnitResponse {
         didSet {
             willChange.send(self)

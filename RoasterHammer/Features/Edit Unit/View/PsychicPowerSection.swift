@@ -10,7 +10,7 @@ import SwiftUI
 import RoasterHammer_Shared
 
 struct PsychicPowerSection : View {
-    @ObjectBinding var editUnitData: EditUnitInteractor
+    @ObservedObject var editUnitData: EditUnitInteractor
     let detachment: DetachmentResponse
 
     var body: some View {

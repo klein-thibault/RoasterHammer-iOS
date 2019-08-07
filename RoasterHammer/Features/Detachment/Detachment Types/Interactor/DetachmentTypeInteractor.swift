@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 import RoasterHammer_Shared
 
-final class DetachmentTypeInteractor: DetachmentTypeViewOutput, BindableObject {
+final class DetachmentTypeInteractor: DetachmentTypeViewOutput, ObservableObject {
     var detachmentTypes: [DetachmentShortResponse] = [] {
         didSet {
             willChange.send(self)

@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 import RoasterHammer_Shared
 
-final class ArmiesInteractor: ArmiesViewOutput, BindableObject {
+final class ArmiesInteractor: ArmiesViewOutput, ObservableObject {
     var armies: [ArmyResponse] = [] {
         didSet {
             willChange.send(self)
