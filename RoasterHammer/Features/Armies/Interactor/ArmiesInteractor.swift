@@ -14,13 +14,13 @@ import RoasterHammer_Shared
 final class ArmiesInteractor: ArmiesViewOutput, ObservableObject {
     var armies: [ArmyResponse] = [] {
         didSet {
-            willChange.send(self)
+            objectWillChange.send(self)
         }
     }
 
     private let armyDataManager: ArmyDataManager
 
-    var willChange = PassthroughSubject<ArmiesInteractor, Never>()
+    let objectWillChange = PassthroughSubject<ArmiesInteractor, Never>()
 
     init(armyDataManager: ArmyDataManager) {
         self.armyDataManager = armyDataManager

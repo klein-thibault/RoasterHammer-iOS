@@ -14,10 +14,10 @@ import RoasterHammer_Shared
 final class RoastersInteractor: RoastersViewOutput, ObservableObject {
     var roasters: [RoasterResponse] = [] {
         didSet {
-            willChange.send(self)
+            objectWillChange.send(self)
         }
     }
-    var willChange = PassthroughSubject<RoastersInteractor, Never>()
+    let objectWillChange = PassthroughSubject<RoastersInteractor, Never>()
 
     private let accountDataManager: AccountDataManager
     private let roastersDataManager: RoasterDataManager

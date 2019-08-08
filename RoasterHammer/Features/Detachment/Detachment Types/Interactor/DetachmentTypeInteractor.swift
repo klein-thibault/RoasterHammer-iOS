@@ -14,11 +14,11 @@ import RoasterHammer_Shared
 final class DetachmentTypeInteractor: DetachmentTypeViewOutput, ObservableObject {
     var detachmentTypes: [DetachmentShortResponse] = [] {
         didSet {
-            willChange.send(self)
+            objectWillChange.send(self)
         }
     }
     var armyId: Int
-    var willChange = PassthroughSubject<DetachmentTypeInteractor, Never>()
+    let objectWillChange = PassthroughSubject<DetachmentTypeInteractor, Never>()
 
     private let detachmentDataManager: DetachmentDataManager
 

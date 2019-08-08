@@ -14,10 +14,10 @@ import RoasterHammer_Shared
 final class EditUnitInteractor: ObservableObject {
     var selectedUnit: SelectedUnitResponse {
         didSet {
-            willChange.send(self)
+            objectWillChange.send(self)
         }
     }
-    var willChange = PassthroughSubject<EditUnitInteractor, Never>()
+    let objectWillChange = PassthroughSubject<EditUnitInteractor, Never>()
 
     private let rosterInteractor: RoasterInteractor
     private let unitDataManager: UnitDataManager
