@@ -61,6 +61,7 @@
 		8E97AFE922BBB361009D08AE /* WeaponResponse+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97AFE822BBB361009D08AE /* WeaponResponse+Identifiable.swift */; };
 		8E97AFEB22BBB6F8009D08AE /* WeaponRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97AFEA22BBB6F8009D08AE /* WeaponRow.swift */; };
 		8E9B462822D6D78E00738443 /* EditUnitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9B462722D6D78E00738443 /* EditUnitInteractor.swift */; };
+		8EA4C53822FD0B45004946FB /* UnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA4C53722FD0B45004946FB /* UnitView.swift */; };
 		8EAEB933227CB9680047BB61 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEB932227CB9680047BB61 /* RulesView.swift */; };
 		8EAEBBA4227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEBBA3227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift */; };
 		8EAEBBA6227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEBBA5227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift */; };
@@ -207,6 +208,7 @@
 		8E97AFE822BBB361009D08AE /* WeaponResponse+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeaponResponse+Identifiable.swift"; sourceTree = "<group>"; };
 		8E97AFEA22BBB6F8009D08AE /* WeaponRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponRow.swift; sourceTree = "<group>"; };
 		8E9B462722D6D78E00738443 /* EditUnitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUnitInteractor.swift; sourceTree = "<group>"; };
+		8EA4C53722FD0B45004946FB /* UnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitView.swift; sourceTree = "<group>"; };
 		8EAEB932227CB9680047BB61 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		8EAEBBA3227CC6260047BB61 /* RoasterSelectedDetachmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterSelectedDetachmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EAEBBA5227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterSelectionBaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -721,6 +723,7 @@
 		8EF1890B22FBB79700F78F4E /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				8EA4C53722FD0B45004946FB /* UnitView.swift */,
 				8EF1890C22FBB96000F78F4E /* UnitDetailView.swift */,
 				8EF1890E22FBB9C300F78F4E /* UnitNameView.swift */,
 				8EF1891622FBBF4900F78F4E /* UnitRulesView.swift */,
@@ -1117,6 +1120,7 @@
 				8EF1891122FBBA3D00F78F4E /* ModelDataView.swift in Sources */,
 				8E0DF9F422BA668200B752E4 /* SelectedModelResponse+Identifiable.swift in Sources */,
 				8EFAF5272225F9AE00DAE956 /* JSONDecodingError.swift in Sources */,
+				8EA4C53822FD0B45004946FB /* UnitView.swift in Sources */,
 				8E0F5227224ACFEC0077D859 /* Array+Utils.swift in Sources */,
 				8ED7EE0522748F6200A21A38 /* RoasterViewerInteractor.swift in Sources */,
 				8EFAF0462224AAB200DAE956 /* UIView+Autolayout.swift in Sources */,

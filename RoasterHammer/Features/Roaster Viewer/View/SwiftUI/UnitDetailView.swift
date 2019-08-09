@@ -21,6 +21,7 @@ struct UnitDetailView: View {
                     WeaponDataView(weapons: model.selectedWeapons)
                 }
                 UnitRulesView(rules: selectedUnit.unit.rules)
+                Spacer()
             }
         }
         .padding()
