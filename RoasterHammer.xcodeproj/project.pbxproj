@@ -94,6 +94,12 @@
 		8EE4E3A32235B2A30043BDD7 /* UnitsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4E3A22235B2A30043BDD7 /* UnitsBuilder.swift */; };
 		8EE4EAF72235B6FF0043BDD7 /* UnitDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4EAF62235B6FF0043BDD7 /* UnitDataManager.swift */; };
 		8EE4EAF92235B7950043BDD7 /* QueryItemConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4EAF82235B7950043BDD7 /* QueryItemConvertible.swift */; };
+		8EF1890D22FBB96000F78F4E /* UnitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1890C22FBB96000F78F4E /* UnitDetailView.swift */; };
+		8EF1890F22FBB9C300F78F4E /* UnitNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1890E22FBB9C300F78F4E /* UnitNameView.swift */; };
+		8EF1891122FBBA3D00F78F4E /* ModelDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1891022FBBA3D00F78F4E /* ModelDataView.swift */; };
+		8EF1891322FBBDAC00F78F4E /* WeaponDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1891222FBBDAC00F78F4E /* WeaponDataView.swift */; };
+		8EF1891522FBBE8300F78F4E /* CharacteristicStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1891422FBBE8300F78F4E /* CharacteristicStackView.swift */; };
+		8EF1891722FBBF4900F78F4E /* UnitRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1891622FBBF4900F78F4E /* UnitRulesView.swift */; };
 		8EFA0263222DC7BB00DAE956 /* ArmyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA0262222DC7BB00DAE956 /* ArmyDataManager.swift */; };
 		8EFA04E22231AC6E00DAE956 /* AccountViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04E12231AC6E00DAE956 /* AccountViewOutput.swift */; };
 		8EFA04E42231AC7B00DAE956 /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA04E32231AC7B00DAE956 /* AccountInteractor.swift */; };
@@ -236,6 +242,12 @@
 		8EE4E3A22235B2A30043BDD7 /* UnitsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsBuilder.swift; sourceTree = "<group>"; };
 		8EE4EAF62235B6FF0043BDD7 /* UnitDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDataManager.swift; sourceTree = "<group>"; };
 		8EE4EAF82235B7950043BDD7 /* QueryItemConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItemConvertible.swift; sourceTree = "<group>"; };
+		8EF1890C22FBB96000F78F4E /* UnitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDetailView.swift; sourceTree = "<group>"; };
+		8EF1890E22FBB9C300F78F4E /* UnitNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitNameView.swift; sourceTree = "<group>"; };
+		8EF1891022FBBA3D00F78F4E /* ModelDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataView.swift; sourceTree = "<group>"; };
+		8EF1891222FBBDAC00F78F4E /* WeaponDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDataView.swift; sourceTree = "<group>"; };
+		8EF1891422FBBE8300F78F4E /* CharacteristicStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicStackView.swift; sourceTree = "<group>"; };
+		8EF1891622FBBF4900F78F4E /* UnitRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitRulesView.swift; sourceTree = "<group>"; };
 		8EFA0262222DC7BB00DAE956 /* ArmyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyDataManager.swift; sourceTree = "<group>"; };
 		8EFA04E12231AC6E00DAE956 /* AccountViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewOutput.swift; sourceTree = "<group>"; };
 		8EFA04E32231AC7B00DAE956 /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
@@ -583,6 +595,7 @@
 		8ED7EDF922748EBE00A21A38 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8EF1890B22FBB79700F78F4E /* SwiftUI */,
 				8E6A8A862275E09D001DE3D2 /* Roaster Viewer Cell */,
 				8ED7EE0022748F0200A21A38 /* RoasterViewerLayoutViewController.swift */,
 				8ED7EE0222748F2200A21A38 /* RoasterViewerViewController.swift */,
@@ -703,6 +716,19 @@
 				8EE4E3A22235B2A30043BDD7 /* UnitsBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		8EF1890B22FBB79700F78F4E /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				8EF1890C22FBB96000F78F4E /* UnitDetailView.swift */,
+				8EF1890E22FBB9C300F78F4E /* UnitNameView.swift */,
+				8EF1891622FBBF4900F78F4E /* UnitRulesView.swift */,
+				8EF1891022FBBA3D00F78F4E /* ModelDataView.swift */,
+				8EF1891222FBBDAC00F78F4E /* WeaponDataView.swift */,
+				8EF1891422FBBE8300F78F4E /* CharacteristicStackView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		8EFA04D52231AAF300DAE956 /* Account */ = {
@@ -1088,6 +1114,7 @@
 				8EFAFD472228A55000DAE956 /* IdentifiableView.swift in Sources */,
 				8E311B712225793A00C58DBF /* HTTPResponse.swift in Sources */,
 				8EFCBD7022BBE0780044E726 /* IfLetView.swift in Sources */,
+				8EF1891122FBBA3D00F78F4E /* ModelDataView.swift in Sources */,
 				8E0DF9F422BA668200B752E4 /* SelectedModelResponse+Identifiable.swift in Sources */,
 				8EFAF5272225F9AE00DAE956 /* JSONDecodingError.swift in Sources */,
 				8E0F5227224ACFEC0077D859 /* Array+Utils.swift in Sources */,
@@ -1110,12 +1137,14 @@
 				8EFCBD7222BBE3BE0044E726 /* PsychicPowerResponse+Identifiable.swift in Sources */,
 				8EE4E3A32235B2A30043BDD7 /* UnitsBuilder.swift in Sources */,
 				8E19B344222D5B52003F10FA /* DetachmentTypeBuilder.swift in Sources */,
+				8EF1891322FBBDAC00F78F4E /* WeaponDataView.swift in Sources */,
 				8ED7EE0122748F0200A21A38 /* RoasterViewerLayoutViewController.swift in Sources */,
 				8E6A8A8D2275E113001DE3D2 /* WeaponCharacteristicsView.swift in Sources */,
 				8EFAF531222600C300DAE956 /* Storable.swift in Sources */,
 				8E97AFE922BBB361009D08AE /* WeaponResponse+Identifiable.swift in Sources */,
 				8E2724B422B90BFF00534449 /* DetachmentTypesView.swift in Sources */,
 				8EFAFD5E2228AB1D00DAE956 /* AlamofireHTTPClient.swift in Sources */,
+				8EF1890D22FBB96000F78F4E /* UnitDetailView.swift in Sources */,
 				8E646CE62224FA4800599834 /* JSONDecoder+Data.swift in Sources */,
 				8E19B5B5222D6383003F10FA /* DetachmentDataManager.swift in Sources */,
 				8E36451B22BA7D0700ED227E /* HeaderAndNavigationButtonHeader.swift in Sources */,
@@ -1128,11 +1157,13 @@
 				8E0DF9F222BA5D5D00B752E4 /* EditUnitView.swift in Sources */,
 				8ED7EE0D22748FC300A21A38 /* RoasterViewerRouter.swift in Sources */,
 				8EFAF52F2226009F00DAE956 /* AccountDataStore.swift in Sources */,
+				8EF1891522FBBE8300F78F4E /* CharacteristicStackView.swift in Sources */,
 				8E60472222C548C1008D448A /* WeaponSelectionView.swift in Sources */,
 				8E6A8A892275E0D0001DE3D2 /* UnitHeaderView.swift in Sources */,
 				8EFAFFEA222DC4C200DAE956 /* ArmiesInteractor.swift in Sources */,
 				8EAEBBA8227CD50A0047BB61 /* DetachmentHeaderView.swift in Sources */,
 				8EC084A722B7201600554850 /* SceneDelegate.swift in Sources */,
+				8EF1891722FBBF4900F78F4E /* UnitRulesView.swift in Sources */,
 				8EAEBBA6227CD2B80047BB61 /* RoasterSelectionBaseCollectionViewCell.swift in Sources */,
 				8E36451622B97A4E00ED227E /* UnitResponse+Identifiable.swift in Sources */,
 				8E19D7EB222AB69E00051784 /* GameDataStore.swift in Sources */,
@@ -1172,6 +1203,7 @@
 				8E19B33C222D5A98003F10FA /* DetachmentTypeViewOutput.swift in Sources */,
 				8EFAFD4B2228A8E900DAE956 /* GameDataManager.swift in Sources */,
 				8E7C402D22B7B72100AB2275 /* CredentialsView.swift in Sources */,
+				8EF1890F22FBB9C300F78F4E /* UnitNameView.swift in Sources */,
 				8EFAFD562228AA3B00DAE956 /* HTTPRequest.swift in Sources */,
 				8E2724B822B90F4200534449 /* ArmyResponse+Identifiable.swift in Sources */,
 				8ED7EE0F22748FD200A21A38 /* RoasterViewerBuilder.swift in Sources */,
