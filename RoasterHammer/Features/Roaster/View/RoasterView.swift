@@ -35,7 +35,7 @@ struct RoasterView : View {
         ScrollView {
             VStack(alignment: .leading) {
                 HStack(spacing: 20) {
-                    NavigationLink(destination: UnitView(selectedUnits: roastersData.roaster.detachments[0].roles[0].units)) {
+                    NavigationLink(destination: RosterView(roster: roastersData.roaster)) {
                         Text("View Roster")
                     }
                 }
