@@ -1,9 +1,9 @@
 //
 //  HTTPEnvironmentManager.swift
-//  PCFSwift
+//  RoasterHammer
 //
 //  Created by Thibault Klein on 2/25/17.
-//  Copyright © 2017 Prolific Interactive. All rights reserved.
+//  Copyright © 2019 Thibault Klein. All rights reserved.
 //
 
 protocol HTTPEnvironmentManager: class {
