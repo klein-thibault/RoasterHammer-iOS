@@ -19,7 +19,7 @@ struct DetachmentTypesView : View {
             ForEach(detachmentTypesData.detachmentTypes, id: \.name) { detachmentType in
                 Button(action: {
                                     self.detachmentTypesData.createDetachment(ofType: detachmentType, forRoster: self.roastersData)
-                                    self.presentationMode.value.dismiss()
+                                    self.presentationMode.wrappedValue.dismiss()
                                 }) {
                                     HStack {
                                         Text(detachmentType.name)

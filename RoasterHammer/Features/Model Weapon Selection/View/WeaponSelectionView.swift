@@ -27,7 +27,7 @@ struct WeaponSelectionView : View {
                                                                                forModel: self.editModelData.selectedModel.id,
                                                                                ofUnit: self.selectedUnit.id,
                                                                                inDetachment: self.detachment.id)
-                                self.presentationMode.value.dismiss()
+                                self.presentationMode.wrappedValue.dismiss()
                             }) {
                                 Text(weapon.name)
                             }

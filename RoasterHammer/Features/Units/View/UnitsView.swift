@@ -22,7 +22,7 @@ struct UnitsView : View {
                                                               detachmentId: self.unitsData.detachmentId,
                                                               unitRoleId: self.unitsData.unitRoleId,
                                                               quantity: 1)
-                        self.presentationMode.value.dismiss()
+                        self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Text(unit.name)
                     }

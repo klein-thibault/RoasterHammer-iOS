@@ -20,7 +20,7 @@ struct CreateRoasterView : View {
             Button(action: {
                 if self.roasterName.count > 0 {
                     self.roastersData.createRoaster(name: self.roasterName)
-                    self.presentationMode.value.dismiss()
+                    self.presentationMode.wrappedValue.dismiss()
                 }
             }) {
                 Text("Create")
