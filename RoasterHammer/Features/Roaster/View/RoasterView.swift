@@ -36,7 +36,11 @@ struct RoasterView : View {
             VStack(alignment: .leading) {
                 HStack(spacing: 20) {
                     NavigationLink(destination: RosterView(roster: roastersData.roaster)) {
-                        Text("View Roster")
+                        HStack {
+                            Spacer()
+                            Text("View Roster")
+                            Spacer()
+                        }
                     }
                 }
                 ForEach(detachments) { detachment in
@@ -55,7 +59,8 @@ struct RoasterView : View {
             .frame(width: UIScreen.main.bounds.width)
         }
         .frame(width: UIScreen.main.bounds.width)
-        .navigationBarTitle(Text(roastersData.roaster.name))
+        .padding(.top)
+        .navigationBarTitle(Text(roastersData.roaster.name), displayMode: .inline)
         .navigationBarItems(trailing: armyButton)
         .sheet(isPresented: $isArmyPresented) {
             ArmiesView(roastersData: self.roastersData)
