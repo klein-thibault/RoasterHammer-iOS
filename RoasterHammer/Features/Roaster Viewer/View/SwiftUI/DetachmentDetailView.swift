@@ -16,6 +16,7 @@ struct DetachmentDetailView: View {
         VStack {
             Text(self.detachment.army.name)
                 .font(.title)
+                .padding()
             Text(self.detachment.name)
                 .font(.title)
             Text("\(self.detachment.totalCost) points")

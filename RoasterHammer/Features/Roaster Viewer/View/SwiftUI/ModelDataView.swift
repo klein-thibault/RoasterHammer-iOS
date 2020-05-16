@@ -111,8 +111,8 @@ private struct ModelSaveView: View {
 private struct VerticalDivider: View {
     var body: some View {
         Divider()
-        .frame(width: 1)
-        .foregroundColor(.black)
+            .frame(width: 1)
+            .foregroundColor(.black)
     }
 }
 

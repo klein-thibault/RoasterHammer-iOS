@@ -39,5 +39,4 @@ class RoasterViewerLayoutViewController: BaseViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
-
 }
