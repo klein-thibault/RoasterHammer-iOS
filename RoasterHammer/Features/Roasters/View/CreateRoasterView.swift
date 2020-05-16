@@ -15,6 +15,10 @@ struct CreateRoasterView : View {
 
     var body: some View {
         VStack(spacing: 20) {
+            Text("Create New Roster")
+                .font(.title)
+                .bold()
+
             TextField("Roster Name", text: $roasterName)
 
             Button(action: {

@@ -23,6 +23,8 @@ struct CredentialsView : View {
 
                 TextField("Email", text: $email)
                     .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
                 SecureField("Password", text: $password)
                     .textContentType(.password)
 
